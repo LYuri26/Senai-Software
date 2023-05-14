@@ -1,62 +1,83 @@
-
 body {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 100vh;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    height: 100vh;
+    overflow:hidden;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.sair {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 900;
 }
 
 table {
-border-collapse: collapse;
-width: 100%;
-max-width: 800px;
-margin: 20px auto;
-white-space: nowrap;
-overflow-x: auto;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
-th, td {
-text-align: left;
-padding: 10px;
+th,
+td {
+    text-align: left;
+    padding: 10px;
 }
 
 th {
-background-color: #007bff;
-color: #fff;
+    background-color: #007bff;
+    color: #fff;
 }
 
 tr.bg-blue {
-background-color: #f0f7ff;
+    background-color: #f0f7ff;
 }
 
 tr.bg-white {
-background-color: #fff;
+    background-color: #fff;
 }
 
 tr:hover {
-background-color: #d9edff;
+    background-color: #d9edff;
 }
 
 tr:nth-child(even) {
-background-color: #f6f8fa;
+    background-color: #f6f8fa;
 }
 
 @media (max-width: 767px) {
-th, td {
-display: block;
-width: auto;
-}
 
-th {
-text-align: center;
-}
+    th,
+    td {
+        display: block;
+        width: auto;
+    }
 
-th:first-child {
-display: none;
-}
+    th {
+        text-align: center;
+    }
 
-td:first-child {
-border-top: none;
-}
+    th:first-child {
+        display: none;
+    }
+
+    td:first-child {
+        border-top: none;
+    }
 }

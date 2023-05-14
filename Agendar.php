@@ -1,3 +1,14 @@
+
+<?php
+session_start();
+
+// Verificar se o usuário está autenticado
+if (!isset($_SESSION['usuario'])) {
+    // Usuário não está autenticado, redirecionar para a página de login
+    header('Location: login.html');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,6 +25,7 @@
 </head>
 
 <body>
+    <a href="logout.php" class="sair">Sair</a>
 
     <form method="POST">
         <h1>AGENDAMENTO</h1>
@@ -46,7 +58,7 @@
         echo 'Error: ' . $e->getMessage();
         die();
     }
-    
+
     // Se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Obtém os dados do formulário
@@ -56,16 +68,16 @@
         $hora_inicio = $_POST['hora_inicio'];
         $hora_termino = $_POST['hora_termino'];
         $quantidade_alunos = $_POST['quantidade_alunos'];
-    
+
         // Insere os dados na tabela "agendamentos"
         $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$instrutor, $curso, $data, $hora_inicio, $hora_termino, $quantidade_alunos]);
-    
+
         // Exibe uma mensagem de sucesso
         echo "<p>Agendamento realizado com sucesso!</p>";
     }
     ?>
-    
+
 </body>
 
 </html>
