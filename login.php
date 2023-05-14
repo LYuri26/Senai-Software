@@ -37,7 +37,7 @@ try {
             // É um superusuário/administrador, armazenar os dados na sessão
             $_SESSION['usuario'] = $superusuario;
             // É um superusuário/administrador, redirecionar para a página de administração
-            header('Location: Agendamentos.php');
+            header('Location: Menu.php');
             exit;
         }
 
@@ -52,7 +52,7 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
             // É um usuário comum, redirecionar para a página principal
-            header('Location: Cancelamentos.php');
+            header('Location: Menu.php');
             exit;
         } else {
             // Login inválido, exibir mensagem de erro
