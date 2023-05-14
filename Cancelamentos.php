@@ -3,7 +3,7 @@
 
 <head>
     <title>Lista de cancelamentos</title>
-    <link rel="stylesheet" href="/Consulta/consulta.css">
+    <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
 </head>
 
 <body>
@@ -11,7 +11,7 @@
     <?php
     // Definir as informações de conexão
     $host = 'localhost';
-    $dbname = 'BibliotecaDB';
+    $dbname = 'biblioteca';
     $username = 'root';
     $password = '';
 

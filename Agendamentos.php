@@ -3,7 +3,7 @@
 
 <head>
     <title>Lista de Agendamentos</title>
-    <link rel="stylesheet" href="consulta.css">
+    <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
 </head>
 
 <body>
@@ -11,7 +11,7 @@
     <?php
     // Definir as informações de conexão
     $host = 'localhost';
-    $banco = 'bibliotecadb';
+    $banco = 'biblioteca';
     $usuario = 'root';
     $senha = '';
 
