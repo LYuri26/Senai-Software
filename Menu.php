@@ -20,12 +20,13 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-  <div class="navbar-logo" id="icone">
-    <img src="./config/assets/img/Logo.jpg" class="logo"></a>
-  </div>
   <header>
     <nav class="navbar">
       <div class="navbar-container">
+
+      <div class="navbar-logo" id="icone">
+    <img src="./config/assets/img/Logo.jpg" class="logo"></a>
+  </div>
 
         <ul class="navbar-menu">
           <li><a href="./Agendar.php">Agendar</a></li>
