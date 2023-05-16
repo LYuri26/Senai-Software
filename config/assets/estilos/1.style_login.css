@@ -92,7 +92,7 @@ button[value="ACESSAR"],
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
-  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  border-radius: 0.8rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -100,8 +100,8 @@ button[value="ACESSAR"],
 }
 
 #botao_limpar:hover {
-  background-color: #000000;
+  background-color: #c2bcbc;
 }
 button:hover {
-  background-color: #00ff15;
+  background-color: #c2bcbc;
 }
