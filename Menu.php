@@ -20,27 +20,14 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-<<<<<<< Updated upstream
 
-
-=======
-  
->>>>>>> Stashed changes
   <header>
   <nav class="navbar">
       <div class="navbar-container">
         <ul class="navbar-menu">
-<<<<<<< Updated upstream
-
-        <div class="navbar-logo" id="icone">
-    <img src="./config/assets/img/Logo.jpg" class="logo"></a>
-  </div>
-
-=======
         <div class="navbar-logo" id="icone">
         <img src="./config/assets/img/Logo.jpg" class="logo"></a>
         </div>
->>>>>>> Stashed changes
           <li><a href="./Agendar.php">Agendar</a></li>
           <li><a href="./Cancelar.php">Cancelar Agendamento</a></li>
           <li><a href="./Agendamentos.php">Consultar agendamentos</a></li>

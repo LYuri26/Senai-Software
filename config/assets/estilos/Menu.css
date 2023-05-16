@@ -1,11 +1,14 @@
 .navbar {
-    background-color: #2ad4a1;
-    padding: 1%,5%;
-    
-    border-radius: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
-  
+  background-color: #005CA9;
+  padding: 0;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
   .navbar-container {
     position: top;
     display: flex;
@@ -17,7 +20,7 @@
     flex-direction: row;
     margin-left: 20%;
     margin: 0 auto; 
-
+    width: bold;
   }
 
   .logo {
@@ -31,11 +34,11 @@
  border-radius: 50px;
  margin-right: 290%;
 
-
   }
   .navbar-menu {
     list-style: none;
     display: flex;
+    align-items: center;
   }
   
   .navbar-menu li {
