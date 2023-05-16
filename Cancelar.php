@@ -15,7 +15,7 @@ if (!isset($_SESSION['usuario'])) {
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./config/assets/estilos/2.style_cancelamento.css">
+    <link rel="stylesheet" href="./config/assets/estilos/cancelar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -39,13 +39,13 @@ if (!isset($_SESSION['usuario'])) {
 
             <p>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
                 professores.</p>
-                <label for="concordo">Eu concordo e estou ciente. </label>
+            <label for="concordo">Eu concordo e estou ciente. </label>
             <input type="checkbox" id="concordo" name="concordo" required>
-          
+
 
             <p><input type="submit" value="CANCELAR"></p>
             <button type="button" onclick="limparFormulario()">LIMPAR</button>
-            
+
 
         </form>
 

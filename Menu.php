@@ -3,16 +3,16 @@ session_start();
 
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
-    // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.html');
-    exit;
+  // Usuário não está autenticado, redirecionar para a página de login
+  header('Location: login.html');
+  exit;
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-  <link rel="stylesheet" href="./config/assets/estilos/Menu.css">
+  <link rel="stylesheet" href="./config/assets/estilos/menu.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +21,16 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
   <header>
-    <nav class="navbar">  
+    <nav class="navbar">
       <div class="navbar-container">
-      <div class="navbar-logo" id="icone">
-    <a><img src="./config/assets/img/Logo.jpg" class="logo"></a>
-  </div>
+        <div class="navbar-logo" id="icone">
+          <a><img src="./config/assets/img/Logo.jpg" class="logo"></a>
+        </div>
         <ul class="navbar-menu">
-          <li><a href="./Agendar.php">Agendar</a></li>
-          <li><a href="./Cancelar.php">Cancelar</a></li>
-          <li><a href="./Agendamentos.php">Consultar agendamentos</a></li>
-          <li><a href="./Cancelamentos.php">Consultar Cancelamentos</a></li>
+          <li><a href="/Agendar.php">Agendar</a></li>
+          <li><a href="/Cancelar.php">Cancelar</a></li>
+          <li><a href="/Agendamentos.php"> Agendamentos</a></li>
+          <li><a href="/Cancelamentos.php"> Cancelamentos</a></li>
           <li><a href="./Login.html">Sair</a></li>
         </ul>
         <div class="navbar-toggle">

@@ -105,3 +105,7 @@ button[value="ACESSAR"],
 button:hover {
   background-color: #005ca9;
 }
+footer {
+  text-align: center;
+align-content: flex-end;
+}

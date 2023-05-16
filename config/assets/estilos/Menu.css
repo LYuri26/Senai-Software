@@ -100,10 +100,9 @@ a {
   }
 }
 .imagem-biblioteca {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 75px;
+  position: relative;
+  top: 15px;
+  padding: 10px;
   border-radius: 5px;
   
 }
