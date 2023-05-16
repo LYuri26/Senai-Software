@@ -26,7 +26,7 @@ if (!isset($_SESSION['usuario'])) {
     <a href="logout.php" class="sair">Sair</a>
 
     <div id="app">
-        <form action="3.relacionar.php.php" method="post" onsubmit="exibirAlerta(event)">
+        <form action="3.relacionar.php" method="post" onsubmit="exibirAlerta(event)">
             <h1>CANCELAMENTO</h1>
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" required><br><br>
@@ -39,11 +39,13 @@ if (!isset($_SESSION['usuario'])) {
 
             <p>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
                 professores.</p>
+                <label for="concordo">Eu concordo e estou ciente. </label>
             <input type="checkbox" id="concordo" name="concordo" required>
-            <label for="concordo">Eu concordo e estou ciente. </label>
+          
 
             <p><input type="submit" value="CANCELAR"></p>
             <button type="button" onclick="limparFormulario()">LIMPAR</button>
+            
 
         </form>
 

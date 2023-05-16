@@ -20,16 +20,15 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-  <div class="navbar-logo" id="icone">
-    <img src="./config/assets/img/Logo.jpg" class="logo"></a>
-  </div>
   <header>
-    <nav class="navbar">
+    <nav class="navbar">  
       <div class="navbar-container">
-
+      <div class="navbar-logo" id="icone">
+    <a><img src="./config/assets/img/Logo.jpg" class="logo"></a>
+  </div>
         <ul class="navbar-menu">
           <li><a href="./Agendar.php">Agendar</a></li>
-          <li><a href="./Cancelar.php">Cancelar Agendamento</a></li>
+          <li><a href="./Cancelar.php">Cancelar</a></li>
           <li><a href="./Agendamentos.php">Consultar agendamentos</a></li>
           <li><a href="./Cancelamentos.php">Consultar Cancelamentos</a></li>
           <li><a href="./Login.html">Sair</a></li>
@@ -40,7 +39,10 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </nav>
   </header>
-  <h1>Bem-vindo ao site de agendamentos da biblioteca!</h1>
+  <div class="imagem-biblioteca">
+    <img src="./config/assets/img/Biblioteca.jpg" class="imagem">
+  </div>
+
 </body>
 
 </html>
