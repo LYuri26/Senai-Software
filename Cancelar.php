@@ -26,7 +26,7 @@ if (!isset($_SESSION['usuario'])) {
     <a href="logout.php" class="sair">Sair</a>
 
     <div id="app">
-        <form action="3.relacionar.php.php" method="post" onsubmit="exibirAlerta(event)">
+        <form action="3.relacionar.php" method="post" onsubmit="exibirAlerta(event)">
             <h1>CANCELAMENTO</h1>
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" required><br><br>

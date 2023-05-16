@@ -21,6 +21,9 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
     <a href="logout.php" class="sair">Sair</a>
+
+    <div id="app">
+        <form action="3.relacionar.php.php" method="post" onsubmit="exibirAlerta(event)">
     <h1>Lista de cancelamentos</h1>
     <?php
     // Definir as informações de conexão

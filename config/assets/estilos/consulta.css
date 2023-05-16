@@ -1,14 +1,9 @@
 body {
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items: center;
-    height: 100vh;
-    overflow:hidden;
-    background-color: #e0e0e0;
-    margin: 0;
-    padding: 0;
+  overflow:hidden;
+  background-color: #e0e0e0;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .sair {
@@ -25,6 +20,13 @@ body {
     font-weight: 900;
 }
 
+#app {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px;
+    margin-top: 2vh;
+  }
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -34,14 +36,33 @@ table {
     overflow-x: auto;
 }
 
+h1 {
+    color: #005ca7;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  form {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+  }
+  
 th,
 td {
-    text-align: left;
+    text-align: center;
     padding: 10px;
 }
 
 th {
-    background-color: #007bff;
+    background-color: #005ca7;
     color: #fff;
 }
 

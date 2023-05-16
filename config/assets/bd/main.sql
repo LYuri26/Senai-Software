@@ -1,4 +1,3 @@
--- Active: 1683993986745@@127.0.0.1@3306@biblioteca
 use biblioteca;
 DROP TRIGGER IF EXISTS delete_agendamento;
 DROP TABLE IF EXISTS cancelamentos;
