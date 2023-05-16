@@ -21,7 +21,6 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <title>Agendamento de Biblioteca</title>
 </head>
 
 <body>
@@ -72,12 +71,11 @@ if (!isset($_SESSION['usuario'])) {
         // Insere os dados na tabela "agendamentos"
         $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$instrutor, $curso, $data, $hora_inicio, $hora_termino, $quantidade_alunos]);
-
         // Exibe uma mensagem de sucesso
-        echo "<p>Agendamento realizado com sucesso!</p>";
+        //echo "<p>Agendamento realizado com sucesso!</p>";
     }
     ?>
-
+    <p>Agendamento realizado com sucesso!</p>
 </body>
 
 </html>

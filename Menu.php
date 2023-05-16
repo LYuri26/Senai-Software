@@ -29,7 +29,7 @@ if (!isset($_SESSION['usuario'])) {
 
         <ul class="navbar-menu">
           <li><a href="./Agendar.php">Agendar</a></li>
-          <li><a href="./Cancelar.php">Cancelar Agendamento</a></li>
+          <li><a href="./Cancelar.php">Cancelar</a></li>
           <li><a href="./Agendamentos.php">Consultar agendamentos</a></li>
           <li><a href="./Cancelamentos.php">Consultar Cancelamentos</a></li>
           <li><a href="./Login.html">Sair</a></li>
