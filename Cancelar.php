@@ -39,11 +39,13 @@ if (!isset($_SESSION['usuario'])) {
 
             <p>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
                 professores.</p>
+                <label for="concordo">Eu concordo e estou ciente. </label>
             <input type="checkbox" id="concordo" name="concordo" required>
-            <label for="concordo">Eu concordo e estou ciente. </label>
+          
 
             <p><input type="submit" value="CANCELAR"></p>
             <button type="button" onclick="limparFormulario()">LIMPAR</button>
+            
 
         </form>
 
