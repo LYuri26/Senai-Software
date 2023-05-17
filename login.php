@@ -10,7 +10,7 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $loginAdmin = "admin"; // Substitua pelo valor desejado
+    /*$loginAdmin = "admin"; // Substitua pelo valor desejado
     $senhaAdmin = 'fixfixfix'; // Substitua 'senha_admin' pela senha do superusuário
 
     // Gerar o hash da senha
@@ -20,7 +20,7 @@ try {
     $stmt = $pdo->prepare("INSERT INTO superusuario (login, senha) VALUES (:login, :senha)");
     $stmt->bindValue(':login', $loginAdmin);
     $stmt->bindValue(':senha', $senhaHash);
-    $stmt->execute();
+    $stmt->execute();*/
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $login = $_POST['usuario'];
