@@ -1,12 +1,35 @@
 <?php
-// Definir as informações de conexão
-$host = '127.0.0.1'; // endereço do servidor de banco de dados
-$dbname = 'biblioteca'; // nome do banco de dados
-$username = 'root'; // nome do usuário do banco de dados
-$password = ''; // senha do usuário do banco de dados (MYSQL ou XAMPP)
+session_start();
+// Verificar se o usuário está autenticado
+if (!isset($_SESSION['usuario'])) {
+  // Usuário não está autenticado, redirecionar para a página de login
+  header('Location: login.html');
+  exit;
+}
+?>
+<!DOCTYPE html>
+<html>
 
-// ... código de conexão ao banco de dados ...
+<head>
+  <meta charset="UTF-8">
+  <title>Software</title>
+  <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
 
+<body>
+  <?php
+  // Definir as informações de conexão
+  $host = '127.0.0.1'; // endereço do servidor de banco de dados
+  $dbname = 'biblioteca'; // nome do banco de dados
+  $username = 'root'; // nome do usuário do banco de dados
+  $password = ''; // senha do usuário do banco de dados (MYSQL ou XAMPP)
+
+  // ... código de conexão ao banco de dados ...
+
+  /*
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Recuperar os valores dos campos de login e senha do formulário
   $login = $_POST['usuario'];
@@ -40,67 +63,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 // Conectar ao banco de dados usando PDO
-try {
-  
-  $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+*/
+  try {
 
-  // Configurar o modo de erro para exceções
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 
-  // Verificar se o formulário foi submetido
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Configurar o modo de erro para exceções
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Recuperar os valores dos parâmetros do HTML
-    $nome = $_POST['nome'];
-    $data = $_POST['data'];
-    $hora_inicio = $_POST['hora_inicio'];
-    $hora_termino = $_POST['hora_termino'];
-    $quantidade_alunos = $_POST['quantidade_alunos'];
-    $curso = $_POST['curso'];
 
-    // Verificar se já existe um agendamento para essa data e hora no banco de dados
-    $stmt = $pdo->prepare("
-      SELECT COUNT(*) FROM agendamentos
-      WHERE data = :data AND (
-        (hora_inicio <= :hora_inicio AND hora_termino > :hora_inicio) OR
-        (hora_inicio < :hora_termino AND hora_termino >= :hora_termino)
-      )
-    ");
+    // Se o formulário foi enviado
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      // Obtém os dados do formulário
+      $nome = $_POST['nome'];
+      $id = $_POST['id'];
+      $motivo = $_POST['motivo'];
 
-    $stmt->bindValue(':data', $data);
-    $stmt->bindValue(':hora_inicio', $hora_inicio);
-    $stmt->bindValue(':hora_termino', $hora_termino);
-    $stmt->execute();
-    $count = $stmt->fetchColumn();
-
-    if ($count > 0) {
-      // Exibir uma mensagem de erro se já existe um agendamento para essa data e hora
-      echo "Já existe um agendamento para esse dia e horário.";
-    } else {
-      
-      // Inserir os dados no banco de dados se não houver conflito de horários
-      $stmt = $pdo->prepare("
-        INSERT INTO agendamentos (nome, data, hora_inicio, hora_termino, quantidade_alunos, curso)
-        VALUES (:nome, :data, :hora_inicio, :hora_termino, :quantidade_alunos, :curso)
-      ");
-
-      // Passar os valores dos parâmetros para a instrução SQL
+      // Insere os dados na tabela "agendamentos"
+      $stmt = $pdo->prepare("INSERT INTO cancelamentos (id, nome, motivo) VALUES (:id, :nome, :motivo)");
+      $stmt->bindValue(':id', $id);
       $stmt->bindValue(':nome', $nome);
-      $stmt->bindValue(':data', $data);
-      $stmt->bindValue(':hora_inicio', $hora_inicio);
-      $stmt->bindValue(':hora_termino', $hora_termino);
-      $stmt->bindValue(':quantidade_alunos', $quantidade_alunos);
-      $stmt->bindValue(':curso', $curso);
-  // Executar a instrução SQL para inserir os dados no banco de dados
-  $stmt->execute();
+      $stmt->bindValue(':motivo', $motivo);
+      $stmt->execute();
+      //echo "<p>Agendamento realizado com sucesso!</p>";
+    }
+  } catch (PDOException $e) { // Exibir uma mensagem de erro
+    echo "Erro de conexão: " . $e->getMessage();
+  }
+  ?>
+  <p>Agendamento realizado com sucesso!</p>
 
-  // Exibir uma mensagem de sucesso
-  echo "Os dados foram inseridos com sucesso!";
-}
+</body>
 
-}
-
-} catch(PDOException $e) {// Exibir uma mensagem de erro
-echo "Erro de conexão: " . $e->getMessage();
-}
-?>
+</html>

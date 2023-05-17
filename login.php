@@ -20,7 +20,7 @@ try {
     $stmt = $pdo->prepare("INSERT INTO superusuario (login, senha) VALUES (:login, :senha)");
     $stmt->bindValue(':login', $loginAdmin);
     $stmt->bindValue(':senha', $senhaHash);
-    $stmt->execute();
+    $stmt->execute();*/
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $login = $_POST['usuario'];
@@ -37,7 +37,7 @@ try {
             // É um superusuário/administrador, armazenar os dados na sessão
             $_SESSION['usuario'] = $superusuario;
             // É um superusuário/administrador, redirecionar para a página de administração
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
 
@@ -52,9 +52,10 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
             // É um usuário comum, redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         } else {
+            header('Location: login.html');
             // Login inválido, exibir mensagem de erro
             echo "Login ou senha inválidos.";
         }
@@ -62,3 +63,4 @@ try {
 } catch (PDOException $e) { // Exibir uma mensagem de erro
     die("Erro de conexão com o banco de dados: " . $e->getMessage());
 }
+?>
