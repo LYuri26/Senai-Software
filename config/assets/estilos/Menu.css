@@ -99,13 +99,3 @@ a {
     transform: rotate(-45deg) translate(1px, -1px);
   }
 }
-.imagem-biblioteca {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 75px;
-  border-radius: 5px;
-  
-}
-
-

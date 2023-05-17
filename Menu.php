@@ -39,10 +39,6 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </nav>
   </header>
-  <div class="imagem-biblioteca">
-    <img src="./config/assets/img/Biblioteca.jpg" class="imagem">
-  </div>
-
 </body>
 
 </html>
