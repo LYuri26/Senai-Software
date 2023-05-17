@@ -27,7 +27,6 @@ if (!isset($_SESSION['usuario'])) {
       <div class="navbar-logo" id="icone">
     <img src="./config/assets/img/Logo.jpg" class="logo"></a>
   </div>
-
         <ul class="navbar-menu">
           <li><a href="./Agendar.php">Agendar</a></li>
           <li><a href="./Cancelar.php">Cancelar Agendamento</a></li>
@@ -41,7 +40,6 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </nav>
   </header>
-  <h1>Bem-vindo ao site de agendamentos da biblioteca!</h1>
 </body>
 
 </html>

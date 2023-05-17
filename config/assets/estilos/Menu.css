@@ -1,9 +1,14 @@
 .navbar {
   background-color: #005ca7;
   padding: 1%, 5%;
-
+  background-position: top;
+  box-shadow: 0 2px 4px rgba(0,0,0,0,3);
+  padding: 7px ;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   border-radius: 300000px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
@@ -23,6 +28,7 @@
   border-radius: 50px;
   margin-top: 1%;
 }
+
 #icone
 {  
   margin-left: 0;
