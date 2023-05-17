@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    height: 100vh;
+    overflow:hidden;
+    background-color: #e0e0e0;
+}
+
+.tabela {
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 100px;
+    max-width: 1000px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+}
+
+h1 {
+    color: #005ca9;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 40px;
+    margin-top: 1px;
+}
+
+.sair {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 900;
+}
+
+table {
+    text-decoration: black;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    white-space: nowrap;
+    overflow-x: auto;
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-column: 1;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+
+th {    
+    text-align: center;
+    background-color: #005ca9;
+    color: #fff;
+    border-radius: 0 0 0 0; /* Arredonda apenas as extremidades superiores */
+}
+
+th:first-child {
+    border-radius: 20px 0 0 0 ; /* Remove o arredondamento do primeiro cabeçalho */
+}
+
+th:last-child {
+    border-radius: 0 20px 0 0 ; /* Remove o arredondamento do primeiro cabeçalho */
+}
+
+td {
+    background-color: #e0e0e0;
+    border-radius: 20px solid #005ca9;  
+}
+
+tr.bg-blue {
+    background-color: #f0f7ff;
+}
+
+tr.bg-white {
+    background-color: #fff;
+}
+
+tr:hover {
+    background-color: #d9edff;
+}
+
+tr:nth-child(even) {
+    background-color: #f6f8fa;
+}
+
+@media (max-width: 767px) {
+    th, td {
+        display: block;
+        width: auto;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    th:first-child {
+        display: none;
+    }
+
+    td:first-child {
+        border-top: none;
+    }
+}
