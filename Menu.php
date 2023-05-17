@@ -39,6 +39,16 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </nav>
   </header>
+  <div class="carousel">
+  <img src="/config/assets/img/joao.png" alt="Imagem 1" class="img1">
+
+  <div class="slide" role="rolebox">
+
+    <img src="/config/assets/img/Logo.jpg" alt="Imagem 2"class="img2">
+    <img src="/config/assets/img/Biblioteca.jpg" alt="Imagem 3"class="img3">
+</div>
+  </div>
+
 </body>
 
 </html>
