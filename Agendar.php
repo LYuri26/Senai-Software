@@ -71,7 +71,7 @@ if (!isset($_SESSION['usuario'])) {
         $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$instrutor, $curso, $data, $hora_inicio, $hora_termino, $quantidade_alunos]);
         // Exibe uma mensagem de sucesso
-        //echo "<p>Agendamento realizado com sucesso!</p>";
+        echo "<p>Agendamento realizado com sucesso!</p>";
     }
     ?>
 </body>
