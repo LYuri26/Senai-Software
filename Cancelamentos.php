@@ -67,4 +67,11 @@ if (!isset($_SESSION['usuario'])) {
     </table>
 </body>
 
+<footer>
+    <div class="rodape">
+        <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
+        <p>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+    </div>
+</footer>
+
 </html>
