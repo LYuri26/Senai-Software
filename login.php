@@ -74,7 +74,7 @@
   <footer>
   <div class="rodape">
     <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
-    <p>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+    <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
   </div>
 </footer>
 </body>
