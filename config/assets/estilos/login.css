@@ -3,10 +3,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  height: 500px;
-  overflow: hidden;
 }
-
 .sair {
   display: block;
   position: fixed;
@@ -29,7 +26,7 @@ body {
 }
 
 h1 {
-  color: #005CA9;
+  color: #2ad4a1;
   font-size: 2rem;
   text-align: center;
 }
@@ -59,7 +56,7 @@ input[type="text"] {
   grid-column: 1;
   width: 100%;
   padding: 1rem;
-  border: 1px solid #005CA9;
+  border: 1px solid #2ad4a1;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -68,7 +65,7 @@ input[type="password"] {
   grid-column: 1;
   width: 100%;
   padding: 1rem;
-  border: 1px solid #005CA9;
+  border: 1px solid #2ad4a1;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -84,18 +81,18 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 button[value="ACESSAR"],
 .limpar-button {
-  background-color: #005CA9;
+  background-color: #2ad4a1;
   color: #ffffff;
   font-size: 1em;
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
-  border-radius: 0.8rem;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -103,61 +100,8 @@ button[value="ACESSAR"],
 }
 
 #botao_limpar:hover {
-  background-color: #c2bcbc;
+  background-color: #000000;
 }
 button:hover {
-  background-color: #c2bcbc;
-}
-
-.rodape {
-padding-bottom: 100%;
-  text-align: center;
-  color: black;
-  width: bold;
-}
-
-.link-button1 {
-  background-color: transparent;
-  color: #005CA9;
-  font-size: 1em;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5em 1em;
-  border-radius: 0.8rem;
-  transition: background-color 0.1s ease;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  float: right;
-}
-
-.link-button1:hover {
-  text-decoration: none;
-  text-decoration: underline;
-}
-
-.link-button2 {
-  background-color: transparent;
-  color: #005CA9;
-  font-size: 0.8em;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5em 1em;
-  border-radius: 0.8rem;
-  transition: background-color 0.1s ease;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
-  float: left;
-}
-
-.link-button2:hover {
-  text-decoration: none;
-  text-decoration: underline;
-}
-
-.rodape{
-  padding-top: 10vw;
-  width: bold;
-  color: black;
-  font-family: 'Arial', sans-serif;
-  line-height: 5px;
+  background-color: #00ff15;
 }

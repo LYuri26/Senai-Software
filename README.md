@@ -18,6 +18,12 @@
 // Lista dos nomes dos colaboradores (lembrem-se de colocar o nome completo de todos).
 
 
+João Victor Martins Deamo,
+
+
+Daniel Tiburcio de Araújo
+
 --> Versão: v1.0.0
 
 --> ///////////////////////////////
+t.1
