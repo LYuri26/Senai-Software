@@ -4,7 +4,7 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
     // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.html');
+    header('Location: Login.php');
     exit;
 }
 ?>
@@ -69,6 +69,7 @@ if (!isset($_SESSION['usuario'])) {
             <?php endforeach; ?>
         </tbody>
     </table>
+    <script src="./config/assets/js/destruirSessao.js"></script>
 </body>
 
 </html>

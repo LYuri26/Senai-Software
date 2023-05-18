@@ -4,7 +4,7 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
   // Usuário não está autenticado, redirecionar para a página de login
-  header('Location: login.html');
+  header('Location: Login.php');
   exit;
 }
 ?>
@@ -16,6 +16,7 @@ if (!isset($_SESSION['usuario'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <title>Menu</title>
 </head>
 
@@ -23,32 +24,28 @@ if (!isset($_SESSION['usuario'])) {
   <header>
     <nav class="navbar">
       <div class="navbar-container">
-        <div class="navbar-logo" id="icone">
-          <a><img src="./config/assets/img/Logo.jpg" class="logo"></a>
-        </div>
-        <ul class="navbar-menu">
-          <li><a href="/Agendar.php">Agendar</a></li>
-          <li><a href="/Cancelar.php">Cancelar</a></li>
-          <li><a href="/Agendamentos.php"> Agendamentos</a></li>
-          <li><a href="/Cancelamentos.php"> Cancelamentos</a></li>
-          <li><a href="./Login.html">Sair</a></li>
-        </ul>
-        <div class="navbar-toggle">
-          <span class="navbar-toggle-icon"></span>
-        </div>
+        <img src="/config/assets/img/Logo.jpg" class="logo">
+          <ul class="navbar-menu">
+            <li><a href="./Agendar.php">Agendar</a></li>
+            <li><a href="./Cancelar.php">Cancelar</a></li>
+            <li><a href="./Agendamentos.php">Agendamentos</a></li>
+            <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
+            <li><a href="./logout.php">Sair</a></li>
+          </ul>
       </div>
+      <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
     </nav>
   </header>
-  <div class="carousel">
-  <img src="/config/assets/img/joao.png" alt="Imagem 1" class="img1">
-
-  <div class="slide" role="rolebox">
-
-    <img src="/config/assets/img/Logo.jpg" alt="Imagem 2"class="img2">
-    <img src="/config/assets/img/Biblioteca.jpg" alt="Imagem 3"class="img3">
-</div>
+  <div class="imgscar">
+    <div class="slide" role="rolebox">
+      <img src="/config/assets/img/Logo.jpg" alt="Logo Senai" class="logosenai">
+      <img src="/config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib">
+    </div>
   </div>
-
+  <script src="./config/assets/js/destruirSessao.js"></script>
 </body>
 
 </html>
