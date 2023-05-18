@@ -3,8 +3,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  height: 500px;
+  height: 400px;
   overflow: hidden;
+  border-color: #bdb5b5;
+  padding-top: 3%;
+  
 }
 
 .sair {
@@ -40,12 +43,21 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border:  10px solid #b9c9d5;
+  border-radius: 40px;
+  padding: 20px;
+  background-color: #b9c9d5;
 }
 
 label {
   display: flex;
+  font-size: large;
   align-items: center;
   margin-bottom: 10px;
+  grid-column: 1;
+  margin-bottom: -1%;
+  font-weight: bold;
+  color: #005CA9;
 }
 
 /* 
@@ -71,7 +83,7 @@ input[type="submit" i] {
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
-  margin-bottom: 1rem;
+  margin-bottom: -5rem;
 
 }
 
@@ -99,6 +111,7 @@ input[type="password"] {
   border: 1px solid #005CA9;
   border-radius: 4px;
   box-sizing: border-box;
+
 }
 
 /* quem botou essa porra de checkbox eh maluco
@@ -109,10 +122,10 @@ input[type="checkbox"] {
 /* BUTTON */
 
 .button-container {
-  display: flex;
+  display: contents;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 50px;
 }
 
 button[value="CADASTRAR"],
@@ -123,11 +136,14 @@ button[value="CADASTRAR"],
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
+  border-top: 20px;
   border-radius: 0.8rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
-  margin-bottom: 1rem;
+  margin: 0;
+  margin-top: 30%;
+  margin-bottom: 20%;
 }
 
 #botao_limpar:hover {

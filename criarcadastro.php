@@ -5,8 +5,9 @@
 </head>
 <body>
 <link rel="stylesheet" href="./config/assets/estilos/criarcadastro.css">
-<h2>Cadastro</h2>
+
         <form id="forms" method="post" action="cadastro.php">
+        <h2>Cadastro</h2>
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" required><br><br>
 
@@ -24,12 +25,17 @@
 
            <div class="button-container">
             <input type="submit" value="Cadastrar">
+            
       <div class="button-container">
         <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR
           FORMULÁRIO</button>
-      </div>
+        </div>
     </form>
+    <footer>
+<p>&copy;2023 UAIBook! todos os direitos reservados.
+    Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI.</p>
   </div>
+</footer>
   <script>
     function limparFormulario() {
       document.getElementById("forms").reset();
