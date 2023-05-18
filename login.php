@@ -50,7 +50,7 @@
   <script src="./config/assets/js/destruirSessao.js"></script>
   <footer>
   <div class="rodape">
-    <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+    <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
     <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
   </div>
 </footer>

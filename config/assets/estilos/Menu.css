@@ -104,8 +104,12 @@ h1 {
 */
 
 .imgscar {
+  border-style:hidden;
+  border-radius: 80%;
+  background-color: gray;
+  background-clip: padding-box;
   box-shadow: 0 0 0 rgba(0, 0, 0, 1);
-  height: auto;
+  height:700px;
   position: relative;
   overflow: hidden;
   margin-bottom: 20px; /* Adicione um espaçamento inferior para afastar a imagem dos elementos abaixo */
@@ -119,8 +123,8 @@ h1 {
   position: relative;
   display:inline-flex;
   justify-content: center;
-  animation: slide-animation 30s linear infinite;
-  transform: translateY(-50%); /* Ajuste para centralizar verticalmente */
+  animation: slide-animation 8s linear infinite;
+  transform: translateY(50%); /* Ajuste para centralizar verticalmente */
   margin-left: auto;
   margin-right: auto;
 }
@@ -128,12 +132,15 @@ h1 {
 .slide img {
   max-width: 100%;
   max-height: 100%;
+  flex-flow: row; 
   /*Object-fit: contain;*/
 }
 
 @keyframes slide-animation {
   0% {
     transform: translateX(-100%);
+
+
   }
   100% {
     transform: translateX(200%);
@@ -144,10 +151,47 @@ h1 {
   height: auto;
 }
 
-.logosenai {
+.container {
+  position: absolute;
+  bottom: 10%;
+  right:0;
+  padding: 10px;
+  max-width: 800px;
+}
+
+
+h1{
+  font-family: 'montserrat', 'sans-serif';
+padding-top:15%;
+padding-left: 30px;
+align-content: flex-start;
+margin-left: 1;
+
+}
+p{
+  padding-top:5%;
+  padding-left: 30px;
+align-content: flex-start;
+margin-right: 60%;
+justify-content: start;
+}
+.rodape{font-size:15px ;
+  color:gray;
+
+  padding-top: 150px;
+  padding-left:600px ;
+
+padding-bottom: 100px;
+  text-align: center;
+  color: black;
+  width: bold;
+
+}
+/*.logosenai {
   animation-delay: 0s;
 }
 
 .logobib {
   animation-delay: 5s;
-}
+}*/
+
