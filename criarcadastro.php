@@ -31,9 +31,6 @@
           FORMULÁRIO</button>
         </div>
     </form>
-    <footer>
-<p>&copy;2023 UAIBook! todos os direitos reservados.
-    Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI.</p>
   </div>
 </footer>
   <script>
@@ -48,5 +45,7 @@
     }
   </script>
 </body>
-
+<footer>
+<p>&copy;2023 UAIBook! todos os direitos reservados.
+    Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI.</p>
 </html>
