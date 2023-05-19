@@ -74,7 +74,7 @@ if (!isset($_SESSION['usuario'])) {
         <footer>
             <div class="rodape">
                 <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>
-                <strong><br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
+                <strong>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
             </div>
         </footer>
 
