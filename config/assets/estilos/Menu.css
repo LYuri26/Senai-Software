@@ -176,12 +176,11 @@ p {
 
 footer {
   font-family: 'Montserrat', sans-serif;
+  padding-bottom: 0rem;
   bottom: 0;
   text-align: center;
-  padding-top: 4rem;
+  padding-top: 25rem;
   font-weight: bold;
-  padding-bottom: 0rem;
-  position: relative;
 }
 
 .rodape {

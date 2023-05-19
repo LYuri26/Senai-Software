@@ -27,12 +27,12 @@ h1 {
 
 form {
     background-color: #ffffff;
-    border-radius: 5%;
+    border-radius: 15px;
     padding: 2%;
     padding-bottom: 1%;
     max-width: 30rem;
     margin: 0 auto;
-    margin-top: 5vh;
+    margin-top: 4vh;
 }
 
 label {
@@ -68,7 +68,7 @@ input[type="submit"] {
     box-sizing: border-box;
     background-color: #005ca9;
     color: #ffffff;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
     border: none;
     border-radius: 1.5rem 1rem 1.5rem 1rem;

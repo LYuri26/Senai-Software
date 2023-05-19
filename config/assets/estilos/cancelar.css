@@ -1,22 +1,22 @@
 body {
-  overflow:hidden;
   background-color: #e0e0e0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
 }
+
 .sair {
-display: block;
-position: fixed;
-top: 10px;
-right: 10px;
-padding: 10px;
-background-color: #f2f2f2;
-border: 1px solid #ccc;
-border-radius: 4px;
-text-decoration: none;
-color: #333;
-font-weight: bold;
+  display: block;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
 #app {
@@ -36,26 +36,48 @@ form {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-  display: block;
+  display: flex;
   margin-bottom: 5px;
   font-weight: bold;
   color: #000000;
+  align-items: center;
 }
 
-input[type="text"],
-input[type="checkbox"],
-input[type="submit"],
-button {
+input[type="checkbox"] {
+  transform: scale(2); /* Ajuste o valor conforme necessário */
+}
+label strong {
+  margin-right: 10px;
+}
+input[type="text"] {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
   font-size: 18px;
   font-weight: 600;
-  transition: color 0.3s 0.1s ease-out;
+  transition: color 0.1s ease;
   box-sizing: border-box;
+}
+
+input[value="CANCELAR"],
+button {
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1em;
+  border-radius: 10px 5px 10px 5px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
 }
 
 input[type="text"],
@@ -65,7 +87,7 @@ input[type="checkbox"] {
   width: 100%;
 }
 
-input[type="submit"],
+/*input[type="submit"],
 button {
   background-color: #005ca9;
   color: #ffffff;
@@ -73,21 +95,82 @@ button {
   cursor: pointer;
   display: block;
   margin: 0 auto;
-}
+  border-radius: 0.8rem;
 
-input:hover,
+}*/
+
+input[type="submit"]:hover,
 button:hover {
-  color: #005ca9;
-  border: 1px solid rgb(189, 194, 199);
+  color: #ffffff;
+  background-color: #c2bcbc;
 }
-
 /* Responsividade */
 
+p {
+  margin-top: 5%;
+}
+/*strong {
+  text-align: center;
+  margin: 0 auto;
+}
+*/
 @media only screen and (max-width: 500px) {
   input[type="text"],
   input[type="checkbox"],
   input[type="submit"],
   button {
     font-size: 16px;
+  }
+
+  .success-message-container {
+    display: flex;
+    padding-bottom: 100%;
+    justify-content: center;
+    /* Centraliza horizontalmente o conteúdo */
+    align-items: center;
+    /* Centraliza verticalmente o conteúdo */
+    height: 100vh;
+    /* Define a altura do contêiner para ocupar toda a altura da tela */
+    color: #005ca9;
+  }
+}
+
+.success-message {
+  position: static;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+}
+.rodape {
+  margin-top: 5%;
+  text-align: center;
+  color: black;
+  margin: 0 auto;
+  left: 50%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    zoom: 100%;
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  footer {
+    zoom: 50%; /* Ajuste o valor conforme necessário */
+    display: none;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  .rodape {
+    color: black;
+    font-weight: bold;
   }
 }
