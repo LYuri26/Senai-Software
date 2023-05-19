@@ -1,15 +1,13 @@
 body {
   background-color: #e0e0e0;
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
   margin: 0;
   padding: 0;
-<<<<<<< Updated upstream:config/assets/estilos/1.style_login.css
-=======
   height: 500px;
   position: relative;
-  overflow: hidden;
->>>>>>> Stashed changes:config/assets/estilos/login.css
 }
+
 .sair {
   display: block;
   position: fixed;
@@ -32,7 +30,7 @@ body {
 }
 
 h1 {
-  color: #2ad4a1;
+  color: #005CA9;
   font-size: 2rem;
   text-align: center;
 }
@@ -54,18 +52,13 @@ label {
   color: #000000;
 }
 
-<<<<<<< Updated upstream:config/assets/estilos/1.style_login.css
-/* 
-input
- */
 
-=======
->>>>>>> Stashed changes:config/assets/estilos/login.css
+
 input[type="text"] {
   grid-column: 1;
   width: 100%;
   padding: 1rem;
-  border: 1px solid #2ad4a1;
+  border: 1px solid #005CA9;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -74,10 +67,15 @@ input[type="password"] {
   grid-column: 1;
   width: 100%;
   padding: 1rem;
-  border: 1px solid #2ad4a1;
+  border: 1px solid #005CA9;
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+/* quem botou essa porra de checkbox eh maluco
+input[type="checkbox"] {
+  margin-right: 5px;
+}*/
 
 /* BUTTON */
 
@@ -85,31 +83,28 @@ input[type="password"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1em;
 }
 
 button[value="ACESSAR"],
 .limpar-button {
-  background-color: #2ad4a1;
+  background-color: #005CA9;
   color: #ffffff;
   font-size: 1em;
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
-  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  border-radius: 20px 10px 20px 10px;
   cursor: pointer;
-  transition: background-color 0.1s ease;
   box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
 #botao_limpar:hover {
-  background-color: #000000;
+  background-color: #0c36be;
 }
 button:hover {
-<<<<<<< Updated upstream:config/assets/estilos/1.style_login.css
-  background-color: #00ff15;
-=======
   background-color: #0c36be;
 }
 
@@ -149,12 +144,12 @@ button:hover {
 
 .rodape {
   font-family: 'Montserrat', sans-serif;
+  bottom: 0;
   text-align: center;
-  padding-top: 17%;
+  padding-top: 21rem;
   font-weight: bold;
 }
 
 .rodape p {   
-  line-height: 0.4;
->>>>>>> Stashed changes:config/assets/estilos/login.css
+  line-height: 0.4rem;
 }

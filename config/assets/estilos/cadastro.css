@@ -1,13 +1,12 @@
 body {
-  background-color: #ffffff;
+  background-color: #E0E0E0;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   height: 400px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-color: #bdb5b5;
   padding-top: 3%;
-  
 }
 
 .sair {
@@ -43,81 +42,51 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border:  10px solid #b9c9d5;
   border-radius: 40px;
-  padding: 20px;
-  background-color: #b9c9d5;
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 20px;
+  background-color: #FFFFFF;
 }
 
 label {
   display: flex;
   font-size: large;
-  align-items: center;
-  margin-bottom: 10px;
-  grid-column: 1;
   margin-bottom: -1%;
   font-weight: bold;
   color: #005CA9;
+  text-align: left;
 }
 
-/* 
-input
- */
+/* INPUT */
 
-input[type="text"] {
+input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
   grid-column: 1;
-  width: 100%;
+  width: 130%;
   padding: 1rem;
   border: 1px solid #005CA9;
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type="submit" i] {
+
+/* input[value="CADASTRAR"] {
   background-color: #005CA9;
   color: #ffffff;
   font-size: 1em;
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
+  border-top: 20px;
   border-radius: 0.8rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
-  margin-bottom: -5rem;
-
-}
-
-input[type="number" i] {
-  grid-column: 1;
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #005CA9;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type="email" i] {
-  grid-column: 1;
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #005CA9;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type="password"] {
-  grid-column: 1;
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #005CA9;
-  border-radius: 4px;
-  box-sizing: border-box;
-
-}
-
-/* quem botou essa porra de checkbox eh maluco
-input[type="checkbox"] {
-  margin-right: 5px;
-}*/
+  margin: 0;
+  margin-top: 30%;
+  margin-bottom: 20%;
+  border-radius: 20px 10px 20px 10px;
+} */
 
 /* BUTTON */
 
@@ -125,10 +94,10 @@ input[type="checkbox"] {
   display: contents;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: px;
 }
 
-button[value="CADASTRAR"],
+button[type="submit"],
 .limpar-button {
   background-color: #005CA9;
   color: #ffffff;
@@ -144,6 +113,7 @@ button[value="CADASTRAR"],
   margin: 0;
   margin-top: 30%;
   margin-bottom: 20%;
+  border-radius: 20px 10px 20px 10px;
 }
 
 #botao_limpar:hover {
@@ -198,10 +168,15 @@ padding-bottom: 100%;
   text-decoration: underline;
 }
 
-.rodape{
-  padding-top: 10vw;
-  width: bold;
-  color: black;
-  font-family: 'Arial', sans-serif;
-  line-height: 5px;
+.rodape {
+  font-family: 'Montserrat', sans-serif;
+  bottom: 0;
+  text-align: center;
+  padding-top: 1
+  rem;
+  font-weight: bold;
+}
+
+.rodape p {   
+  line-height: 0.4em;
 }
