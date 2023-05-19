@@ -30,7 +30,7 @@
       <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu E-mail / CPF / ID" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu E-mail / CPF / ID'" style="text-align: left;"><br>
       
       <label for="curso"></label>  
-      <input type="password" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required>
+      <input type="password" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu E-mail / CPF / ID'" style="text-align: left;">
 
       <div class="link-container">
         <a href="passwrecovery.php" class="link-button2">RECUPERAR SENHA</a>

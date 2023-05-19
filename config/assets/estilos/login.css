@@ -1,10 +1,11 @@
 body {
   background-color: #e0e0e0;
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
   margin: 0;
   padding: 0;
   height: 500px;
-  overflow: hidden;
+  position: relative;
 }
 
 .sair {
@@ -82,7 +83,8 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1em;
 }
 
 button[value="ACESSAR"],
@@ -93,38 +95,28 @@ button[value="ACESSAR"],
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
-  border-radius: 0.8rem;
+  border-radius: 20px 10px 20px 10px;
   cursor: pointer;
-  transition: background-color 0.1s ease;
   box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
 #botao_limpar:hover {
-  background-color: #c2bcbc;
+  background-color: #0c36be;
 }
 button:hover {
-  background-color: #c2bcbc;
-}
-
-.rodape {
-padding-bottom: 100%;
-  text-align: center;
-  color: black;
-  width: bold;
+  background-color: #0c36be;
 }
 
 .link-button1 {
+  display: flex;
   background-color: transparent;
   color: #005CA9;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
-  padding: 0.5em 1em;
-  border-radius: 0.8rem;
-  transition: background-color 0.1s ease;
+  padding: 0em 0em 0em 1rem;
   box-sizing: border-box;
-  margin-bottom: 1rem;
   float: right;
 }
 
@@ -139,9 +131,7 @@ padding-bottom: 100%;
   font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
-  padding: 0.5em 1em;
-  border-radius: 0.8rem;
-  transition: background-color 0.1s ease;
+  padding: 0.3em 0em;
   box-sizing: border-box;
   margin-bottom: 1rem;
   float: left;
@@ -151,13 +141,15 @@ padding-bottom: 100%;
   text-decoration: none;
   text-decoration: underline;
 }
-
-.rodape{
-  padding-top: 11vw;
-  width: bold;
-  color: black;
+footer {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  line-height: 5px;
+  bottom: 0;
+  text-align: center;
+  padding-top: 4rem;
+  font-weight: bold;
+}
+.rodape {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 

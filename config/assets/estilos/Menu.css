@@ -1,6 +1,8 @@
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
+  overflow-x: hidden;
+
 }
 
 .navbar {
@@ -12,7 +14,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999; /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
 
 .navbar-container {
@@ -40,6 +43,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 .navbar-menu li {
@@ -51,8 +55,10 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
+
 .navbar-menu li:last-child {
-  margin-right: 30px; /* Removendo margin do último elemento */
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
 }
 
 
@@ -102,17 +108,17 @@ h1 {
   }
 }
 */
-
 .imgscar {
-  border-style:hidden;
-  border-radius: 80%;
-  background-color: gray;
-  background-clip: padding-box;
+  border-style: none;
+  border-width: 0 2px;
+  /* Define a largura da borda somente nas laterais */
+  border-radius: 60%/60%;
   box-shadow: 0 0 0 rgba(0, 0, 0, 1);
-  height:700px;
+  height: 700px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px; /* Adicione um espaçamento inferior para afastar a imagem dos elementos abaixo */
+  margin-bottom: 20px;
+  /* Adicione um espaçamento inferior para afastar a imagem dos elementos abaixo */
   background-color: transparent;
   z-index: -1;
 }
@@ -121,72 +127,69 @@ h1 {
   width: 90%;
   align-items: center;
   position: relative;
-  display:inline-flex;
-  justify-content: center;
-  animation: slide-animation 8s linear infinite;
-  transform: translateY(50%); /* Ajuste para centralizar verticalmente */
+  display: inline-flex;
+  animation: slide-animation 7s linear infinite;
+  transform: translateY(50%);
   margin-left: auto;
   margin-right: auto;
 }
 
 .slide img {
   max-width: 100%;
-  max-height: 100%;
-  flex-flow: row; 
-  /*Object-fit: contain;*/
+  height: 100%;
+  flex-flow: row;
 }
 
 @keyframes slide-animation {
   0% {
     transform: translateX(-100%);
-
-
   }
+
   100% {
     transform: translateX(200%);
   }
-}
-.slide img {
-  width: 100%;
-  height: auto;
 }
 
 .container {
   position: absolute;
   bottom: 10%;
-  right:0;
+  right: 0;
   padding: 10px;
   max-width: 800px;
 }
 
-
-h1{
+h1 {
   font-family: 'montserrat', 'sans-serif';
-padding-top:15%;
-padding-left: 30px;
-align-content: flex-start;
-margin-left: 1;
-
+  padding-top: 6rem;
+  padding-left:2rem;
+  align-content: flex-start;
 }
-p{
-  padding-top:5%;
-  padding-left: 30px;
-align-content: flex-start;
-margin-right: 60%;
-justify-content: start;
+
+p {
+  line-height: 1.5;
+  padding-left: 2em;
+  align-content: flex-start;
+  margin-right: 60%;
+  justify-content: start;
+  font-weight: 600;
 }
-.rodape{font-size:15px ;
-  color:gray;
 
-  padding-top: 150px;
-  padding-left:600px ;
-
-padding-bottom: 100px;
+footer {
+  font-family: 'Montserrat', sans-serif;
+  bottom: 0;
   text-align: center;
-  color: black;
-  width: bold;
-
+  padding-top: 4rem;
+  font-weight: bold;
+  padding-bottom: 0rem;
+  position: relative;
 }
+
+.rodape {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  white-space: pre-line;
+}
+
 /*.logosenai {
   animation-delay: 0s;
 }
@@ -194,4 +197,8 @@ padding-bottom: 100px;
 .logobib {
   animation-delay: 5s;
 }*/
-
+#linhatexto {
+  margin-top: 0;
+  display: inline-block;
+  width: 45%;
+}
