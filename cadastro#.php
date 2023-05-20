@@ -30,26 +30,70 @@ try {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $csenha = $_POST['confirmarsenha'];
-        // admin
-        $supercadconsulta = "SELECT * FROM users WHERE codigo = :codigo AND email = :email";
-        $usercadconsulta = "SELECT * FROM superusuario WHERE codigo = :codigo AND email = :email";
-        $stmt = $pdo->prepare($cadconsulta);
 
-        $stmt->bindParam(':login', $login);
+        // Verificar se as informações já existem nas tabelas users e superusuario
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE codigo = :codigo OR email = :email");
+        $stmt->bindValue(':codigo', $codigo);
+        $stmt->bindValue(':email', $email);
         $stmt->execute();
-        $resconsultasuper = $stmt->fetch(PDO::FETCH_ASSOC);
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-       /*$cadinsert = "INSERT INTO cadastro values ";*/
+        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE codigo = :codigo OR email = :email");
+        $stmt->bindValue(':codigo', $codigo);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        $superusuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $stmt = $pdo->prepare("INSERT INTO cadastro (nome, codigo, email, senha, checksenha) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$nome, $codigo, $email, $senha, $csenha]);
-        
-        
-        
-        echo "<p>Cadastro realizado com sucesso!</p>";
+        // Verificar se as informações já existem em alguma tabela
+        if (!empty($users) || !empty($superusuario)) {
+            foreach ($users as $user) {
+                if (strtolower($user['codigo']) == strtolower($codigo)) {
+                    echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
+                    return;
+                }
+                if (strtolower($user['email']) == strtolower($email)) {
+                    echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
+                    return;
+                }
+            }
+
+            foreach ($superusuario as $su) {
+                if (strtolower($su['codigo']) == strtolower($codigo)) {
+                    echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
+                    return;
+                }
+                if (strtolower($su['email']) == strtolower($email)) {
+                    echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
+                    return;
+                }
+            }
+        } else {
+            // Inserir informações na tabela cadastro
+            $stmt = $pdo->prepare("INSERT INTO cadastro (nome, codigo, email, senha, checksenha) VALUES (:nome, :codigo, :email, :senha, :csenha)");
+            $stmt->execute([
+                ':nome' => $nome,
+                ':codigo' => $codigo,
+                ':email' => $email,
+                ':senha' => $senha,
+                ':csenha' => $csenha
+            ]);
+
+            // Obter o ID do último registro inserido na tabela cadastro
+            $cadastroId = $pdo->lastInsertId();
+
+            // Inserir informações na tabela users com a foreign key para a tabela cadastro
+            $stmt = $pdo->prepare("INSERT INTO users (cadastro_id, codigo, email) VALUES (:cadastroId, :codigo, :email)");
+            $stmt->execute([
+                ':cadastroId' => $cadastroId,
+                ':codigo' => $codigo,
+                ':email' => $email
+            ]);
+
+            echo "<p>Cadastro realizado com sucesso!</p>";
+        }
 
         //users
-        $stmt = $pdo->prepare("SELECT * FROM cadastro WHERE nome = :nome AND senha = :senha");
+        /*$stmt = $pdo->prepare("SELECT  * FROM cadastro WHERE nome = :nome AND senha = :senha");
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':codigo', $codigo);
         $stmt->bindValue(':email', $email);
@@ -58,7 +102,7 @@ try {
 
         $stmt->execute();
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
+*/
         if ($usuario) {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
@@ -90,4 +134,3 @@ try {
     echo "Erro de conexão com o banco de dados: " . $e->getMessage();
     exit;
 }
-?>

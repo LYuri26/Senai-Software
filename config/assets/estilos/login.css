@@ -128,7 +128,7 @@ button:hover {
 .link-button2 {
   background-color: transparent;
   color: #005CA9;
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: bold;
   text-decoration: none;
   padding: 0.3em 0em;
@@ -145,7 +145,7 @@ button:hover {
 .rodape {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  padding-top: 17%;
+  padding-top: 7%;
   font-weight: bold;
 }
 

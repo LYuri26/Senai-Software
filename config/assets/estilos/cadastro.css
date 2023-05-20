@@ -4,7 +4,6 @@ body {
   margin: 0;
   padding: 0;
   height: 400px;
-  overflow: hidden;
   border-color: #bdb5b5;
   padding-top: 3%;
   text-align: center;
@@ -132,7 +131,6 @@ button[value="CADASTRAR"],
   box-sizing: border-box;
   margin: 0;
   margin-top: 30%;
-  margin-bottom: 20%;
 }
 
 #botao_limpar:hover {
@@ -142,16 +140,6 @@ button:hover {
   background-color: #c2bcbc;
 }
 
-.rodape {
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  padding-top: 17%;
-  font-weight: bold;
-}
-
-.rodape p {   
-  line-height: 0.4;
-}
 
 .link-button1 {
   background-color: transparent;
@@ -192,9 +180,11 @@ button:hover {
 }
 
 .rodape {
-  padding-top: 10vw;
-  width: bold;
-  color: black;
-  font-family: "Arial", sans-serif;
-  line-height: 5px;
+  padding-top: 8vh;
+  font-family: "Montserrat", sans-serif;
+
+}
+.rodape p {   
+  font-weight: 600;
+  line-height: 0.4rem;
 }
