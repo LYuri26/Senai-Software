@@ -15,10 +15,10 @@
 
 <body>
     <div id="app">
-        <form id="forms" method="post" action="cadastro.php">
+        <form id="forms" action="./conexaocadastro.php" method="post">
             <h2>Cadastro</h2>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" required><br><br>
+            <input type="text" maxlength="42" name="nome" id="nome" required><br><br>
 
             <label for="Código de acesso">Código de acesso:</label>
             <input type="text" name="codigo" ID="codigo" required><br><br>
@@ -27,10 +27,10 @@
             <input type="email" name="email" id="email" required><br><br>
 
             <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha" required><br><br>
+            <input type="password" minlength="8" name="senha" id="senha" required><br><br>
 
             <label for="confirmar senha">confirmar senha:</label>
-            <input type="password" name="confirmarsenha" id="confirmarsenha" required><br><br>
+            <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha" required><br><br>
 
             <div class="button-container">
                 <input type="submit" value="Cadastrar">

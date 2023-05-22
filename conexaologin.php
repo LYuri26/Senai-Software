@@ -72,7 +72,7 @@ try {
             exit;
         }
         // Verificar se é um usuário comum
-        $consultauser = "SELECT * FROM users WHERE login = :login";
+        $consultauser = "SELECT * FROM users WHERE (login = :login OR email = :login)";
         $stmt = $pdo->prepare($consultauser);
         $stmt->bindParam(':login', $login);
         $stmt->execute();

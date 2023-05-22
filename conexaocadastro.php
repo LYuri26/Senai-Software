@@ -60,10 +60,12 @@ try {
             foreach ($superusuario as $su) {
                 if (strtolower($su['codigo']) == strtolower($codigo)) {
                     echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
+                    header('Location : cadastro.php');
                     return;
                 }
                 if (strtolower($su['email']) == strtolower($email)) {
                     echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
+                    header('Location : cadastro.php');
                     return;
                 }
             }
@@ -82,18 +84,23 @@ try {
             $cadastroId = $pdo->lastInsertId();
 
             // Inserir informações na tabela users com a foreign key para a tabela cadastro
-            $stmt = $pdo->prepare("INSERT INTO users (cadastro_id, codigo, email) VALUES (:cadastroId, :codigo, :email)");
+            $stmt = $pdo->prepare("INSERT INTO users (id, login, codigo, email, senha) VALUES (:cadastroId, :login, :codigo, :email, :senha)");
             $stmt->execute([
                 ':cadastroId' => $cadastroId,
+                ':login' => $nome,
                 ':codigo' => $codigo,
-                ':email' => $email
+                ':email' => $email,
+                ':senha' => $senha
             ]);
 
             echo "<p>Cadastro realizado com sucesso!</p>";
+            echo "<script> setTimeout(function() { window.location.href = 'login.php'; }, 5000);
+        </script>";
+            header('Location : login.php');
         }
-
-        //users
-        /*$stmt = $pdo->prepare("SELECT  * FROM cadastro WHERE nome = :nome AND senha = :senha");
+/*
+        users
+        $stmt = $pdo->prepare("SELECT  * FROM cadastro WHERE nome = :nome AND senha = :senha");
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':codigo', $codigo);
         $stmt->bindValue(':email', $email);
@@ -102,7 +109,7 @@ try {
 
         $stmt->execute();
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-*/
+
         if ($usuario) {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
@@ -128,6 +135,7 @@ try {
         // Credenciais inválidas, redirecionar para login.php com mensagem de erro
         header('Location: Login.php?error=1001');
         exit;
+    }*/
     }
 } catch (PDOException $e) {
     // Tratar exceções de conexão com o banco de dados aqui, se necessário
