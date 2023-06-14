@@ -4,10 +4,25 @@ DROP TRIGGER IF EXISTS delete_agendamento;
 DROP TABLE IF EXISTS cancelamentos;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS agendamentos;
+DROP TABLE IF EXISTS superusuario;
+DROP TABLE IF EXISTS cadastro;
+
+CREATE TABLE cadastro (
+  id INT(20) NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  codigo VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  senha VARCHAR(255) NOT NULL,
+  checksenha VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY (senha)
+);
 
 CREATE TABLE superusuario (
   id INT(11) NOT NULL AUTO_INCREMENT,
   login VARCHAR(255) NOT NULL,
+  codigo VARCHAR(255) NOT NULL,
+  email varchar(255) NOT NULL,
   senha VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 );
@@ -15,8 +30,11 @@ CREATE TABLE superusuario (
 CREATE TABLE users (
   id INT(11) NOT NULL AUTO_INCREMENT,
   login VARCHAR(255) NOT NULL,
+  codigo VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
   senha VARCHAR(255) NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  foreign key (senha) REFERENCES cadastro(senha)
 );
 
 CREATE TABLE agendamentos (
@@ -52,7 +70,9 @@ select * from users;
 select * from agendamentos;
 select * from cancelamentos;
 select * from superusuario;
+select * from cadastro;
 show triggers;
 
-insert into users (login, senha) VALUES ('usuarioteste', '12345')
+insert into superusuario (login, senha) VALUES ('admin', 'admin123');
 
+/*insert into users (login, senha) VALUES ('usuarioteste', '12345678');*/
