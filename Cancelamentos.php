@@ -21,47 +21,57 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
     <a href="logout.php" class="sair">Sair</a>
-    <h1>Lista de cancelamentos</h1>
-    <?php
-    // Definir as informações de conexão
-    $host = 'localhost';
-    $dbname = 'biblioteca';
-    $username = 'root';
-    $password = '';
 
-    // Conectar ao banco de dados usando mysqli
+    <div id="app">
+        <form action="3.relacionar.php.php" method="post" onsubmit="exibirAlerta(event)">
+            <h1>Lista de cancelamentos</h1>
+            <?php
+            // Definir as informações de conexão
+            $host = 'localhost';
+            $dbname = 'biblioteca';
+            $username = 'root';
+            $password = '';
 
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo "Conexão falhou" . $e->getMessage();
-    }
+            // Conectar ao banco de dados usando mysqli
 
-    // buscar agendamentos no banco de dados
-    $query = "SELECT * FROM cancelamentos";
-    $busca = $pdo->query($query);
-    $cancelamento = $busca->fetchAll(PDO::FETCH_ASSOC);
-    ?>
+            try {
+                $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                echo "Conexão falhou" . $e->getMessage();
+            }
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome do instrutor</th>
-                <th>Motivo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($cancelamento as $cancelamento) : ?>
-                <tr>
-                    <td><?php echo $cancelamento['id']; ?></td>
-                    <td><?php echo $cancelamento['nome']; ?></td>
-                    <td><?php echo $cancelamento['motivo']; ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            // buscar agendamentos no banco de dados
+            $query = "SELECT * FROM cancelamentos";
+            $busca = $pdo->query($query);
+            $cancelamento = $busca->fetchAll(PDO::FETCH_ASSOC);
+            ?>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do instrutor</th>
+                        <th>Motivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($cancelamento as $cancelamento) : ?>
+                        <tr>
+                            <td><?php echo $cancelamento['id']; ?></td>
+                            <td><?php echo $cancelamento['nome']; ?></td>
+                            <td><?php echo $cancelamento['motivo']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
 </body>
+
+<footer>
+    <div class="rodape">
+        <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
+        <p>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+    </div>
+</footer>
 
 </html>

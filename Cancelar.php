@@ -26,7 +26,7 @@ if (!isset($_SESSION['usuario'])) {
     <a href="logout.php" class="sair">Sair</a>
 
     <div id="app">
-        <form action="3.relacionar.php" method="post" onsubmit="exibirAlerta(event)">
+        <form method="post" onsubmit="exibirAlerta(event)">
             <h1>CANCELAMENTO</h1>
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" required><br><br>
@@ -37,10 +37,9 @@ if (!isset($_SESSION['usuario'])) {
             <label for="data">Motivo</label>
             <input type="text" id="motivo" name="motivo" required><br><br>
 
-            <p>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
-                professores.</p>
-            <label for="concordo">Eu concordo e estou ciente. </label>
-            <input type="checkbox" id="concordo" name="concordo" required>
+            <strong>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
+                professores.<br>Eu concordo e estou ciente.</strong>
+            <span><input type="checkbox" id="concordo" name="concordo" required></span>
 
 
             <p><input type="submit" value="CANCELAR"></p>
@@ -49,15 +48,36 @@ if (!isset($_SESSION['usuario'])) {
 
         </form>
 
-        <script src="agendamentoalertas.js"></script>
+        <script src="./config/assets/js/destruirSessao.js"></script>
         <script>
             function limparFormulario() {
                 document.getElementById("nome").value = "";
                 document.getElementById("id").value = "";
-                document.getElementById("data").value = "";
+                document.getElementById("motivo").value = "";
                 document.getElementById("concordo").checked = false;
             }
         </script>
+        <?php
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Obtém os dados do formulário
+            $instrutor = $_POST['nome'];
+            $curso = $_POST['id'];
+            $data = $_POST['motivo'];
+            // Exibe uma mensagem de sucesso
+            echo "<div class='success-message'>Cancelamento realizado com sucesso!</div>";
+        }
+        ?>
+        <div class="content-wrapper">
+
+        </div>
+        <footer>
+            <div class="rodape">
+                <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>
+                <strong>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
+            </div>
+        </footer>
+
 
     </div>
 
