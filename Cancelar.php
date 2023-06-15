@@ -35,9 +35,6 @@ if (!isset($_SESSION['usuario'])) {
             <input type="text" id="id" name="id" required><br><br>
 
             <label for="data">Motivo</label>
-<<<<<<< Updated upstream
-            <input type="text" id="data" name="motivo" required><br><br>
-=======
             <input type="text" id="motivo" name="motivo" required><br><br>
 
             <strong>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
@@ -46,7 +43,6 @@ if (!isset($_SESSION['usuario'])) {
 
                 <div class="strong2">
                 <strong> Eu concordo e estou ciente.</strong></div>
->>>>>>> Stashed changes
 
             <p>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
                 professores.</p>
