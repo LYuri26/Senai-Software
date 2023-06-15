@@ -17,14 +17,19 @@ body {
   color: #333;
   font-weight: bold;
   }
+.logosenai img {
+  width: 150px
 
+}
 #app {
   max-width: 40%;
   margin: 0 auto;
   padding: 2%;
   margin-top: 1vh;
 }
-
+.id img{
+  width: 150px
+}
 h1 {
   color: #005ca9;
   font-size: 2rem;
@@ -83,6 +88,8 @@ input[type="checkbox"] {
   align-items: center;
   margin-top: 2rem;
 }
+
+
 
 button[value="ACESSAR"],
 .limpar-button {
