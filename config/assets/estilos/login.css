@@ -27,8 +27,17 @@ body {
   padding: 2%;
   margin-top: 1vh;
 }
+<<<<<<< Updated upstream
 .id img{
   width: 150px
+=======
+
+.logosenai img{
+  width: 12rem;
+  position: absolute;
+  left: 4rem;
+  top: 1rem;
+>>>>>>> Stashed changes
 }
 h1 {
   color: #005ca9;

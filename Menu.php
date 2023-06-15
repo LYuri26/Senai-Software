@@ -24,9 +24,13 @@ if (!isset($_SESSION['usuario'])) {
     <nav class="navbar">
       <div class="navbar-container">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <div class="navbar-logo" id="icone">
           <a><img src="./config/assets/img/Logo.jpg" class="logo"></a>
         </div>
+=======
+        <img src="/config/assets/img/senai-logo-0 (1).png" class="logo">
+>>>>>>> Stashed changes
 =======
         <img src="/config/assets/img/senai-logo-0 (1).png" class="logo">
 >>>>>>> Stashed changes

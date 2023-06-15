@@ -20,6 +20,24 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
+<header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="/config/assets/img/senai-logo-0 (1).png" class="logo">
+                <ul class="navbar-menu">
+                    <li><a href="./Agendar.php">Agendar</a></li>
+                    <li><a href="./Cancelar.php">Cancelar</a></li>
+                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./logout.php">Sair</a></li>
+                </ul>
+            </div>
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
+        </nav>
+    </header>
     <a href="logout.php" class="sair">Sair</a>
     <h1>Lista de cancelamentos</h1>
     <?php

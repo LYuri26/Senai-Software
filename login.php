@@ -115,7 +115,8 @@ try {
         <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR FORMULÁRIO</button>
 
       </div>
-
+    
+  </div>      
   </div>
   </form>
   <?php
