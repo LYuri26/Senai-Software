@@ -4,7 +4,7 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
     // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.html');
+    header('Location: login.php');
     exit;
 }
 ?>
@@ -20,10 +20,10 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <a href="logout.php" class="sair">Sair</a>
+    <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
-        <form action="3.relacionar.php.php" method="post" onsubmit="exibirAlerta(event)">
+        <form action="./conexao.php" method="post" onsubmit="exibirAlerta(event)">
             <h1>Lista de cancelamentos</h1>
             <?php
             // Definir as informações de conexão

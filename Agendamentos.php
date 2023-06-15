@@ -4,7 +4,7 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
     // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.html');
+    header('Location: login.php');
     exit;
 }
 ?>
@@ -12,7 +12,7 @@ if (!isset($_SESSION['usuario'])) {
 <html>
 
 <head>
-    <title>Lista de Agendamentos</title>
+    <title>Lista de agendamentos</title>
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,10 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <a href="logout.php" class="sair">Sair</a>
+    <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
-        <form action="3.relacionar.php.php" method="post" onsubmit="exibirAlerta(event)">
+        <form action="q./conexao.php" method="post" onsubmit="exibirAlerta(event)">
             <h1>Lista de Agendamentos</h1>
             <?php
             // Definir as informações de conexão

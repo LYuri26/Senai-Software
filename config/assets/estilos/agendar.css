@@ -83,6 +83,14 @@ input[type="submit"]:hover {
     background-color: #005ca9;
 }
 
+.success-message {
+    position: static;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+  }
+
 
 /* abaixo usa-se um método responsivo com o @media screen, servindo para adaptar-se ao layout da tela em uso
 @media screen and (max-width: 768px) {
