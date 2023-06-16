@@ -49,7 +49,7 @@ if (!isset($_SESSION['usuario'])) {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        
                         <th>Nome</th>
                         <th>Data</th>
                         <th>Hora de Início</th>
@@ -61,7 +61,6 @@ if (!isset($_SESSION['usuario'])) {
                 <tbody>
                     <?php foreach ($agendamentos as $agendamento) : ?>
                         <tr>
-                            <td><?php echo $agendamento['id']; ?></td>
                             <td><?php echo $agendamento['nome']; ?></td>
                             <td><?php echo $agendamento['data']; ?></td>
                             <td><?php echo $agendamento['hora_inicio']; ?></td>
