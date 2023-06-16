@@ -13,6 +13,23 @@ session_start();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <title>Login</title>
+  <style>
+    .password-container {
+      position: relative;
+    }
+
+    .password-toggle-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .password-toggle-btn i {
+      font-size: 16px;
+    }
+  </style>
 </head>
 
 <body>
@@ -31,7 +48,12 @@ session_start();
       <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu E-mail / CPF / ID" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu E-mail / CPF / ID'" style="text-align: left;"><br>
 
       <label for="curso"></label>
-      <input type="password" minlength="8" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu E-mail / CPF / ID'" style="text-align: left;">
+      <div class="password-container">
+        <input type="password" minlength="8" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu E-mail / CPF / ID'" style="text-align: left;">
+        <span class="password-toggle-btn" onclick="togglePasswordVisibility()">
+          <i id="password-toggle-icon" class="fas fa-eye"></i>
+        </span>
+      </div>
 
       <div class="link-container">
         <a href="passwrecovery.php" class="link-button2">RECUPERAR SENHA</a>
@@ -44,13 +66,12 @@ session_start();
 
       </div>
 
-  </div>
-  </form>
-  <?php
-  if (isset($_GET['error']) && $_GET['error'] == '1001') {
-    echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Login ou senha inválidos.</div>";
-  }
-  ?>
+    </form>
+    <?php
+    if (isset($_GET['error']) && $_GET['error'] == '1001') {
+      echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Login ou senha inválidos.</div>";
+    }
+    ?>
   </div>
   <script>
     function limparFormulario() {
@@ -70,6 +91,20 @@ session_start();
     function resetPlaceholder(element) {
       element.placeholder = 'Digite seu E-mail / CPF / ID';
     }
+
+    function togglePasswordVisibility() {
+      var senhaInput = document.getElementById("senha");
+      var toggleIcon = document.getElementById("password-toggle-icon");
+      if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
+      } else {
+        senhaInput.type = "password";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
+      }
+    }
   </script>
   <script src="./config/assets/js/destruirSessao.js"></script>
   <script src="./config/assets/js/default.js"></script>
@@ -80,7 +115,5 @@ session_start();
     </div>
   </footer>
 </body>
-
-
 
 </html>
