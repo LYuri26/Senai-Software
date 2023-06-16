@@ -41,6 +41,7 @@ session_start();
       <div class="link-container">
         <a href="cadastro.php" class="link-button1">CRIAR CADASTRO</a>
       </div>
+      <img src="config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
 
       <h1>LOGIN</h1>
 

@@ -59,7 +59,6 @@ input[type="text"] {
   padding: 10px;
   border-radius: 4px;
   font-size: 18px;
-  font-weight: 600;
   transition: color 0.1s ease;
   box-sizing: border-box;
 }
