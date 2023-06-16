@@ -4,7 +4,7 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
   // Usuário não está autenticado, redirecionar para a página de login
-  header('Location: Login.php');
+  header('Location: login.php');
   exit;
 }
 ?>
@@ -29,10 +29,10 @@ if (!isset($_SESSION['usuario'])) {
       <div class="navbar-container">
         <img src="/config/assets/img/Logo.png" class="logo">
         <ul class="navbar-menu">
-          <li><a href="./Agendar.php">Agendar</a></li>
-          <li><a href="./Cancelar.php">Cancelar</a></li>
-          <li><a href="./Agendamentos.php">Agendamentos</a></li>
-          <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
+          <li><a href="./agendar.php">Agendar</a></li>
+          <li><a href="./cancelar.php">Cancelar</a></li>
+          <li><a href="./agendamentos.php">Agendamentos</a></li>
+          <li><a href="./cancelamentos.php">Cancelamentos</a></li>
           <li><a href="./logout.php">Sair</a></li>
         </ul>
       </div>

@@ -4,7 +4,7 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
     // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.html');
+    header('Location: login.php');
     exit;
 }
 ?>
@@ -23,7 +23,7 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <a href="logout.php" class="sair">Sair</a>
+    <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
         <form method="post" onsubmit="exibirAlerta(event)">
@@ -58,14 +58,28 @@ if (!isset($_SESSION['usuario'])) {
             }
         </script>
         <?php
-
+        // Tenta criar uma conexão com o banco de dados
+        try {
+            $pdo = new PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            die();
+        }
+        // Se o formulário foi enviado
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Obtém os dados do formulário
-            $instrutor = $_POST['nome'];
-            $curso = $_POST['id'];
-            $data = $_POST['motivo'];
+            $nome = $_POST['nome'];
+            $id = $_POST['id'];
+            $motivo = $_POST['motivo'];
+            // Insere os dados na tabela "cancelamentos"
+            $stmt = $pdo->prepare("INSERT INTO cancelamentos (id, nome, motivo) VALUES (:id, :nome, :motivo)");
+            $stmt->bindValue(':id', $id);
+            $stmt->bindValue(':nome', $nome);
+            $stmt->bindValue(':motivo', $motivo);
+            $stmt->execute();
             // Exibe uma mensagem de sucesso
-            echo "<div class='success-message'>Cancelamento realizado com sucesso!</div>";
+            echo "<div class='success-message' style='text-align: center; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
         }
         ?>
         <div class="content-wrapper">

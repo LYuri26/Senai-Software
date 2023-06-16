@@ -4,12 +4,12 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
     // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: Login.php');
+    header('Location: login.php');
     exit;
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="PT-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <a href="logout.php" class="sair">Sair</a>
+    <a href="./logout.php" class="sair">Sair</a>
 
     <form method="POST">
         <h1>AGENDAMENTO</h1>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['usuario'])) {
     // Se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Obtém os dados do formulário
-        $instrutor = $_POST['instrutor'];
+        $nome = $_POST['instrutor'];
         $curso = $_POST['curso'];
         $data = $_POST['data'];
         $hora_inicio = $_POST['hora_inicio'];
@@ -68,10 +68,16 @@ if (!isset($_SESSION['usuario'])) {
         $quantidade_alunos = $_POST['quantidade_alunos'];
 
         // Insere os dados na tabela "agendamentos"
-        $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$instrutor, $curso, $data, $hora_inicio, $hora_termino, $quantidade_alunos]);
+        $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (:nome, :curso, :data, :hora_inicio, :hora_termino, :quantidade_alunos)");
+        $stmt->bindValue(':nome', $nome);
+        $stmt->bindValue(':curso', $curso);
+        $stmt->bindValue(':data', $data);
+        $stmt->bindValue(':hora_inicio', $hora_inicio);
+        $stmt->bindValue(':hora_termino', $hora_termino);
+        $stmt->bindValue(':quantidade_alunos', $quantidade_alunos);
+        $stmt->execute();
         // Exibe uma mensagem de sucesso
-        //echo "<p>Agendamento realizado com sucesso!</p>";
+        echo "<div class='success-message' style='text-align: center; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
     }
     ?>
       <script src="./config/assets/js/destruirSessao.js"></script>

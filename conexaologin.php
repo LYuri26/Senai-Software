@@ -39,7 +39,7 @@ try {
             // É um superusuário/administrador, armazenar os dados na sessão
             $_SESSION['usuario'] = $resconsultasuper;
             // Redirecionar para a página de administração
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
 
@@ -53,7 +53,7 @@ try {
             // É um superusuário/administrador, armazenar os dados na sessão
             $_SESSION['usuario'] = $superusuario;
             // É um superusuário/administrador, redirecionar para a página de administração
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
 
@@ -68,7 +68,7 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
             // É um usuário comum, redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
         // Verificar se é um usuário comum
@@ -82,12 +82,12 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $resconsultauser;
             // Redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
 
         // Credenciais inválidas, redirecionar para login.php com mensagem de erro
-        header('Location: Login.php?error=1001');
+        header('Location: login.php?error=1001');
         exit;
     }
 } catch (PDOException $e) {

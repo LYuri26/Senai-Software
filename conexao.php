@@ -3,7 +3,7 @@ session_start();
 // Verificar se o usuário está autenticado
 if (!isset($_SESSION['usuario'])) {
   // Usuário não está autenticado, redirecionar para a página de login
-  header('Location: Login.php');
+  header('Location: login.php');
   exit;
 }
 ?>
@@ -79,13 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $id = $_POST['id'];
       $motivo = $_POST['motivo'];
 
-      // Insere os dados na tabela "agendamentos"
+      // Insere os dados na tabela "cancelamentos"
       $stmt = $pdo->prepare("INSERT INTO cancelamentos (id, nome, motivo) VALUES (:id, :nome, :motivo)");
       $stmt->bindValue(':id', $id);
       $stmt->bindValue(':nome', $nome);
       $stmt->bindValue(':motivo', $motivo);
       $stmt->execute();
-      //echo "<p>Agendamento realizado com sucesso!</p>";
+      //echo "<p>Cancelamento realizado com sucesso!</p>";
     }
   } catch (PDOException $e) { // Exibir uma mensagem de erro
     echo "Erro de conexão: " . $e->getMessage();
