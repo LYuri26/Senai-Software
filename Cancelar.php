@@ -51,8 +51,16 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             <label for="curso">ID / CPF</label>
             <input type="text" id="id" name="id" required><br><br>
 
-            <label for="data">Motivo</label>
-            <input type="text" id="motivo" name="motivo" required><br><br>
+            <label for="motivo">Motivo</label>
+            <select id="motivo" name="motivo" required>
+                <option value="" disabled selected hidden>Escolha uma das opções abaixo</option>
+                <option value="opcao1">Condições climáticas extremas.</option>
+                <option value="opcao2">Emergências e/ou urgências médicas.</option>
+                <option value="opcao3">Estruturais (elétrica, internet, hidráulica, etc.).</option>
+                <option value="opcao4">Feriados ou eventos não previstos anteriormente.</option>
+                <option value="opcao5">Mudança de plano de aula</option>
+                <option value="opcao6">Nenhuma das opções</option>
+            </select>
 
             <strong>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
                 professores.<br>Eu concordo e estou ciente.</strong>
@@ -96,7 +104,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             $stmt->bindValue(':motivo', $motivo);
             $stmt->execute();
             // Exibe uma mensagem de sucesso
-            echo "<div class='success-message' style='text-align: center; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
+            echo "<div class='success-message' style='text-align: center; color:green; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
         }
         ?>
         <div class="content-wrapper">
