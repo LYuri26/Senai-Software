@@ -1,12 +1,15 @@
 <?php
-session_start();
+/*
+usado para sempre verificar a sessão do usuário
+require_once './session.php';
 
-// Verificar se o usuário está autenticado
-if (!isset($_SESSION['usuario'])) {
-    // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.php');
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: login.html"); 
     exit;
 }
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,7 +69,7 @@ if (!isset($_SESSION['usuario'])) {
                 </tbody>
             </table>
 </body>
-
+<script src="./config/assets/js/destruirSessao.js"></script>
 <footer>
     <div class="rodape">
         <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>

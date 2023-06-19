@@ -1,5 +1,12 @@
 <?php
-session_start();
+require_once './session.php';
+
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: login.html"); 
+    exit;
+}
 $host = '127.0.0.1';
 $dbname = 'biblioteca';
 $username = 'root';
@@ -60,12 +67,12 @@ try {
             foreach ($superusuario as $su) {
                 if (strtolower($su['codigo']) == strtolower($codigo)) {
                     echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
-                    header('Location : cadastro.php');
+                    header('Location : cadastro.html');
                     return;
                 }
                 if (strtolower($su['email']) == strtolower($email)) {
                     echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
-                    header('Location : cadastro.php');
+                    header('Location : cadastro.html');
                     return;
                 }
             }
@@ -94,9 +101,9 @@ try {
             ]);
 
             echo "<p>Cadastro realizado com sucesso!</p>";
-            echo "<script> setTimeout(function() { window.location.href = 'login.php'; }, 5000);
+            echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000);
         </script>";
-            header('Location : login.php');
+            header('Location : login.html');
         }
 /*
         users
@@ -132,8 +139,8 @@ try {
             exit;
         }
 
-        // Credenciais inválidas, redirecionar para login.php com mensagem de erro
-        header('Location: Login.php?error=1001');
+        // Credenciais inválidas, redirecionar para login.html com mensagem de erro
+        header('Location: Login.html?error=1001');
         exit;
     }*/
     }

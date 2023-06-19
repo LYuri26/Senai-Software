@@ -1,13 +1,20 @@
 <?php
+/*
+include_once './session.php';
+
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: login.html"); 
+    exit;
+}*/
 session_start();
 
-// Verificar se o usuário está autenticado
-if (!isset($_SESSION['usuario'])) {
-  // Usuário não está autenticado, redirecionar para a página de login
-  header('Location: login.php');
-  exit;
-}
+/* Definir a mensagem na variável de sessão
+$_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça login novamente!';*/
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,7 +37,7 @@ if (!isset($_SESSION['usuario'])) {
         <img src="/config/assets/img/Logo.png" class="logo">
         <ul class="navbar-menu">
           <li><a href="./agendar.php">Agendar</a></li>
-          <li><a href="./cancelar.php">Cancelar</a></li>
+          <li><a href="./Cancelar.php">Cancelar</a></li>
           <li><a href="./agendamentos.php">Agendamentos</a></li>
           <li><a href="./cancelamentos.php">Cancelamentos</a></li>
           <li><a href="./logout.php">Sair</a></li>
@@ -45,7 +52,7 @@ if (!isset($_SESSION['usuario'])) {
   <div class="container" id="slider">
     <div class="imgscar"id="slider">
       <div class="slide" role="rolebox"id="slider">
-        <img src="/config/assets/img/Logo.png" alt="Logo Senai" class="selected">
+        <img src="/config/assets/img/senailogo1.png" alt="Logo Senai" class="selected">
         <img src="/config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib">
         <!--<img src="/config/assets/img/img2.png" alt="imagem2" class="IMG.2">-->
       </div>
@@ -58,6 +65,7 @@ if (!isset($_SESSION['usuario'])) {
   <p>Com o UAIBook, agendar o horário desejado na biblioteca nunca foi tão fácil e livre de complicações. Desfrute de uma experiência tranquila e eficiente ao realizar suas reservas sem preocupações.</p>
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
  <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
+ <script src="./config/assets/js/destruirSessao.js"></script>
   <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.

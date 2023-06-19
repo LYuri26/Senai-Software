@@ -1,12 +1,15 @@
 <?php
-session_start();
+/*
+usado para sempre verificar a sessão do usuário
+require_once './session.php';
 
-// Verificar se o usuário está autenticado
-if (!isset($_SESSION['usuario'])) {
-    // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.php');
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: login.html"); 
     exit;
 }
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +52,7 @@ if (!isset($_SESSION['usuario'])) {
             <table>
                 <thead>
                     <tr>
-                        
+
                         <th>Nome</th>
                         <th>Data</th>
                         <th>Hora de Início</th>
@@ -71,13 +74,14 @@ if (!isset($_SESSION['usuario'])) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
-                    </div>
-            <footer>
-                <div class="rodape">
-                    <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
-                    <p>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
-                </div>
-            </footer>
+    </div>
+    <script src="./config/assets/js/destruirSessao.js"></script>
+    <footer>
+        <div class="rodape">
+            <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
+            <p>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+        </div>
+    </footer>
 </body>
 
 

@@ -1,8 +1,37 @@
-if (performance.navigation.type == 1) {
-  const urlLogin = new URLSearchParams(window.location.search);
-  const erroParam = urlLogin.get('error');
+/*const urlParams = new URLSearchParams(window.location.search);
+const erroParam = urlParams.get('error');
 
-  if (erroParam === '1001') {
-    window.location.href = 'Login.php';
-  }
+if (erroParam === '1001') {
+  document.title = 'Login'; // Alterar o título da página
+  //window.location.href = 'login.html';
+  var msgErro = document.getElementById('falseMsg');
+  msgErro.textContent = 'Usuário ou senha inválidos';
+  msgErro.classList.add('erro'); // Adicionar a classe 'erro' ao elemento
+  msgErro.style.visibility = 'visible'; // Exibir o elemento
+  msgErro.style.display = 'block'; // Exibir o elemento
+  history.replaceState(null, null, 'login.html'); // Redirecionar para a página inicial
 }
+*/
+var urlParams = new URLSearchParams(window.location.search);
+var erroParam = urlParams.get('error');
+
+if (erroParam === '1001') {
+  document.title = 'Login'; // Alterar o título da página
+  //window.location.href = 'login.html';
+  var msgErro = document.getElementById('falseMsg');
+  msgErro.textContent = 'Usuário ou senha inválidos';
+  msgErro.classList.add('erro'); // Adicionar a classe 'erro' ao elemento
+  msgErro.style.visibility = 'visible'; // Exibir o elemento
+  msgErro.style.display = 'block'; // Exibir o elemento
+  history.replaceState(null, 'Login', 'login.html'); // Redirecionar para a página inicial
+};
+
+var urlParams1 = new URLSearchParams(window.location.search);
+var skip_message = urlParams1.get('skip_message');
+
+if (skip_message === '1') {
+  document.title = 'Cancelar'; // Alterar o título da página
+  window.location.href = 'cancelar.php?skip_message=1';
+  history.replaceState(null, 'Cancelar', 'cancelar.php?skip_message=1'); // Redirecionar para a página inicial
+};
+

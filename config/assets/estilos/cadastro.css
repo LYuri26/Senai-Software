@@ -115,9 +115,8 @@ input[type="password"] {
   align-items: center;
   margin-top: 50px;
 }
-
-button[value="CADASTRAR"],
-.limpar-button {
+button[value="Cadastrar"]{
+  font-family: "Montserrat", sans-serif;
   background-color: #005ca9;
   color: #ffffff;
   font-size: 1em;
@@ -129,15 +128,28 @@ button[value="CADASTRAR"],
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
-  margin: 0;
-  margin-top: 30%;
+}
+.limpar-button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  padding: 0.5em 1em;
+  border-top: 20px;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  margin-top: 10%;
 }
 
 #botao_limpar:hover {
-  background-color: #c2bcbc;
+  background-color: #0c36be;
 }
 button:hover {
-  background-color: #c2bcbc;
+  background-color: #0c36be;
 }
 
 

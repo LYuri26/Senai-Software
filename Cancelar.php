@@ -1,12 +1,29 @@
 <?php
+//require_once './session.php';
 session_start();
 
-// Verificar se o usuário está autenticado
-if (!isset($_SESSION['usuario'])) {
-    // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.php');
-    exit;
-}
+// ! IMPORTANTE !
+// ! IMPORTANTE !
+
+// ABAIXO SEGUE O SCRIPT QUE SOMENTE AUTORIZA O ACESSO À PÁGINA SE O USUÁRIO FAZER LOGIN NOVAMENTE
+// DEIXAR COMENTADO POR ENQUANTO
+
+/*// Verificar se há uma sessão de usuário ou superusuário
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
+    // Se a sessão não estiver ativa, exibe uma mensagem de aviso com JavaScript
+    echo "<script> alert('Você precisa fazer login novamente para acessar esta página.');
+    window.location.href = 'login.html?skip_message=1';
+    </script>";
+    exit; // Termina a execução do script
+} else {
+    echo " window.location.href = 'cancelar.php?skip_message=1';";
+  }
+*/
+
+
+
+// ! IMPORTANTE !
+// ! IMPORTANTE !
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -42,7 +59,7 @@ if (!isset($_SESSION['usuario'])) {
             <span><input type="checkbox" id="concordo" name="concordo" required></span>
 
 
-            <p><input type="submit" value="CANCELAR"></p>
+            <button type="submit" value="CANCELAR">CANCELAR</button>
             <button type="button" onclick="limparFormulario()">LIMPAR</button>
 
 
@@ -85,6 +102,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="content-wrapper">
 
         </div>
+        <script src="./config/assets/js/destruirSessao.js"></script>
         <footer>
             <div class="rodape">
                 <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>
