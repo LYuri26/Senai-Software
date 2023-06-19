@@ -53,7 +53,6 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nome do instrutor</th>
                         <th>Motivo</th>
                     </tr>
@@ -61,7 +60,6 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                 <tbody>
                     <?php foreach ($cancelamento as $cancelamento) : ?>
                         <tr>
-                            <td><?php echo $cancelamento['id']; ?></td>
                             <td><?php echo $cancelamento['nome']; ?></td>
                             <td><?php echo $cancelamento['motivo']; ?></td>
                         </tr>
