@@ -32,8 +32,8 @@
             <label for="confirmar senha">confirmar senha:</label>
             <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha" required><br><br>
 
-            <div class="button-container">
-                <input type="submit" value="Cadastrar">
+            <div class="button-container">  
+                <button type="submit" value="Cadastrar">CADASTRAR</input>
 
                 <div class="button-container">
                     <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR
@@ -43,6 +43,7 @@
         </form>
     </div>
     <script>
+        
         function limparFormulario() {
             document.getElementById("forms").reset();
 
@@ -53,6 +54,8 @@
             }
         }
     </script>
+    <script src="./config/assets/js/destruirSessao.js"></script>
+  <!--<script src="./config/assets/js/default.js"></script>-->
 </body>
 <footer>
     <div class="rodape">

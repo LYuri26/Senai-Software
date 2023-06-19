@@ -8,6 +8,22 @@ body {
   position: relative;
 }
 
+/* css mensagem erro ou exito (opcional)
+#falseMsg {
+  font-size: 20px; 
+  font-weight:600;
+  color: red;
+  text-align: center;
+}
+
+#trueMsg {
+  font-size: 20px; 
+  font-weight:600;
+  color: red;
+  text-align: center;
+}
+*/
+
 .sair {
   display: block;
   position: fixed;
@@ -20,13 +36,19 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  }
+}
 
 #app {
   max-width: 40%;
   margin: 0 auto;
   padding: 2%;
   margin-top: 1vh;
+}
+
+#logosenai {
+  position: relative;
+  width: 10rem;
+  margin-top: -1rem;
 }
 
 h1 {
@@ -104,6 +126,30 @@ button[value="ACESSAR"],
 #botao_limpar:hover {
   background-color: #0c36be;
 }
+
+.g-recaptcha {
+  background-color: #005CA9;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 20px 10px 20px 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+.captcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.g-recaptcha:hover {
+  background-color: #0c36be;
+}
+
 button:hover {
   background-color: #0c36be;
 }
@@ -149,6 +195,6 @@ button:hover {
   font-weight: bold;
 }
 
-.rodape p {   
+.rodape p {
   line-height: 0.4;
 }

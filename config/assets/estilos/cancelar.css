@@ -59,20 +59,33 @@ input[type="text"] {
   padding: 10px;
   border-radius: 4px;
   font-size: 18px;
-  font-weight: 600;
   transition: color 0.1s ease;
   box-sizing: border-box;
 }
-
-input[value="CANCELAR"],
-button {
+button[type="submit"]{
+  margin-top: 1rem;
   background-color: #005ca9;
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius: 10px 5px 10px 5px;
+  border-radius: 20px 10px 20px 10px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+button[type="button"] {
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1em;
+  border-radius: 20px 10px 20px 10px;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -83,7 +96,7 @@ button {
 input[type="text"],
 input[type="checkbox"] {
   border: 1px solid #005ca9;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
@@ -101,8 +114,7 @@ button {
 
 input[type="submit"]:hover,
 button:hover {
-  color: #ffffff;
-  background-color: #c2bcbc;
+  background-color: #0c36be;
 }
 /* Responsividade */
 

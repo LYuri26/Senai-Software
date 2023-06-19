@@ -1,5 +1,5 @@
 body {
-  overflow: hidden;
+  overflow:scroll;
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
   margin: 0;

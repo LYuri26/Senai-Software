@@ -1,12 +1,20 @@
 <?php
+/*
+
+usado para sempre verificar a sessão do usuário
+require_once './session.php';
+
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: login.html"); 
+    exit;
+}*/
 session_start();
 
-// Verificar se o usuário está autenticado
-if (!isset($_SESSION['usuario'])) {
-    // Usuário não está autenticado, redirecionar para a página de login
-    header('Location: login.php');
-    exit;
-}
+// Definir a mensagem na variável de sessão
+$_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça login novamente';
+
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -45,7 +53,7 @@ if (!isset($_SESSION['usuario'])) {
         <label for="quantidade_alunos">Quantidade de Alunos</label>
         <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
 
-        <input type="submit" value="AGENDAR">
+        <button type="submit" value="AGENTAR">AGENDAR</button>
     </form>
     <?php
     // Tenta criar uma conexão com o banco de dados

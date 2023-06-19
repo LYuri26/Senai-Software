@@ -1,5 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/ico" href="config/assets/img/baixar.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
 <?php
-session_start();
+/*
+require_once './session.php';
+
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: login.html"); 
+    exit;
+}*/
+
 $host = '127.0.0.1';
 $dbname = 'biblioteca';
 $username = 'root';
@@ -9,6 +27,7 @@ $password = '';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
     /*Resto do seu código...
     $loginAdmin = "admin"; // Substitua pelo valor desejado
@@ -85,9 +104,18 @@ try {
             header('Location: menu.php');
             exit;
         }
+        if (isset($_GET['error']) && $_GET['error'] == '1001') {
+            echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Usuário ou senha inválidos.</div>";
+        }
+        // Credenciais inválidas, redirecionar para login.html com mensagem de erro
+        header('Location: login.html?error=1001');
+        exit;
 
-        // Credenciais inválidas, redirecionar para login.php com mensagem de erro
-        header('Location: login.php?error=1001');
+        if (isset($_GET['skip_message']) && $_GET['skip_message'] === '1') {
+            header('Location: cancelar.php?skip_message=1');
+            // Se o parâmetro "skip_message" estiver presente e tiver o valor "1", não exibir a mensagem
+            // Continuar normalmente com o restante do código da página "cancelar.php"
+        }
         exit;
     }
 } catch (PDOException $e) {
