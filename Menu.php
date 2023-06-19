@@ -34,7 +34,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <header>
     <nav class="navbar">
       <div class="navbar-container">
-        <img src="/config/assets/img/Logo.png" class="logo">
+        <img src="./config/assets/img/senailogo2.png" class="logo">
         <ul class="navbar-menu">
           <li><a href="./agendar.php">Agendar</a></li>
           <li><a href="./Cancelar.php">Cancelar</a></li>
@@ -52,7 +52,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <div class="container" id="slider">
     <div class="imgscar"id="slider">
       <div class="slide" role="rolebox"id="slider">
-        <img src="/config/assets/img/senailogo1.png" alt="Logo Senai" class="selected">
+        <img src="/config/assets/img/senailogo3.png" alt="Logo Senai" class="selected">
         <img src="/config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib">
         <!--<img src="/config/assets/img/img2.png" alt="imagem2" class="IMG.2">-->
       </div>
@@ -66,13 +66,18 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
  <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
  <script src="./config/assets/js/destruirSessao.js"></script>
-  <footer>
+
+
+
+
+ <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.
         Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</strong>
-
     </div>
+
   </footer>
+
 </body>
 
 </html>
