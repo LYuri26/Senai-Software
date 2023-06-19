@@ -1,14 +1,14 @@
 <?php
-/*
-include_once './session.php';
 
+require_once './session.php';
+/*
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
     // Redirecionar para a página de login 
     header("Location: login.html"); 
     exit;
-}*/
-session_start();
+}
+//session_start();
 
 /* Definir a mensagem na variável de sessão
 $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça login novamente!';*/

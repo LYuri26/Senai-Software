@@ -7,6 +7,9 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     header("Location: login.html"); 
     exit;
 }
+
+$_SESSION['user_id'] = $usuario['id']; // Armazena o ID do usuário na sessão
+$_SESSION['privilegios'] = $usuario['privilegios']; // Armazena os privilégios do usuário na sessão
 /*<?php
 session_start();
 if (!isset($_SESSION['usuario'])) { 
@@ -14,7 +17,5 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: Login.html"); 
     exit;
 }
-$_SESSION['user_id'] = $usuario['id']; // Armazena o ID do usuário na sessão
-$_SESSION['privilegios'] = $usuario['privilegios']; // Armazena os privilégios do usuário na sessão
 ?>*/
 ?>
