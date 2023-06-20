@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="config/assets/estilos/login.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap"
-    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <!-- Adicione a biblioteca de ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   <title>Login</title>
   <style>
     .password-container {
@@ -44,14 +46,14 @@
 
       <h1>LOGIN</h1>
 
-      <label for="nome"></label>
-      <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu E-mail / CPF / ID" required
+      <label for="nome">Nome ou e-mail</label>
+      <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite aqui seu nome ou e-mail" required
         onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu E-mail / CPF / ID'"
         style="text-align: left;" autocomplete="off"><br>
 
-      <label for="curso"></label>
+      <label for="curso">Senha</label>
       <div class="password-container">
-        <input type="password" minlength="8" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha"
+        <input type="password" minlength="8" maxlength="62" id="senha" name="senha" placeholder="Digite aqui sua senha"
           required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'"
           style="text-align: left; " autocomplete="off">
 
@@ -151,12 +153,14 @@
   <!--<button onclick="history.go(-1)">Voltar</button>-->
   <script src="./config/assets/js/destruirSessao.js"></script>
   <script src="./config/assets/js/default.js"></script>
-  <footer>
-    <div class="rodape">
-      <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
-      <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
-    </div>
-  </footer>
+ 
 </body>
+
+<footer>
+  <div class="rodape">
+    <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
+    <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
+  </div>
+</footer>
 
 </html>
