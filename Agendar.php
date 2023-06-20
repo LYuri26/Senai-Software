@@ -10,7 +10,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     header("Location: login.html"); 
     exit;
 }*/
-require_once './session.php';
+//require_once './session.php';
 
 // Definir a mensagem na variável de sessão
 $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça login novamente';
