@@ -26,7 +26,9 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <img src="./config/assets/img/senailogo1.png" class="logo">
+                <a href="./Menu.php">
+                    <img src="./config/assets/img/senailogo1.png" class="logo">
+                </a>
                 <ul class="navbar-menu">
                     <li><a href="./Agendar.php">Agendar</a></li>
                     <li><a href="./Cancelar.php">Cancelar</a></li>
@@ -84,6 +86,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
+                    </DIV>
 </body>
 <script src="./config/assets/js/destruirSessao.js"></script>
 <footer>

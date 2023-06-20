@@ -50,7 +50,9 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <header>
     <nav class="navbar">
       <div class="navbar-container">
-        <img src="./config/assets/img/senailogo1.png" class="logo">
+        <a href="./Menu.php">
+        <img src="./config/assets/img/senailogo1.png" class="logo" href="./Menu.php">
+        </a>
         <ul class="navbar-menu">
           <li><a href="./agendar.php">Agendar</a></li>
           <li><a href="./Cancelar.php">Cancelar</a></li>
@@ -67,8 +69,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   </header>
   <div class="container" id="slider">
     <div class="imgscar" id="slider">
-      <div class="slide" role="rolebox">
-        <img src="./config/assets/img/senailogo1.png"Logo Senai" class="selected">
+      <div class="slide" role="rolebox" id="slider">
+        <img src="./config/assets/img/senailogo1.png" Logo Senai" class="selected">
         <img src="./config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib">
         <!--<img src="/config/assets/img/img2.png" alt="imagem2" class="IMG.2">-->
       </div>

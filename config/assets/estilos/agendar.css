@@ -48,14 +48,18 @@ h1 {
   }
 
   .logo {
+    /* Movemos essas tags para o .navbar-container
     display: flex;
     align-items: center;
+    */
     font-weight: bold;
     text-decoration: none;
-    width: 6rem;
-    height: auto;
-    border-radius: 50px;
-    margin-right: 20px;
+   /* object-fit: cover;
+    /*width: 10rem;*/
+    height: 3rem;
+    width: 10rem;
+    /*border-radius: 200px;
+    margin-right: 200px;*/
   }
 
   .navbar-menu {
@@ -90,7 +94,7 @@ form {
     padding-bottom: 1%;
     max-width: 30rem;
     margin: 0 auto;
-    margin-top: 4vh;
+    margin-top: 4rem;
 }
 
 label {

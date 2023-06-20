@@ -34,14 +34,16 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <img src="./config/assets/img/senailogo1.png" class="logo">
+                <a href="./Menu.php">
+                    <img src="./config/assets/img/senailogo1.png" class="logo">
+                </a>
                 <ul class="navbar-menu">
                     <li><a href="./Cancelar.php">Cancelar</a></li>
                     <li><a href="./Agendamentos.php">Agendamentos</a></li>
                     <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./Menu.php">Menu</a></li>
                     <li><a href="./logout.php">Sair</a></li>
-                
+
                 </ul>
             </div>
             <!-- <div class="navbar-toggle">
@@ -93,8 +95,30 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         $hora_inicio = $_POST['hora_inicio'];
         $hora_termino = $_POST['hora_termino'];
         $quantidade_alunos = $_POST['quantidade_alunos'];
+    }
+
+    // Verificar se já existe um agendamento para essa data e hora no banco de dados
+    $stmt = $pdo->prepare("
+        SELECT COUNT(*) FROM agendamentos
+        WHERE data = :data AND (
+        (hora_inicio <= :hora_inicio AND hora_termino > :hora_inicio) OR
+        (hora_inicio < :hora_termino AND hora_termino >= :hora_termino)
+        )
+        ");
+    $stmt->bindValue(':data', $data);
+    $stmt->bindValue(':hora_inicio', $hora_inicio);
+    $stmt->bindValue(':hora_termino', $hora_termino);
+    $stmt->execute();
+    $count = $stmt->fetchColumn();
+
+
+    if ($count > 0) {
+        /*$_SESSION['error_message'] = "Já existe um agendamento neste horário!";*/
+        // Exibir uma mensagem de erro se já existe um agendamento para essa data e hora
+        echo "<div class='error-message' style='text-align: center; font-size:20px; margin: 1rem;'>Já existe um agendamento neste horário!</div>";
 
         // Insere os dados na tabela "agendamentos"
+    } else {
         $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (:nome, :curso, :data, :hora_inicio, :hora_termino, :quantidade_alunos)");
         $stmt->bindValue(':nome', $nome);
         $stmt->bindValue(':curso', $curso);
@@ -105,7 +129,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         $stmt->execute();
         // Exibe uma mensagem de sucesso
         echo "<div class='success-message' style='text-align: center; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
-        session_destroy();
+        //session_destroy();
     }
     ?>
     <script src="./config/assets/js/destruirSessao.js"></script>
