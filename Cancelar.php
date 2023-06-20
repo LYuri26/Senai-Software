@@ -1,6 +1,6 @@
 <?php
 //require_once './session.php';
-session_start();
+require_once './session.php';
 
 // ! IMPORTANTE !
 // ! IMPORTANTE !
@@ -106,12 +106,14 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             $stmt->execute();
             // Exibe uma mensagem de sucesso
             echo "<div class='success-message' style='text-align: center; color:green; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
+            session_destroy();
         }
         ?>
         <div class="content-wrapper">
 
         </div>
         <script src="./config/assets/js/destruirSessao.js"></script>
+        <script src="./config/assets/js/default.js"></script>
         <footer>
             <div class="rodape">
                 <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>

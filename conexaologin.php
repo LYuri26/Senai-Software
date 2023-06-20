@@ -8,6 +8,7 @@
     <title>Login</title>
 </head>
 <?php
+session_start();
 /*
 require_once './session.php';
 
@@ -123,4 +124,6 @@ try {
     echo "Erro de conexão com o banco de dados: " . $e->getMessage();
     exit;
 }
+session_destroy();
+
 ?>

@@ -10,7 +10,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     header("Location: login.html"); 
     exit;
 }*/
-session_start();
+require_once './session.php';
 
 // Definir a mensagem na variável de sessão
 $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça login novamente';
@@ -86,9 +86,11 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         $stmt->execute();
         // Exibe uma mensagem de sucesso
         echo "<div class='success-message' style='text-align: center; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
+        session_destroy();
     }
     ?>
       <script src="./config/assets/js/destruirSessao.js"></script>
+      <script src="./config/assets/js/default.js"></script>
 </body>
 
 </html>

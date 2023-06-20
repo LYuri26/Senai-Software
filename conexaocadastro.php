@@ -1,4 +1,5 @@
 <?php
+/*
 require_once './session.php';
 
 // Verificar se há uma sessão de usuário ou superusuário 
@@ -7,6 +8,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     header("Location: login.html"); 
     exit;
 }
+*/
+
 $host = '127.0.0.1';
 $dbname = 'biblioteca';
 $username = 'root';
