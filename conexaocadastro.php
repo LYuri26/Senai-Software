@@ -9,7 +9,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     exit;
 }
 */
-
+session_start();
 $host = '127.0.0.1';
 $dbname = 'biblioteca';
 $username = 'root';
@@ -104,11 +104,32 @@ try {
             ]);
 
             echo "<p>Cadastro realizado com sucesso!</p>";
+            /* OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO HTML
+            // Inclua essa linha no seu código PHP para informar ao navegador o tipo de codificação de caracteres que está sendo usado
+            header('Content-Type: text/html; charset=utf-8');
+
+            // Abra o documento HTML e inicie a seção "head"
+            echo '<!DOCTYPE html>';
+            echo '<html lang="pt-BR">';
+            echo '<head>';
+            echo '<meta charset="utf-8">';
+            echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+            echo '<meta http-equiv="refresh" content="5;url=login.html">';
+            // Adicione outras meta tags aqui...
+            echo '</head>';
+
+            // Feche a seção "head" e inicie o corpo do documento
+            echo '<body>';
+            // Adicione o conteúdo da página aqui...
+            echo '</body>';
+            echo '</html>';
+            */
+            // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
             echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000);
         </script>";
             header('Location : login.html');
         }
-/*
+        /*
         users
         $stmt = $pdo->prepare("SELECT  * FROM cadastro WHERE nome = :nome AND senha = :senha");
         $stmt->bindValue(':nome', $nome);
@@ -147,8 +168,17 @@ try {
         exit;
     }*/
     }
+    session_destroy();
 } catch (PDOException $e) {
     // Tratar exceções de conexão com o banco de dados aqui, se necessário
-    echo "Erro de conexão com o banco de dados: " . $e->getMessage();
+    //  echo "Erro de conexão com o banco de dados: " . $e->getMessage();
+    if ($e->errorInfo[1] == 1062) {
+        // Checa se o erro é código 1062 (Duplicate entry)
+        echo "Erro: essa senha já foi cadastrada!";
+        echo "<script>alert('Erro: essa senha já foi cadastrada!');</script>";
+    } else {
+        // Caso contrário, exibe a mensagem de erro padrão
+        echo "Erro: " . $e->getMessage();
+    }
     exit;
 }
