@@ -50,7 +50,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <header>
     <nav class="navbar">
       <div class="navbar-container">
-        <img src="./config/assets/img/senailogo2.png" class="logo">
+        <img src="./config/assets/img/senailogo1.png" class="logo">
         <ul class="navbar-menu">
           <li><a href="./agendar.php">Agendar</a></li>
           <li><a href="./Cancelar.php">Cancelar</a></li>
@@ -67,9 +67,9 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   </header>
   <div class="container" id="slider">
     <div class="imgscar" id="slider">
-      <div class="slide" role="rolebox" id="slider">
-        <img src="/config/assets/img/senailogo3.png" alt="Logo Senai" class="selected">
-        <img src="/config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib">
+      <div class="slide" role="rolebox">
+        <img src="./config/assets/img/senailogo1.png"Logo Senai" class="selected">
+        <img src="./config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib">
         <!--<img src="/config/assets/img/img2.png" alt="imagem2" class="IMG.2">-->
       </div>
     </div>
@@ -91,7 +91,6 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.
         Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</strong>
     </div>
-
   </footer>
 
 </body>

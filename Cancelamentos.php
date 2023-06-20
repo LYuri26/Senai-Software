@@ -23,6 +23,24 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="./config/assets/img/senailogo1.png" class="logo">
+                <ul class="navbar-menu">
+                    <li><a href="./Agendar.php">Agendar</a></li>
+                    <li><a href="./Cancelar.php">Cancelar</a></li>
+                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./logout.php">Sair</a></li>
+                </ul>
+            </div>
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
+        </nav>
+    </header>
     <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">

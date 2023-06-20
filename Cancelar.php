@@ -40,6 +40,24 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="./config/assets/img/senailogo1.png" class="logo">
+                <ul class="navbar-menu">
+                    <li><a href="./Agendar.php">Agendar</a></li>
+                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./logout.php">Sair</a></li>
+                </ul>
+            </div>
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
+        </nav>
+    </header>
     <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
@@ -56,6 +74,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             <select id="motivo" name="motivo" required>
                 <option value="" disabled selected hidden>Escolha uma das opções abaixo</option>
                 <option value="Condições climáticas extremas.">Condições climáticas extremas.</option>
+                <option value="Tortuguita">Foi oferecido tortuguitas.</option>
                 <option value="Emergências e/ou urgências médicas.">Emergências e/ou urgências médicas.</option>
                 <option value="Estruturais (elétrica, internet, hidráulica, etc.).">Estruturais (elétrica, internet, hidráulica, etc.).</option>
                 <option value="Feriados ou eventos não previstos anteriormente.">Feriados ou eventos não previstos anteriormente.</option>
@@ -106,7 +125,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             $stmt->execute();
             // Exibe uma mensagem de sucesso
             echo "<div class='success-message' style='text-align: center; color:green; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
-            session_destroy();
+            //session_destroy();
         }
         ?>
         <div class="content-wrapper">

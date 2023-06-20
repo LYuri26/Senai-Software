@@ -31,6 +31,25 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="./config/assets/img/senailogo1.png" class="logo">
+                <ul class="navbar-menu">
+                    <li><a href="./Cancelar.php">Cancelar</a></li>
+                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./logout.php">Sair</a></li>
+                
+                </ul>
+            </div>
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
+        </nav>
+    </header>
     <a href="./logout.php" class="sair">Sair</a>
 
     <form method="POST">
@@ -89,8 +108,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         session_destroy();
     }
     ?>
-      <script src="./config/assets/js/destruirSessao.js"></script>
-      <script src="./config/assets/js/default.js"></script>
+    <script src="./config/assets/js/destruirSessao.js"></script>
+    <script src="./config/assets/js/default.js"></script>
 </body>
 
 </html>

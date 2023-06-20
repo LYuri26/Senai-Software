@@ -174,8 +174,8 @@ try {
     //  echo "Erro de conexão com o banco de dados: " . $e->getMessage();
     if ($e->errorInfo[1] == 1062) {
         // Checa se o erro é código 1062 (Duplicate entry)
-        echo "Erro: essa senha já foi cadastrada!";
-        echo "<script>alert('Erro: essa senha já foi cadastrada!');</script>";
+        echo "Erro: Por favor, digite outra senha!";
+        echo "<script>alert('Erro: Por favor, digite outra senha.');</script>";
     } else {
         // Caso contrário, exibe a mensagem de erro padrão
         echo "Erro: " . $e->getMessage();

@@ -7,7 +7,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     session_destroy(); 
     exit;
 } else {
-    session_destroy(); 
+    //session_destroy(); 
 }
 
 /*$_SESSION['user_id'] = $usuario['id']; // Armazena o ID do usuário na sessão

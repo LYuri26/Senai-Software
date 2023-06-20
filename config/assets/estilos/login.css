@@ -50,6 +50,16 @@ body {
   width: 10rem;
   margin-top: -1rem;
 }
+.id img{
+  width: 150px
+}
+
+.logosenai img{
+  width: 12rem;
+  position: absolute;
+  left: 4rem;
+  top: 1rem;
+}
 
 h1 {
   color: #005CA9;
