@@ -61,7 +61,7 @@ input[type="number"]:hover {
 
 input[type="date"]:hover,
 input[type="time"]:hover {
-    color: rgba(255, 0, 0);
+    color: #005ca9;;
 }
 
 button[type="submit"] {

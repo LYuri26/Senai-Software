@@ -1,6 +1,6 @@
 <?php
 //require_once './session.php';
-session_start();
+//require_once './session.php';
 
 // ! IMPORTANTE !
 // ! IMPORTANTE !
@@ -46,13 +46,22 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
         <form method="post" onsubmit="exibirAlerta(event)">
             <h1>CANCELAMENTO</h1>
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required><br><br>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br><br>
 
-            <label for="curso">ID / CPF</label>
-            <input type="text" id="id" name="id" required><br><br>
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id" required placeholder="Digite seu ID"><br><br>
 
-            <label for="data">Motivo</label>
-            <input type="text" id="motivo" name="motivo" required><br><br>
+
+            <label for="motivo">Motivo</label>
+            <select id="motivo" name="motivo" required>
+                <option value="" disabled selected hidden>Escolha uma das opções abaixo</option>
+                <option value="Condições climáticas extremas.">Condições climáticas extremas.</option>
+                <option value="Emergências e/ou urgências médicas.">Emergências e/ou urgências médicas.</option>
+                <option value="Estruturais (elétrica, internet, hidráulica, etc.).">Estruturais (elétrica, internet, hidráulica, etc.).</option>
+                <option value="Feriados ou eventos não previstos anteriormente.">Feriados ou eventos não previstos anteriormente.</option>
+                <option value="Mudança de plano de aula">Mudança de plano de aula</option>
+                <option value="Nenhuma das opções">Nenhuma das opções</option>
+            </select>
 
             <strong>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
                 professores.<br>Eu concordo e estou ciente.</strong>
@@ -96,13 +105,15 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             $stmt->bindValue(':motivo', $motivo);
             $stmt->execute();
             // Exibe uma mensagem de sucesso
-            echo "<div class='success-message' style='text-align: center; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
+            echo "<div class='success-message' style='text-align: center; color:green; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
+            session_destroy();
         }
         ?>
         <div class="content-wrapper">
 
         </div>
         <script src="./config/assets/js/destruirSessao.js"></script>
+        <script src="./config/assets/js/default.js"></script>
         <footer>
             <div class="rodape">
                 <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>

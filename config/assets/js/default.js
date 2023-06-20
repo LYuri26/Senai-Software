@@ -23,7 +23,8 @@ if (erroParam === '1001') {
   msgErro.classList.add('erro'); // Adicionar a classe 'erro' ao elemento
   msgErro.style.visibility = 'visible'; // Exibir o elemento
   msgErro.style.display = 'block'; // Exibir o elemento
-  history.replaceState(null, 'Login', 'login.html'); // Redirecionar para a página inicial
+  history.replaceState(null, 'Login', 'login.html'); // Redirecionar para a página inicial sem nova requisição
+  //window.location.replace('login.html'); // O window location também redireciona para a página inicial, no entanto, ele também atualiza a página, diferentemente do replaceState, que apenas restaura um estado anterior da página
 };
 
 var urlParams1 = new URLSearchParams(window.location.search);

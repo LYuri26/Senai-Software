@@ -4,6 +4,7 @@ if (performance.navigation.type === 2) {
   session_start();
   session_destroy();
 }
+
 */
 window.addEventListener('beforeunload', function () {
   document.title = 'Login'; // Alterar o título da página
@@ -16,6 +17,9 @@ window.addEventListener('beforeunload', function () {
 
 window.addEventListener('pageshow', function (event) {
   var inputs = document.querySelectorAll('input, textarea');
+  document.cookie = '';
+  sessionStorage.clear(); // Limpar a sessão
+  localStorage.clear() // Limpar o armazenamento local
   inputs.forEach(function (input) {
     input.defaultValue = '';
   });
