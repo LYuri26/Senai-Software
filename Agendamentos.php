@@ -16,6 +16,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 
 <head>
     <title>Lista de agendamentos</title>
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,14 +27,14 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="./Menu.php">
+                <a href="./menu.php">
                     <img src="./config/assets/img/senailogo1.png" class="logo">
                 </a>
                 <ul class="navbar-menu">
-                    <li><a href="./Agendar.php">Agendar</a></li>
-                    <li><a href="./Cancelar.php">Cancelar</a></li>
-                    <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
-                    <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./agendar.php">Agendar</a></li>
+                    <li><a href="./cancelar.php">Cancelar</a></li>
+                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./menu.php">Menu</a></li>
                     <li><a href="./logout.php">Sair</a></li>
                 </ul>
             </div>
@@ -47,7 +48,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
-        <form action="q./conexao.php" method="post" onsubmit="exibirAlerta(event)">
+        <form method="post" onsubmit="exibirAlerta(event)">
             <h1>Lista de Agendamentos</h1>
             <?php
             // Definir as informações de conexão

@@ -21,8 +21,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
 <head>
     <meta charset="UTF-8">
-    <title>Agendamento de Aula</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <title>Agendar</title>
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./config/assets/estilos/agendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,14 +34,14 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="./Menu.php">
+                <a href="./menu.php">
                     <img src="./config/assets/img/senailogo1.png" class="logo">
                 </a>
                 <ul class="navbar-menu">
-                    <li><a href="./Cancelar.php">Cancelar</a></li>
-                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
-                    <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./agendar.php">Agendar</a></li>
+                    <li><a href="./cancelar.php">Cancelar</a></li>
+                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./menu.php">Menu</a></li>
                     <li><a href="./logout.php">Sair</a></li>
 
                 </ul>
@@ -172,7 +172,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
                 //session_destroy();
                 echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
-                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento:</p>". $cadastroId;
+                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento:</p>" . $cadastroId;
 
                 /*echo "<script> alert('Agendado com sucesso!') </script>";*/
                 // Agendamento válido, continuar com o código existente para inserir no banco de dados
@@ -185,7 +185,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
     ?>
     <script src="./config/assets/js/destruirSessao.js"></script>
-    <script src="./config/assets/js/default.js"></script>
+    <!--<script src="./config/assets/js/default.js"></script>-->
 </body>
 
 </html>

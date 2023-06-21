@@ -7,7 +7,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
   exit;
 }
 if ((isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
-  header("Location: Menu.php"); 
+  header("Location: menu.php"); 
   exit;
 }
 /* INCLUDE ONCE SERVE PARA INCLUIR O ARQUIVO APENAS UMA VEZ, OU SEJA, SE O ARQUIVO JÁ FOI INCLUÍDO ANTES, ELE NÃO SERÁ INCLUÍDO NOVAMENTE.
@@ -44,24 +44,25 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
   <title>Menu</title>
+  <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 
 <body>
   <header>
     <nav class="navbar">
       <div class="navbar-container">
-        <a href="./Menu.php">
-        <img src="./config/assets/img/senailogo1.png" class="logo" href="./Menu.php">
+        <a href="./menu.php">
+          <img src="./config/assets/img/senailogo1.png" class="logo" href="./menu.php">
         </a>
         <ul class="navbar-menu">
           <li><a href="./agendar.php">Agendar</a></li>
-          <li><a href="./Cancelar.php">Cancelar</a></li>
-          <li><a href="./agendamentos.php">Agendamentos</a></li>
+          <li><a href="./cancelar.php">Cancelar</a></li>
           <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+          <li><a href="./menu.php">Menu</a></li>
           <li><a href="./logout.php">Sair</a></li>
         </ul>
       </div>
-      
+
       <!-- <div class="navbar-toggle">
         <span class="navbar-toggle-icon"></span>
       </div>
@@ -85,10 +86,6 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
-
-
-
-
   <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.

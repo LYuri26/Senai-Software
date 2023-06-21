@@ -1,6 +1,5 @@
 <?php
 //require_once './session.php';
-//require_once './session.php';
 
 // ! IMPORTANTE !
 // ! IMPORTANTE !
@@ -36,21 +35,22 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <title>Cancelamento</title>
+    <title>Cancelar</title>
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="./Menu.php">
+                <a href="./menu.php">
                     <img src="./config/assets/img/senailogo1.png" class="logo">
                 </a>
                 <ul class="navbar-menu">
-                    <li><a href="./Agendar.php">Agendar</a></li>
-                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="./Cancelamentos.php">Cancelamentos</a></li>
-                    <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./agendar.php">Agendar</a></li>
+                    <li><a href="./cancelar.php">Cancelar</a></li>
+                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./menu.php">Menu</a></li>
                     <li><a href="./logout.php">Sair</a></li>
                 </ul>
             </div>

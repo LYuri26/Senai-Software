@@ -1,4 +1,13 @@
 <?php
+/* 
+! IMPORTANTE !
+! IMPORTANTE !
+
+SE NAO ESTOU ENGANDO, PODE HAVER A POSSIBILIDADE DE EXCLUSÃO DESTE ARQUIVO (conexao.php) POIS O MESMO JÁ NÃO CUMPRE MAIS A FUNÇÃO DESIGNADA, MAS POR ENQUANTO VAMOS MANTÊ-LO
+
+! IMPORTANTE !
+! IMPORTANTE !
+*/
 require_once './session.php';
 
 // Verificar se há uma sessão de usuário ou superusuário 
@@ -44,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($superusuario && password_verify($senha, $superusuario['senha'])) {
     // É um superusuário/administrador, redirecionar para a página de administração
-    header('Location: Agendamentos.php');
+    header('Location: agendamentos.php');
     exit;
   }
 
@@ -56,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($usuario && password_verify($senha, $usuario['senha'])) {
     // É um usuário comum, redirecionar para a página principal
-    header('Location: Agendamentos.php');
+    header('Location: agendamentos.php');
     exit;
   } else {
     // Login inválido, exibir mensagem de erro

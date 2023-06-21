@@ -145,7 +145,7 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
             // É um usuário comum, redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
         // Verificar se é um usuário comum
@@ -159,7 +159,7 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $resconsultauser;
             // Redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
 
