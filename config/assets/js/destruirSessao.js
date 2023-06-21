@@ -7,7 +7,7 @@ if (performance.navigation.type === 2) {
 
 */
 window.addEventListener('beforeunload', function () {
-  document.title = 'Login'; // Alterar o título da página
+  document.title = 'Formulário de Cadastro'; // Alterar o título da página
   // Limpar a sessão antes de recarregar a página
   // Pode ser usado duas funcoes: sessionStorage.clear() ou localStorage.clear()
   document.cookie = '';
