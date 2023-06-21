@@ -162,7 +162,9 @@ button:hover {
 */
 
 #senhaErro {
+  display:none;
   float: left;
+  justify-content: flex-start; 
   background-color: transparent; 
   font-size: 1em; 
   font-weight: bold; 
