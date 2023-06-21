@@ -59,13 +59,13 @@ input[type="text"] {
   margin-bottom: 1em;
 
 }
-
+/*
 input[type="text"]:hover {
   border-color: #666466;
 }
-
+*/
 input[type="submit" i] {
-  background-color: #005ca9;
+  /*background-color: #005ca9;*/
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
@@ -155,8 +155,13 @@ button:hover {
   text-align: left;
 }
 
+
 /* trata-se de um seletor que seleciona os elementos que não tem o atributo placeholder-shown, ou seja, que não está com o placeholder aparecendo. 
-#nome:not(:placeholder-shown), #codigo:not(:placeholder-shown), #email:not(:placeholder-shown), #senha:not(:placeholder-shown){
+#nome:not(:placeholder-shown), #codigo:not(:placeholder-shown), #email:not(:placeholder-shown), #senha:not(:placeholder-shown), #confirmarsenha:not(:placeholder-shown){
+  text-align: center;
+}
+// apenas do codigo de acesso
+#codigo:not(:placeholder-shown){
   text-align: center;
 }
 */

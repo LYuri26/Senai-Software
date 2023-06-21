@@ -48,8 +48,8 @@ CREATE TABLE agendamentos (
 );
 
 CREATE TABLE cancelamentos (
-  id INT (50) PRIMARY KEY,
-  nome VARCHAR(50) NOT NULL,
+  id INT (50),
+  nome VARCHAR(50) NOT NULL PRIMARY KEY,
   motivo VARCHAR(100) NOT NULL
 );
 

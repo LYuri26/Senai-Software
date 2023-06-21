@@ -115,11 +115,12 @@ input[type="number"] {
     margin-bottom: 1em;
 }
 
+/*
 input[type="text"]:hover,
 input[type="number"]:hover {
-    color: #005ca9;
-    border: 1px solid rgb(189, 194, 199);
+    /*border: 1px solid rgb(0, 0, 0);
 }
+*/
 
 input[type="date"]:hover,
 input[type="time"]:hover {

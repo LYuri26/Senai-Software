@@ -48,7 +48,7 @@
 
       <label for="nome">Nome ou e-mail</label>
       <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite aqui seu nome ou e-mail" required
-        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu E-mail / CPF / ID'"
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite aqui seu nome ou e-mail'"
         style="text-align: left;" autocomplete="off"><br>
 
       <label for="curso">Senha</label>
@@ -130,7 +130,7 @@
     }
 
     function resetPlaceholder(element) {
-      element.placeholder = 'Digite seu E-mail / CPF / ID';
+      element.placeholder = 'Digite aqui seu nome ou e-mail';
     }
 
     function togglePasswordVisibility() {

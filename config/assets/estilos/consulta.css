@@ -1,5 +1,4 @@
 body {
-  overflow: scroll;
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -92,7 +91,7 @@ table {
   max-width: 800px;
   margin: 20px auto;
   white-space: nowrap;
-  overflow-x: auto;
+  font-weight: 600;
 }
 
 h1 {
