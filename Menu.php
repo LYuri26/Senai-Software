@@ -17,6 +17,10 @@ if (!isset($_SESSION['usuario'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu</title>
+<<<<<<< Updated upstream
+=======
+  <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
 </head>
 
 <body>

@@ -12,7 +12,12 @@ if (!isset($_SESSION['usuario'])) {
 <html>
 
 <head>
+<<<<<<< Updated upstream
     <title>Lista de Agendamentos</title>
+=======
+    <title>Lista de agendamentos</title>
+    <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

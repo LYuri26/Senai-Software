@@ -13,6 +13,10 @@ if (!isset($_SESSION['usuario'])) {
 
 <head>
     <title>Lista de cancelamentos</title>
+<<<<<<< Updated upstream
+=======
+    <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recuperação de Senha</title>
+    <link rel="stylesheet" type="text/css" href="config/assets/estilos/recuperarsenha.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Recuperação de Senha</h2>
+        <form method="POST" action="reset_password.php">
+            <label for="username">Nome de Usuário ou E-mail:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="newPassword">Nova Senha:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <label for="confirmPassword">Confirmar Nova Senha:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <input type="submit" value="Redefinir Senha">
+        </form>
+    </div>
+</body>
+</html>

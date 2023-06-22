@@ -14,8 +14,13 @@ if (!isset($_SESSION['usuario'])) {
 
 <head>
     <meta charset="UTF-8">
+<<<<<<< Updated upstream
     <title>Agendamento de Aula</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+=======
+    <title>Agendar</title>
+    <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./config/assets/estilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
