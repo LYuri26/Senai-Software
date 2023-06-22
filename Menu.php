@@ -44,7 +44,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
   <title>Menu</title>
-  <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+  <link rel="icon" href="./config/assets/img/joao.png" type="image/x-icon">
 </head>
 
 <body>

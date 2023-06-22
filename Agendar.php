@@ -56,73 +56,67 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
     <div class="text-container">
 
-    <div class="dias">
-  <table>
-    <tr>
-      <th>Dias</th>
-      <th>Início</th>
-      <th></th>
-      <th>Final</th>
-    </tr>
-    <tr>
-      <td>Segunda-feira</td>
-      <td>13:00</td>
-      <td>às</td>
-      <td>21:00</td>
-    </tr>
-    <tr>
-      <td>Terça-feira</td>
-      <td>08:00</td>
-      <td>às</td>
-      <td>17:00</td>
-    </tr>
-    <tr>
-      <td>Quarta-feira</td>
-      <td>13:00</td>
-      <td>às</td>
-      <td>21:00</td>
-    </tr>
-    <tr>
-      <td>Quinta-feira</td>
-      <td>13:00</td>
-      <td>às</td>
-      <td>21:00</td>
-    </tr>
-    <tr>
-      <td>Sexta-feira</td>
-      <td>08:00</td>
-      <td>às</td>
-      <td>17:00</td>
-    </tr>
-  </table>
-</div>
+        <div class="calendario">
+            <table>
+                <tr>
+                    <th>Dia útil</th>
+                    <th>Início</th>
+                    <th>Término</th>
+                </tr>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                </tr>
+            </table>
+        </div>
 
-    <form method="POST">
-        <h1>AGENDAMENTO</h1>
-        <label for="instrutor">Instrutor</label>
-        <input type="text" id="instrutor" name="instrutor" required><br><br>
+        <form method="POST">
+            <h1>AGENDAMENTO</h1>
+            <label for="instrutor">Instrutor</label>
+            <input type="text" id="instrutor" name="instrutor" required><br><br>
 
-        <label for="curso">Curso</label>
-        <input type="text" id="curso" name="curso" required><br><br>
+            <label for="curso">Curso</label>
+            <input type="text" id="curso" name="curso" required><br><br>
 
-        <label for="data">Data</label>
-        <input type="date" id="data" name="data" required><br><br>
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required><br><br>
 
-        <label for="hora_inicio">Início</label>
-        <input type="time" id="hora_inicio" name="hora_inicio" required><br><br>
+            <label for="hora_inicio">Início</label>
+            <input type="time" id="hora_inicio" name="hora_inicio" required><br><br>
 
-        <label for="hora_termino">Término</label>
-        <input type="time" id="hora_termino" name="hora_termino" required><br><br>
+            <label for="hora_termino">Término</label>
+            <input type="time" id="hora_termino" name="hora_termino" required><br><br>
 
-        <label for="quantidade_alunos">Quantidade de Alunos</label>
-        <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
+            <label for="quantidade_alunos">Quantidade de Alunos</label>
+            <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
 
-        <button type="submit" value="AGENTAR">AGENDAR</button>
-    </form>
+            <button type="submit" value="AGENTAR">AGENDAR</button>
+        </form>
 
 
- 
-</div>
+
+    </div>
 
     <?php
     // Tenta criar uma conexão com o banco de dados
@@ -238,10 +232,10 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 </body>
 
 <footer>
-  <div class="rodape">
-    <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
-    <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
-  </div>
+    <div class="rodape">
+        <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
+        <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
+    </div>
 </footer>
 
 </html>

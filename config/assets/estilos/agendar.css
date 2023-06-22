@@ -109,6 +109,7 @@ form {
   max-width: 30rem;
   margin: 0 auto;
   margin-top: 4rem;
+  display: grid;
 }
 
 label {
@@ -169,38 +170,64 @@ input[type="submit"]:hover {
   text-align: center;
 }
 
-  .rodape {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    /* padding-top: auto; */
-    font-weight: bold;
-    margin-top: 3%;
-    object-position: bottom;
-  }
-  
-  .rodape p {
-    line-height: 0.4;
-  }
-
-  .dias {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    /* padding-top: auto; */
-    font-weight: bold;
-    margin-top: 3%;
-    object-position: bottom;
-    font: bold;  
-  }
-
-.text-container {
-
-    
-
+.rodape {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  /* padding-top: auto; */
+  font-weight: bold;
+  margin-top: 3%;
+  object-position: bottom;
 }
 
-  .dias h5 {
-    line-height: 0.4;
-  }
+.rodape p {
+  line-height: 0.4;
+}
+
+.text-container {
+  margin: 0 auto;
+  align-items:center;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  /* padding-top: auto; */
+  font-weight: bold;
+}
+
+.text-container .calendario {
+  margin: 0 auto;
+  width: 100%;
+  flex-basis: 20%;
+}
+
+.text-container form {
+  flex-basis: 30%;
+}
+/*
+table {
+  width: max-content;
+}
+*/
+th,
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  background-color: #005ca7;
+  color: #fff;
+}
+
+th:first-child {
+  border-radius: 20px 0px 0px 0px;
+}
+
+th:last-child {
+  border-radius: 0px 20px 0px 0px;
+}
+
+.dias h5 {
+  line-height: 0.4;
+}
 
 /* abaixo usa-se um método responsivo com o @media screen, servindo para adaptar-se ao layout da tela em uso
 @media screen and (max-width: 768px) {
@@ -249,24 +276,24 @@ input[type="submit"]:hover {
 }*/
 
 h1 {
-    color: #005ca9;
-    /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
-    font-size: 2rem;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 1rem;
-    width: 100%;
-    z-index: 999;
-    /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+  color: #005ca9;
+  /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
+  font-size: 2rem;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
 
 .navbar-container {
-    /*align-items: flex-start;*/
-    justify-content: space-between;
-    display: flex;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
+  /*align-items: flex-start;*/
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -276,7 +303,7 @@ h1 {
   */
   font-weight: bold;
   text-decoration: none;
- /* object-fit: cover;
+  /* object-fit: cover;
   /*width: 10rem;*/
   height: 3rem;
   width: 10rem;
@@ -284,47 +311,46 @@ h1 {
   margin-right: 200px;*/
 }
 .navbar-menu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 .navbar-menu li {
-    text-align: center;
-    margin-right: 4rem;
+  text-align: center;
+  margin-right: 4rem;
 }
 
 .navbar-menu li a {
-    color: #ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 .navbar-menu li:last-child {
-    margin-right: 30px;
-    /* Removendo margin do último elemento */
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
 }
-
-
 
 form {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 2%;
-    padding: 2rem;
-    padding-bottom: 1%;
-    max-width: 30rem;
-    margin: 0 auto;
-    margin-top: 6rem;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  padding-bottom: 1%;
+  max-width: 30rem;
+  margin: 0 auto;
+  margin-top: 5rem;
 }
 
-input[type="number"]:hover, input[type="date"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
 input[type="time"]:hover {
-    color: #0c36be;
-    color: #0c36be;
+  color: #0c36be;
+  color: #0c36be;
 }
 
-button[type="submit"]:hover, input[type="submit"]:hover {
+button[type="submit"]:hover,
+input[type="submit"]:hover {
   background-color: #0c36be;
   text-align: center;
 }
