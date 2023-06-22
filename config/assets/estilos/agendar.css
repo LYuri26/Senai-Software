@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-    color: #2ad4a1;
+    color: #005ca9;
     /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
     font-size: 2rem;
     text-align: center;
@@ -25,14 +25,76 @@ h1 {
     font-weight: bold;
 }
 
+.navbar {
+    background-color: #005ca9;
+    background-position: top;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+    padding-bottom: 2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+  }
+
+  .navbar-container {
+    /*align-items: flex-start;*/
+    justify-content: space-between;
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    /* Movemos essas tags para o .navbar-container
+    display: flex;
+    align-items: center;
+    */
+    font-weight: bold;
+    text-decoration: none;
+   /* object-fit: cover;
+    /*width: 10rem;*/
+    height: 3rem;
+    width: 10rem;
+    /*border-radius: 200px;
+    margin-right: 200px;*/
+  }
+
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  .navbar-menu li {
+    text-align: center;
+    margin-right: 4rem;
+  }
+
+  .navbar-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .navbar-menu li:last-child {
+    margin-right: 30px;
+    /* Removendo margin do último elemento */
+  }
+
+
+
 form {
     background-color: #ffffff;
-    border-radius: 5%;
+    border-radius: 15px;
     padding: 2%;
     padding-bottom: 1%;
     max-width: 30rem;
     margin: 0 auto;
-    margin-top: 5vh;
+    margin-top: 4rem;
 }
 
 label {
@@ -48,27 +110,29 @@ input[type="number"] {
     box-sizing: border-box;
     width: 100%;
     padding: 1em;
-    border: 1px solid #2ad4a1;
+    border: 1px solid #005ca9;
     border-radius: 4px;
     margin-bottom: 1em;
 }
 
+/*
 input[type="text"]:hover,
 input[type="number"]:hover {
-    color: #2ad4a1;
-    border: 1px solid rgb(189, 194, 199);
+    /*border: 1px solid rgb(0, 0, 0);
 }
+*/
 
 input[type="date"]:hover,
 input[type="time"]:hover {
-    color: rgba(255, 0, 0);
+    color: #005ca9;;
 }
 
-input[type="submit"] {
+button[type="submit"] {
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
-    background-color: #2ad4a1;
+    background-color: #005ca9;
     color: #ffffff;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
     border: none;
     border-radius: 1.5rem 1rem 1.5rem 1rem;
@@ -80,8 +144,16 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #4ca843;
+    background-color: #005ca9;
 }
+
+.success-message {
+    position: static;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+  }
 
 
 /* abaixo usa-se um método responsivo com o @media screen, servindo para adaptar-se ao layout da tela em uso
