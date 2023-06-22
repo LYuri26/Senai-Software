@@ -54,6 +54,49 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     </header>
     <a href="./logout.php" class="sair">Sair</a>
 
+    <div class="text-container">
+
+    <div class="dias">
+  <table>
+    <tr>
+      <th>Dias</th>
+      <th>Início</th>
+      <th></th>
+      <th>Final</th>
+    </tr>
+    <tr>
+      <td>Segunda-feira</td>
+      <td>13:00</td>
+      <td>às</td>
+      <td>21:00</td>
+    </tr>
+    <tr>
+      <td>Terça-feira</td>
+      <td>08:00</td>
+      <td>às</td>
+      <td>17:00</td>
+    </tr>
+    <tr>
+      <td>Quarta-feira</td>
+      <td>13:00</td>
+      <td>às</td>
+      <td>21:00</td>
+    </tr>
+    <tr>
+      <td>Quinta-feira</td>
+      <td>13:00</td>
+      <td>às</td>
+      <td>21:00</td>
+    </tr>
+    <tr>
+      <td>Sexta-feira</td>
+      <td>08:00</td>
+      <td>às</td>
+      <td>17:00</td>
+    </tr>
+  </table>
+</div>
+
     <form method="POST">
         <h1>AGENDAMENTO</h1>
         <label for="instrutor">Instrutor</label>
@@ -76,6 +119,11 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
         <button type="submit" value="AGENTAR">AGENDAR</button>
     </form>
+
+
+ 
+</div>
+
     <?php
     // Tenta criar uma conexão com o banco de dados
     try {
@@ -186,6 +234,14 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     ?>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
+
 </body>
+
+<footer>
+  <div class="rodape">
+    <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
+    <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
+  </div>
+</footer>
 
 </html>

@@ -169,6 +169,38 @@ input[type="submit"]:hover {
   text-align: center;
 }
 
+  .rodape {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    /* padding-top: auto; */
+    font-weight: bold;
+    margin-top: 3%;
+    object-position: bottom;
+  }
+  
+  .rodape p {
+    line-height: 0.4;
+  }
+
+  .dias {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    /* padding-top: auto; */
+    font-weight: bold;
+    margin-top: 3%;
+    object-position: bottom;
+    font: bold;  
+  }
+
+.text-container {
+
+    
+
+}
+
+  .dias h5 {
+    line-height: 0.4;
+  }
 
 /* abaixo usa-se um método responsivo com o @media screen, servindo para adaptar-se ao layout da tela em uso
 @media screen and (max-width: 768px) {
