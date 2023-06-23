@@ -109,7 +109,6 @@ form {
   max-width: 30rem;
   margin: 0 auto;
   margin-top: 4rem;
-  display: grid;
 }
 
 label {
@@ -143,7 +142,6 @@ input[type="time"]:hover {
 }
 
 button[type="submit"] {
-  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   background-color: #005ca9;
   color: #ffffff;
@@ -206,6 +204,10 @@ table {
   width: max-content;
 }
 */
+table {
+  display: flex;
+  text-align: center;
+}
 th,
 td {
   text-align: center;
@@ -225,10 +227,10 @@ th:last-child {
   border-radius: 0px 20px 0px 0px;
 }
 
-.dias h5 {
+/*.dias h5 {
   line-height: 0.4;
 }
-
+*/
 /* abaixo usa-se um método responsivo com o @media screen, servindo para adaptar-se ao layout da tela em uso
 @media screen and (max-width: 768px) {
     form {

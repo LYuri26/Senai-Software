@@ -40,7 +40,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 <ul class="navbar-menu">
                     <li><a href="./cancelar.php">Cancelar</a></li>
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-                    <li><a href="./">Agendamentos</a></li>
+                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
                     <li><a href="./menu.php">Menu</a></li>
                     <li><a href="./logout.php">Sair</a></li>
 
@@ -57,7 +57,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <div class="text-container">
 
         <div class="calendario">
-            <table>
+            <table title="Horários">
                 <tr>
                     <th>Dia útil</th>
                     <th>Início</th>
@@ -111,7 +111,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
             <label for="quantidade_alunos">Quantidade de Alunos</label>
             <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
 
-            <button type="submit" value="AGENTAR">AGENDAR</button>
+            <button type="submit" value="AGENDAR">AGENDAR</button>
         </form>
 
 
@@ -213,8 +213,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 // Exibe uma mensagem de sucesso
                 //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
                 //session_destroy();
-                echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
-                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento:</p>" . $cadastroId;
+                echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div> <p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento: " . $cadastroId. "</p>";
 
                 /*echo "<script> alert('Agendado com sucesso!') </script>";*/
                 // Agendamento válido, continuar com o código existente para inserir no banco de dados
