@@ -23,6 +23,7 @@ try {
     /*Resto do seu código...
     $loginAdmin = "admin"; // Substitua pelo valor desejado
     $senhaAdmin = 'fixfixfix'; // Substitua 'senha_admin' pela senha do superusuário
+location
 
     // Gerar o hash da senha
     $senhaHash = password_hash($senhaAdmin, PASSWORD_DEFAULT);
