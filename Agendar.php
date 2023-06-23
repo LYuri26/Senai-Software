@@ -30,29 +30,24 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-container">
-                <a href="./menu.php">
-                    <img src="./config/assets/img/senailogo1.png" class="logo">
-                </a>
-                <ul class="navbar-menu">
-                    <li><a href="./cancelar.php">Cancelar</a></li>
-                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="./menu.php">Menu</a></li>
-                    <li><a href="./logout.php">Sair</a></li>
+<header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="./menu.php">
+                <img src="./config/assets/img/senailogo1.png" class="logo" href="./menu.php">
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="./agendar.php">Agendar</a></li>
+                <li><a href="./cancelar.php">Cancelar</a></li>
+                <li><a href="./agendamentos.php">Agendamentos</a></li>
+                <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+                <li><a href="./logout.php">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-                </ul>
-            </div>
-            <!-- <div class="navbar-toggle">
-        <span class="navbar-toggle-icon"></span>
-      </div>
-      </div>-->
-        </nav>
-    </header>
-    <a href="./logout.php" class="sair">Sair</a>
+<body>
 
     <form method="POST">
         <h1>AGENDAMENTO</h1>
@@ -187,5 +182,11 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
 </body>
+<footer>
+    <div class="rodape">
+        <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
+        <p>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+    </div>
+</footer>
 
 </html>
