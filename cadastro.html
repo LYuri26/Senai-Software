@@ -13,7 +13,17 @@
         rel="stylesheet">
     <title>Formulário de Cadastro</title>
     <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+    
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        // API do Gmail
+        function handleClientLoad() {
+          gapi.client.setApiKey(API_KEY);
+          window.setTimeout(checkAuth,1);
+        }
+      </script>
 
+    <script src="./config/assets/js/gmail api.js"></script>
 </head>
 
 <body>
@@ -48,7 +58,7 @@
             <p id="senhaErro" style="color:red;">Senhas não coincidem!</p><br><br>
 
             <div class="button-container">
-                <button type="submit" value="Cadastrar">CADASTRAR</input>
+                <button onclick="iniciarAPI()" type="submit" value="Cadastrar">CADASTRAR</button>
 
                     <div class="button-container">
                         <button type="button" id="botao_limpar" onclick="limparFormulario()"
