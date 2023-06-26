@@ -49,28 +49,70 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
 <body>
 
-    <form method="POST">
-        <h1>AGENDAMENTO</h1>
-        <label for="instrutor">Instrutor</label>
-        <input type="text" id="instrutor" name="instrutor" required><br><br>
+    <div class="text-container">
 
-        <label for="curso">Curso</label>
-        <input type="text" id="curso" name="curso" required><br><br>
+        <div class="calendario">
+            <table>
+                <tr>
+                    <th>Dia útil</th>
+                    <th>Início</th>
+                    <th>Término</th>
+                </tr>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                </tr>
+            </table>
+        </div>
 
-        <label for="data">Data</label>
-        <input type="date" id="data" name="data" required><br><br>
+        <form method="POST">
+            <h1>AGENDAMENTO</h1>
+            <label for="instrutor">Instrutor</label>
+            <input type="text" id="instrutor" name="instrutor" required><br><br>
 
-        <label for="hora_inicio">Início</label>
-        <input type="time" id="hora_inicio" name="hora_inicio" required><br><br>
+            <label for="curso">Curso</label>
+            <input type="text" id="curso" name="curso" required><br><br>
 
-        <label for="hora_termino">Término</label>
-        <input type="time" id="hora_termino" name="hora_termino" required><br><br>
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required><br><br>
 
-        <label for="quantidade_alunos">Quantidade de Alunos</label>
-        <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
+            <label for="hora_inicio">Início</label>
+            <input type="time" id="hora_inicio" name="hora_inicio" required><br><br>
 
-        <button type="submit" value="AGENTAR">AGENDAR</button>
-    </form>
+            <label for="hora_termino">Término</label>
+            <input type="time" id="hora_termino" name="hora_termino" required><br><br>
+
+            <label for="quantidade_alunos">Quantidade de Alunos</label>
+            <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
+
+            <button type="submit" value="AGENTAR">AGENDAR</button>
+        </form>
+
+
+
+    </div>
+
     <?php
     // Tenta criar uma conexão com o banco de dados
     try {
@@ -142,11 +184,11 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         if ($count > 0) {
             /*$_SESSION['error_message'] = "Já existe um agendamento neste horário!";*/
             // Exibir uma mensagem de erro se já existe um agendamento para essa data e hora
+
             echo "<div class='error-message' style='color: yellow; text-align: center; font-size:20px; font-weight:600;margin: 1rem;'>Já existe um agendamento neste horário!</div>";
 
             // Insere os dados na tabela "agendamentos"
         }
-
         if (isWeekend($data) || isHoliday($data)) {
             echo "<div class='error-message' style='color: red; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Não é possível agendar nos sábados e domingos.</div>";
         } else {
@@ -167,7 +209,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
                 //session_destroy();
                 echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
-                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento:</p>" . $cadastroId;
+                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento:  $cadastroId </p>";
+                echo "<script> window.location.href =' Agendamentos.php'</script>";
 
                 /*echo "<script> alert('Agendado com sucesso!') </script>";*/
                 // Agendamento válido, continuar com o código existente para inserir no banco de dados
@@ -181,11 +224,19 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     ?>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
+
 </body>
 <footer>
     <div class="rodape">
         <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
         <p>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+    </div>
+</footer>
+
+<footer>
+    <div class="rodape">
+        <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
+        <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
     </div>
 </footer>
 

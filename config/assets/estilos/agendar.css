@@ -1,171 +1,239 @@
 .navbar {
-    background-color: #005ca9;
-    background-position: top;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-    padding-bottom: 2px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%
+  background-color: #005ca9;
+  background-position: top;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  padding-bottom: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%
 }
 
 .navbar-container {
-    justify-content: space-between;
-    display: flex;
-    max-width: 100%;
-    align-items: center;
-    box-sizing: border-box;
-    flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .logo {
-    font-weight: bold;
-    text-decoration: none;
-    height: 3rem;
-    width: 10rem;
-    margin-left: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  height: 3rem;
+  width: 10rem;
+  margin-left: 1rem;
 }
 
 .navbar-menu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
-    flex-wrap: wrap;
-    margin-right: 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  flex-wrap: wrap;
+  margin-right: 20px;
 
 }
 
 .navbar-menu li {
-    text-align: center;
-    margin-right: 2rem;
+  text-align: center;
+  margin-right: 2rem;
 }
 
 .navbar-menu li a {
-    color: #ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .navbar-menu li:last-child {
-    margin-right: 3rem;
+  margin-right: 3rem;
 }
 
 @media (max-width: 768px) {
-    .navbar-menu {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .navbar-menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .navbar-menu li {
-        margin-right: 0;
-    }
+  .navbar-menu li {
+    margin-right: 0;
+  }
 
-    body {
-        background-color: #e0e0e0;
-        font-family: 'Montserrat', sans-serif;
-        margin-top: 9rem;
-    }
+  body {
+    background-color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 9rem;
+  }
 
 }
 
 body {
-    background-color: #e0e0e0;
-    font-family: 'Montserrat', sans-serif;
+  background-color: #e0e0e0;
+  font-family: "Montserrat", sans-serif;
 }
+
+
 
 h1 {
-    color: #005ca9;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1rem;
+  color: #005ca9;
+  /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
+  font-size: 2rem;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  z-index: 999;
+  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
 
 
 
-form {
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 2%;
-    padding-bottom: 1%;
-    max-width: 30rem;
-    margin: 0 auto;
-    margin-top: 4rem;
-    margin-bottom: 20px;
+.navbar-menu li:last-child {
+  margin-right: 30px;
+  /* Removendo margin do último elemento */
 }
+
+
 
 label {
-    margin-bottom: 1%;
-    font-weight: bold;
-    color: #000000;
+  margin-bottom: 1%;
+  font-weight: bold;
+  color: #000000;
 }
 
 input[type="text"],
 input[type="date"],
 input[type="time"],
 input[type="number"] {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1em;
-    border: 1px solid #005ca9;
-    border-radius: 4px;
-    margin-bottom: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #005ca9;
+  border-radius: 4px;
+  margin-bottom: 1em;
 }
 
 
-input[type="date"]:hover,
-input[type="time"]:hover {
-    color: #005ca9;
-    ;
-}
+
 
 button[type="submit"] {
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
-    background-color: #005ca9;
-    color: #ffffff;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: none;
-    border-radius: 1.5rem 1rem 1.5rem 1rem;
-    padding: 2% 30px;
-    cursor: pointer;
-    transition: background-color 0.1s ease;
-    display: block;
-    margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  padding: 2% 30px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 input[type="submit"]:hover {
-    background-color: #005ca9;
-}
-
-.success-message {
-    position: static;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 900;
-    text-align: center;
+  background-color: #0c36be;
 }
 
 footer p {
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 0rem;
-    bottom: 0;
-    text-align: center;
-    padding-top: 8.4rem;
-    font-weight: bold;
-    margin-top: 3rem;
-    margin-bottom: 0px;
-
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 0rem;
+  bottom: 0;
+  text-align: center;
+  padding-top: 8.4rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 0px;
 }
 
-.rodape p {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    white-space: pre-line;
-    padding-top: 15rem;
-    padding-top: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+input[type="submit"] {
+  padding: 2% 15px;
+  /* Reduz ainda mais o espaçamento interno do botão de envio 
+    }
+}*/
 
+  h1 {
+    color: #005ca9;
+    /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
+    font-size: 2rem;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    z-index: 999;
+    /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
+  }
+
+  .navbar-container {
+    /*align-items: flex-start;*/
+    justify-content: space-between;
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    /* Movemos essas tags para o .navbar-container
+  display: flex;
+  align-items: center;
+  */
+    font-weight: bold;
+    text-decoration: none;
+    /* object-fit: cover;
+  /*width: 10rem;*/
+    height: 3rem;
+    width: 10rem;
+    /*border-radius: 200px;
+  margin-right: 200px;*/
+  }
+
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  .navbar-menu li {
+    text-align: center;
+    margin-right: 4rem;
+  }
+
+  .navbar-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .navbar-menu li:last-child {
+    margin-right: 30px;
+    /* Removendo margin do último elemento */
+  }
+
+  form {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 2rem;
+    padding-bottom: 1%;
+    max-width: 30rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+  }
+
+  input[type="number"]:hover,
+  input[type="date"]:hover,
+  input[type="time"]:hover {
+    color: #0c36be;
+    color: #0c36be;
+  }
+
+  button[type="submit"]:hover,
+  input[type="submit"]:hover {
+    background-color: #0c36be;
+    text-align: center;
+  }
 }

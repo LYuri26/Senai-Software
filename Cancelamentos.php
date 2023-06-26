@@ -87,7 +87,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
-    </DIV>
+        </div>
 </body>
 <script src="./config/assets/js/destruirSessao.js"></script>
 <footer>
