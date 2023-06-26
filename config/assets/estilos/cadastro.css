@@ -8,7 +8,7 @@ body {
   text-align: left;
 }
 
-.sair {
+.sair{
   display: block;
   position: fixed;
   top: 10px;
@@ -35,18 +35,18 @@ h2 {
 
 form {
   background-color: #ffffff;
-  border-radius: 15px;
-  padding: 5%;
-  padding-bottom: 5%;
-  max-width: 30rem;
-  margin: 0 auto;
-  
+    border-radius: 15px;
+    padding: 5%;
+    padding-bottom: 5%;
+    max-width: 30rem;
+    margin: 0 auto;
 }
 
 label {
   margin-bottom: 1%;
   font-weight: bold;
   color: #000000;
+  
 }
 
 input[type="text"] {
@@ -57,6 +57,7 @@ input[type="text"] {
   border-radius: 4px;
   box-sizing: border-box;
   margin-bottom: 1em;
+
 }
 /*
 input[type="text"]:hover {
@@ -70,7 +71,7 @@ input[type="submit" i] {
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  border-radius:  1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -112,15 +113,14 @@ input[type="password"] {
   margin-top: 1000px;
 }
 
-button[type="submit"] {
-  
+button[type="submit"]{
   background-color: #005ca9;
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  border-radius:  1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -135,7 +135,7 @@ button[value="CADASTRAR"],
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  border-radius:  1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -151,13 +151,10 @@ button:hover {
   background-color: #0c36be;
 }
 /* Codigo original sem modificação de placeholder show*/
-#nome,
-#codigo,
-#email,
-#senha,
-#confirmarsenha {
+#nome, #codigo, #email, #senha, #confirmarsenha{
   text-align: left;
 }
+
 
 /* trata-se de um seletor que seleciona os elementos que não tem o atributo placeholder-shown, ou seja, que não está com o placeholder aparecendo. 
 #nome:not(:placeholder-shown), #codigo:not(:placeholder-shown), #email:not(:placeholder-shown), #senha:not(:placeholder-shown), #confirmarsenha:not(:placeholder-shown){
@@ -170,17 +167,17 @@ button:hover {
 */
 
 #senhaErro {
-  display: none;
+  display:none;
   float: left;
-  justify-content: flex-start;
-  background-color: transparent;
-  font-size: 1em;
-  font-weight: bold;
-  text-decoration: none;
+  justify-content: flex-start; 
+  background-color: transparent; 
+  font-size: 1em; 
+  font-weight: bold; 
+  text-decoration: none; 
   margin-top: -0.5rem;
 }
-#senhaErro::after {
-  display: flex;
+#senhaErro::after{
+  display: flex; 
 }
 .link-button1 {
   background-color: transparent;
@@ -228,6 +225,6 @@ button:hover {
 
 .rodape p {
   font-weight: 600;
-  line-height: 1rem;
+  line-height: 0.8rem;
   margin: 0; /* Remover margens para evitar espaçamento extra */
 }

@@ -44,7 +44,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
   <title>Menu</title>
-  <link rel="icon" href="./config/assets/img/joao.png" type="image/x-icon">
+  <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -86,7 +86,6 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
-  
   <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.

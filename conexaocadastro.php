@@ -23,7 +23,6 @@ try {
     /*Resto do seu código...
     $loginAdmin = "admin"; // Substitua pelo valor desejado
     $senhaAdmin = 'fixfixfix'; // Substitua 'senha_admin' pela senha do superusuário
-location
 
     // Gerar o hash da senha
     $senhaHash = password_hash($senhaAdmin, PASSWORD_DEFAULT);
@@ -104,7 +103,7 @@ location
                 ':senha' => $senha
             ]);
 
-            echo "<div class='Cadastro-sucesso' style='color: black; text-align: center; font-size:60px; font-weight:600; margin: 1rem;'>Cadastro realizado com sucesso!</div>";
+            echo "<p>Cadastro realizado com sucesso!</p>";
             /* OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO HTML
             // Inclua essa linha no seu código PHP para informar ao navegador o tipo de codificação de caracteres que está sendo usado
             header('Content-Type: text/html; charset=utf-8');
@@ -126,7 +125,7 @@ location
             echo '</html>';
             */
             // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
-            echo "<script>window.location.href = 'login.html';
+            echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000);
         </script>";
             header('Location : login.html');
         }
