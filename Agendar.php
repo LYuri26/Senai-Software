@@ -182,11 +182,38 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
 </body>
-<footer>
-    <div class="rodape">
-        <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
-        <p>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- cabeçalho omitido por brevidade -->
+    <style>
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- formulário omitido por brevidade -->
     </div>
-</footer>
+
+    <footer>
+        <div class="rodape">
+            <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
+            <p>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+        </div>
+    </footer>
+
+    <script>
+        // scripts omitidos por brevidade
+    </script>
+</body>
 
 </html>

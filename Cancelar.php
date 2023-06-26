@@ -135,16 +135,38 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
         </div>
         <script src="./config/assets/js/destruirSessao.js"></script>
         <script src="./config/assets/js/default.js"></script>
-        <footer>
-            <div class="rodape">
-                <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>
-                <strong>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
-            </div>
-        </footer>
+        <!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <!-- cabeçalho omitido por brevidade -->
+    <style>
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
 
+<body>
+    <div id="app">
+        <!-- formulário omitido por brevidade -->
     </div>
 
+    <footer>
+    <div class="rodape">
+    <strong>&copy; 2023 UAIBook. Todos os direitos reservados.
+    Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
+    </div>
+</footer>
+
+    <script>
+        // scripts omitidos por brevidade
+    </script>
 </body>
 
 </html>

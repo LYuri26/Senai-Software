@@ -86,13 +86,38 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
-  <footer>
+  <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- cabeçalho omitido por brevidade -->
+    <style>
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- formulário omitido por brevidade -->
+    </div>
+
+    <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.
-        Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</strong>
+      Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
     </div>
   </footer>
 
+    <script>
+        // scripts omitidos por brevidade
+    </script>
 </body>
 
 </html>

@@ -63,9 +63,20 @@
 
     body {
         background-color: #e0e0e0;
-        font-family: 'Montserrat', sans-serif;
-        margin-top: 9rem;
+        margin-top: 6rem;
     }
+
+    .rodape p {
+        text-align: center;
+        white-space: pre-line;
+        color:rgb(0, 0, 0);
+        padding-top: 20px;
+        margin-top: 50rem;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+    
+   
 
 }
 
@@ -148,7 +159,6 @@ input[type="submit"]:hover {
 }
 
 footer p {
-    font-family: 'Montserrat', sans-serif;
     padding-bottom: 0rem;
     bottom: 0;
     text-align: center;
@@ -160,7 +170,6 @@ footer p {
 }
 
 .rodape p {
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
     white-space: pre-line;
     padding-top: 15rem;
