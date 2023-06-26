@@ -1,7 +1,49 @@
-function iniciarAPI() {
-    // Chama a função para inicializar a API do Gmail
-    initGmailAPI();
+// Autenticando com as credenciais da API do Gmail
+gapi.load('client:auth2', () => {
+    gapi.client.init({
+        clientId: '258998056882-iqgnnsd2j54b6oc07dk2k8t6tfsrbris.apps.googleusercontent.com',
+        apiKey: '',
+        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest'],
+        scope: 'https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/gmail.readonly'
+    }).then(() => {
+        return gapi.auth2.getAuthInstance().signIn();
+    }).then(() => {
+        console.log('Autenticado!');
+    }).catch(err => {
+        console.log(err);
+    });
+});
+
+// Função para enviar o e-mail
+function sendEmail() {
+    // Recuperando o valor do formulário
+    const recipient = document.getElementById('email').value;
+
+    // Configurando a mensagem de e-mail
+    const message = 'Olá, isto é um teste de e-mail utilizando a API do Gmail!';
+
+    // Criando a mensagem
+    const encodedMessage = btoa(`To: ${recipient}\r\nSubject: Teste de e-mail\r\n\r\n${message}`);
+
+    // Enviando a mensagem
+    const request = gapi.client.gmail.users.messages.send({
+        userId: 'me',
+        resource: {
+            raw: encodedMessage
+        }
+    });
+
+    // Tratando a resposta
+    request.execute(resp => {
+        console.log(resp);
+    });
 }
+
+/*function iniciarAPI() {
+    // Chama a função para inicializar a API do Gmail 
+    checkAuth();
+}
+
 function checkAuth() {
     gapi.auth.authorize({
         client_id: '258998056882-iqgnnsd2j54b6oc07dk2k8t6tfsrbris.apps.googleusercontent.com',
@@ -17,67 +59,69 @@ gapi.load('client:auth2', function () {
         'scope': 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send',
         'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest']
     }).then(function () {
-        // Agora é seguro chamar a gapi.auth.authorize e outras chamadas relacionadas ao Gmail API
-        // ...
-        // Autenticação do Gmail 
-        gapi.auth.authorize({
-            'client_id': '258998056882-iqgnnsd2j54b6oc07dk2k8t6tfsrbris.apps.googleusercontent.com',
-            'scope': 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send',
-            'immediate': false
-        }, enviarEmail);
+        // Define a função que será chamada após a autenticação do usuário  
+        function enviarEmail(destinatario) {
+            console.log('Destinatário:', destinatario);
+            gapi.client.load('gmail', 'v1', function () {
+                const mensagem = `<h1>Cadastro realizado com sucesso</h1><p>Olá, seu cadastro foi realizado com sucesso!</p>`;
+                const assunto = 'Cadastro realizado com sucesso';
+                console.log('Assunto:', assunto);
 
-        // Define a função que será chamada após a autenticação do usuário 
-        function enviarEmail(authResult) {
+                const corpoMensagem = `To: ${destinatario}\r\nSubject: ${assunto}\r\n\r\n${mensagem}`;
+                console.log('Corpo da mensagem:', corpoMensagem);
+
+                const request = gapi.client.gmail.users.messages.send({
+                    'userId': 'me',
+                    'resource': {
+                        'raw': btoa(corpoMensagem).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+                    }
+                });
+                request.execute(function (response) {
+                    console.log(response);
+                });
+            });
+        }
+
+        function handleAuthResult(authResult) {
             console.log('Auth result:', authResult);
             if (authResult && !authResult.error) {
-                // Instancia o objeto gapi.client.gmail 
-                gapi.client.load('gmail', 'v1', function () {
-                    // Configura a mensagem de e-mail 
-                    const mensagem = ` 
-        <h1>Cadastro realizado com sucesso</h1> 
-        <p>Olá, seu cadastro foi realizado com sucesso!</p> 
-      `;
-                    const assunto = 'Cadastro realizado com sucesso';
-                    console.log('Destinatario:', assunto);
-
-                    const destinatario = document.querySelector('#email').value;
-                    console.log('Destinatario:', destinatario);
-
-                    // Inclui o email do destinatário na definição da string corpoMensagem
-                    const corpoMensagem = 'To: ' + destinatario + '\r\n Subject: ' + assunto + '\r\n\r\n' + mensagem;
-                    console.log('Destinatario:', corpoMensagem);
-
-                    // Envia a mensagem utilizando a API do Gmail 
-                    const request = gapi.client.gmail.users.messages.send({
-                        'userId': 'me',
-                        'resource': {
-                            'raw': btoa(corpoMensagem).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
-                        }
-                    }
-                    )
-                    console.log('Destinatario:', request);
-                    ;
-                    request.execute(function (response) {
-                        console.log(response);
-                    });
+                const destinatario = document.querySelector('#email').value;
+                console.log('Destinatário:', destinatario);
+                enviarEmail(destinatario);
+            } else {
+                gapi.auth.authorize({
+                    'client_id': '258998056882-iqgnnsd2j54b6oc07dk2k8t6tfsrbris.apps.googleusercontent.com',
+                    'scope': 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send',
+                    'immediate': false
+                }, function (authResult) {
+                    enviarEmail(destinatario);
                 });
             }
             console.log('Auth result:', authResult);
         }
+
+        gapi.auth.authorize({
+            'client_id': '258998056882-iqgnnsd2j54b6oc07dk2k8t6tfsrbris.apps.googleusercontent.com',
+            'scope': 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send',
+            'immediate': false
+        }, function (authResult) {
+            enviarEmail(destinatario);
+        });
     });
 });
+
 function initGmailAPI() {
-    // Carrega a biblioteca da API do Gmail
     gapi.load('client', function () {
-        // Configura as informações do cliente 
         gapi.client.init({
             'apiKey': '',
             'clientId': '258998056882-iqgnnsd2j54b6oc07dk2k8t6tfsrbris.apps.googleusercontent.com',
             'scope': 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send',
             'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest']
         }).then(function () {
-            // Chama a função para enviar o e-mail
-            enviarEmail();
+            const destinatario = document.querySelector('#email').value;
+            console.log('Destinatário:', destinatario);
+            enviarEmail(destinatario);
         });
     });
 }
+*/

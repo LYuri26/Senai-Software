@@ -15,12 +15,30 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 <html>
 
 <head>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
+    <meta charset="UTF-8">
     <title>Lista de cancelamentos</title>
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+
+    <!-- meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, nofollow">
+    <meta name="googlebot" content="index, nofollow">
+    <meta name="googlebot" content="notranslate">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="description" content="Consulta biblioteca SENAI">
+    <meta name="keywords" content="SENAI, Biblioteca, cancelar">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="SENAI">
+
+    <!-- link tags -->
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -87,7 +105,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        </div>
+    </div>
 </body>
 <script src="./config/assets/js/destruirSessao.js"></script>
 <footer>

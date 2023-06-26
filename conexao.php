@@ -11,18 +11,19 @@ SE NAO ESTOU ENGANDO, PODE HAVER A POSSIBILIDADE DE EXCLUSÃO DESTE ARQUIVO (con
 require_once './session.php';
 
 // Verificar se há uma sessão de usuário ou superusuário 
-if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
-    // Redirecionar para a página de login 
-    header("Location: login.html"); 
-    exit;
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
+  // Redirecionar para a página de login 
+  header("Location: login.html");
+  exit;
 }
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+  <!-- meta tags -->
   <meta charset="UTF-8">
-  <title>Software</title>
+  <!-- link tags -->
   <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -20,14 +20,29 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 <html lang="PT-BR">
 
 <head>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
     <title>Agendar</title>
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, nofollow">
+    <meta name="googlebot" content="index, nofollow">
+    <meta name="googlebot" content="notranslate">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="description" content="Agendar biblioteca SENAI">
+    <meta name="keywords" content="SENAI, Biblioteca, agendar">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="SENAI">
+
+    <!-- link tags -->
     <link rel="stylesheet" href="./config/assets/estilos/agendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -213,7 +228,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 // Exibe uma mensagem de sucesso
                 //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
                 //session_destroy();
-                echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div> <p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento: " . $cadastroId. "</p>";
+                echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div> <p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento: " . $cadastroId . "</p>";
 
                 /*echo "<script> alert('Agendado com sucesso!') </script>";*/
                 // Agendamento válido, continuar com o código existente para inserir no banco de dados

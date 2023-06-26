@@ -14,10 +14,11 @@ $host = '127.0.0.1';
 $dbname = 'biblioteca';
 $username = 'root';
 $password = '';
+/*
 echo '<script src="https://apis.google.com/js/api.js"></script>';
 echo '<script src="./config/assets/js/gmail api.js"></script>';
 echo '<script src="./config/assets/js/destruirSessao.js"></script>';
-
+*/
 
 // Conectar ao banco de dados usando PDO
 try {

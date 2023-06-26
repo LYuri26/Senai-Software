@@ -2,10 +2,13 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
-    <link rel="icon" type="image/ico" href="config/assets/img/baixar.png">
+    <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+
+    <!-- link tags -->
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 <?php
 session_start();
