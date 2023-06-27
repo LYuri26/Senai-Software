@@ -1,4 +1,14 @@
 <?php
+/*
+require_once './session.php';
+
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: login.html"); 
+    exit;
+}
+*/
 session_start();
 $host = '127.0.0.1';
 $dbname = 'biblioteca';
@@ -13,6 +23,7 @@ try {
     /*Resto do seu código...
     $loginAdmin = "admin"; // Substitua pelo valor desejado
     $senhaAdmin = 'fixfixfix'; // Substitua 'senha_admin' pela senha do superusuário
+location
 
     // Gerar o hash da senha
     $senhaHash = password_hash($senhaAdmin, PASSWORD_DEFAULT);
@@ -60,12 +71,12 @@ try {
             foreach ($superusuario as $su) {
                 if (strtolower($su['codigo']) == strtolower($codigo)) {
                     echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
-                    header('Location : cadastro.php');
+                    header('Location : cadastro.html');
                     return;
                 }
                 if (strtolower($su['email']) == strtolower($email)) {
                     echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
-                    header('Location : cadastro.php');
+                    header('Location : cadastro.html');
                     return;
                 }
             }
@@ -93,12 +104,33 @@ try {
                 ':senha' => $senha
             ]);
 
-            echo "<p>Cadastro realizado com sucesso!</p>";
-            echo "<script> setTimeout(function() { window.location.href = 'login.php'; }, 5000);
+            echo "<div class='Cadastro-sucesso' style='color: black; text-align: center; font-size:60px; font-weight:600; margin: 1rem;'>Cadastro realizado com sucesso!</div>";
+            /* OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO HTML
+            // Inclua essa linha no seu código PHP para informar ao navegador o tipo de codificação de caracteres que está sendo usado
+            header('Content-Type: text/html; charset=utf-8');
+
+            // Abra o documento HTML e inicie a seção "head"
+            echo '<!DOCTYPE html>';
+            echo '<html lang="pt-BR">';
+            echo '<head>';
+            echo '<meta charset="utf-8">';
+            echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+            echo '<meta http-equiv="refresh" content="5;url=login.html">';
+            // Adicione outras meta tags aqui...
+            echo '</head>';
+
+            // Feche a seção "head" e inicie o corpo do documento
+            echo '<body>';
+            // Adicione o conteúdo da página aqui...
+            echo '</body>';
+            echo '</html>';
+            */
+            // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
+            echo "<script>window.location.href = 'login.html';
         </script>";
-            header('Location : login.php');
+            header('Location : login.html');
         }
-/*
+        /*
         users
         $stmt = $pdo->prepare("SELECT  * FROM cadastro WHERE nome = :nome AND senha = :senha");
         $stmt->bindValue(':nome', $nome);
@@ -114,7 +146,7 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
             // É um usuário comum, redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
         // Verificar se é um usuário comum
@@ -128,17 +160,26 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $resconsultauser;
             // Redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
 
-        // Credenciais inválidas, redirecionar para login.php com mensagem de erro
-        header('Location: Login.php?error=1001');
+        // Credenciais inválidas, redirecionar para login.html com mensagem de erro
+        header('Location: Login.html?error=1001');
         exit;
     }*/
     }
+    session_destroy();
 } catch (PDOException $e) {
     // Tratar exceções de conexão com o banco de dados aqui, se necessário
-    echo "Erro de conexão com o banco de dados: " . $e->getMessage();
+    //  echo "Erro de conexão com o banco de dados: " . $e->getMessage();
+    if ($e->errorInfo[1] == 1062) {
+        // Checa se o erro é código 1062 (Duplicate entry)
+        echo "Erro: Por favor, digite outra senha!";
+        echo "<script>alert('Erro: Por favor, digite outra senha.');</script>";
+    } else {
+        // Caso contrário, exibe a mensagem de erro padrão
+        echo "Erro: " . $e->getMessage();
+    }
     exit;
 }

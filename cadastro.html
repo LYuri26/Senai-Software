@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/ico" href="config/assets/img/baixar.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./config/assets/estilos/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+    <title>Formulário de Cadastro</title>
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="app">
+        <form id="forms" action="./conexaocadastro.php" method="post">
+            <h2>CADASTRO</h2>
+            <label for="nome">Nome</label>
+            <input type="text" maxlength="60" name="nome" id="nome" placeholder="Digite seu nome" required
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu nome'"" autocomplete="
+                off"><br><br>
+
+            <label for="Código de acesso">Código de acesso</label>
+            <input type="text" name="codigo" ID="codigo" placeholder="Digite o código" required
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o código'"
+                autocomplete="off"><br><br>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Digite o email" required
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o email'" autocomplete="off"><br><br>
+
+            <label for="senha">Senha</label>
+            <input type="password" minlength="8" name="senha" id="senha" placeholder="Digite a senha" required
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a senha'" autocomplete="off"><br><br>
+
+            <label for="confirmar senha">Confirmar senha</label>
+            <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha"
+                placeholder="Confirme a senha" required onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Confirme a senha'" autocomplete="off"><br><br>
+
+            <!--Caso as senhas não coincidam, mostrar mensagem-->
+
+            <p id="senhaErro" style="color:red;">Senhas não coincidem!</p><br><br>
+
+            <div class="button-container">
+                <button type="submit" value="Cadastrar">CADASTRAR</input>
+
+                    <div class="button-container">
+                        <button type="button" id="botao_limpar" onclick="limparFormulario()"
+                            class="limpar-button">LIMPAR
+                            FORMULÁRIO</button>
+                    </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        const senha = document.getElementById('senha');
+        const cSenha = document.getElementById('confirmarsenha');
+        const senhaErro = document.getElementById('senhaErro');
+
+        cSenha.addEventListener('blur', () => {
+            if (senha.value !== cSenha.value) {
+                senhaErro.style.display = 'block';
+                senha.value = '';
+                cSenha.value = '';
+            } else {
+                senhaErro.style.display = 'none';
+            }
+        });
+
+        function limparFormulario() {
+            document.getElementById("forms").reset();
+
+            // Limpar manualmente os campos de texto
+            var dados = document.querySelectorAll('#forms input[type="text"]');
+            for (var i = 0; i < dados.length; i++) {
+                dados[i].value = '';
+            }
+        }
+    </script>
+    <script src="./config/assets/js/destruirSessao.js"></script>
+    <!--<script src="./config/assets/js/default.js"></script>-->
+</body>
+<footer>
+    <div class="rodape">
+        <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
+        <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI.</p>
+    </div>
+</footer>
+
+</html>
