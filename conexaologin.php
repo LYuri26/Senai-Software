@@ -51,8 +51,29 @@ try {
         $login = $_POST['usuario'];
         $senha = $_POST['senha'];
 
-        // admin
-        $consultasuper = "SELECT * FROM superusuario WHERE login = :login || email = :login;";
+        /* admin
+        $consultasuper = "SELECT * FROM superusuario WHERE BINARY (login = :login || email = :login)";
+        $stmt = $pdo->prepare($consultasuper);
+        $stmt->bindParam(':login', $login);
+        $stmt->execute();
+        $resconsultasuper = $stmt->fetch(PDO::FETCH_ASSOC);
+        */
+
+        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE BINARY (login = :login || email = :login) AND BINARY senha = :senha");
+        $stmt->bindValue(':login', $login);
+        $stmt->bindValue(':senha', $senha);
+        $stmt->execute();
+        $superusuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($superusuario) {
+            // É um superusuário/administrador, armazenar os dados na sessão
+            $_SESSION['usuario'] = $superusuario;
+            // É um superusuário/administrador, redirecionar para a página de administração
+            header('Location: menu.php');
+            exit;
+        }
+        
+        $consultasuper = "SELECT * FROM superusuario WHERE BINARY (login = :login || email = :login)";
         $stmt = $pdo->prepare($consultasuper);
         $stmt->bindParam(':login', $login);
         $stmt->execute();
@@ -66,22 +87,8 @@ try {
             exit;
         }
 
-        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE login = :login || email = :login AND senha = :senha");
-        $stmt->bindValue(':login', $login);
-        $stmt->bindValue(':senha', $senha);
-        $stmt->execute();
-        $superusuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($superusuario) {
-            // É um superusuário/administrador, armazenar os dados na sessão
-            $_SESSION['usuario'] = $superusuario;
-            // É um superusuário/administrador, redirecionar para a página de administração
-            header('Location: menu.php');
-            exit;
-        }
-
         //users
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE login = :login || email = :login AND senha = :senha");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE BINARY (login = :login || email = :login) AND BINARY (senha = :senha)");
         $stmt->bindValue(':login', $login);
         $stmt->bindValue(':senha', $senha);
         $stmt->execute();
@@ -94,8 +101,9 @@ try {
             header('Location: menu.php');
             exit;
         }
+
         // Verificar se é um usuário comum
-        $consultauser = "SELECT * FROM users WHERE (login = :login || email = :login)";
+        $consultauser = "SELECT * FROM users WHERE BINARY (login = :login || email = :login)";
         $stmt = $pdo->prepare($consultauser);
         $stmt->bindParam(':login', $login);
         $stmt->execute();

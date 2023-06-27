@@ -16,7 +16,7 @@ try {
 
     // Definindo as atribuições das tabelas
     $tableStatements = [
-        
+
         "CREATE TABLE IF NOT EXISTS cadastro (
         id INT(20) NOT NULL AUTO_INCREMENT,
         nome VARCHAR(255) NOT NULL,
@@ -57,29 +57,25 @@ try {
             PRIMARY KEY(id)
             )",
 
-            "CREATE TABLE IF NOT EXISTS cancelametos(
+        "CREATE TABLE IF NOT EXISTS cancelametos(
               id INT(50) PRIMARY KEY, 
               nome VARCHAR(50) NOT NULL,
               motivo VARCHAR(100) NOT NULL,  
             )"
 
-        ];
+    ];
 
-        // Executando as instruções das taelas
-        foreach ($tableStatements as $tableStatement) {
-            $pdo->exec($tableStatement);    
-            }
+    // Executando as instruções das taelas
+    foreach ($tableStatements as $tableStatement) {
+        $pdo->exec($tableStatement);
+    }
 
-            echo "Instruções das tabelas exeutadas com sucesso.";
-        } catch(PDOException $e) {
-            echo "Erro na execução das instruções das tabelas: " . $e->getMessage();
-        }
+    echo "Instruções das tabelas exeutadas com sucesso.";
+} catch (PDOException $e) {
+    echo "Erro na execução das instruções das tabelas: " . $e->getMessage();
+}
 
-        //Fechando a conexão com o banco de dados
-        $pdo = null;
+//Fechando a conexão com o banco de dados
+$pdo = null;
 
 ?>
-
-
-
-
