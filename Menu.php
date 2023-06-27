@@ -38,8 +38,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
   <meta charset="UTF-8">
   <title>Menu</title>
-
-  <!-- meta tags -->
+<!-- meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -99,7 +98,9 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
-
+  <!-- Assim que o usuário acessar o menu, o js sera executado, executao/linkando também as tabelas. -->
+  <script src="./config/assets/js/linkdb.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.
