@@ -131,6 +131,17 @@ th:first-child {
 th:last-child {
   border-radius: 0px 20px 0px 0px;
 }
+@media (max-width: 768px) {
+  .rodape {
+    text-align: center;
+    white-space: pre-line;
+    color:rgb(0, 0, 0);
+    padding-top: 20px;
+    margin-top: 50rem;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+}
 
 @media (max-width: 767px) {
   th,

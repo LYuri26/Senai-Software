@@ -51,11 +51,12 @@ body {
   width: 10rem;
   margin-top: -1rem;
 }
-.id img{
+
+.id img {
   width: 150px
 }
 
-.logosenai img{
+.logosenai img {
   width: 12rem;
   position: absolute;
   left: 4rem;
@@ -208,6 +209,56 @@ button:hover {
   object-position: bottom;
 }
 
-.rodape p {
-  line-height: 0.4;
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .link-button1 {
+    display: flex;
+    background-color: transparent;
+    color: #005CA9;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-decoration: none;
+    box-sizing: border-box;
+    float: right;
+  }
+
+  #app {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2%;
+    margin-top: 1vh;
+  }
+
+  footer {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    /* padding-top: auto; */
+    font-weight: bold;
+    margin-top: 17%;
+    object-position: bottom;
+  }/*
+  .rodape {
+    line-height: 0.4rem;
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  }
+  */
+  .rodape p {
+    line-height: 1rem;
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  }
 }

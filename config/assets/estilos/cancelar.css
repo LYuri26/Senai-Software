@@ -234,6 +234,17 @@ p {
   white-space: pre-line;
   padding-top: 7.1rem;
 }
+@media (max-width: 768px) {
+  .rodape {
+    text-align: center;
+    white-space: pre-line;
+    color:rgb(0, 0, 0);
+    padding-top: 20px;
+    margin-top: 50rem;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+}
 
 @media screen and (min-width: 1000px) {
   body {
@@ -241,16 +252,16 @@ p {
   }
 }
 
-@media screen and (max-width: 1919px) {
+ /* @media screen and (max-width: 1919px) {
   footer {
-    zoom: 50%; /* Ajuste o valor conforme necessário */
+    zoom: 50%; /* Ajuste o valor conforme necessário 
     display: none;
     background-color: #f2f2f2;
     padding: 20px;
     text-align: center;
-  }
+  } */ 
   .rodape {
     color: black;
     font-weight: bold;
   }
-}
+

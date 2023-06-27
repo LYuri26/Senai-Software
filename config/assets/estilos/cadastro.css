@@ -8,7 +8,7 @@ body {
   text-align: left;
 }
 
-.sair{
+.sair {
   display: block;
   position: fixed;
   top: 10px;
@@ -35,18 +35,18 @@ h2 {
 
 form {
   background-color: #ffffff;
-    border-radius: 15px;
-    padding: 5%;
-    padding-bottom: 5%;
-    max-width: 30rem;
-    margin: 0 auto;
+  border-radius: 15px;
+  padding: 5%;
+  padding-bottom: 5%;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
 label {
   margin-bottom: 1%;
   font-weight: bold;
   color: #000000;
-  
+
 }
 
 input[type="text"] {
@@ -59,6 +59,7 @@ input[type="text"] {
   margin-bottom: 1em;
 
 }
+
 /*
 input[type="text"]:hover {
   border-color: #666466;
@@ -71,7 +72,7 @@ input[type="submit" i] {
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius:  1.5rem 1rem 1.5rem 1rem;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -113,20 +114,21 @@ input[type="password"] {
   margin-top: 1000px;
 }
 
-button[type="submit"]{
+button[type="submit"] {
   background-color: #005ca9;
   color: #ffffff;
   font-size: 1.2em;
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius:  1.5rem 1rem 1.5rem 1rem;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
   margin: 0 auto;
   display: block;
 }
+
 button[value="CADASTRAR"],
 .limpar-button {
   background-color: #005ca9;
@@ -135,7 +137,7 @@ button[value="CADASTRAR"],
   font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius:  1.5rem 1rem 1.5rem 1rem;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -147,11 +149,17 @@ button[value="CADASTRAR"],
 #botao_limpar:hover {
   background-color: #0c36be;
 }
+
 button:hover {
   background-color: #0c36be;
 }
+
 /* Codigo original sem modificação de placeholder show*/
-#nome, #codigo, #email, #senha, #confirmarsenha{
+#nome,
+#codigo,
+#email,
+#senha,
+#confirmarsenha {
   text-align: left;
 }
 
@@ -167,18 +175,20 @@ button:hover {
 */
 
 #senhaErro {
-  display:none;
+  display: none;
   float: left;
-  justify-content: flex-start; 
-  background-color: transparent; 
-  font-size: 1em; 
-  font-weight: bold; 
-  text-decoration: none; 
+  justify-content: flex-start;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
   margin-top: -0.5rem;
 }
-#senhaErro::after{
-  display: flex; 
+
+#senhaErro::after {
+  display: flex;
 }
+
 .link-button1 {
   background-color: transparent;
   color: #005ca9;
@@ -217,14 +227,53 @@ button:hover {
   text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+
+  }
+
+  footer {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    /* padding-top: auto; */
+    font-weight: bold;
+    margin-top: 5rem;
+    object-position: bottom;
+  }
+
+  /*
+  .rodape {
+    line-height: 0.4rem;
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  }
+  */
+  .rodape p {
+    line-height: 1rem;
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  }
+
+  #app {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .rodape {
   padding-top: 8vh;
   font-family: "Montserrat", sans-serif;
-  text-align: center; /* Centralizar o conteúdo do rodapé */
+  text-align: center;
+  /* Centralizar o conteúdo do rodapé */
 }
 
 .rodape p {
   font-weight: 600;
-  line-height: 0.8rem;
-  margin: 0; /* Remover margens para evitar espaçamento extra */
+  margin: 0;
+  /* Remover margens para evitar espaçamento extra */
 }
