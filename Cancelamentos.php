@@ -17,7 +17,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 <head>
     <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
-    <title>Lista de cancelamentos</title>
+    <title>Cancelamentos</title>
 
     <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,36 +37,36 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
-
+    <link rel="icon" href="./config/assets/img/senailogo2.png" type="image/x-icon">
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-container">
-                <a href="./menu.php">
-                    <img src="./config/assets/img/senailogo1.png" class="logo">
-                </a>
-                <ul class="navbar-menu">
-                    <li><a href="./agendar.php">Agendar</a></li>
-                    <li><a href="./cancelar.php">Cancelar</a></li>
-                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="./menu.php">Menu</a></li>
-                    <li><a href="./logout.php">Sair</a></li>
-                </ul>
-            </div>
+<header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="./menu.php">
+                <img src="./config/assets/img/senailogo1.png" class="logo">
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="./agendar.php">Agendar</a></li>
+                <li><a href="./cancelar.php">Cancelar</a></li>
+                <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                <li><a href="./menu.php">Menu</a></li>
+                <li><a href="./logout.php">Sair</a></li>
+            </ul>
+        </div>
             <!-- <div class="navbar-toggle">
         <span class="navbar-toggle-icon"></span>
       </div>
       </div>-->
-        </nav>
-    </header>
+    </nav>
+</header>
+
+<body>
     <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
         <form action="./conexao.php" method="post" onsubmit="exibirAlerta(event)">
-            <h1>Lista de cancelamentos</h1>
+            <h1>LISTA DE CANCELAMENTOS</h1>
             <?php
             // Definir as informações de conexão
             $host = 'localhost';
@@ -105,6 +105,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
+        </form>
     </div>
 </body>
 <script src="./config/assets/js/destruirSessao.js"></script>

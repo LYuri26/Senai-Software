@@ -1,6 +1,7 @@
 body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
 }
 /*
 h1 {
@@ -51,11 +52,11 @@ h1 {
 }
 
 .navbar-container {
-  /*align-items: flex-start;*/
   justify-content: space-between;
   display: flex;
   max-width: 100%;
   margin: 0 auto;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -64,18 +65,10 @@ h1 {
   align-items: center;
   font-weight: bold;
   text-decoration: none;
-  /* Movemos essas tags para o .navbar-container
-    display: flex;
-    align-items: center;
-    */
   font-weight: bold;
   text-decoration: none;
-  /* object-fit: cover;
-    /*width: 10rem;*/
   height: 3rem;
   width: 10rem;
-  /*border-radius: 200px;
-    margin-right: 200px;*/
 }
 
 .navbar-menu {

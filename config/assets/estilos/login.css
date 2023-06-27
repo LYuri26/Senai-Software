@@ -1,10 +1,8 @@
 body {
   background-color: #e0e0e0;
   font-family: 'Montserrat', sans-serif;
-  height: 50%;
   margin: 0;
   padding: 0;
-  height: 500px;
   position: relative;
   overflow: hidden;
 }
@@ -49,17 +47,7 @@ body {
 #logosenai {
   position: relative;
   width: 10rem;
-  margin-top: -1rem;
-}
-.id img{
-  width: 150px
-}
-
-.logosenai img{
-  width: 12rem;
-  position: absolute;
-  left: 4rem;
-  top: 1rem;
+  margin-top: -2rem;
 }
 
 h1 {
@@ -84,8 +72,6 @@ label {
   font-weight: bold;
   color: #000000;
 }
-
-
 
 input[type="text"] {
   grid-column: 1;
@@ -202,12 +188,27 @@ button:hover {
 .rodape {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  /* padding-top: auto; */
   font-weight: bold;
-  margin-top: 17%;
+  margin-top: 16.5%;
   object-position: bottom;
 }
 
 .rodape p {
   line-height: 0.4;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-toggle-btn i {
+  font-size: 16px;
 }

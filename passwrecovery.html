@@ -4,7 +4,7 @@
 <head>
   <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
   <meta charset="UTF-8">
-  <title>Recuperação de Senha</title>
+  <title>Recuperar Senha</title>
 
   <!-- meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +23,8 @@
   <link rel="stylesheet" type="text/css" href="config/assets/estilos/recuperarsenha.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap"
-    rel="stylesheet">
-  <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap">
+  <link rel="icon" href="./config/assets/img/senailogo2.png" type="image/x-icon">
 </head>
 
 <body>
@@ -34,7 +32,8 @@
     <a href="./logout.php" class="sair">Voltar</a>
 
     <form method="POST" action="./reset_password.php">
-      <h2>RECUPERAÇÃO DE SENHA</h2>
+      <img src="config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
+      <h2>RECUPERAR SENHA</h2>
       <label for="usuario">Nome de Usuário ou E-mail</label>
       <input type="text" id="usuario" name="usuario" />
 
@@ -46,7 +45,7 @@
       <p id="senhaErro" style="color:red;">Senhas não coincidem!</p><br><br>
 
       <div class="button-container">
-        <button type="submit" value="redefinir"> Redefinir</button>
+        <button type="submit" value="redefinir">REDEFINIR</button>
       </div>
       <!--Caso as senhas não coincidam, mostrar mensagem-->
 
@@ -66,7 +65,14 @@
             senhaErro.style.display = 'none';
         }
     });
-</script>
+  </script>
+
+<footer>
+  <div class="rodape">
+    <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
+    <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
+  </div>
+</footer>
 </body>
 
 </html>

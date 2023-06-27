@@ -42,31 +42,32 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+    <link rel="icon" href="./config/assets/img/senailogo2.png" type="image/x-icon">
 </head>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-container">
-                <a href="./menu.php">
-                    <img src="./config/assets/img/senailogo1.png" class="logo">
-                </a>
-                <ul class="navbar-menu">
-                    <li><a href="./cancelar.php">Cancelar</a></li>
-                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="./menu.php">Menu</a></li>
-                    <li><a href="./logout.php">Sair</a></li>
-
-                </ul>
-            </div>
+<header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="./menu.php">
+                <img src="./config/assets/img/senailogo1.png" class="logo">
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="./cancelar.php">Cancelar</a></li>
+                <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+                <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                <li><a href="./menu.php">Menu</a></li>
+                <li><a href="./logout.php">Sair</a></li>
+            </ul>
+        </div>
             <!-- <div class="navbar-toggle">
         <span class="navbar-toggle-icon"></span>
       </div>
       </div>-->
-        </nav>
-    </header>
+    </nav>
+</header>
+
+<body>
+    
     <a href="./logout.php" class="sair">Sair</a>
 
     <div class="text-container">
@@ -74,34 +75,34 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         <div class="calendario">
             <table title="Horários">
                 <tr>
-                    <th>Dia útil</th>
-                    <th>Início</th>
-                    <th>Término</th>
+                  <th>Dia útil</th>
+                  <th>Início</th>
+                  <th>Término</th>
                 </tr>
                 <tr>
-                    <td>Segunda-feira</td>
-                    <td>13:00</td>
-                    <td>21:00</td>
+                  <td>Segunda-feira</td>
+                  <td>13:00</td>
+                  <td>21:00</td>
                 </tr>
                 <tr>
-                    <td>Terça-feira</td>
-                    <td>08:00</td>
-                    <td>17:00</td>
+                  <td>Terça-feira</td>
+                  <td>08:00</td>
+                  <td>17:00</td>
                 </tr>
                 <tr>
-                    <td>Quarta-feira</td>
-                    <td>13:00</td>
-                    <td>21:00</td>
+                  <td>Quarta-feira</td>
+                  <td>13:00</td>
+                  <td>21:00</td>
                 </tr>
                 <tr>
-                    <td>Quinta-feira</td>
-                    <td>13:00</td>
-                    <td>21:00</td>
+                  <td>Quinta-feira</td>
+                  <td>13:00</td>
+                  <td>21:00</td>
                 </tr>
                 <tr>
-                    <td>Sexta-feira</td>
-                    <td>08:00</td>
-                    <td>17:00</td>
+                  <td>Sexta-feira</td>
+                  <td>08:00</td>
+                  <td>17:00</td>
                 </tr>
             </table>
         </div>
@@ -128,8 +129,6 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
             <button type="submit" value="AGENDAR">AGENDAR</button>
         </form>
-
-
 
     </div>
 

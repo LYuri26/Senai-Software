@@ -30,7 +30,6 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -57,31 +56,32 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-  <link rel="icon" href="./config/assets/img/joao.png" type="image/x-icon">
+  <link rel="icon" href="./config/assets/img/senailogo2.png" type="image/x-icon">
 </head>
 
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="./menu.php">
-          <img src="./config/assets/img/senailogo1.png" class="logo" href="./menu.php">
-        </a>
-        <ul class="navbar-menu">
-          <li><a href="./agendar.php">Agendar</a></li>
-          <li><a href="./cancelar.php">Cancelar</a></li>
-          <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-          <li><a href="./Agendamentos.php">Agendamentos</a></li>
-          <li><a href="./logout.php">Sair</a></li>
-        </ul>
-      </div>
+<header>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="./menu.php">
+       <img src="./config/assets/img/senailogo1.png" class="logo" href="./menu.php">
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="./agendar.php">Agendar</a></li>
+        <li><a href="./cancelar.php">Cancelar</a></li>
+        <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+        <li><a href="./Agendamentos.php">Agendamentos</a></li>
+        <li><a href="./logout.php">Sair</a></li>
+      </ul>
+    </div>
 
       <!-- <div class="navbar-toggle">
         <span class="navbar-toggle-icon"></span>
       </div>
       </div>-->
-    </nav>
-  </header>
+  </nav>
+</header>
+
+<body>
   <div class="container" id="slider">
     <div class="imgscar" id="slider">
       <div class="slide" role="rolebox" id="slider">
@@ -99,14 +99,14 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
+</body>
 
-  <footer>
+<footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.
-        Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</strong>
+        Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI
+      </strong>
     </div>
-  </footer>
-
-</body>
+</footer>
 
 </html>

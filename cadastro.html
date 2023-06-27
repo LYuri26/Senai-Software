@@ -23,9 +23,8 @@
     <link rel="stylesheet" href="./config/assets/estilos/cadastro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap">
+        
 
     <!-- script tags que são necessárias estarem em <head> -->
     <script src="https://apis.google.com/js/api.js"></script>
@@ -40,13 +39,14 @@
     <script src="https://accounts.google.com/gsi/client" async></script>
 
     <!-- O ícone da página pode ser carregado no final, por questão de organização do código e porque é interessante processarmos as fontes e estilos primeiro do que o ícone -->
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+    <link rel="icon" href="./config/assets/img/senailogo2.png" type="image/x-icon">
 </head>
 
 
 <body>
     <div id="app">
         <form id="forms" action="./conexaocadastro.php" onsubmit="sendEmail();" method="post">
+            <img src="config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
             <h2>CADASTRO</h2>
             <label for="nome">Nome</label>
             <input type="text" maxlength="60" name="nome" id="nome" placeholder="Digite seu nome" required
@@ -77,13 +77,11 @@
 
             <div class="button-container">
                 <button type="submit" value="Cadastrar">CADASTRAR</button>
+                <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR FORMULÁRIO</button>
             </div>
-            <div class="button-container">
-                <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR
-                    FORMULÁRIO</button>
-            </div>
+        </form>
     </div>
-    </form>
+    
     <!--
         <div id="g_id_onload"
      data-client_id="CLIENT_ID"
@@ -92,9 +90,9 @@
      data-login_uri="http://localhost:3000/cadastro.html"
      data-nonce=""
      data-auto_prompt="false">
-</div>
+ </div>
 
-<div class="g_id_signin"
+ <div class="g_id_signin"
      data-type="standard"
      data-shape="pill"
      data-theme="outline"
@@ -102,8 +100,8 @@
      data-size="large"
      data-locale="pt-BR"
      data-logo_alignment="left">
-</div>
--->
+ </div>
+ -->
     </div>
 
     <script>

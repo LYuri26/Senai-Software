@@ -1,6 +1,7 @@
 body {
     background-color: #e0e0e0;
     font-family: 'Montserrat', sans-serif;
+    height: 50%;
     margin: 0;
     padding: 0;
     position: relative;
@@ -13,6 +14,12 @@ body {
     padding: 2%;
     margin-top: 1vh;
 }
+
+#logosenai {
+    position: relative;
+    width: 10rem;
+    margin-top: -1rem;
+  }
 
 .sair {
     display: block;
@@ -94,18 +101,36 @@ input[type="submit"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1em;
 }
+
 
 button[value="redefinir"] {
     background-color: #005CA9;
     color: #ffffff;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
     border: none;
     padding: 0.5em 1em;
     border-radius: 20px 10px 20px 10px;
     cursor: pointer;
     box-sizing: border-box;
-    margin-bottom: 1rem;
+    transition: background-color 0.1s ease;
+    margin: 0 auto;
+    display: block;
+    margin-top: 3%;
+    transform: translateY(-130%);
 }
+
+.rodape {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15.4%;
+    object-position: bottom;
+  }
+  
+  .rodape p {
+    line-height: 0.4;
+  }
