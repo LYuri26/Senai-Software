@@ -51,8 +51,11 @@ label {
   color: #000000;
 }
 
+<<<<<<< Updated upstream
 /* input */
 
+=======
+>>>>>>> Stashed changes
 input[type="text"] {
   grid-column: 1;
   width: 100%;
