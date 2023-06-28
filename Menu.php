@@ -35,15 +35,32 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 <html lang="pt-br">
 
 <head>
-  <link rel="stylesheet" href="./config/assets/estilos/menu.css">
+  <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Menu</title>
+
+  <!-- meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="robots" content="index, nofollow">
+  <meta name="googlebot" content="index, nofollow">
+  <meta name="googlebot" content="notranslate">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="description" content="Menu biblioteca SENAI">
+  <meta name="keywords" content="SENAI, Biblioteca, menu">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="author" content="SENAI">
+
+  <!-- link tags -->
+  <link rel="stylesheet" href="./config/assets/estilos/menu.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+<<<<<<< HEAD
+=======
   <title>Menu</title>
+>>>>>>> origin/Backup-do-backup
   <link rel="icon" href="./config/assets/img/joao.png" type="image/x-icon">
 </head>
 
@@ -86,7 +103,11 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> origin/Backup-do-backup
   <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.

@@ -31,7 +31,11 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <meta name="keywords" content="SENAI, Biblioteca, agendamentos">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="author" content="SENAI">
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> origin/Backup-do-backup
     <!-- link tags -->
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +69,10 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
+<<<<<<< HEAD
+        <form method="post" onsubmit="exibirAlerta(event)">
+            <h1>Lista de Agendamentos</h1>
+=======
 
         <form method="post" onsubmit="exibirAlerta(event)">
             <label for="pesquisa">Pesquisar</label>
@@ -87,6 +95,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 -->
             </select>
 
+>>>>>>> origin/Backup-do-backup
             <?php
             // Definir as informações de conexão
             $host = 'localhost';
@@ -140,6 +149,33 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             }
             // Fechar a conexão com o banco de dados
             ?>
+<<<<<<< HEAD
+            <table>
+                <thead>
+                    <tr>
+
+                        <th>Nome</th>
+                        <th>Data</th>
+                        <th>Hora de Início</th>
+                        <th>Hora de Término</th>
+                        <th>Quantidade de Alunos</th>
+                        <th>Curso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($agendamentos as $agendamento) : ?>
+                        <tr>
+                            <td><?php echo $agendamento['nome']; ?></td>
+                            <td><?php echo $agendamento['data']; ?></td>
+                            <td><?php echo $agendamento['hora_inicio']; ?></td>
+                            <td><?php echo $agendamento['hora_termino']; ?></td>
+                            <td><?php echo $agendamento['quantidade_alunos']; ?></td>
+                            <td><?php echo $agendamento['curso']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+=======
 
             <!-- Seu formulário HTML -->
             <form method="post" onsubmit="exibirAlerta(event)">
@@ -203,6 +239,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 
                     </tbody>
                 </table>
+>>>>>>> origin/Backup-do-backup
     </div>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <footer>

@@ -123,4 +123,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 $conn->exec("SET FOREIGN_KEY_CHECKS=0");
 // Fecha a conexão com o banco de dados
+<<<<<<< HEAD
 $conn = null;
+=======
+$conn = null;
+>>>>>>> origin/Backup-do-backup

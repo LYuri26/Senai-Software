@@ -28,14 +28,32 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 <html lang="PT-BR">
 
 <head>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Cancelar</title>
+
+    <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, nofollow">
+    <meta name="googlebot" content="index, nofollow">
+    <meta name="googlebot" content="notranslate">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="description" content="Cancelar biblioteca SENAI">
+    <meta name="keywords" content="SENAI, Biblioteca, cancelar">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="SENAI">
+
+    <!-- link tags -->
     <link rel="stylesheet" href="./config/assets/estilos/cancelar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<<<<<<< HEAD
+=======
     <title>Cancelar</title>
+>>>>>>> origin/Backup-do-backup
     <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 
