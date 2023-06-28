@@ -18,6 +18,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
     <title>Lista de cancelamentos</title>
+<<<<<<< HEAD
 
     <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +34,9 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <meta name="author" content="SENAI">
 
     <!-- link tags -->
+=======
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+>>>>>>> origin/Backup-do-backup
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +109,11 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
+<<<<<<< HEAD
     </div>
+=======
+        </div>
+>>>>>>> origin/Backup-do-backup
 </body>
 <script src="./config/assets/js/destruirSessao.js"></script>
 <footer>

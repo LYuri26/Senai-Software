@@ -31,7 +31,11 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <meta name="keywords" content="SENAI, Biblioteca, agendamentos">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="author" content="SENAI">
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/Backup-do-backup
     <!-- link tags -->
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,8 +69,33 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <a href="./logout.php" class="sair">Sair</a>
 
     <div id="app">
+<<<<<<< HEAD
         <form method="post" onsubmit="exibirAlerta(event)">
             <h1>Lista de Agendamentos</h1>
+=======
+
+        <form method="post" onsubmit="exibirAlerta(event)">
+            <label for="pesquisa">Pesquisar</label>
+            <input type="text" id="pesquisa" name="pesquisa" required placeholder="Digite para pesquisar"><br><br>
+            <label for="filtro">Filtrar</label>
+            <select id="filtro" name="filtro" required>
+                <option value="" disabled selected hidden>Escolha uma das opções abaixo</option>
+                <option value="Nome">Nome</option>
+                <option value="Data">Data</option>
+                <option value="Horario">Horário Inicial</option>
+                <option value="Quantidade">Quantidade de Alunos</option>
+                <option value="Curso">Curso</option>
+            </select>
+            <button type="submit" value="barra">Buscar</button>
+            <!--
+        <input type="radio" name="webmaster" value="sim"/> Nome<br />
+<input type="radio" name="webmaster" value="nao"/> ID<br />
+<input type="radio" name="webmaster" value="talvez"/> <br />
+<input type="radio" name="webmaster" value="quem_sabe"/> Quem sabe
+-->
+            </select>
+
+>>>>>>> origin/Backup-do-backup
             <?php
             // Definir as informações de conexão
             $host = 'localhost';
@@ -82,12 +111,45 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             } catch (PDOException $e) {
                 echo "Conexão falhou" . $e->getMessage();
             }
+            // 2. Recuperar os valores do formulário
+            $pesquisa = $_POST['pesquisa'];
+            $filtro = $_POST['filtro'];
 
-            // buscar agendamentos no banco de dados
-            $query = "SELECT * FROM agendamentos";
-            $busca = $pdo->query($query);
-            $agendamentos = $busca->fetchAll(PDO::FETCH_ASSOC);
+            // 3. Construir a consulta SQL
+            $sql = "SELECT * FROM agendamentos WHERE ";
+
+            // Adicionar o critério de pesquisa selecionado
+            if ($filtro === "Nome") {
+                $sql .= "Nome LIKE '%$pesquisa%'";
+            } elseif ($filtro === "Data") {
+                $sql .= "Data = '$pesquisa'";
+            } elseif ($filtro === "Horario") {
+                $sql .= "Horario = '$pesquisa'";
+            } elseif ($filtro === "Quantidade") {
+                $sql .= "Quantidade = '$pesquisa'";
+            } elseif ($filtro === "Curso") {
+                $sql .= "Curso LIKE '%$pesquisa%'";
+            }
+
+
+            // 4. Executar a consulta SQL e exibir os resultados
+            $result = $pdo->query($sql);
+
+            if ($result->rowCount() > 0) {
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    // Exibir os dados do agendamento encontrados
+                    echo "Nome: " . $row["nome"] . "<br>";
+                    echo "Data: " . $row["data"] . "<br>";
+                    echo "Horário: " . $row["hora_inicio"] . "<br>";
+                    echo "Quantidade de Alunos: " . $row["quantidade_alunos"] . "<br>";
+                    echo "Curso: " . $row["curso"] . "<br><br>";
+                }
+            } else {
+                echo "Nenhum resultado encontrado.";
+            }
+            // Fechar a conexão com o banco de dados
             ?>
+<<<<<<< HEAD
             <table>
                 <thead>
                     <tr>
@@ -113,6 +175,71 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <?php endforeach; ?>
                 </tbody>
             </table>
+=======
+
+            <!-- Seu formulário HTML -->
+            <form method="post" onsubmit="exibirAlerta(event)">
+                <label for="pesquisa">Pesquisar</label>
+                <input type="text" id="pesquisa" name="pesquisa" required placeholder="Digite para pesquisar"><br><br>
+                <button type="submit" value="barra">Buscar</button>
+                <label for="filtro">Filtrar</label>
+                <select id="filtro" name="filtro" required>
+                    <option value="" disabled selected hidden>Escolha uma das opções abaixo</option>
+                    <option value="Nome">Nome</option>
+                    <option value="Data">Data</option>
+                    <option value="Horario">Horário Inicial</option>
+                    <option value="Quantidade">Quantidade de Alunos</option>
+                    <option value="Curso">Curso</option>
+                </select>
+                <?php
+                // Definir as informações de conexão
+                $host = 'localhost';
+                $dbname = 'biblioteca';
+                $username = 'root';
+                $password = '';
+
+                // Conectar ao banco de dados usando mysqli
+
+                try {
+                    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                } catch (PDOException $e) {
+                    echo "Conexão falhou" . $e->getMessage();
+                }
+
+                // buscar agendamentos no banco de dados
+                $query = "SELECT * FROM agendamentos";
+                $busca = $pdo->query($query);
+                $agendamentos = $busca->fetchAll(PDO::FETCH_ASSOC);
+                ?>
+                <h1>Lista de Agendamentos</h1>
+                <table>
+                    <thead>
+                        <tr>
+
+                            <th>Nome</th>
+                            <th>Data</th>
+                            <th>Hora de Início</th>
+                            <th>Hora de Término</th>
+                            <th>Quantidade de Alunos</th>
+                            <th>Curso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($agendamentos as $agendamento) : ?>
+                            <tr>
+                                <td><?php echo $agendamento['nome']; ?></td>
+                                <td><?php echo $agendamento['data']; ?></td>
+                                <td><?php echo $agendamento['hora_inicio']; ?></td>
+                                <td><?php echo $agendamento['hora_termino']; ?></td>
+                                <td><?php echo $agendamento['quantidade_alunos']; ?></td>
+                                <td><?php echo $agendamento['curso']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+
+                    </tbody>
+                </table>
+>>>>>>> origin/Backup-do-backup
     </div>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <footer>

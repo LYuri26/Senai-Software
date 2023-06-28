@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+<<<<<<< HEAD
     <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
     <!-- meta tags -->
@@ -9,6 +10,12 @@
 
     <!-- link tags -->
     <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+=======
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/ico" href="config/assets/img/baixar.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+>>>>>>> origin/Backup-do-backup
 </head>
 <?php
 session_start();
@@ -59,7 +66,19 @@ try {
         $resconsultasuper = $stmt->fetch(PDO::FETCH_ASSOC);
         */
 
+<<<<<<< HEAD
         $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE BINARY (login = :login || email = :login) AND BINARY senha = :senha");
+=======
+        if ($resconsultasuper && password_verify($senha, $resconsultasuper['senha'])) {
+            // É um superusuário/administrador, armazenar os dados na sessão
+            $_SESSION['usuario'] = $resconsultasuper;
+            // Redirecionar para a página de administração
+            header('Location: menu.php');
+            exit;
+        }
+
+        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE login = :login AND senha = :senha");
+>>>>>>> origin/Backup-do-backup
         $stmt->bindValue(':login', $login);
         $stmt->bindValue(':senha', $senha);
         $stmt->execute();
@@ -70,6 +89,7 @@ try {
             $_SESSION['usuario'] = $superusuario;
             // É um superusuário/administrador, redirecionar para a página de administração
             header('Location: menu.php');
+<<<<<<< HEAD
             exit;
         }
         
@@ -84,6 +104,8 @@ try {
             $_SESSION['usuario'] = $resconsultasuper;
             // Redirecionar para a página de administração
             header('Location: menu.php');
+=======
+>>>>>>> origin/Backup-do-backup
             exit;
         }
 
