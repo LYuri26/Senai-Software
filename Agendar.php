@@ -19,7 +19,11 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 =======
     <title>Agendar</title>
+<<<<<<< Updated upstream
     <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
+=======
+    <link rel="icon" href="./config/assets/img/senai-icon.ico" type="image/x-icon">
 >>>>>>> Stashed changes
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./config/assets/estilos/style.css">
@@ -55,6 +59,7 @@ if (!isset($_SESSION['usuario'])) {
         <input type="submit" value="AGENDAR">
     </form>
     <?php
+<<<<<<< Updated upstream
     // Tenta criar uma conexão com o banco de dados
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
@@ -63,6 +68,59 @@ if (!isset($_SESSION['usuario'])) {
         echo 'Error: ' . $e->getMessage();
         die();
     }
+=======
+            // Definir as informações de conexão
+            $host = 'localhost';
+            $dbname = 'biblioteca';
+            $username = 'root';
+            $password = '';
+
+            // Conectar ao banco de dados usando mysqli
+
+            try {
+                $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                echo "Conexão falhou" . $e->getMessage();
+            }
+    /* datas */
+
+    function isWeekend($date)
+    {
+        $timestamp = strtotime($date);
+        $weekday = date('N', $timestamp);
+        return ($weekday == 6 || $weekday == 7);
+    }
+
+    function isHoliday($date)
+    {
+        $apiUrl = "https://api.calendario.com.br/?json=true&ano=" . date('Y') . "&estado=SP&cidade=Sao_Paulo&token=SEU_TOKEN";
+        // Substitua SEU_TOKEN pelo token fornecido pela API Calendário Brasileiro
+
+        $response = file_get_contents($apiUrl);
+        $holidays = json_decode($response, true);
+
+        return isset($holidays[$date]);
+    }
+
+    function isValidTime($dayOfWeek, $time)
+    {
+        $validTimes = [
+            1 => ['13:00', '21:00'], // Segunda-feira
+            2 => ['08:00', '17:00'], // Terça-feira
+            3 => ['13:00', '21:00'], // Quarta-feira
+            4 => ['13:00', '21:00'], // Quinta-feira
+            5 => ['08:00', '17:00'], // Sexta-feira
+        ];
+
+        $start = $validTimes[$dayOfWeek][0];
+        $end = $validTimes[$dayOfWeek][1];
+
+        return ($time >= $start && $time <= $end);
+    }
+
+    // Restante do código...
+>>>>>>> Stashed changes
 
     // Se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -74,9 +132,35 @@ if (!isset($_SESSION['usuario'])) {
         $hora_termino = $_POST['hora_termino'];
         $quantidade_alunos = $_POST['quantidade_alunos'];
 
+<<<<<<< Updated upstream
         // Insere os dados na tabela "agendamentos"
         $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$instrutor, $curso, $data, $hora_inicio, $hora_termino, $quantidade_alunos]);
+=======
+        // Verificar se o número de alunos é válido (não negativo)
+        if ($quantidade_alunos < 0) {
+        echo "<div class='error-message' style='color: red; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Não é possível agendar com número negativo de alunos.</div>";
+        exit;
+    }
+
+        // Verificar se já existe um agendamento para essa data e hora no banco de dados
+        $stmt = $pdo->prepare("
+        SELECT COUNT(*) FROM agendamentos
+        WHERE data = :data AND (
+        (hora_inicio <= :hora_inicio AND hora_termino > :hora_inicio) OR
+        (hora_inicio < :hora_termino AND hora_termino >= :hora_termino)
+        )
+        ");
+        $stmt->bindValue(':data', $data);
+        $stmt->bindValue(':hora_inicio', $hora_inicio);
+        $stmt->bindValue(':hora_termino', $hora_termino);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        if ($count > 0) {
+            /*$_SESSION['error_message'] = "Já existe um agendamento neste horário!";*/
+            // Exibir uma mensagem de erro se já existe um agendamento para essa data e hora
+            echo "<div class='error-message' style='color: yellow; text-align: center; font-size:20px; font-weight:600;margin: 1rem;'>Já existe um agendamento neste horário!</div>";
+>>>>>>> Stashed changes
 
         // Exibe uma mensagem de sucesso
         echo "<p>Agendamento realizado com sucesso!</p>";

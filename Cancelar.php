@@ -23,7 +23,11 @@ if (!isset($_SESSION['usuario'])) {
     <title>Cancelamento</title>
 =======
     <title>Cancelar</title>
+<<<<<<< Updated upstream
     <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
+=======
+    <link rel="icon" href="./config/assets/img/senai-icon.ico" type="image/x-icon">
 >>>>>>> Stashed changes
 </head>
 

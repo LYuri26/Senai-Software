@@ -18,8 +18,12 @@ if (!isset($_SESSION['usuario'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu</title>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
   <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
+=======
+  <link rel="icon" href="./config/assets/img/senai-icon.ico" type="image/x-icon">
 >>>>>>> Stashed changes
 </head>
 

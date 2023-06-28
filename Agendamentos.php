@@ -16,7 +16,11 @@ if (!isset($_SESSION['usuario'])) {
     <title>Lista de Agendamentos</title>
 =======
     <title>Lista de agendamentos</title>
+<<<<<<< Updated upstream
     <link rel="icon" href="config/assets/img/joao.png" type="image/x-icon">
+>>>>>>> Stashed changes
+=======
+    <link rel="icon" href="./config/assets/img/senai-icon.ico" type="image/x-icon">
 >>>>>>> Stashed changes
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
