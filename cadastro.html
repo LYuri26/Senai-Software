@@ -39,12 +39,13 @@
     <script src="https://accounts.google.com/gsi/client" async></script>
 
     <!-- O ícone da página pode ser carregado no final, por questão de organização do código e porque é interessante processarmos as fontes e estilos primeiro do que o ícone -->
-    <link rel="icon" href="./config/assets/img/senailogo2.png" type="image/x-icon">
+    <link rel="icon" href="config/assets/img/senai-icon.ico" type="image/x-icon">
 </head>
 
 
 <body>
     <div id="app">
+        <a href="./logout.php" class="sair">Voltar</a>
         <form id="forms" action="./conexaocadastro.php" onsubmit="sendEmail();" method="post">
             <img src="config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
             <h2>CADASTRO</h2>
@@ -77,7 +78,7 @@
 
             <div class="button-container">
                 <button type="submit" value="Cadastrar">CADASTRAR</button>
-                <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR FORMULÁRIO</button>
+                <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR</button>
             </div>
         </form>
     </div>

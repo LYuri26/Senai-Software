@@ -8,6 +8,9 @@ body {
   position: relative;
   overflow: hidden;
 }
+#falseMsg {
+  margin-top: 1rem;
+}
 
 /* css mensagem erro ou exito (opcional)
 #falseMsg {

@@ -22,12 +22,12 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 <head>
     <meta charset="UTF-8">
     <title>Agendar</title>
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./config/assets/estilos/agendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="config/assets/img/senai-icon.ico" type="image/x-icon">
 </head>
 
 <header>
@@ -134,11 +134,16 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         (hora_inicio < :hora_termino AND hora_termino >= :hora_termino)
         )
         ");
+        if ($quantidade_alunos < 0) {
+            echo "<div class='error-message' style='color: orange; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Insira a quantidade de alunos correta.</div>";
+            exit;
+        }
         $stmt->bindValue(':data', $data);
         $stmt->bindValue(':hora_inicio', $hora_inicio);
         $stmt->bindValue(':hora_termino', $hora_termino);
         $stmt->execute();
         $count = $stmt->fetchColumn();
+    
         if ($count > 0) {
             /*$_SESSION['error_message'] = "Já existe um agendamento neste horário!";*/
             // Exibir uma mensagem de erro se já existe um agendamento para essa data e hora

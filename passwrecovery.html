@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap">
-  <link rel="icon" href="./config/assets/img/senailogo2.png" type="image/x-icon">
+  <link rel="icon" href="config/assets/img/senai-icon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -38,7 +38,15 @@
       <input type="text" id="usuario" name="usuario" />
 
       <label for="novaSenha">Nova Senha</label>
-      <input type="password" id="novaSenha" name="novaSenha" minlength="8" autocomplete="off" required />
+      <div class="password-container">
+        <input type="password" minlength="8" maxlength="40" id="novaSenha" name="novaSenha" placeholder="Digite aqui sua senha"
+          required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'"
+          style="text-align: left; " autocomplete="off">
+
+        <span class="password-toggle-btn" onclick="togglePasswordVisibility()">
+          <i id="password-toggle-icon" class="fas fa-eye"></i>
+        </span>
+      </div>
 
       <label for="Csenha">Confirmar Nova Senha</label>
       <input type="password" id="Csenha" name="Csenha" minlength="8" autocomplete="off" required />

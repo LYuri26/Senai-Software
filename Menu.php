@@ -80,13 +80,16 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   </div>
   <script src="./config/assets/js/menu.js"></script>
   <h1>Bem-vindo ao UAIBook!</h1>
-<div class="container" id="conteudo">
-  <p>O UAIBook é a melhor ferramenta que você, aluno, pode escolher para obter facilidade e bem-estar ao realizar a reserva de um horário na biblioteca!</p>
-  <p>Com o UAIBook, agendar o horário desejado na biblioteca nunca foi tão fácil e livre de complicações. Desfrute de uma experiência tranquila e eficiente ao realizar suas reservas sem preocupações.</p>
-  <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
+  <div class="container" id="conteudo">
+    <p>O UAIBook é a melhor ferramenta que você, aluno, pode escolher para obter facilidade e bem-estar ao realizar a reserva de um horário na biblioteca!</p>
+    <p>Com o UAIBook, agendar o horário desejado na biblioteca nunca foi tão fácil e livre de complicações. Desfrute de uma experiência tranquila e eficiente ao realizar suas reservas sem preocupações.</p>
+    <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   </div>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
+  <!-- Assim que o usuário acessar o menu, o js sera executado, executao/linkando também as tabelas. -->
+  <script src="./config/assets/js/linkdb.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <footer>
     <div class="rodape">
