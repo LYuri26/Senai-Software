@@ -40,13 +40,14 @@
     <script src="https://accounts.google.com/gsi/client" async></script>
 
     <!-- O ícone da página pode ser carregado no final, por questão de organização do código e porque é interessante processarmos as fontes e estilos primeiro do que o ícone -->
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+    <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
 
 <body>
+    <a href="./logout.php" class="sair">Voltar</a>
+
     <div id="app">
-        <a href="./logout.php" class="sair">Voltar</a>
         <form id="forms" action="./conexaocadastro.php" onsubmit="sendEmail();" method="post">
             <h2>CADASTRO</h2>
             <label for="nome">Nome</label>
@@ -134,12 +135,13 @@
     </script>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
+    <footer>
+        <div class="rodape">
+            <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do
+                Futuro II. <br>SENAI. Uberaba/MG.</p>
+        </div>
+    </footer>
+
 </body>
-<footer>
-    <div class="rodape">
-        <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
-        <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI.</p>
-    </div>
-</footer>
 
 </html>

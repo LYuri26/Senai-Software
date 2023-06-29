@@ -50,7 +50,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+    <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -80,11 +80,10 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
         <form method="post" onsubmit="exibirAlerta(event)">
             <h1>CANCELAMENTO</h1>
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br><br>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome"><br>
 
             <label for="id">ID</label>
-            <input type="text" id="id" name="id" required placeholder="Digite seu ID"><br><br>
-
+            <input type="text" id="id" name="id" required placeholder="Digite seu ID"><br>
 
             <label for="motivo">Motivo</label>
             <select id="motivo" name="motivo" required>
@@ -99,8 +98,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             </select>
 
             <strong>Estou ciente de que ao cancelar meu agendamento, estarei disponibilizando a data/horário para outros
-                professores.<br>Eu concordo e estou ciente.</strong>
-            <span><input type="checkbox" id="concordo" name="concordo" required></span>
+                professores.<br> <span><input type="checkbox" id="concordo" name="concordo" required> <strong class="concordo"> Eu concordo e estou ciente.</strong>
+                </span> </strong>
 
 
             <button type="submit" value="CANCELAR">CANCELAR</button>

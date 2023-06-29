@@ -4,70 +4,60 @@ if (performance.navigation.type === 2) {
   session_start();
   session_destroy();
 }*/
-window.addEventListener('beforeunload', function () {
-
+window.addEventListener("beforeunload", function () {
   // document.title = 'Formulário de Cadastro'; // Alterar o título da página
   // Limpar a sessão antes de recarregar a página
   // Pode ser usado duas funcoes: sessionStorage.clear() ou localStorage.clear()
-  document.cookie = '';
+  document.cookie = "";
   sessionStorage.clear(); // Limpar a sessão
-  localStorage.clear() // Limpar o armazenamento local
+  localStorage.clear(); // Limpar o armazenamento local
 });
-window.addEventListener('beforeunload', function () {
+window.addEventListener("beforeunload", function () {
   var currentPage = location.pathname; // Obtém o caminho da URL
 
-  if (currentPage === '/login.html') {
-    document.title = 'Carregando...';
-
-  } else if (currentPage === '/menu.php') {
-    document.title = 'Carregando...';
-
-  } else if (currentPage === '/agendamentos.php') {
-    document.title = 'Carregando...'; 
-
-  } else if (currentPage === '/agendar.php') {
-    document.title = 'Carregando...';
-
-  } else if (currentPage === '/cancelamentos.php') {
-    document.title = 'Carregando...';
-
-  } else if (currentPage === './cancelar.php') {
-    document.title = 'Carregando...';
+  if (currentPage === "/login.html") {
+    document.title = "Login";
+  } else if (currentPage === "/cadastro.html") {
+    document.title = "Carregando...";
+  } else if (currentPage === "/menu.php") {
+    document.title = "Carregando...";
+  } else if (currentPage === "/agendamentos.php") {
+    document.title = "Carregando...";
+  } else if (currentPage === "/agendar.php") {
+    document.title = "Carregando...";
+  } else if (currentPage === "/cancelamentos.php") {
+    document.title = "Carregando...";
+  } else if (currentPage === "./cancelar.php") {
+    document.title = "Carregando...";
   }
 });
-  window.addEventListener('load', function () {
-    var currentPage1 = window.location.pathname; // Obtém o caminho da URL
+window.addEventListener("load", function () {
+  var currentPage1 = window.location.pathname; // Obtém o caminho da URL
 
-    if (currentPage1 === '/login.html') {
-      document.title = 'Login';
-      
-    } else if (currentPage1 === '/menu.php') {
-      document.title = 'Menu';
+  if (currentPage1 === "/login.html") {
+    document.title = "Login";
+  } else if (currentPage1 === "/menu.php") {
+    document.title = "Menu";
+  } else if (currentPage1 === "/agendamentos.php") {
+    document.title = "Lista de Agendamentos";
+  } else if (currentPage1 === "/agendar.php") {
+    document.title = "Agendar";
+  } else if (currentPage1 === "/cancelamentos.php") {
+    document.title = "Lista de Cancelamentos";
+  } else if (currentPage1 === "/cancelar.php") {
+    document.title = "Cancelar";
+  } else if (currentPage1 === "/cadastro.html") {
+    document.title = "Formulário de Cadastro";
+  }
+});
 
-    } else if (currentPage1 === '/agendamentos.php') {
-      document.title = 'Lista de Agendamentos';
-
-    } else if (currentPage1 === '/agendar.php') {
-      document.title = 'Agendar';
-
-    } else if (currentPage1 === '/cancelamentos.php') {
-      document.title = 'Lista de Cancelamentos';
-      
-    } else if (currentPage1 === '/cancelar.php') {
-      document.title = 'Cancelar';
-
-    } else if (currentPage1 === '/cadastro.html') {
-      document.title = 'Formulário de Cadastro';
-    }
-  });
-
-window.addEventListener('pageshow', function (event) {
-  var inputs = document.querySelectorAll('input, textarea');
-  document.cookie = '';
+window.addEventListener("pageshow", function (event) {
+  var inputs = document.querySelectorAll("input, textarea");
+  document.cookie = "";
   sessionStorage.clear(); // Limpar a sessão
-  localStorage.clear() // Limpar o armazenamento local
+  localStorage.clear(); // Limpar o armazenamento local
   inputs.forEach(function (input) {
-    input.defaultValue = '';
+    input.defaultValue = "";
   });
 });
 

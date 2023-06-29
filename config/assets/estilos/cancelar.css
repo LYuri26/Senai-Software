@@ -1,5 +1,6 @@
 body {
   background-color: #e0e0e0;
+  font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
@@ -48,7 +49,7 @@ body {
   */
   font-weight: bold;
   text-decoration: none;
- /* object-fit: cover;
+  /* object-fit: cover;
   /*width: 10rem;*/
   height: 3rem;
   width: 10rem;
@@ -78,8 +79,6 @@ body {
   /* Removendo margin do último elemento */
 }
 
-
-
 #app {
   max-width: 500px;
   margin: 0 auto;
@@ -94,6 +93,7 @@ h1 {
 }
 
 form {
+  margin-top: 3rem;
   background-color: #ffffff;
   border-radius: 15px;
   padding: 5%;
@@ -124,7 +124,7 @@ input[type="text"] {
   box-sizing: border-box;
 }
 
-button[type="submit"]{
+button[type="submit"] {
   margin-top: 1rem;
   background-color: #005ca9;
   color: #ffffff;
@@ -156,7 +156,7 @@ button[type="button"] {
 }
 select {
   border: 1px solid #005ca9;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   padding: 0.9rem;
   border-radius: 4px;
@@ -164,12 +164,10 @@ select {
   transition: color 0.1s ease;
 }
 
-
 input[type="text"],
 input[type="checkbox"] {
   border: 1px solid #005ca9;
   margin-bottom: 1rem;
-  width: 100%;
 }
 
 /*input[type="submit"],
@@ -183,7 +181,9 @@ button {
   border-radius: 0.8rem;
 
 }*/
-
+.concordo {
+  font-size: 17px;
+}
 input[type="submit"]:hover,
 button:hover {
   background-color: #0c36be;
@@ -198,6 +198,9 @@ p {
   margin: 0 auto;
 }
 */
+strong {
+  margin-bottom: 1rem;
+}
 @media only screen and (max-width: 500px) {
   input[type="text"],
   input[type="checkbox"],
@@ -218,7 +221,11 @@ p {
     color: #005ca9;
   }
 }
-
+#concordo {
+  margin-top: 1.5rem;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+}
 .success-message {
   position: static;
   color: #000000;
@@ -228,7 +235,7 @@ p {
 }
 
 .rodape {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   line-height: 1.5;
   white-space: pre-line;
@@ -241,11 +248,8 @@ p {
   }
 }
 
-@media screen and (max-width: 1919px) {
+@media screen and (max-width: 1920px) {
   footer {
-    zoom: 50%; /* Ajuste o valor conforme necessário */
-    display: none;
-    background-color: #f2f2f2;
     padding: 20px;
     text-align: center;
   }
@@ -253,4 +257,103 @@ p {
     color: black;
     font-weight: bold;
   }
+}
+
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    padding-top: 20px;
+    margin-bottom: 10px;
+  }
+  .navbar {
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  body {
+    margin-top: 6rem;
+  }
+
+  #conteudo {
+    align-items: flex-start;
+    text-align: center;
+    align-items: center;
+  }
+
+  .navbar-menu {
+    justify-content: stretch;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    align-items: flex-start;
+  }
+
+  .navbar-container {
+    /*align-items: flex-start;*/
+    justify-content: stretch;
+    text-align: center;
+    align-items: center;
+    display: grid;
+  }
+
+  .navbar-menu li {
+    justify-content: stretch;
+    margin-top: 1rem;
+    margin-right: 0;
+  }
+
+  .navbar-menu li:last-child {
+    margin-right: 0rem;
+    /* Removendo margin do último elemento */
+  }
+
+  .logo {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    margin: 0 auto;
+    padding-left: 2rem;
+  }
+  form {
+    margin-top: 12rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: color 0.1s ease;
+    box-sizing: border-box;
+  }
+  /*
+  .navbar-menu {
+    display: grid;
+    margin-block-start: 1rem;
+    margin-block-end: 01rem;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+  }
+  .navbar-menu li {
+    text-align: center;
+    margin-right: 2rem;
+  }
+  .navbar-menu li:last-child {
+    margin-left: 0rem;
+    padding-left: 0rem;
+  }*/
 }

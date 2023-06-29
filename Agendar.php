@@ -42,7 +42,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+    <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
 <body>

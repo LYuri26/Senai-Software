@@ -9,17 +9,26 @@ body {
 }
 
 .sair {
-  display: block;
+  font-family: sans-serif;
   position: fixed;
   top: 10px;
   right: 10px;
   padding: 10px;
-  background-color: #f2f2f2;
   border: 1px solid #ccc;
   border-radius: 4px;
   text-decoration: none;
   color: #333;
-  font-weight: bold;
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  border: none;
+  padding: 0.5rem 1em;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
 }
 
 #app {
@@ -40,7 +49,11 @@ form {
   padding-bottom: 5%;
   max-width: 30rem;
   margin: 0 auto;
-  
+  border-radius: 15px;
+  padding: 5%;
+  padding-bottom: 5%;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
 label {
@@ -113,7 +126,6 @@ input[type="password"] {
 }
 
 button[type="submit"] {
-  
   background-color: #005ca9;
   color: #ffffff;
   font-size: 1.2em;
@@ -178,6 +190,11 @@ button:hover {
   font-weight: bold;
   text-decoration: none;
   margin-top: -0.5rem;
+  justify-content: flex-start;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
 }
 #senhaErro::after {
   display: flex;
@@ -230,4 +247,62 @@ button:hover {
   font-weight: 600;
   line-height: 1rem;
   margin: 0; /* Remover margens para evitar espaçamento extra */
+}
+
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
+  footer {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    /* padding-top: auto; */
+    font-weight: bold;
+    margin-top: 5rem;
+    object-position: bottom;
+  }
+
+  /*
+  .rodape {
+    line-height: 0.4rem;
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  }
+  */
+  .rodape p {
+    line-height: 1rem;
+    text-align: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  }
+  .sair {
+    position: absolute;
+    font-family: sans-serif;
+    margin: 0.4rem;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    background-color: #005ca9;
+    color: #ffffff;
+    font-size: 1.2em;
+    border: none;
+    padding: 0.5rem 1em;
+    border-radius: 1.5rem 1rem 1.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    box-sizing: border-box;
+  }
+
+  #app {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
