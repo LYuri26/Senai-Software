@@ -1,34 +1,10 @@
 body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
-  margin: 0;
   padding: 2%;
   height: 400px;
 }
 
-.sair {
-  margin-bottom: 3rem;
-  font-family: sans-serif;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #333;
-  background-color: #005ca9;
-  color: #ffffff;
-  font-size: 1.2em;
-  border: none;
-  padding: 0.5rem 1em;
-  border-radius: 1.5rem 1rem 1.5rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.1s ease;
-  box-sizing: border-box;
-  margin: 0 auto;
-  display: block;
-}
 
 #app {
   max-width: 40%;
@@ -71,6 +47,29 @@ input[type="text"] {
   box-sizing: border-box;
   margin-bottom: 1em;
 }
+.sair {
+  font-family: sans-serif;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  background-color: #005ca9;
+  color: #ffffff;
+  font-size: 1.2em;
+  border: none;
+  padding: 0.5rem 1em;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+}
+
 /*
 input[type="text"]:hover {
   border-color: #666466;
@@ -126,10 +125,10 @@ input[type="password"] {
 }
 
 button[type="submit"] {
+  font-size: 1.5rem;
+  font-weight: 600;
   background-color: #005ca9;
   color: #ffffff;
-  font-size: 1.2em;
-  font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
   border-radius: 1.5rem 1rem 1.5rem 1rem;
@@ -139,12 +138,12 @@ button[type="submit"] {
   margin: 0 auto;
   display: block;
 }
-button[value="CADASTRAR"],
+
 .limpar-button {
   background-color: #005ca9;
   color: #ffffff;
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 600;
   border: none;
   padding: 0.5rem 1em;
   border-radius: 1.5rem 1rem 1.5rem 1rem;
@@ -159,9 +158,11 @@ button[value="CADASTRAR"],
 #botao_limpar:hover {
   background-color: #0c36be;
 }
+
 button:hover {
   background-color: #0c36be;
 }
+
 /* Codigo original sem modificação de placeholder show*/
 #nome,
 #codigo,
@@ -193,12 +194,13 @@ button:hover {
   justify-content: flex-start;
   background-color: transparent;
   font-size: 1em;
-  font-weight: bold;
   text-decoration: none;
 }
+
 #senhaErro::after {
   display: flex;
 }
+
 .link-button1 {
   background-color: transparent;
   color: #005ca9;
@@ -240,29 +242,34 @@ button:hover {
 .rodape {
   padding-top: 8vh;
   font-family: "Montserrat", sans-serif;
-  text-align: center; /* Centralizar o conteúdo do rodapé */
+  text-align: center;
+  /* Centralizar o conteúdo do rodapé */
 }
 
 .rodape p {
   font-weight: 600;
   line-height: 1rem;
-  margin: 0; /* Remover margens para evitar espaçamento extra */
+  margin: 0;
+  /* Remover margens para evitar espaçamento extra */
 }
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     max-width: 100%;
     padding: 4%;
+    position: relative;
+    overflow: scroll;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   footer {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     /* padding-top: auto; */
-    font-weight: bold;
     margin-top: 5rem;
     object-position: bottom;
   }
+
   form {
     margin-top: 3rem;
     padding-top: 3rem;
@@ -294,9 +301,8 @@ button:hover {
     color: rgb(0, 0, 0);
     font-size: 0.9rem;
   }
+
   .sair {
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
     position: absolute;
     font-family: sans-serif;
     margin: 0.4rem;

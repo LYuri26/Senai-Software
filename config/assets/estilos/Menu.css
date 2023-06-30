@@ -65,6 +65,19 @@ body {
   /* Removendo margin do último elemento */
 }
 
+#conteudo {
+  display: grid;
+  padding-left: 0em;
+  line-height: 1.5;
+  align-content: flex-start;
+  justify-content: start;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-right: 0rem;
+  font-weight: 600;
+  max-width: 50%;
+}
+
 /* vei quem colocou isso estava sob efeito PESADO de droga
 .navbar-toggle {
   display: none;
@@ -151,14 +164,21 @@ h1 {
   padding-top: 6rem;
   padding-left: 2rem;
   align-content: flex-start;
-  display: flex;
+  text-align: center;
+  /* Centraliza o texto */
+  max-width: 800px;
+  /* Define uma largura máxima para o título */
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+  box-sizing: border-box;
+  /* Inclui a largura das bordas e o padding na largura total do elemento */
+  margin-bottom: 1rem;
 }
 
 p {
   line-height: 1.5;
   padding-left: 2em;
   align-content: flex-start;
-  margin-right: 60%;
   justify-content: start;
   font-weight: 600;
 }
@@ -168,7 +188,6 @@ footer {
   padding-bottom: 0rem;
   bottom: 0;
   text-align: center;
-  padding-top: 8.4rem;
   font-weight: bold;
 }
 
@@ -176,7 +195,6 @@ footer {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   white-space: pre-line;
-  padding-top: 15rem;
 }
 
 /*.logosenai {
@@ -190,30 +208,57 @@ footer {
 #linhatexto {
   margin-top: 0;
   display: inline-block;
-  width: 45%;
+  height: 10vh;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  /* Alinha o carrossel à direita */
+  align-items: center;
+  height: 55vh;
+  padding: 0 2%;
+  /* Adiciona um espaço de 2% nas laterais do carrossel */
+  box-sizing: border-box;
+  /* Inclui a largura das bordas e o padding na largura total do elemento */
 }
 
 #slider {
   z-index: -1;
-  width: 100%;
-  height: auto;
-  max-width: 600px;
-  height: 35vw;
-  max-height: 600px;
+  height: 25vw;
   position: absolute;
-  right: 80px;
-  bottom: 80px;
+  right: 2%;
+  /* Alinha o carrossel à direita com uma margem de 2% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  /* Define a largura do carrossel em 90% do container */
+  max-width: 50vw;
+  /* Define uma largura máxima para o carrossel */
 }
 
 #slider img {
   opacity: 0;
-  /*border-style: double;*/
   border-radius: 400px;
   position: absolute;
-  width: 100%;
-  height: 100%;
   object-fit: contain;
   transition: opacity 800ms;
+  width: 100%;
+  /* Define a largura das imagens do slide para ocupar todo o espaço disponível */
+  height: 100%;
+  /* Permite que a altura das imagens seja ajustada proporcionalmente à largura */
+}
+
+.slide {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
 }
 
 #slider img.selected {
@@ -226,21 +271,17 @@ footer {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
   }
+
   header {
     display: flex;
     position: relative;
     justify-content: center;
   }
+
   body {
     margin-top: 6rem;
-  }
-
-  #conteudo {
-    align-items: flex-start;
-    text-align: center;
-    align-items: center;
   }
 
   .navbar-menu {
@@ -260,13 +301,15 @@ footer {
   }
 
   h1 {
-    padding-top: 15rem;
-    padding-left: 0rem;
-    margin: 0 auto;
-    display: flex;
-    text-align: center;
-    align-items: center;
+    font-size: 24px;
+    /* Reduz o tamanho da fonte para telas menores */
+    padding: 0;
+    /* Remove o espaçamento lateral */
+    margin-top: 25vh;
+    /* Adiciona um espaçamento superior para afastar o título da barra de navegação */
+    margin-bottom: 2vh;
   }
+
 
   #linhatexto {
     align-items: flex-start;
@@ -310,31 +353,25 @@ footer {
   }
 
   .rodape {
+    display:flex;
+    flex-direction: column;
     font-family: "Montserrat", sans-serif;
     text-align: center;
     white-space: pre-line;
   }
 
   footer {
+    display: flex;
+    flex-direction: column;
     font-family: "Montserrat", sans-serif;
     text-align: center;
     /* padding-top: auto; */
     font-weight: bold;
     object-position: bottom;
   }
-  #slider {
-    display: flex;
-    z-index: -1;
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    height: 35vw;
-    max-height: 600px;
-    right: 80px;
-    bottom: 80px;
-  }
 
   #conteudo {
+    max-width: 100%;
     display: grid;
     padding-left: 0em;
     line-height: 1.5;
@@ -344,27 +381,13 @@ footer {
     line-height: 1.5;
     margin-right: 0rem;
     font-weight: 600;
+    align-items: flex-start;
+    text-align: center;
+    align-items: center;
   }
+
   #linhatexto {
     width: 100%;
-  }
-
-  #slider img {
-    display: flex;
-    opacity: 0;
-    /*border-style: double;*/
-    border-radius: 400px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: opacity 800ms;
-  }
-
-  #slider img.selected {
-    display: flex;
-    opacity: 1;
-    object-fit: contain;
   }
 
   /*
@@ -382,6 +405,30 @@ footer {
     white-space: pre-line;
     color: rgb(0, 0, 0);
     font-size: 0.9rem;
+  }
+
+  .container {
+    position: relative;
+    height: 55vh;
+    justify-content: center;
+    /* Centraliza o carrossel na página */
+    /* Remove o espaço nas laterais */
+  }
+
+  #slider {
+    position: relative;
+    /* Remove a posição absoluta para ajustar ao fluxo do documento */
+    right: auto;
+    /* Remove o alinhamento à direita */
+    width: 90%;
+    /* Define a largura do carrossel como 100% do container */
+    height: 10vh;
+    /* Ajusta a altura proporcionalmente ao conteúdo */
+    max-width: none;
+    /* Remove a largura máxima */
+    padding: 0;
+    /* Remove o espaçamento nas laterais */
+    margin: 0 auto;
   }
 
   #app {

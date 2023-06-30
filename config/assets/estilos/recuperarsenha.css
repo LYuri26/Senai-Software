@@ -7,6 +7,12 @@ body {
   padding: 2%;
   margin-top: 1vh;
 }
+label {
+  grid-column: 1;
+  margin-bottom: 1%;
+  font-weight: bold;
+  color: #000000;
+}
 .sair {
   font-family: sans-serif;
   position: fixed;
@@ -30,12 +36,14 @@ body {
   display: block;
 }
 #app {
+  position: relative;
   max-width: 40%;
   margin: 0 auto;
   padding: 2%;
   margin-top: 1vh;
 }
 form {
+  height: max-content;
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
@@ -45,11 +53,6 @@ form {
   padding: 5%;
 }
 
-label {
-  margin-bottom: 1%;
-  font-weight: bold;
-  color: #000000;
-}
 
 h2 {
   white-space: normal;
@@ -106,17 +109,19 @@ input[type="submit"] {
 button[value="redefinir"] {
   background-color: #005ca9;
   color: #ffffff;
-  font-size: 1em;
+  font-size: 1.2rem;
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
   border-radius: 20px 10px 20px 10px;
   cursor: pointer;
   box-sizing: border-box;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+button[value="redefinir"]:hover {
+  background-color: #0c36be;
 }
 .rodape {
-  padding-top: 8vh;
   font-family: "Montserrat", sans-serif;
   text-align: center; /* Centralizar o conteúdo do rodapé */
 }
@@ -130,13 +135,15 @@ button[value="redefinir"] {
 @media screen and (max-width: 768px) {
   body {
     position: relative;
-    overflow: hidden;
+    overflow:scroll;
     margin: 0 auto;
     height: 500px;
     box-sizing: border-box;
   }
 
   form {
+    max-height: 80vh;
+    height: max-content;
     box-sizing: border-box;
     max-width: 100%;
     padding: 50px;
@@ -152,6 +159,7 @@ button[value="redefinir"] {
   }
 
   #app {
+    position: relative;
     box-sizing: border-box;
     max-width: 100%;
     margin: 0 auto;
@@ -187,6 +195,10 @@ button[value="redefinir"] {
     white-space: pre-line;
     color: rgb(0, 0, 0);
     font-size: 0.9rem;
+  }
+  button[value="redefinir"] {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
   .sair {
     position: absolute;
