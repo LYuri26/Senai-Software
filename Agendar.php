@@ -233,6 +233,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
                 //session_destroy();
                 echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div> <p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento: " . $resultado_final . "</p>";
+                echo "<script>window.location.href = 'agendamentos.php'</script>;";
+                header("Location: agendamentos.php"); 
 
                 /*echo "<script> alert('Agendado com sucesso!') </script>";*/
                 // Agendamento válido, continuar com o código existente para inserir no banco de dados
