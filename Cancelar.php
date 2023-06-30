@@ -102,7 +102,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                 </span> </strong>
 
 
-            <button type="submit" value="CANCELAR">CANCELAR</button>
+            <button type="submit" value="CANCELAR">DESMARCAR</button>
             <button type="button" onclick="limparFormulario()">LIMPAR</button>
 
 

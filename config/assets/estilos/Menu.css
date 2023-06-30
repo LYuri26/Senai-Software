@@ -200,7 +200,7 @@ footer {
 .rodape {
   font-family: "Montserrat", sans-serif;
   text-align: center;
-  white-space: pre-line;
+  /*hite-space: pre-line;*/
 }
 
 /*.logosenai {

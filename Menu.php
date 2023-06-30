@@ -101,8 +101,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
   <footer>
     <div class="rodape">
-      <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do
-        Futuro II. <br>SENAI. Uberaba/MG.</p>
+      <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. <br>Trilhas do
+        Futuro II. <br>SENAI Uberaba/MG.</p>
     </div>
   </footer>
   <script src="./config/assets/js/destruirSessao.js"></script>
