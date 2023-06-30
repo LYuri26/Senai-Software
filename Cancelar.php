@@ -140,7 +140,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 
 <head>
     <!-- cabeçalho omitido por brevidade -->
-    <style>
+    <!--<style>
         footer {
             position: fixed;
             left: 0;
@@ -149,7 +149,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             padding: 10px;
             text-align: center;
         }
-    </style>
+    </style>-->
 </head>
 
 <body>

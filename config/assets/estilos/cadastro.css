@@ -179,6 +179,18 @@ button:hover {
 #senhaErro::after{
   display: flex; 
 }
+
+@media (max-width: 768px) {
+  .rodape {
+    text-align: center;
+    white-space: pre-line;
+    color:rgb(0, 0, 0);
+    padding-top: 20px;
+    margin-top: 50rem;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+}
 .link-button1 {
   background-color: transparent;
   color: #005ca9;
