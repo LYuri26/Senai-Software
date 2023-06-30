@@ -20,57 +20,119 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 <html lang="PT-BR">
 
 <head>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
     <title>Agendar</title>
-    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, nofollow">
+    <meta name="googlebot" content="index, nofollow">
+    <meta name="googlebot" content="notranslate">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="description" content="Agendar biblioteca SENAI">
+    <meta name="keywords" content="SENAI, Biblioteca, agendar">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="SENAI">
+
+    <!-- link tags -->
     <link rel="stylesheet" href="./config/assets/estilos/agendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 
-<header>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="./menu.php">
-                <img src="./config/assets/img/senailogo1.png" class="logo" href="./menu.php">
-            </a>
-            <ul class="navbar-menu">
-                <li><a href="./agendar.php">Agendar</a></li>
-                <li><a href="./cancelar.php">Cancelar</a></li>
-                <li><a href="./agendamentos.php">Agendamentos</a></li>
-                <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-                <li><a href="./logout.php">Sair</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="./menu.php">
+                    <img src="./config/assets/img/senailogo1.png" class="logo">
+                </a>
+                <ul class="navbar-menu">
+                    <li><a href="./cancelar.php">Cancelar</a></li>
+                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./menu.php">Menu</a></li>
+                    <li><a href="./logout.php">Sair</a></li>
 
-    <form method="POST">
-        <h1>AGENDAMENTO</h1>
-        <label for="instrutor">Instrutor</label>
-        <input type="text" id="instrutor" name="instrutor" required><br><br>
+                </ul>
+            </div>
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
+        </nav>
+    </header>
+    <a href="./logout.php" class="sair">Sair</a>
 
-        <label for="curso">Curso</label>
-        <input type="text" id="curso" name="curso" required><br><br>
+    <div class="text-container">
 
-        <label for="data">Data</label>
-        <input type="date" id="data" name="data" required><br><br>
+        <div class="calendario">
+            <table title="Horários">
+                <tr>
+                    <th>Dia útil</th>
+                    <th>Início</th>
+                    <th>Término</th>
+                </tr>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>13:00</td>
+                    <td>21:00</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>08:00</td>
+                    <td>17:00</td>
+                </tr>
+            </table>
+        </div>
 
-        <label for="hora_inicio">Início</label>
-        <input type="time" id="hora_inicio" name="hora_inicio" required><br><br>
+        <form method="POST">
+            <h1>AGENDAMENTO</h1>
+            <label for="instrutor">Instrutor</label>
+            <input type="text" id="instrutor" name="instrutor" required><br><br>
 
-        <label for="hora_termino">Término</label>
-        <input type="time" id="hora_termino" name="hora_termino" required><br><br>
+            <label for="curso">Curso</label>
+            <input type="text" id="curso" name="curso" required><br><br>
 
-        <label for="quantidade_alunos">Quantidade de Alunos</label>
-        <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required><br><br>
 
-        <button type="submit" value="AGENTAR">AGENDAR</button>
-    </form>
+            <label for="hora_inicio">Início</label>
+            <input type="time" id="hora_inicio" name="hora_inicio" required><br><br>
+
+            <label for="hora_termino">Término</label>
+            <input type="time" id="hora_termino" name="hora_termino" required><br><br>
+
+            <label for="quantidade_alunos">Quantidade de Alunos</label>
+            <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
+
+            <button type="submit" value="AGENDAR">AGENDAR</button>
+        </form>
+
+
+
+    </div>
+
     <?php
     // Tenta criar uma conexão com o banco de dados
     try {
@@ -166,8 +228,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 // Exibe uma mensagem de sucesso
                 //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
                 //session_destroy();
-                echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
-                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento:</p>" . $cadastroId;
+                echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div> <p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento: " . $cadastroId . "</p>";
 
                 /*echo "<script> alert('Agendado com sucesso!') </script>";*/
                 // Agendamento válido, continuar com o código existente para inserir no banco de dados
@@ -181,39 +242,14 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     ?>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
+
 </body>
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <!-- cabeçalho omitido por brevidade -->
-    <style>
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="app">
-        <!-- formulário omitido por brevidade -->
+<footer>
+    <div class="rodape">
+        <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
+        <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
     </div>
-
-    <footer>
-        <div class="rodape">
-            <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
-            <p>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
-        </div>
-    </footer>
-
-    <script>
-        // scripts omitidos por brevidade
-    </script>
-</body>
+</footer>
 
 </html>

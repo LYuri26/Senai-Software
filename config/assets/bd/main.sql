@@ -1,3 +1,7 @@
+create database biblioteca;
+
+show databases;
+
 use biblioteca;
 DROP TRIGGER IF EXISTS delete_agendamento;
 DROP TABLE IF EXISTS cancelamentos;

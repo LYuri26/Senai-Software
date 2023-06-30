@@ -2,10 +2,13 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
-    <link rel="icon" type="image/ico" href="config/assets/img/baixar.png">
+    <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+
+    <!-- link tags -->
+    <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
 </head>
 <?php
 session_start();
@@ -49,7 +52,7 @@ try {
         $senha = $_POST['senha'];
 
         // admin
-        $consultasuper = "SELECT * FROM superusuario WHERE login = :login";
+        $consultasuper = "SELECT * FROM superusuario WHERE login = :login || email = :login;";
         $stmt = $pdo->prepare($consultasuper);
         $stmt->bindParam(':login', $login);
         $stmt->execute();
@@ -63,7 +66,7 @@ try {
             exit;
         }
 
-        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE login = :login AND senha = :senha");
+        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE login = :login || email = :login AND senha = :senha");
         $stmt->bindValue(':login', $login);
         $stmt->bindValue(':senha', $senha);
         $stmt->execute();
@@ -78,7 +81,7 @@ try {
         }
 
         //users
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE login = :login AND senha = :senha");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE login = :login || email = :login AND senha = :senha");
         $stmt->bindValue(':login', $login);
         $stmt->bindValue(':senha', $senha);
         $stmt->execute();
@@ -92,7 +95,7 @@ try {
             exit;
         }
         // Verificar se é um usuário comum
-        $consultauser = "SELECT * FROM users WHERE (login = :login OR email = :login)";
+        $consultauser = "SELECT * FROM users WHERE (login = :login || email = :login)";
         $stmt = $pdo->prepare($consultauser);
         $stmt->bindParam(':login', $login);
         $stmt->execute();

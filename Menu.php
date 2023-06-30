@@ -35,16 +35,28 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 <html lang="pt-br">
 
 <head>
-  <link rel="stylesheet" href="./config/assets/estilos/menu.css">
+  <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Menu</title>
+<!-- meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="robots" content="index, nofollow">
+  <meta name="googlebot" content="index, nofollow">
+  <meta name="googlebot" content="notranslate">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="description" content="Menu biblioteca SENAI">
+  <meta name="keywords" content="SENAI, Biblioteca, menu">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="author" content="SENAI">
+
+  <!-- link tags -->
+  <link rel="stylesheet" href="./config/assets/estilos/menu.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-  <title>Menu</title>
-  <link rel="icon" href="./config/assets/img/linguicao.ico" type="image/x-icon">
+  <link rel="icon" href="./config/assets/img/joao.png" type="image/x-icon">
 </head>
 
 <body>
@@ -86,38 +98,16 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
-  <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <!-- cabeçalho omitido por brevidade -->
-    <style>
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="app">
-        <!-- formulário omitido por brevidade -->
-    </div>
-
-    <footer>
+  <!-- Assim que o usuário acessar o menu, o js sera executado, executao/linkando também as tabelas. -->
+  <script src="./config/assets/js/linkdb.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <footer>
     <div class="rodape">
       <strong>&copy; 2023 UAIBook. Todos os direitos reservados.
-      Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
+        Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</strong>
     </div>
   </footer>
 
-    <script>
-        // scripts omitidos por brevidade
-    </script>
 </body>
 
 </html>

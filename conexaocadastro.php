@@ -14,6 +14,11 @@ $host = '127.0.0.1';
 $dbname = 'biblioteca';
 $username = 'root';
 $password = '';
+/*
+echo '<script src="https://apis.google.com/js/api.js"></script>';
+echo '<script src="./config/assets/js/gmail api.js"></script>';
+echo '<script src="./config/assets/js/destruirSessao.js"></script>';
+*/
 
 // Conectar ao banco de dados usando PDO
 try {
@@ -103,7 +108,7 @@ try {
                 ':senha' => $senha
             ]);
 
-            echo "<p>Cadastro realizado com sucesso!</p>";
+            echo "<div class='Cadastro-sucesso' style='color: black; text-align: center; font-size:60px; font-weight:600; margin: 1rem;'>Cadastro realizado com sucesso!</div>";
             /* OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO HTML
             // Inclua essa linha no seu código PHP para informar ao navegador o tipo de codificação de caracteres que está sendo usado
             header('Content-Type: text/html; charset=utf-8');
@@ -125,7 +130,7 @@ try {
             echo '</html>';
             */
             // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
-            echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000);
+            echo "<script>window.location.href = 'login.html';
         </script>";
             header('Location : login.html');
         }
