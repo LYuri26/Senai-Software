@@ -3,6 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
+  overflow: scroll;
 }
 
 .sair {
@@ -77,7 +78,10 @@ body {
   margin-right: 30px;
   /* Removendo margin do último elemento */
 }
-
+.navbar-menu li a:hover {
+  color: #000000;
+  text-decoration: none;
+}
 #app {
   max-width: 1000px;
   margin: 0 auto;

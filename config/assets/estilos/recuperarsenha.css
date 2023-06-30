@@ -131,6 +131,9 @@ button[value="redefinir"]:hover {
   line-height: 1rem;
   margin: 0 auto; /* Remover margens para evitar espaçamento extra */
 }
+.sair:hover { 
+  background-color: #0c36be;
+}
 
 @media screen and (max-width: 768px) {
   body {

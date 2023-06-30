@@ -24,7 +24,6 @@ body {
   text-align: center;
 }
 */
-
 .sair {
   display: block;
   position: fixed;
@@ -164,12 +163,13 @@ button:hover {
 }
 
 .link-button1 {
+  text-decoration: none;
+  text-decoration-line: none;
   display: flex;
   background-color: transparent;
   color: #005ca9;
   font-size: 0.8em;
   font-weight: bold;
-  text-decoration: none;
   padding: 0em 0em 0em 1rem;
   box-sizing: border-box;
   float: right;
@@ -177,24 +177,26 @@ button:hover {
 
 .link-button1:hover {
   text-decoration: none;
-  text-decoration: underline;
+  color: #000000;
 }
 
 .link-button2 {
   background-color: transparent;
   color: #005ca9;
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: bold;
   text-decoration: none;
   padding: 0.3em 0em;
   box-sizing: border-box;
   margin-bottom: 1rem;
   float: left;
+  text-decoration: none;
 }
 
 .link-button2:hover {
+  text-decoration-line: none;
   text-decoration: none;
-  text-decoration: underline;
+  color: #000000;
 }
 
 .rodape {

@@ -23,7 +23,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
     <title>Agendar</title>
-    
+
     <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -247,8 +247,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
 <footer>
     <div class="rodape">
-        <p>&copy; 2023 UAIBook. Todos os direitos reservados.</p>
-        <p>Curso de Desenvolvimento de Sistemas, Uberaba/MG, SENAI</p>
+        <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>
+        <strong>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
     </div>
 </footer>
 

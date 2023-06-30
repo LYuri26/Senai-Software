@@ -37,6 +37,7 @@ h1 {
   font-weight: bold;
 }
 
+
 .navbar {
   background-color: #005ca9;
   background-position: top;
@@ -48,15 +49,6 @@ h1 {
   width: 100%;
   z-index: 999;
   /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
-}
-
-.navbar-container {
-  /*align-items: flex-start;*/
-  justify-content: space-between;
-  display: flex;
-  max-width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .logo {
@@ -90,6 +82,10 @@ h1 {
   text-align: center;
   margin-right: 4rem;
 }
+.navbar-menu li a:hover {
+  color: #000000;
+  text-decoration: none;
+}
 
 .navbar-menu li a {
   color: #ffffff;
@@ -100,7 +96,13 @@ h1 {
   margin-right: 30px;
   /* Removendo margin do último elemento */
 }
-
+.rodape {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  line-height: 1.5;
+  white-space: pre-line;
+  padding-top: 2rem;
+}
 form {
   background-color: #ffffff;
   border-radius: 15px;

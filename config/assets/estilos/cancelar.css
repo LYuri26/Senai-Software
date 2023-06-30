@@ -1,6 +1,5 @@
 body {
   background-color: #e0e0e0;
-  font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
@@ -24,7 +23,7 @@ body {
   background-color: #005ca9;
   background-position: top;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
-  padding-bottom: 2px;
+  padding-bottom: 1px;
   position: fixed;
   top: 0;
   left: 0;
@@ -41,7 +40,6 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 .logo {
   /* Movemos essas tags para o .navbar-container
   display: flex;
@@ -64,16 +62,21 @@ body {
   font-weight: bold;
 }
 
+
 .navbar-menu li {
   text-align: center;
   margin-right: 4rem;
 }
 
+
 .navbar-menu li a {
   color: #ffffff;
   text-decoration: none;
 }
-
+.navbar-menu li a:hover {
+  color: #000000;
+  text-decoration: none;
+}
 .navbar-menu li:last-child {
   margin-right: 30px;
   /* Removendo margin do último elemento */
