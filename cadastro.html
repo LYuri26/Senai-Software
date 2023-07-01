@@ -45,11 +45,14 @@
 
 
 <body>
-    <a href="./logout.php" class="sair">Voltar</a>
-
     <div id="app">
+        <div class="voltar">
+            <a href="./logout.php" class="sair">Voltar</a>
+        </div>
         <form id="forms" action="./conexaocadastro.php" onsubmit="sendEmail();" method="post">
-            <img src="./config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
+            <div class="containerimg">
+                <img src="./config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
+            </div>
             <h2>CADASTRO</h2>
             <label for="nome">Nome</label>
             <input type="text" maxlength="60" name="nome" id="nome" placeholder="Digite seu nome" required
@@ -82,7 +85,8 @@
                 <button type="submit" value="Cadastrar">Cadastrar</button>
             </div>
             <div class="button-container">
-                <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">Limpar</button>
+                <button type="button" id="botao_limpar" onclick="limparFormulario()"
+                    class="limpar-button">Limpar</button>
             </div>
     </div>
     </form>

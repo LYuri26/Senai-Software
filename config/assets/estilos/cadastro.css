@@ -47,6 +47,7 @@ input[type="text"] {
   box-sizing: border-box;
   margin-bottom: 1em;
 }
+
 .sair {
   font-family: sans-serif;
   position: fixed;
@@ -69,7 +70,8 @@ input[type="text"] {
   margin: 0 auto;
   display: block;
 }
-.sair:hover { 
+
+.sair:hover {
   background-color: #0c36be;
 }
 
@@ -92,10 +94,28 @@ input[type="submit" i] {
   margin: 0 auto;
   display: block;
 }
+
+.containerimg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 #logosenai {
-  position: relative;
   width: 10rem;
-  margin-top: -1rem;
+  flex-grow: 0;
+  max-width: 40%;
+  height: auto;
+}
+
+img {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  align-content: space-around;
+  align-items: center;
 }
 
 input[type="number" i] {
@@ -260,6 +280,7 @@ button:hover {
   margin: 0;
   /* Remover margens para evitar espaçamento extra */
 }
+
 @media screen and (max-width: 768px) {
   body {
     max-width: 100%;
@@ -278,6 +299,21 @@ button:hover {
     object-position: bottom;
   }
 
+  .containerimg {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+  }
+
+  #logosenai {
+    position: absolute;
+    width: 10rem;
+  }
+
   form {
     margin-top: 3rem;
     padding-top: 3rem;
@@ -291,6 +327,13 @@ button:hover {
     padding-bottom: 5%;
     max-width: 30rem;
     margin: 0 auto;
+  }
+
+  .voltar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 1.5rem;
   }
 
   /*

@@ -5,7 +5,6 @@ body {
   overflow: hidden;
   margin: 0 auto;
   padding: 2%;
-  margin-top: 1vh;
 }
 label {
   grid-column: 1;
@@ -40,7 +39,6 @@ label {
   max-width: 40%;
   margin: 0 auto;
   padding: 2%;
-  margin-top: 1vh;
 }
 form {
   height: max-content;
@@ -56,10 +54,10 @@ form {
 
 h2 {
   white-space: normal;
-  font-size: 2rem;
+  font-size: 1.68rem;
   color: #005ca9;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 #senhaErro {

@@ -244,13 +244,13 @@ strong {
   white-space: pre-line;
   padding-top: 7.1rem;
 }
-
+/*
 @media screen and (min-width: 1000px) {
   body {
     zoom: 100%;
   }
 }
-
+*/
 @media screen and (max-width: 1920px) {
   footer {
     padding: 20px;
