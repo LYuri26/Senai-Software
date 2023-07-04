@@ -108,9 +108,9 @@ try {
                 ':senha' => $senha
             ]);
 
-            echo "<div class='Cadastro-sucesso' style='color: black; text-align: center; font-size:60px; font-weight:600; margin: 1rem;'>Cadastro realizado com sucesso!</div>";
+            echo "<div class='Cadastro-sucesso' style='color: black; text-align: center; font-size:42px; margin: 1rem;'>Cadastro realizado com sucesso!</div>";
             /* OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO HTML
-            // Inclua essa linha no seu código PHP para informar ao navegador o tipo de codificação de caracteres que está sendo usado
+            // Inclua essa linha no seu código PHP para informar ao navegador o tipo de codificação de caracteres que está sendo usado*/
             header('Content-Type: text/html; charset=utf-8');
 
             // Abra o documento HTML e inicie a seção "head"
@@ -119,20 +119,34 @@ try {
             echo '<head>';
             echo '<meta charset="utf-8">';
             echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-            echo '<meta http-equiv="refresh" content="5;url=login.html">';
+            /*echo '<meta http-equiv="refresh" content="5;url=login.html">';*/
             // Adicione outras meta tags aqui...
             echo '</head>';
 
             // Feche a seção "head" e inicie o corpo do documento
             echo '<body>';
+            echo ' <div class="container" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20%;">';
+            echo '<button onclick="redirecionar()">Para ir para a página de Login, clique aqui!</button>';
+            echo '  </div>';
+            echo "  <script>
+            function redirecionar() {
+              window.location.href = 'login.html';
+            }
+          </script>";
+
             // Adicione o conteúdo da página aqui...
             echo '</body>';
             echo '</html>';
-            */
+
             // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
-            echo "<script>window.location.href = 'login.html';
-        </script>";
-            header('Location : login.html');
+            /*echo "<script>window.location.href = 'login.html';
+        </script>";*/
+            echo "<script> setInterval(function() { window.location.href = 'login.html'; }, 5000);
+      </script>";
+            /*header('Location : login.html');*/
         }
         /*
         users

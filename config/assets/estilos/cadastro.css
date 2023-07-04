@@ -224,7 +224,17 @@ button:hover {
   font-size: 1em;
   text-decoration: none;
 }
+#email:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: red;
+}
 
+#emailErro {
+  display: none;
+}*/*
+#emailErro:invalid {
+  color: aquamarine;
+  display: flex;
+}*/
 #senhaErro::after {
   display: flex;
 }
