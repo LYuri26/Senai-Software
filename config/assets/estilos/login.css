@@ -108,7 +108,21 @@ input[type="checkbox"] {
 }*/
 
 /* BUTTON */
+.password-container {
+  position: relative;
+}
 
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-toggle-btn i {
+  font-size: 16px;
+}
 .button-container {
   display: flex;
   flex-direction: column;

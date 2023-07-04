@@ -38,6 +38,7 @@
     </script>
     <script src="./config/assets/js/gmail api.js" async></script>
     <script src="https://accounts.google.com/gsi/client" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- O ícone da página pode ser carregado no final, por questão de organização do código e porque é interessante processarmos as fontes e estilos primeiro do que o ícone -->
     <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
@@ -59,25 +60,46 @@
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu nome'"
                 autocomplete="off"><br><br>
 
-            <label for="Código de acesso">Código de acesso</label>
+            <!--
+                <label for="Código de acesso">Código de acesso</label>
             <input type="text" name="codigo" ID="codigo" placeholder="Digite o código" required
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o código'"
                 autocomplete="off"><br><br>
 
+            -->
             <label for="email" novalidate>Email</label>
-            <input type="email" name="email" id="email" placeholder="Digite o email" required pattern="[^@\s]+@fiemg\.com\.br" title="Sexo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o email'" autocomplete="off"><br><br>
+            <input type="email" name="email" id="email" placeholder="exemplo@fiemg.com.br" required pattern="[^@\s]+@fiemg\.com\.br" title="domínio @fiemg.com.br" onfocus="this.placeholder = ''" onblur="this.placeholder = 'exemplo@fiemg.com.br'" autocomplete="off"><br><br>
 
+            <label for="confirmar email" novalidate>Confirmar email</label>
+            <input type="email" name="confirmar email" id="confirmaremail" placeholder="Confirmar email" required pattern="[^@\s]+@fiemg\.com\.br" title="domínio @fiemg.com.br" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirmar email'" autocomplete="off"><br><br>
 
-            <p id="emailErro"></p>
+            <p id="emailErro1" style="color: red;">Email não coincide!</p><br><br>
+
+            <p id="emailErro"></p> 
 
             <label for="senha">Senha</label>
+            <div class="password-container">
+
             <input type="password" minlength="8" name="senha" id="senha" placeholder="Digite a senha" required
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a senha'" autocomplete="off"><br><br>
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a senha'" autocomplete="off">
+                
+        <span class="password-toggle-btn" onclick="togglePasswordVisibility()">
+            <i id="password-toggle-icon" class="fas fa-eye"></i>
+          </span>
+        </div>
+
+        <br>
+        <div class="password-container">
 
             <label for="confirmar senha">Confirmar senha</label>
             <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha"
                 placeholder="Confirme a senha" required onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Confirme a senha'" autocomplete="off"><br><br>
+                onblur="this.placeholder = 'Confirme a senha'" autocomplete="off">  
+
+                <span class="password-toggle-btn" onclick="togglePasswordVisibility1()">
+                    <i id="password-toggle-icon1" class="fas fa-eye"></i>
+                  </span>
+                </div>
 
             <!--Caso as senhas não coincidam, mostrar mensagem-->
 
@@ -129,6 +151,21 @@
             }
         });
 
+        const email = document.getElementById('email');
+        const cEmail = document.getElementById('confirmaremail');
+        const emailErro = document.getElementById('emailErro1');
+
+        cSenha.addEventListener('blur', () => {
+            if (email.value !== cEmail.value) {
+                emailErro.style.display = 'block';
+                email.value = '';
+                cEmail.value = '';
+            } else {
+                emailErro.style.display = 'none';
+            }
+        });
+
+
         function limparFormulario() {
             document.getElementById("forms").reset();
 
@@ -141,6 +178,36 @@
     </script>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <script src="./config/assets/js/email_fiemg.js"></script>
+    <!--<script>
+    function togglePasswordVisibility() {
+        var senhaInput = document.getElementById("senha");
+        var toggleIcon = document.getElementById("password-toggle-icon");
+        if (senhaInput.type === "password") {
+          senhaInput.type = "text";
+          toggleIcon.classList.remove("fa-eye");
+          toggleIcon.classList.add("fa-eye-slash");
+        } else {
+          senhaInput.type = "password";
+          toggleIcon.classList.remove("fa-eye-slash");
+          toggleIcon.classList.add("fa-eye");
+        }
+      }
+
+      function togglePasswordVisibility1() {
+        var senhaInput = document.getElementById("confirmarsenha");
+        var toggleIcon = document.getElementById("password-toggle-icon1");
+        if (senhaInput.type === "password") {
+          senhaInput.type = "text";
+          toggleIcon.classList.remove("fa-eye");
+          toggleIcon.classList.add("fa-eye-slash");
+        } else {
+          senhaInput.type = "password";
+          toggleIcon.classList.remove("fa-eye-slash");
+          toggleIcon.classList.add("fa-eye");
+        }
+      }
+    </script>-->
+    <script src="./config/assets/js/passw_eye.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
     <footer>
         <div class="rodape">

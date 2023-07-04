@@ -17,5 +17,6 @@ function validarEmail() {
 // Exemplo de uso: associando a função ao evento de envio do formulário
 var form = document.getElementById("forms");
 form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Previne o envio do formulário
     validarEmail();
 });

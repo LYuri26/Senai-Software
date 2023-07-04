@@ -27,24 +27,6 @@
 
   <!-- Adicione a biblioteca de ícones Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-  <style>
-    .password-container {
-      position: relative;
-    }
-
-    .password-toggle-btn {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-    }
-
-    .password-toggle-btn i {
-      font-size: 16px;
-    }
-  </style>
     <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
   </head>
 
@@ -66,7 +48,7 @@
         onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite aqui seu nome ou e-mail'"
         style="text-align: left;" autocomplete="off"><br>
 
-      <label for="curso">Senha</label>
+      <label for="senha">Senha</label>
       <div class="password-container">
         <input type="password" minlength="8" maxlength="62" id="senha" name="senha" placeholder="Digite aqui sua senha"
           required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'"
@@ -120,8 +102,8 @@
     <div id="trueMsg" class="success"
       style="margin-top: 1rem; visibility: hidden;  display: none; color: red; text-align: center; font-size:20px; font-weight:600;">
     </div>
-    <script>
-      /*
+   <!--<script>
+      
       
       // Verificar se a variável de sessão está definida
       if (sessionStorage.getItem('login_message')) {
@@ -129,7 +111,7 @@
         alert(sessionStorage.getItem('login_message'));
         // Limpar a variável de sessão
         sessionStorage.removeItem('login_message');
-      }*/
+      }
 
 
       function limparFormulario() {
@@ -141,15 +123,6 @@
           dados[i].value = '';
         }
       }
-
-      function clearPlaceholder(element) {
-        element.placeholder = '';
-      }
-
-      function resetPlaceholder(element) {
-        element.placeholder = 'Digite aqui seu nome ou e-mail';
-      }
-
       function togglePasswordVisibility() {
         var senhaInput = document.getElementById("senha");
         var toggleIcon = document.getElementById("password-toggle-icon");
@@ -163,9 +136,10 @@
           toggleIcon.classList.add("fa-eye");
         }
       }
-    </script>
+    </script>-->
   
   <!--<button onclick="history.go(-1)">Voltar</button>-->
+  <script src="./config/assets/js/passw_eye.js"></script>
   <script src="./config/assets/js/destruirSessao.js"></script>
   <script src="./config/assets/js/default.js"></script>
     <footer>
