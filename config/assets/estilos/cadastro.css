@@ -276,7 +276,18 @@ button:hover {
   display: none;
 }
 #emailErro1 {
-  display: none;
+  justify-content: flex-start;
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  justify-content: flex-start;
+  background-color: transparent;
+  font-size: 1em;
+  text-decoration: none;
+  display: none;  
+  margin-top: -0.2rem;
+  margin-bottom: -0.2rem;
 }/*
 #emailErro:invalid {
   color: aquamarine;

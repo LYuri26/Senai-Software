@@ -11,6 +11,7 @@ function validarEmail() {
         console.log('Email inválido');
         mensagemErro.textContent = 'O email precisa conter o domínio @fiemg.com.br'; // Define a mensagem de erro
         mensagemErro.style.display = 'flex'; // Exibe a mensagem de erro
+        mensagemErro.style.margin = '1rem' // Define a cor da mensagem de erro
     }
 }
 
