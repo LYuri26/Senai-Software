@@ -2,6 +2,7 @@ body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
 }
+
 /*
 h1 {
     color: #005ca9;
@@ -82,6 +83,7 @@ h1 {
   text-align: center;
   margin-right: 4rem;
 }
+
 .navbar-menu li a:hover {
   color: #000000;
   text-decoration: none;
@@ -96,17 +98,23 @@ h1 {
   margin-right: 30px;
   /* Removendo margin do último elemento */
 }
+
 .rodape {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   line-height: 1.5;
-  white-space: pre-line;
-  padding-top: 2rem;
+  display: grid;
+  place-items: center;
+}  
+tr {
+  background-color: rgba(206, 204, 204, 0.521);
 }
+
 form {
+  display: grid;
   background-color: #ffffff;
   border-radius: 15px;
-  padding: 2%;
+  padding: 2rem;
   padding-bottom: 1%;
   max-width: 30rem;
   margin: 0 auto;
@@ -170,46 +178,38 @@ input[type="submit"]:hover {
   text-align: center;
 }
 
-.rodape {
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  /* padding-top: auto; */
-  font-weight: bold;
-  margin-top: 3%;
-  object-position: bottom;
-}
-
-.rodape p {
-  line-height: 0.4;
-}
 
 .text-container {
-  margin: 0 auto;
-  align-items:center;
-  font-family: "Montserrat", sans-serif;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
   /* padding-top: auto; */
   font-weight: bold;
 }
-
 .text-container .calendario {
-  margin: 0 auto;
-  width: 100%;
-  flex-basis: 20%;
+  display: flex;
+  margin: 0 auto; /* Adicionando um espaçamento entre os elementos */
 }
+
 
 .text-container form {
-  flex-basis: 30%;
+  width: 100%;
+  margin-left: 0rem; /* Adicionando um espaçamento entre os elementos */
 }
+
 /*
 table {
   width: max-content;
 }
 */
 table {
+  border-collapse: collapse;
   display: flex;
   text-align: center;
 }
+
 th,
 td {
   text-align: center;
@@ -314,6 +314,7 @@ h1 {
   /*border-radius: 200px;
   margin-right: 200px;*/
 }
+
 .navbar-menu {
   list-style: none;
   display: flex;
@@ -331,20 +332,12 @@ h1 {
   color: #ffffff;
   text-decoration: none;
 }
+
 .navbar-menu li:last-child {
   margin-right: 30px;
   /* Removendo margin do último elemento */
 }
 
-form {
-  background-color: #ffffff;
-  border-radius: 15px;
-  padding: 2rem;
-  padding-bottom: 1%;
-  max-width: 30rem;
-  margin: 0 auto;
-  margin-top: 5rem;
-}
 
 input[type="number"]:hover,
 input[type="date"]:hover,
@@ -357,4 +350,99 @@ button[type="submit"]:hover,
 input[type="submit"]:hover {
   background-color: #0c36be;
   text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+
+  body {
+    margin-top: 6rem;
+  }
+
+  .navbar-menu {
+    justify-content: stretch;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    align-items: flex-start;
+  }
+  .text-container {
+    display:grid;
+    margin: 0 auto;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    /* padding-top: auto; */
+    font-weight: bold;
+  }
+  table {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  tbody {
+    margin-top: 8rem;
+    justify-items: center;
+    text-align: center;
+  }
+  tr:last-of-type td:last-child {
+    border-radius: 0px 0px 20px 0px;
+  }
+  tr:last-of-type td:first-child {
+    border-radius: 0px 0px 0px 20px;
+  }
+  tr {
+    background-color: rgba(206, 204, 204, 0.521);
+  }
+
+  .text-container .calendario {
+    margin: 0 auto;
+    width: 100%;
+    flex-basis: 20%;
+    display: grid;
+    margin: 0 auto;
+    align-items: center;
+  }
+  
+  .text-container form {
+    display:inline;
+    flex-basis: 30%;
+  }
+  
+  .navbar-container {
+    /*align-items: flex-start;*/
+    justify-content: stretch;
+    text-align: center;
+    align-items: center;
+    display: grid;
+  }
+  footer {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .rodape {
+    display: grid;
+    place-items: center;
+    white-space: pre-line;
+  }
+  .rodape p {
+    display: grid;
+    place-items: center;
+    white-space: pre-line;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  }
+
 }

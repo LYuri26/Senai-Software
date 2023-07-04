@@ -92,20 +92,21 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
       </div>
     </div>
   </div>
-  <script src="./config/assets/js/menu.js"></script>
   <div class="container" id="conteudo">
     <p>O UAIBook é a melhor ferramenta que você, aluno, pode escolher para obter facilidade e bem-estar ao realizar a reserva de um horário na biblioteca. Com o UAIBook, agendar o horário desejado na biblioteca nunca foi tão fácil e livre de complicações. Desfrute de uma experiência tranquila e eficiente ao realizar suas reservas sem preocupações.</p>
     <p id="linhatexto">Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   </div>
   <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
 
-  <footer>
-    <div class="rodape">
-      <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. <br>Trilhas do
-        Futuro II. <br>SENAI Uberaba/MG.</p>
-    </div>
-  </footer>
   <script src="./config/assets/js/destruirSessao.js"></script>
+  <script src="./config/assets/js/menu.js"></script>
 </body>
+
+<footer>
+  <div class="rodape">
+    <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. <br>Trilhas do
+      Futuro II. <br>SENAI Uberaba/MG.</p>
+  </div>
+</footer>
 
 </html>

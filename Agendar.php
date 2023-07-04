@@ -234,7 +234,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 //session_destroy();
                 echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div> <p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento: " . $resultado_final . "</p>";
                 echo "<script>window.location.href = 'agendamentos.php'</script>;";
-                header("Location: agendamentos.php"); 
+                header("Location: agendamentos.php");
 
                 /*echo "<script> alert('Agendado com sucesso!') </script>";*/
                 // Agendamento válido, continuar com o código existente para inserir no banco de dados
@@ -253,8 +253,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
 <footer>
     <div class="rodape">
-        <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>
-        <strong>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
+        <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. <br>Trilhas do Futuro II. <br>SENAI Uberaba/MG.</p>
     </div>
 </footer>
 
