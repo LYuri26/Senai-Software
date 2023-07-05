@@ -59,7 +59,7 @@ try {
         $resconsultasuper = $stmt->fetch(PDO::FETCH_ASSOC);
         */
 
-        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE BINARY (login = :login || email = :login) AND BINARY senha = :senha");
+        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE BINARY (BINARY login = :login OR BINARY email = :login) AND BINARY senha = :senha");
         $stmt->bindValue(':login', $login);
         $stmt->bindValue(':senha', $senha);
         $stmt->execute();
@@ -72,8 +72,8 @@ try {
             header('Location: menu.php');
             exit;
         }
-        
-        $consultasuper = "SELECT * FROM superusuario WHERE BINARY (login = :login || email = :login)";
+
+        $consultasuper = "SELECT * FROM superusuario WHERE BINARY (BINARY login = :login OR BINARY email = :login)";
         $stmt = $pdo->prepare($consultasuper);
         $stmt->bindParam(':login', $login);
         $stmt->execute();
@@ -88,7 +88,7 @@ try {
         }
 
         //users
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE BINARY (login = :login || email = :login) AND BINARY (senha = :senha)");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE BINARY (BINARY login = :login OR BINARY email = :login) AND BINARY senha = :senha");
         $stmt->bindValue(':login', $login);
         $stmt->bindValue(':senha', $senha);
         $stmt->execute();
@@ -103,7 +103,7 @@ try {
         }
 
         // Verificar se é um usuário comum
-        $consultauser = "SELECT * FROM users WHERE BINARY (login = :login || email = :login)";
+        $consultauser = "SELECT * FROM users WHERE BINARY (BINARY login = :login OR BINARY email = :login)";
         $stmt = $pdo->prepare($consultauser);
         $stmt->bindParam(':login', $login);
         $stmt->execute();

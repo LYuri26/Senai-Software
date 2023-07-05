@@ -7,9 +7,9 @@ function limparFormulario() {
     dados[i].value = "";
   }
 }
-function togglePasswordVisibility() {
-  var senhaInput = document.getElementById("senha");
-  var toggleIcon = document.getElementById("password-toggle-icon");
+function togglePasswordVisibility(inputId, toggleIconId) {
+  var senhaInput = document.getElementById(inputId);
+  var toggleIcon = document.getElementById(toggleIconId);
   if (senhaInput.type === "password") {
     senhaInput.type = "text";
     toggleIcon.classList.remove("fa-eye");

@@ -138,6 +138,7 @@ input[type="email" i] {
   box-sizing: border-box;
   margin-bottom: 1em;
 }
+
 #senha {
   grid-column: 1;
   width: 100%;
@@ -145,6 +146,10 @@ input[type="email" i] {
   border: 1px solid #005ca9;
   border-radius: 4px;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 input[type="password"] {
@@ -155,7 +160,12 @@ input[type="password"] {
   border-radius: 4px;
   box-sizing: border-box;
   margin-bottom: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
 .password-container {
   position: relative;
 }
@@ -167,23 +177,12 @@ input[type="password"] {
   transform: translateY(-50%);
   cursor: pointer;
 }*/
-#password-toggle-icon {
-position: absolute;
-right: 10px;
-top: 41%;
-transform: translateY(-50%);
-cursor: pointer;
-}
-
-#password-toggle-icon1 {
-  position: absolute !important;
-  right: 10px !important;
-  top: 55% !important;
-  transform: translateY(-50%) !important;
-  cursor: pointer !important;
-}
-.password-toggle-btn i {
-  font-size: 16px;
+.password-toggle-btn {
+  position: absolute;
+  top: 54%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .button-container {
@@ -239,6 +238,10 @@ button:hover {
 #senha,
 #confirmarsenha {
   text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* trata-se de um seletor que seleciona os elementos que não tem o atributo placeholder-shown, ou seja, que não está com o placeholder aparecendo. 
@@ -265,9 +268,11 @@ button:hover {
   font-size: 1em;
   text-decoration: none;
 }
+
 #email:invalid:not(:focus):not(:placeholder-shown) {
   border-color: red;
 }
+
 #confirmaremail:invalid:not(:focus):not(:placeholder-shown) {
   border-color: red;
 }
@@ -275,6 +280,7 @@ button:hover {
 #emailErro {
   display: none;
 }
+
 #emailErro1 {
   justify-content: flex-start;
   background-color: transparent;
@@ -285,10 +291,12 @@ button:hover {
   background-color: transparent;
   font-size: 1em;
   text-decoration: none;
-  display: none;  
+  display: none;
   margin-top: -0.2rem;
   margin-bottom: -0.2rem;
-}/*
+}
+
+/*
 #emailErro:invalid {
   color: aquamarine;
   display: flex;

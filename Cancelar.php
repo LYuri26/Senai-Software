@@ -150,8 +150,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
         <script src="./config/assets/js/default.js"></script>
         <footer>
             <div class="rodape">
-                <strong>&copy; 2023 UAIBook. Todos os direitos reservados.</strong>
-                <strong>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. SENAI. Uberaba/MG.</strong>
+                <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro
+                    II. <br>SENAI. Uberaba/MG.</p>
             </div>
         </footer>
 

@@ -54,7 +54,7 @@
           required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'"
           style="text-align: left; " autocomplete="off">
 
-        <span class="password-toggle-btn" onclick="togglePasswordVisibility()">
+        <span class="password-toggle-btn" onclick="togglePasswordVisibility('senha', 'password-toggle-icon')">
           <i id="password-toggle-icon" class="fas fa-eye"></i>
         </span>
       </div>
@@ -97,11 +97,8 @@
   -->
 
 
-    <div id="falseMsg" class="failed"
-      style="margin-top: 1rem; visibility: hidden; display: none; color: red; text-align: center; font-size:20px; font-weight:600;"></div>
-    <div id="trueMsg" class="success"
-      style="margin-top: 1rem; visibility: hidden;  display: none; color: red; text-align: center; font-size:20px; font-weight:600;">
-    </div>
+    <div id="falseMsg" class="failed"></div>
+    <div id="trueMsg" class="success"></div>
    <!--<script>
       
       
@@ -144,7 +141,7 @@
   <script src="./config/assets/js/default.js"></script>
     <footer>
       <div class="rodape">
-        <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro
+        <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro
           II. <br>SENAI. Uberaba/MG.</p>
       </div>
     </footer>

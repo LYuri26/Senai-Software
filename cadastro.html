@@ -60,46 +60,47 @@
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu nome'"
                 autocomplete="off"><br><br>
 
-            
-                <label for="Código de acesso">Código de acesso</label>
+
+            <label for="Código de acesso">Código de acesso</label>
             <input type="text" name="codigo" ID="codigo" placeholder="Digite o código" required
                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o código'"
                 autocomplete="off"><br><br>
 
-            
+
             <label for="email" novalidate>Email</label>
-            <input type="email" name="email" id="email" placeholder="exemplo@fiemg.com.br" required pattern="[^@\s]+@fiemg\.com\.br" title="domínio @fiemg.com.br" onfocus="this.placeholder = ''" onblur="this.placeholder = 'exemplo@fiemg.com.br'" autocomplete="off"><br><br>
+            <input type="email" name="email" id="email" placeholder="exemplo@fiemg.com.br" required
+                pattern="[^@\s]+@fiemg\.com\.br" title="domínio @fiemg.com.br" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'exemplo@fiemg.com.br'" autocomplete="off"><br><br>
 
             <label for="confirmar email" novalidate>Confirmar email</label>
-            <input type="email" name="confirmar email" id="confirmaremail" placeholder="Confirmar email" required pattern="[^@\s]+@fiemg\.com\.br" title="domínio @fiemg.com.br" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirmar email'" autocomplete="off"><br>
+            <input type="email" name="confirmar email" id="confirmaremail" placeholder="Confirmar email" required
+                pattern="[^@\s]+@fiemg\.com\.br" title="domínio @fiemg.com.br" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Confirmar email'" autocomplete="off"><br>
 
             <p id="emailErro1" style="color: red;">Email não coincide!</p><br>
 
-            <p id="emailErro"></p> 
+            <p id="emailErro"></p>
 
-            <label for="senha">Senha</label>
             <div class="password-container">
 
-            <input type="password" minlength="8" name="senha" id="senha" placeholder="Digite a senha" required
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a senha'" autocomplete="off">
-                
-        <span class="password-toggle-btn" onclick="togglePasswordVisibility()">
-            <i id="password-toggle-icon" class="fas fa-eye"></i>
-          </span>
-        </div>
+                <label for="senha">Senha</label>
+                <input type="password" minlength="8" name="senha" id="senha" placeholder="Digite a senha" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a senha'" autocomplete="off">
 
-        <br>
-        <div class="password-container">
+                <span class="password-toggle-btn" onclick="togglePasswordVisibility('senha', 'password-toggle-icon')">
+                    <i id="password-toggle-icon" class="fas fa-eye"></i>
+                </span>
+            </div>
 
-            <label for="confirmar senha">Confirmar senha</label>
-            <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha"
-                placeholder="Confirme a senha" required onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Confirme a senha'" autocomplete="off">  
+            <br>
+            <div class="password-container">
 
-                <span class="password-toggle-btn" onclick="togglePasswordVisibility1()">
+                <label for="confirmar senha">Confirmar senha</label>
+                <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme a senha" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirme a senha'" autocomplete="off">
+
+                <span class="password-toggle-btn" onclick="togglePasswordVisibility('confirmarsenha', 'password-toggle-icon1')">
                     <i id="password-toggle-icon1" class="fas fa-eye"></i>
-                  </span>
-                </div>
+                </span>
+            </div>
 
             <!--Caso as senhas não coincidam, mostrar mensagem-->
 
@@ -212,7 +213,8 @@
     <footer>
         <div class="rodape">
             <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do
-                Futuro II. <br>SENAI. Uberaba/MG.</p>
+                Futuro
+                II. <br>SENAI. Uberaba/MG.</p>
         </div>
     </footer>
 

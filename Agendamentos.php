@@ -31,7 +31,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <meta name="keywords" content="SENAI, Biblioteca, agendamentos">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="author" content="SENAI">
-    
+
     <!-- link tags -->
     <link rel="stylesheet" href="./config/assets/estilos/consulta.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,8 +117,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <script src="./config/assets/js/destruirSessao.js"></script>
     <footer>
         <div class="rodape">
-            <p>&copy;2023 UAIBook. Todos os direitos reservados.</p>
-            <p>Curso de Desenvolvimento em Sistemas.Trilhas do Futuro II. SENAI. Uberaba/MG.</p>
+            <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro
+                II. <br>SENAI. Uberaba/MG.</p>
         </div>
     </footer>
 </body>
