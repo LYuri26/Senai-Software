@@ -3,7 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .sair {
@@ -48,7 +48,7 @@ body {
   */
   font-weight: bold;
   text-decoration: none;
- /* object-fit: cover;
+  /* object-fit: cover;
   /*width: 10rem;*/
   height: 3rem;
   width: 10rem;
@@ -83,32 +83,43 @@ body {
   text-decoration: none;
 }
 #app {
-  max-width: 1000px;
+  display:grid;
+  justify-items: center;
+  text-align: center;
+  justify-content: center;
+  max-width: 90%;
   margin: 0 auto;
-  padding: 0px;
-  margin-top: 2vh;
+  margin-top: 5rem;
+}
+form {
+  border-radius: 15px;
 }
 
 table {
+  border-radius: 20px 20px 0px 0px;
   border-collapse: collapse;
   width: 100%;
   max-width: 800px;
   margin: 20px auto;
   white-space: nowrap;
   font-weight: 600;
+  padding-bottom: 5%;
 }
-
+tr {
+  background-color: #f2f2f2;
+}
+tr:last-of-type td:first-child {
+  border-radius: 0px 0px 0px 20px;
+}
+tr:last-of-type td:last-child {
+  border-radius: 0px 0px 20px 0px;
+}
 h1 {
   color: #005ca7;
   font-size: 24px;
   text-align: center;
 }
 
-form {
-  background-color: #ffffff;
-  border-radius: 15px;
-  padding: 10%;
-}
 
 label {
   display: block;

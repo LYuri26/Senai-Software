@@ -2,6 +2,12 @@ body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
 }
+header {
+  display: flex;
+  z-index: 10;
+  position: relative;
+  justify-content: center;
+}
 
 /*
 h1 {
@@ -37,7 +43,6 @@ h1 {
   color: #333;
   font-weight: bold;
 }
-
 
 .navbar {
   background-color: #005ca9;
@@ -82,6 +87,7 @@ h1 {
 .navbar-menu li {
   text-align: center;
   margin-right: 4rem;
+  z-index: 999;
 }
 
 .navbar-menu li a:hover {
@@ -98,22 +104,30 @@ h1 {
   margin-right: 30px;
   /* Removendo margin do último elemento */
 }
-
+tr:last-of-type td:last-child {
+  border-radius: 0px 0px 20px 0px;
+}
+tr:last-of-type td:first-child {
+  border-radius: 0px 0px 0px 20px;
+}
 .rodape {
+  font-weight: bold;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   line-height: 1.5;
   display: grid;
   place-items: center;
-}  
+}
 tr {
   background-color: rgba(206, 204, 204, 0.521);
 }
 
 form {
+  width: 100%;
   display: grid;
   background-color: #ffffff;
   border-radius: 15px;
+  margin-left: 0px;
   padding: 2rem;
   padding-bottom: 1%;
   max-width: 30rem;
@@ -177,8 +191,6 @@ input[type="submit"]:hover {
   font-weight: 900;
   text-align: center;
 }
-
-
 .text-container {
   display: flex;
   justify-content: center;
@@ -188,17 +200,19 @@ input[type="submit"]:hover {
   /* padding-top: auto; */
   font-weight: bold;
 }
+form {
+  width: 100%;
+  width: 30rem;
+  width:30vw;
+  padding-bottom: 1rem;
+}
 .text-container .calendario {
   display: flex;
-  margin: 0 auto; /* Adicionando um espaçamento entre os elementos */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 1rem; /* Adicionando um espaçamento entre os elementos */
 }
-
-
-.text-container form {
-  width: 100%;
-  margin-left: 0rem; /* Adicionando um espaçamento entre os elementos */
-}
-
 /*
 table {
   width: max-content;
@@ -338,7 +352,6 @@ h1 {
   /* Removendo margin do último elemento */
 }
 
-
 input[type="number"]:hover,
 input[type="date"]:hover,
 input[type="time"]:hover {
@@ -352,9 +365,9 @@ input[type="submit"]:hover {
   text-align: center;
 }
 
-
 @media (max-width: 768px) {
   .navbar {
+    z-index: 999;
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -362,6 +375,7 @@ input[type="submit"]:hover {
   }
 
   header {
+    z-index: 10;
     display: flex;
     position: relative;
     justify-content: center;
@@ -370,6 +384,23 @@ input[type="submit"]:hover {
   body {
     margin-top: 6rem;
   }
+  form {
+    width: 100%;
+    margin: 0;
+    margin-top: 2rem;
+  }
+  .navbar-menu li {
+    text-align: center;
+    margin-right: 4rem;
+    z-index: 999;
+  }
+
+  .forms {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
 
   .navbar-menu {
     justify-content: stretch;
@@ -377,9 +408,10 @@ input[type="submit"]:hover {
     text-align: center;
     align-items: center;
     align-items: flex-start;
+    z-index: 999;
   }
   .text-container {
-    display:grid;
+    display: grid;
     margin: 0 auto;
     align-items: center;
     font-family: "Montserrat", sans-serif;
@@ -397,31 +429,37 @@ input[type="submit"]:hover {
     justify-items: center;
     text-align: center;
   }
+
   tr:last-of-type td:last-child {
     border-radius: 0px 0px 20px 0px;
   }
   tr:last-of-type td:first-child {
     border-radius: 0px 0px 0px 20px;
   }
+
   tr {
-    background-color: rgba(206, 204, 204, 0.521);
+    background-color: rgba(204, 204, 206, 0.521);
   }
 
   .text-container .calendario {
-    margin: 0 auto;
     width: 100%;
     flex-basis: 20%;
     display: grid;
     margin: 0 auto;
     align-items: center;
   }
-  
+
   .text-container form {
-    display:inline;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    padding: 2rem;
     flex-basis: 30%;
   }
-  
+
   .navbar-container {
+    z-index: 999;
     /*align-items: flex-start;*/
     justify-content: stretch;
     text-align: center;
@@ -433,6 +471,7 @@ input[type="submit"]:hover {
     margin: 0 auto;
   }
   .rodape {
+    font-weight: bold;
     display: grid;
     place-items: center;
     white-space: pre-line;
@@ -444,5 +483,4 @@ input[type="submit"]:hover {
     color: rgb(0, 0, 0);
     font-size: 0.9rem;
   }
-
 }

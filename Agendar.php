@@ -105,31 +105,30 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 </tr>
             </table>
         </div>
-
+        <div class="forms">
         <form method="POST">
             <h1>AGENDAMENTO</h1>
             <label for="instrutor">Instrutor</label>
-            <input type="text" id="instrutor" name="instrutor" required><br><br>
+            <input type="text" id="instrutor" name="instrutor" required><br>
 
             <label for="curso">Curso</label>
-            <input type="text" id="curso" name="curso" required><br><br>
+            <input type="text" id="curso" name="curso" required><br>
 
             <label for="data">Data</label>
-            <input type="date" id="data" name="data" required><br><br>
+            <input type="date" id="data" name="data" required><br>
 
             <label for="hora_inicio">Início</label>
-            <input type="time" id="hora_inicio" name="hora_inicio" required><br><br>
+            <input type="time" id="hora_inicio" name="hora_inicio" required><br>
 
             <label for="hora_termino">Término</label>
-            <input type="time" id="hora_termino" name="hora_termino" required><br><br>
+            <input type="time" id="hora_termino" name="hora_termino" required><br>
 
             <label for="quantidade_alunos">Quantidade de Alunos</label>
-            <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br><br>
+            <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br>
 
             <button type="submit" value="AGENDAR">AGENDAR</button>
         </form>
-
-
+        </div>
 
     </div>
 
