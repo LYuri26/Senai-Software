@@ -79,12 +79,16 @@ try {
         $stmt->execute();
         $resconsultasuper = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($resconsultasuper && password_verify($senha, $resconsultasuper['senha'])) {
-            // É um superusuário/administrador, armazenar os dados na sessão
-            $_SESSION['usuario'] = $resconsultasuper;
-            // Redirecionar para a página de administração
-            header('Location: menu.php');
-            exit;
+        if ($resconsultasuper) {
+            $hashSenhaDB = $resconsultasuper['senha'];
+            $senhaCorrespondente = password_verify($senha, $hashSenhaDB);
+            if ($senhaCorrespondente) {
+                // É um superusuário/administrador, armazenar os dados na sessão
+                $_SESSION['usuario'] = $resconsultasuper;
+                // Redirecionar para a página de administração
+                header('Location: menu.php');
+                exit;
+            }
         }
 
         //users
@@ -109,12 +113,16 @@ try {
         $stmt->execute();
         $resconsultauser = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($resconsultauser && password_verify($senha, $resconsultauser['senha'])) {
-            // É um usuário comum, armazenar os dados na sessão
-            $_SESSION['usuario'] = $resconsultauser;
-            // Redirecionar para a página principal
-            header('Location: menu.php');
-            exit;
+        if ($resconsultauser) {
+            $hashSenhaDBuser = $resconsultauser['senha'];
+            $senhaCorrespondenteuser = password_verify($senha, $hashSenhaDBuser);
+            if ($senhaCorrespondenteuser) {
+                // É um superusuário/administrador, armazenar os dados na sessão
+                $_SESSION['usuario'] = $resconsultauser;
+                // Redirecionar para a página de administração
+                header('Location: menu.php');
+                exit;
+            }
         }
         if (isset($_GET['error']) && $_GET['error'] == '1001') {
             echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Usuário ou senha inválidos.</div>";

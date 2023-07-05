@@ -63,36 +63,39 @@ try {
         if (!empty($users) || !empty($superusuario)) {
             foreach ($users as $user) {
                 if (strtolower($user['codigo']) == strtolower($codigo)) {
-                    echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
+                    echo "<p>Código de acesso já cadastrado.</p>";
                     return;
                 }
                 if (strtolower($user['email']) == strtolower($email)) {
-                    echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
+                    echo "<p>Email já cadastrado.</p>";
                     return;
                 }
             }
 
             foreach ($superusuario as $su) {
                 if (strtolower($su['codigo']) == strtolower($codigo)) {
-                    echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
+                    echo "<p>Código de acesso já cadastrado.</p>";
                     header('Location : cadastro.html');
                     return;
                 }
                 if (strtolower($su['email']) == strtolower($email)) {
-                    echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
+                    echo "<p>Email já cadastrado.</p>";
                     header('Location : cadastro.html');
                     return;
                 }
             }
         } else {
+            $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+            $csenhaHash = password_hash($csenha, PASSWORD_DEFAULT);
+
             // Inserir informações na tabela cadastro
             $stmt = $pdo->prepare("INSERT INTO cadastro (nome, codigo, email, senha, checksenha) VALUES (:nome, :codigo, :email, :senha, :csenha)");
             $stmt->execute([
                 ':nome' => $nome,
                 ':codigo' => $codigo,
                 ':email' => $email,
-                ':senha' => $senha,
-                ':csenha' => $csenha
+                ':senha' => $senhaHash,
+                ':csenha' => $csenhaHash
             ]);
 
             // Obter o ID do último registro inserido na tabela cadastro
@@ -105,7 +108,7 @@ try {
                 ':login' => $nome,
                 ':codigo' => $codigo,
                 ':email' => $email,
-                ':senha' => $senha
+                ':senha' => $senhaHash
             ]);
 
             echo "<div class='Cadastro-sucesso' style='color: black; text-align: center; font-size:42px; margin: 1rem;'>Cadastro realizado com sucesso!</div>";
