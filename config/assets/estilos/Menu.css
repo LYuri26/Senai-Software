@@ -1,7 +1,9 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .navbar {
@@ -50,6 +52,19 @@ body {
   font-weight: bold;
 }
 
+.fa {
+  font-family: "Font Awesome";
+}
+
+.fa .fafa-bars::before {
+  content: "\f0c9";
+}
+
+#menu-icon {
+  display: none;
+  /* Oculta o ícone em dispositivos desktop */
+}
+
 .navbar-menu li {
   text-align: center;
   margin-right: 4rem;
@@ -79,10 +94,12 @@ body {
   font-weight: 600;
   max-width: 50%;
 }
+
 .navbar-menu li a:hover {
   color: #000000;
   text-decoration: none;
 }
+
 /* vei quem colocou isso estava sob efeito PESADO de droga
 .navbar-toggle {
   display: none;
@@ -259,7 +276,7 @@ footer {
 .slide {
   display: flex;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .slide img {
@@ -274,20 +291,31 @@ footer {
 
 @media (max-width: 768px) {
   .navbar {
+    background-position: top;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+    padding-bottom: 2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: grid;
+    place-items: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+    border-radius: 14px;
+    width: 100%;
   }
 
   header {
     display: flex;
-    position: relative;
     justify-content: center;
   }
 
   body {
-    margin-top: 6rem;
+    margin-top: 0;
   }
 
   .navbar-menu {
@@ -300,20 +328,44 @@ footer {
 
   .navbar-container {
     /*align-items: flex-start;*/
-    justify-content: stretch;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
     display: grid;
+    justify-items: center;
+    place-items: center;
+    position: relative;
+  }
+
+  .fa {
+    font-family: "Font Awesome";
+    align-self: center;
+
+  }
+
+  /* Seletor para o ícone */
+  #menu-icon {
+    place-items: center;
+    display: block;
+    padding-left: 2em;
+  }
+
+  /* Seletor para o menu suspenso */
+  #menu-list {
+    display: none;
+    margin-top: 0px;
   }
 
   h1 {
+    position: relative;
+    margin-top: 0; /* Define a margem superior como 0 para eliminar o espaço */
+    display: flex;
+    justify-content: center;
+    font-family: "montserrat", "sans-serif";
+    text-align: center;
     font-size: 24px;
-    /* Reduz o tamanho da fonte para telas menores */
-    padding: 0;
-    /* Remove o espaçamento lateral */
-    margin-top: 25vh;
-    /* Adiciona um espaçamento superior para afastar o título da barra de navegação */
     margin-bottom: 2vh;
+    padding-top: 1rem;
   }
 
 
@@ -338,10 +390,20 @@ footer {
     font-weight: 600;
   }
 
+  .fa,
+  .fas {
+    text-align: center;
+    align-items: center;
+    justify-content: start;
+  }
+
   .navbar-menu li {
     justify-content: stretch;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     margin-right: 0;
+  }
+  #conteudo {
+    font-size: 16px;
   }
 
   .navbar-menu li:last-child {
@@ -353,13 +415,12 @@ footer {
     justify-content: center;
     text-align: center;
     align-items: center;
-    display: grid;
     margin: 0 auto;
     padding-left: 2rem;
   }
 
   .rodape {
-    display:flex;
+    display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     text-align: center;

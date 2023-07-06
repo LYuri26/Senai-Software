@@ -1,4 +1,5 @@
 <?php
+require_once './session.php';
 /*
 
 usado para sempre verificar a sessão do usuário

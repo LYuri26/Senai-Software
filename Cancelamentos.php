@@ -62,8 +62,6 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
       </div>-->
         </nav>
     </header>
-    <a href="./logout.php" class="sair">Sair</a>
-
     <div id="app">
         <form action="./conexao.php" method="post" onsubmit="exibirAlerta(event)">
             <h1>Lista de cancelamentos</h1>
@@ -88,24 +86,26 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             $busca = $pdo->query($query);
             $cancelamento = $busca->fetchAll(PDO::FETCH_ASSOC);
             ?>
+            <div class="table-container">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome do instrutor</th>
-                        <th>Motivo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($cancelamento as $cancelamento) : ?>
+                <table>
+                    <thead>
                         <tr>
-                            <td><?php echo $cancelamento['nome']; ?></td>
-                            <td><?php echo $cancelamento['motivo']; ?></td>
+                            <th>Nome do instrutor</th>
+                            <th>Motivo</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-    </div>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($cancelamento as $cancelamento) : ?>
+                            <tr>
+                                <td><?php echo $cancelamento['nome']; ?></td>
+                                <td><?php echo $cancelamento['motivo']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                </div>
+            </div>
 </body>
 <script src="./config/assets/js/destruirSessao.js"></script>
 <footer>

@@ -1,7 +1,6 @@
 body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
-  margin: 0;
   padding: 0;
   overflow: auto;
 }
@@ -25,7 +24,7 @@ body {
   background-position: top;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
   padding-bottom: 2px;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -41,6 +40,7 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
 }
+
 .logo {
   /* Movemos essas tags para o .navbar-container
   display: flex;
@@ -78,42 +78,49 @@ body {
   margin-right: 30px;
   /* Removendo margin do último elemento */
 }
+
 .navbar-menu li a:hover {
   color: #000000;
   text-decoration: none;
 }
+
 #app {
-  display:grid;
-  justify-items: center;
+  display: grid;
   text-align: center;
   justify-content: center;
   max-width: 90%;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
+
 form {
+  display: grid;
   border-radius: 15px;
 }
 
 table {
+  display: table-header-group;
   border-radius: 20px 20px 0px 0px;
   border-collapse: collapse;
   width: 100%;
-  max-width: 800px;
   margin: 20px auto;
   white-space: nowrap;
   font-weight: 600;
   padding-bottom: 5%;
 }
+
 tr {
   background-color: #f2f2f2;
 }
+
 tr:last-of-type td:first-child {
   border-radius: 0px 0px 0px 20px;
 }
+
 tr:last-of-type td:last-child {
   border-radius: 0px 0px 20px 0px;
 }
+
 h1 {
   color: #005ca7;
   font-size: 24px;
@@ -148,22 +155,59 @@ th:last-child {
 }
 
 @media (max-width: 767px) {
-  th,
-  td {
-    display: block;
-    width: auto;
+  .navbar {
+    position: fixed;
+  }
+
+  #app {
+    position: relative;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5rem;
+    align-content: space-around;
+    justify-content: space-around;
+  }
+
+  form {
+    display: grid;
+    text-align: center;
+    align-content: space-around;
+  }
+
+  .table-container {
+    display: grid;
+  }
+
+  h1 {
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  table {
+    margin: 0;
+
+    display: table-column;
+    margin: 1rem;
+    border-radius: 20px 20px 0px 0px;
+    border-collapse: collapse;
+    white-space: nowrap;
+    font-weight: 600;
   }
 
   th {
-    text-align: center;
+    background-color: #005ca7;
+    color: #fff;
   }
 
   th:first-child {
-    display: none;
+    border-radius: 20px 0px 0px 0px;
   }
 
-  td:first-child {
-    border-top: none;
+  th:last-child {
+    border-radius: 0px 20px 0px 0px;
   }
 }
 
@@ -172,6 +216,7 @@ footer {
   padding-top: 33rem;
   font-weight: bold;
 }
+
 .rodape {
   font-family: "Montserrat", sans-serif;
   text-align: center;

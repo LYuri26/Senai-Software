@@ -57,6 +57,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
@@ -65,15 +67,17 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <nav class="navbar">
       <div class="navbar-container">
         <a href="./menu.php">
-          <img src="./config/assets/img/senailogo1.png" class="logo" href="./menu.php">
-        </a>
-        <ul class="navbar-menu">
-          <li><a href="./agendar.php">Agendar</a></li>
-          <li><a href="./cancelar.php">Cancelar</a></li>
-          <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-          <li><a href="./Agendamentos.php">Agendamentos</a></li>
-          <li><a href="./logout.php">Sair</a></li>
-        </ul>
+          <img src="./config/assets/img/senailogo2.png" class="logo" href="./menu.php">
+          <a href="#" id="menu-icon">
+            <i class="fas fa-bars"></i>
+          </a>
+          <ul class="navbar-menu" id="menu-list">
+            <li><a href="./agendar.php">Agendar</a></li>
+            <li><a href="./cancelar.php">Cancelar</a></li>
+            <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+            <li><a href="./Agendamentos.php">Agendamentos</a></li>
+            <li><a href="./logout.php">Sair</a></li>
+          </ul>
       </div>
 
       <!-- <div class="navbar-toggle">
@@ -91,13 +95,51 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         <!--<img src="/config/assets/img/img2.png" alt="imagem2" class="IMG.2">-->
       </div>
     </div>
+
   </div>
   <div id="conteudo">
     <p>O UAIBook é a melhor ferramenta que você, aluno, pode escolher para obter facilidade e bem-estar ao realizar a reserva de um horário na biblioteca. Com o UAIBook, agendar o horário desejado na biblioteca nunca foi tão fácil e livre de complicações. Desfrute de uma experiência tranquila e eficiente ao realizar suas reservas sem preocupações.</p>
     <p>Nosso objetivo é proporcionar a melhor experiência possível para aqueles que buscam um futuro brilhante através da utilização desse espaço valioso. O site foi desenvolvido com carinho e dedicação pelos talentosos alunos da turma de Desenvolvimento de Sistemas.</p>
   </div>
-  <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
 
+  <script>
+    $(document).ready(function() {
+      // Define a função toggleDropdown
+      function toggleDropdown() {
+        $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
+      }
+
+      // Adiciona um evento de clique ao elemento com o id "menu-icon"
+      $("#menu-icon").click(toggleDropdown);
+
+      // Adiciona um evento de redimensionamento ao documento
+      $(window).on("resize", function() {
+        // Verifica se a largura da janela é maior que 768 pixels
+        if ($(window).width() > 768) {
+          // Mostra a lista suspensa
+          $("#menu-list").show();
+        } else {
+          // Oculta a lista suspensa
+          $("#menu-list").hide();
+        }
+      });
+    });
+    /*
+    document.addEventListener("DOMContentLoaded", function() {
+      var menuIcon = document.getElementById("menu-icon");
+      var menuList = document.getElementById("menu-list");
+
+      menuIcon.addEventListener("click", function() {
+        if (menuList.style.display === "none" || menuList.style.display === "") {
+          menuList.style.display = "block";
+        } else {
+          menuList.style.display = "none";
+        }
+      });
+    });*/
+  </script>
+
+  <!-- <script src="./config/assets/js/destruirSessao.js"></script> -->
   <script src="./config/assets/js/destruirSessao.js"></script>
   <script src="./config/assets/js/menu.js"></script>
 </body>
