@@ -1,17 +1,22 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
   overflow-x: auto;
+  height: 100vh;
 }
 
 .navbar {
   background-color: #005ca9;
   background-position: top;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+  display: flex;
   padding-bottom: 2px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -23,6 +28,7 @@ body {
   /*align-items: flex-start;*/
   justify-content: space-between;
   display: flex;
+  align-items: center;
   max-width: 100%;
   margin: 0 auto;
   align-items: center;
@@ -81,7 +87,6 @@ body {
 }
 
 #conteudo {
-  margin-top: 3.8rem;
   font-size: 26px;
   display: grid;
   padding-left: 0em;
@@ -181,10 +186,14 @@ h1 {
 }
 
 */
+header {
+  display: flex;
+}
 h1 {
+  display: flex;
+  position: relative;
   font-family: "montserrat", "sans-serif";
   font-size: 2.6rem;
-  padding-top: 6rem;
   padding-left: 2rem;
   align-content: flex-start;
   text-align: center;
@@ -291,6 +300,9 @@ footer {
 
 @media (max-width: 768px) {
   .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-position: top;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
     padding-bottom: 2px;
@@ -298,7 +310,6 @@ footer {
     top: 0;
     left: 0;
     z-index: 999;
-    display: grid;
     place-items: center;
     align-items: center;
     text-align: center;
@@ -316,13 +327,18 @@ footer {
 
   body {
     margin-top: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
   }
 
   .navbar-menu {
-    justify-content: stretch;
+    list-style-type: none;
+    justify-content: center;
     display: grid;
     text-align: center;
-    align-items: center;
     align-items: flex-start;
   }
 
@@ -340,7 +356,6 @@ footer {
   .fa {
     font-family: "Font Awesome";
     align-self: center;
-
   }
 
   /* Seletor para o ícone */
@@ -367,7 +382,6 @@ footer {
     margin-bottom: 2vh;
     padding-top: 1rem;
   }
-
 
   #linhatexto {
     align-items: flex-start;

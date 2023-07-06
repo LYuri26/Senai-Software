@@ -1,12 +1,15 @@
 body {
   background-color: #e0e0e0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
   font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  overflow-x: auto;
+  height: 100vh;
 }
 header {
   display: flex;
-  z-index: 10;
-  position: relative;
-  justify-content: center;
 }
 
 /*
@@ -48,15 +51,15 @@ h1 {
   background-color: #005ca9;
   background-position: top;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+  display: flex;
   padding-bottom: 2px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
   /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
-
 .logo {
   display: flex;
   align-items: center;
@@ -203,7 +206,7 @@ input[type="submit"]:hover {
 form {
   width: 100%;
   width: 30rem;
-  width:30vw;
+  width: 30vw;
   padding-bottom: 1rem;
 }
 .text-container .calendario {
@@ -304,43 +307,17 @@ h1 {
   z-index: 999;
   /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
-
 .navbar-container {
   /*align-items: flex-start;*/
   justify-content: space-between;
   display: flex;
+  align-items: center;
   max-width: 100%;
   margin: 0 auto;
+  align-items: center;
   box-sizing: border-box;
 }
 
-.logo {
-  /* Movemos essas tags para o .navbar-container
-  display: flex;
-  align-items: center;
-  */
-  font-weight: bold;
-  text-decoration: none;
-  /* object-fit: cover;
-  /*width: 10rem;*/
-  height: 3rem;
-  width: 10rem;
-  /*border-radius: 200px;
-  margin-right: 200px;*/
-}
-
-.navbar-menu {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: bold;
-}
-
-.navbar-menu li {
-  text-align: center;
-  margin-right: 4rem;
-}
 
 .navbar-menu li a {
   color: #ffffff;

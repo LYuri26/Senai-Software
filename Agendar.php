@@ -51,7 +51,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         <nav class="navbar">
             <div class="navbar-container">
                 <a href="./menu.php">
-                    <img src="./config/assets/img/senailogo1.png" class="logo">
+                    <img src="./config/assets/img/senailogo2.png" class="logo">
                 </a>
                 <ul class="navbar-menu">
                     <li><a href="./cancelar.php">Cancelar</a></li>
@@ -68,7 +68,6 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
       </div>-->
         </nav>
     </header>
-    <a href="./logout.php" class="sair">Sair</a>
 
     <div class="text-container">
 
@@ -107,28 +106,28 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
             </table>
         </div>
         <div class="forms">
-        <form method="POST">
-            <h1>AGENDAMENTO</h1>
-            <label for="instrutor">Instrutor</label>
-            <input type="text" id="instrutor" name="instrutor" required><br>
+            <form method="POST">
+                <h1>AGENDAMENTO</h1>
+                <label for="instrutor">Instrutor</label>
+                <input type="text" id="instrutor" name="instrutor" required><br>
 
-            <label for="curso">Curso</label>
-            <input type="text" id="curso" name="curso" required><br>
+                <label for="curso">Curso</label>
+                <input type="text" id="curso" name="curso" required><br>
 
-            <label for="data">Data</label>
-            <input type="date" id="data" name="data" required><br>
+                <label for="data">Data</label>
+                <input type="date" id="data" name="data" required><br>
 
-            <label for="hora_inicio">Início</label>
-            <input type="time" id="hora_inicio" name="hora_inicio" required><br>
+                <label for="hora_inicio">Início</label>
+                <input type="time" id="hora_inicio" name="hora_inicio" required><br>
 
-            <label for="hora_termino">Término</label>
-            <input type="time" id="hora_termino" name="hora_termino" required><br>
+                <label for="hora_termino">Término</label>
+                <input type="time" id="hora_termino" name="hora_termino" required><br>
 
-            <label for="quantidade_alunos">Quantidade de Alunos</label>
-            <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br>
+                <label for="quantidade_alunos">Quantidade de Alunos</label>
+                <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br>
 
-            <button type="submit" value="AGENDAR">AGENDAR</button>
-        </form>
+                <button type="submit" value="AGENDAR">AGENDAR</button>
+            </form>
         </div>
 
     </div>
@@ -252,10 +251,9 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 </body>
 
 <footer>
-      <div class="rodape">
-        <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro
-          II. <br>SENAI. Uberaba/MG.</p>
-      </div>
-    </footer>
+    <div class="rodape">
+        <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro II. <br>SENAI. Uberaba/MG.</p>
+    </div>
+</footer>
 
 </html>

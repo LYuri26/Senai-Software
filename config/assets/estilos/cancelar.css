@@ -1,10 +1,17 @@
 body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  overflow-x: auto;
+  height: 100vh;
 }
 
+header {
+  display: flex;
+}
 .sair {
   display: block;
   position: fixed;
@@ -23,36 +30,42 @@ body {
   background-color: #005ca9;
   background-position: top;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
-  padding-bottom: 1px;
-  position: fixed;
+  display: flex;
+  padding-bottom: 2px;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
   /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
-
 .navbar-container {
   /*align-items: flex-start;*/
   justify-content: space-between;
   display: flex;
+  align-items: center;
   max-width: 100%;
   margin: 0 auto;
+  align-items: center;
   box-sizing: border-box;
 }
 .logo {
-  /* Movemos essas tags para o .navbar-container
   display: flex;
   align-items: center;
-  */
+  font-weight: bold;
+  text-decoration: none;
+  /* Movemos essas tags para o .navbar-container
+    display: flex;
+    align-items: center;
+    */
   font-weight: bold;
   text-decoration: none;
   /* object-fit: cover;
-  /*width: 10rem;*/
+    /*width: 10rem;*/
   height: 3rem;
   width: 10rem;
   /*border-radius: 200px;
-  margin-right: 200px;*/
+    margin-right: 200px;*/
 }
 .navbar-menu {
   list-style: none;
@@ -62,12 +75,10 @@ body {
   font-weight: bold;
 }
 
-
 .navbar-menu li {
   text-align: center;
   margin-right: 4rem;
 }
-
 
 .navbar-menu li a {
   color: #ffffff;
@@ -86,7 +97,6 @@ body {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  margin-top: 2vh;
 }
 
 h1 {
@@ -238,11 +248,12 @@ strong {
 }
 
 .rodape {
+  font-weight: bold;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   line-height: 1.5;
-  white-space: pre-line;
-  padding-top: 7.1rem;
+  display: grid;
+  place-items: center;
 }
 /*
 @media screen and (min-width: 1000px) {
@@ -253,7 +264,6 @@ strong {
 */
 @media screen and (max-width: 1920px) {
   footer {
-    padding: 20px;
     text-align: center;
   }
   .rodape {

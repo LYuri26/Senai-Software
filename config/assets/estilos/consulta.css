@@ -1,8 +1,15 @@
 body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
-  padding: 0;
-  overflow: auto;
+  background-color: #e0e0e0;
+  display: grid;
+  align-items: center;
+  font-size: 1.2rem;
+  overflow-x: auto;
+  height: 100vh;
+}
+header {
+  display: flex;
 }
 
 .sair {
@@ -23,8 +30,9 @@ body {
   background-color: #005ca9;
   background-position: top;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+  display: flex;
   padding-bottom: 2px;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -36,8 +44,10 @@ body {
   /*align-items: flex-start;*/
   justify-content: space-between;
   display: flex;
+  align-items: center;
   max-width: 100%;
   margin: 0 auto;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -88,7 +98,6 @@ body {
   display: grid;
   text-align: center;
   justify-content: center;
-  max-width: 90%;
   margin: 0 auto;
   margin-top: 2rem;
 }
@@ -99,17 +108,23 @@ form {
 }
 
 table {
-  display: table-header-group;
   border-radius: 20px 20px 0px 0px;
   border-collapse: collapse;
   width: 100%;
   margin: 20px auto;
   white-space: nowrap;
   font-weight: 600;
-  padding-bottom: 5%;
+  align-items: center;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  -o-table-baseline: inherit;
+  table-layout: unset;
+  display: table-row-group;
 }
 
 tr {
+  display: table-row;
+  vertical-align:super;
   background-color: #f2f2f2;
 }
 
@@ -126,7 +141,6 @@ h1 {
   font-size: 24px;
   text-align: center;
 }
-
 
 label {
   display: block;
@@ -152,6 +166,13 @@ th:first-child {
 
 th:last-child {
   border-radius: 0px 20px 0px 0px;
+}
+
+@media screen and (max-width: 480px) {
+  .responsive-table th,
+  .responsive-table td {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -210,11 +231,23 @@ th:last-child {
     border-radius: 0px 20px 0px 0px;
   }
 }
+thead {
+  display: table-header-group;
+  vertical-align: baseline;
+}
 
 footer {
   text-align: center;
-  padding-top: 33rem;
   font-weight: bold;
+}
+.responsive-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.responsive-table th,
+.responsive-table td {
+  white-space: nowrap;
 }
 
 .rodape {

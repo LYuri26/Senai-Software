@@ -46,7 +46,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
         <nav class="navbar">
             <div class="navbar-container">
                 <a href="./menu.php">
-                    <img src="./config/assets/img/senailogo1.png" class="logo">
+                    <img src="./config/assets/img/senailogo2.png" class="logo">
                 </a>
                 <ul class="navbar-menu">
                     <li><a href="./agendar.php">Agendar</a></li>
