@@ -66,18 +66,20 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <header>
     <nav class="navbar">
       <div class="navbar-container">
-        <a href="./menu.php">
-          <img src="./config/assets/img/senailogo2.png" class="logo" href="./menu.php">
-          <a href="#" id="menu-icon">
-            <i class="fas fa-bars"></i>
-          </a>
-          <ul class="navbar-menu" id="menu-list">
-            <li><a href="./agendar.php">Agendar</a></li>
-            <li><a href="./cancelar.php">Cancelar</a></li>
-            <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-            <li><a href="./Agendamentos.php">Agendamentos</a></li>
-            <li><a href="./logout.php">Sair</a></li>
-          </ul>
+        <div class="navbar-logo">
+          <a href="./menu.php">
+            <img src="./config/assets/img/senailogo2.png" class="logo" href="./menu.php">
+        </div>
+        <a href="#" id="menu-icon">
+          <i class="fas fa-bars fa-2x"></i>
+        </a>
+        <ul class="navbar-menu" id="menu-list">
+          <li><a href="./agendar.php">Agendar</a></li>
+          <li><a href="./cancelar.php">Cancelar</a></li>
+          <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+          <li><a href="./Agendamentos.php">Agendamentos</a></li>
+          <li><a href="./logout.php">Sair</a></li>
+        </ul>
       </div>
 
       <!-- <div class="navbar-toggle">
@@ -86,7 +88,9 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
       </div>-->
     </nav>
   </header>
-  <h1>Bem-vindo ao UAIBook!</h1>
+  <div class="titulo">
+    <h1>Bem-vindo ao UAIBook!</h1>
+  </div>
   <div class="container" id="slider">
     <div class="imgscar" id="slider">
       <div class="slide" role="rolebox" id="slider">
@@ -124,6 +128,16 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         }
       });
     });
+    // Obtenha o botão do menu e o elemento navbar
+    const menuBtn = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    // Manipule o evento de clique do botão
+    menuBtn.addEventListener('click', function() {
+      // Adicione a classe "rounded" ao elemento navbar
+      navbar.classList.removse('rounded');
+    });
+
     /*
     document.addEventListener("DOMContentLoaded", function() {
       var menuIcon = document.getElementById("menu-icon");

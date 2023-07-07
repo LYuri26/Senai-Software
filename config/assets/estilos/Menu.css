@@ -1,5 +1,9 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: grid;
   justify-content: center;
@@ -8,6 +12,7 @@ body {
   font-size: 1.2rem;
   overflow-x: auto;
   height: 100vh;
+  position: relative;
 }
 
 .navbar {
@@ -16,13 +21,13 @@ body {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
   display: flex;
   padding-bottom: 2px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
+
 
 .navbar-container {
   /*align-items: flex-start;*/
@@ -46,8 +51,26 @@ body {
   /*width: 10rem;*/
   height: 3rem;
   width: 10rem;
+  animation: fade-in 3s forwards;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  /* cor de fundo ao passar o mouse */
   /*border-radius: 200px;
   margin-right: 200px;*/
+}
+
+.navbar-logo:hover {
+  box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
+  transform: scale(1.05);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .navbar-menu {
@@ -80,6 +103,7 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
+
 
 .navbar-menu li:last-child {
   margin-right: 30px;
@@ -189,9 +213,25 @@ h1 {
 header {
   display: flex;
 }
-h1 {
+
+.titulo {
   display: flex;
-  position: relative;
+  font-family: "montserrat", "sans-serif";
+  font-size: 2.6rem;
+  align-content: flex-start;
+  /* Centraliza o texto */
+  max-width: 800px;
+  /* Define uma largura máxima para o título */
+  margin: 3rem auto 0rem auto;
+  /* Centraliza horizontalmente */
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+h1 {
   font-family: "montserrat", "sans-serif";
   font-size: 2.6rem;
   padding-left: 2rem;
@@ -297,7 +337,9 @@ footer {
   opacity: 1;
   object-fit: contain;
 }
-
+.navbar.rounded {
+  border-radius: 50px;
+}
 @media (max-width: 768px) {
   .navbar {
     display: flex;
@@ -314,10 +356,11 @@ footer {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
-    border-radius: 14px;
-    width: 100%;
+    border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
+    max-width: 60%;
+    overflow: hidden;
   }
 
   header {
@@ -344,13 +387,19 @@ footer {
 
   .navbar-container {
     /*align-items: flex-start;*/
-    justify-content: space-around;
+    justify-content: center;
     text-align: center;
     align-items: center;
     display: grid;
     justify-items: center;
     place-items: center;
     position: relative;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-logo {
+    box-sizing: content-box;
   }
 
   .fa {
@@ -362,7 +411,6 @@ footer {
   #menu-icon {
     place-items: center;
     display: block;
-    padding-left: 2em;
   }
 
   /* Seletor para o menu suspenso */
@@ -373,7 +421,8 @@ footer {
 
   h1 {
     position: relative;
-    margin-top: 0; /* Define a margem superior como 0 para eliminar o espaço */
+    margin-top: 0;
+    /* Define a margem superior como 0 para eliminar o espaço */
     display: flex;
     justify-content: center;
     font-family: "montserrat", "sans-serif";
@@ -404,18 +453,44 @@ footer {
     font-weight: 600;
   }
 
+  ul {
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
+    padding-inline-start: 1rem;
+
+  }
+
+  .titulo {
+    display: flex;
+    font-family: "montserrat", "sans-serif";
+    font-size: 2.6rem;
+    align-content: flex-start;
+    /* Centraliza o texto */
+    max-width: 800px;
+    /* Define uma largura máxima para o título */
+    margin: 0rem 0rem 0rem 0rem;
+    /* Centraliza horizontalmente */
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
   .fa,
   .fas {
     text-align: center;
     align-items: center;
     justify-content: start;
   }
-
+  .fa-2x{
+    font-size: 1.5em !important;
+  }
   .navbar-menu li {
     justify-content: stretch;
     margin-top: 0.8rem;
     margin-right: 0;
   }
+
   #conteudo {
     font-size: 16px;
   }
@@ -430,7 +505,8 @@ footer {
     text-align: center;
     align-items: center;
     margin: 0 auto;
-    padding-left: 2rem;
+    box-sizing: content-box;
+    width: 100%;
   }
 
   .rodape {
