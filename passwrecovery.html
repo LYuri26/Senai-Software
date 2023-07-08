@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Recuperação de Senha</title>
   <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
-  
+
   <!-- meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +23,13 @@
   <link rel="stylesheet" type="text/css" href="config/assets/estilos/recuperarsenha.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Fira+Sans:ital,wght@1,200&amp;family=Montserrat:wght@200&amp;family=Source+Sans+Pro&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Fira+Sans:ital,wght@1,200&amp;family=Montserrat:wght@200&amp;family=Source+Sans+Pro&amp;display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -35,17 +40,17 @@
       <h2>RECUPERAÇÃO DE SENHA</h2>
       <label for="usuario">Email</label>
       <input type="text" id="usuario" name="usuario" placeholder="Digite o usuário" required
-      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o usuário'" autocomplete="off"/>
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o usuário'" autocomplete="off" />
       <br>
 
       <label for="novaSenha">Nova senha</label>
       <input type="password" id="novaSenha" name="novaSenha" minlength="8" placeholder="Digite a nova senha" required
-      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a nova senha'" autocomplete="off" />
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a nova senha'" autocomplete="off" />
       <br>
 
       <label for="Csenha">Confirmar nova senha</label>
       <input type="password" id="Csenha" name="Csenha" minlength="8" placeholder="Confirme a senha" required
-      onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirme a senha'" autocomplete="off"/>
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirme a senha'" autocomplete="off" />
       <br>
       <p id="senhaErro" style="color:red;">Senhas não coincidem!</p><br>
 
@@ -62,21 +67,21 @@
     const senhaErro = document.getElementById('senhaErro');
 
     cSenha.addEventListener('blur', () => {
-        if (senha.value !== cSenha.value) {
-            senhaErro.style.display = 'block';
-            senha.value = '';
-            cSenha.value = '';
-        } else {
-            senhaErro.style.display = 'none';
-        }
+      if (senha.value !== cSenha.value) {
+        senhaErro.style.display = 'block';
+        senha.value = '';
+        cSenha.value = '';
+      } else {
+        senhaErro.style.display = 'none';
+      }
     });
-</script>
-<footer>
-  <div class="rodape">
-    <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro
-      II. <br>SENAI. Uberaba/MG.</p>
-  </div>
-</footer>
+  </script>
+  <footer>
+    <div class="rodape">
+      <p>&copy;2023 UAIBook. Todos os direitos reservados.<br>Curso de Desenvolvimento em Sistemas. Trilhas do Futuro
+        II. <br>SENAI. Uberaba/MG.</p>
+    </div>
+  </footer>
 </body>
 
 </html>

@@ -14,7 +14,9 @@ body {
   height: 100vh;
   position: relative;
 }
-
+#botaosair:hover{
+  color: red;
+}
 .navbar {
   background-color: #005ca9;
   background-position: top;
@@ -348,34 +350,43 @@ footer {
     background-position: top;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
     padding-bottom: 2px;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 999;
-    place-items: center;
-    align-items: center;
     text-align: center;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
     border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
     max-width: 60%;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
-
+  body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
   header {
-    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
     justify-content: center;
   }
 
-  body {
+  /*body {
     margin-top: 0;
     display: grid;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f2f2f2;
-  }
+  }*/
 
   .navbar-menu {
     list-style-type: none;
@@ -491,9 +502,6 @@ footer {
     margin-right: 0;
   }
 
-  #conteudo {
-    font-size: 16px;
-  }
 
   .navbar-menu li:last-child {
     margin-right: 0rem;
@@ -528,15 +536,15 @@ footer {
   }
 
   #conteudo {
-    max-width: 100%;
-    display: grid;
+    margin: 0 auto;
+    font-size: 18px;
+    max-width: 90%;
     padding-left: 0em;
     line-height: 1.5;
-    align-content: flex-start;
-    justify-content: start;
+    align-content: center;
+    justify-content: center;
     font-weight: 600;
     line-height: 1.5;
-    margin-right: 0rem;
     font-weight: 600;
     align-items: flex-start;
     text-align: center;
@@ -568,7 +576,7 @@ footer {
     position: relative;
     height: 55vh;
     justify-content: center;
-    /* Centraliza o carrossel na página */
+    /* Centraliza o carr#ossel na página */
     /* Remove o espaço nas laterais */
   }
 
@@ -577,11 +585,11 @@ footer {
     /* Remove a posição absoluta para ajustar ao fluxo do documento */
     right: auto;
     /* Remove o alinhamento à direita */
-    width: 90%;
+    width: 90vw;
     /* Define a largura do carrossel como 100% do container */
-    height: 10vh;
+    height: 20vh;
     /* Ajusta a altura proporcionalmente ao conteúdo */
-    max-width: none;
+    max-width: 100%;
     /* Remove a largura máxima */
     padding: 0;
     /* Remove o espaçamento nas laterais */

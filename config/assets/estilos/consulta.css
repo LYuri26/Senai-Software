@@ -11,7 +11,9 @@ body {
 header {
   display: flex;
 }
-
+#botaosair:hover{
+  color: red;
+}
 .sair {
   display: block;
   position: fixed;

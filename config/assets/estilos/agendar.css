@@ -20,7 +20,9 @@ h1 {
     text-align: center;
     margin-bottom: 1rem;
 }*/
-
+#botaosair:hover{
+  color: red;
+}
 h1 {
   color: #005ca9;
   /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */

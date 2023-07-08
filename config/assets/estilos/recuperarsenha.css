@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
 body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
@@ -6,12 +8,14 @@ body {
   margin: 0 auto;
   padding: 2%;
 }
+
 label {
   grid-column: 1;
   margin-bottom: 1%;
   font-weight: bold;
   color: #000000;
 }
+
 .sair {
   font-family: sans-serif;
   position: fixed;
@@ -34,12 +38,14 @@ label {
   margin: 0 auto;
   display: block;
 }
+
 #app {
   position: relative;
   max-width: 40%;
   margin: 0 auto;
   padding: 2%;
 }
+
 form {
   height: max-content;
   position: relative;
@@ -105,9 +111,10 @@ input[type="submit"] {
 }
 
 button[value="redefinir"] {
+  font-family: 'Raleway', sans-serif;
   background-color: #005ca9;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: bold;
   border: none;
   padding: 0.5em 1em;
@@ -116,27 +123,34 @@ button[value="redefinir"] {
   box-sizing: border-box;
   margin-bottom: 2rem;
 }
+#botaosair:hover{
+  color: red;
+}
 button[value="redefinir"]:hover {
   background-color: #0c36be;
 }
+
 .rodape {
   font-family: "Montserrat", sans-serif;
-  text-align: center; /* Centralizar o conteúdo do rodapé */
+  text-align: center;
+  /* Centralizar o conteúdo do rodapé */
 }
 
 .rodape p {
   font-weight: 600;
   line-height: 1rem;
-  margin: 0 auto; /* Remover margens para evitar espaçamento extra */
+  margin: 0 auto;
+  /* Remover margens para evitar espaçamento extra */
 }
-.sair:hover { 
+
+.sair:hover {
   background-color: #0c36be;
 }
 
 @media screen and (max-width: 768px) {
   body {
     position: relative;
-    overflow:scroll;
+    overflow: scroll;
     margin: 0 auto;
     height: 500px;
     box-sizing: border-box;
@@ -167,11 +181,13 @@ button[value="redefinir"]:hover {
     padding: 2%;
     margin-top: 1vh;
   }
+
   input[type="text"],
   input[type="password"] {
     padding: 0.8rem;
     margin-bottom: 1rem;
   }
+
   footer {
     font-family: "Montserrat", sans-serif;
     text-align: center;
@@ -197,10 +213,12 @@ button[value="redefinir"]:hover {
     color: rgb(0, 0, 0);
     font-size: 0.9rem;
   }
+
   button[value="redefinir"] {
     font-size: 1.2rem;
     margin-bottom: 2rem;
   }
+
   .sair {
     position: absolute;
     font-family: sans-serif;
@@ -222,6 +240,7 @@ button[value="redefinir"]:hover {
     transition: background-color 0.1s ease;
     box-sizing: border-box;
   }
+
   h2 {
     white-space: normal;
     font-size: 2rem;
@@ -230,6 +249,7 @@ button[value="redefinir"]:hover {
     margin-bottom: 20px;
     padding: 0rem;
   }
+
   .rodape p {
     line-height: 1rem;
     text-align: center;

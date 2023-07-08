@@ -52,7 +52,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <li><a href="./cancelar.php">Cancelar</a></li>
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./menu.php">Menu</a></li>
-                    <li><a href="./logout.php">Sair</a></li>
+                    <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
             <!-- <div class="navbar-toggle">

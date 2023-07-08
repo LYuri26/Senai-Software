@@ -58,8 +58,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./Agendamentos.php">Agendamentos</a></li>
                     <li><a href="./menu.php">Menu</a></li>
-                    <li><a href="./logout.php">Sair</a></li>
-
+                    <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
             <!-- <div class="navbar-toggle">

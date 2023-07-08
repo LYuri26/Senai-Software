@@ -103,6 +103,9 @@ input[type="submit" i] {
   flex-direction: row;
   flex-wrap: nowrap;
 }
+.botaosair:hover{
+  color: red;
+}
 
 #logosenai {
   width: 10rem;
