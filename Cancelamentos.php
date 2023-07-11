@@ -45,21 +45,21 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="./menu.php">
-                    <img src="./config/assets/img/senailogo2.png" class="logo">
+                <div class="navbar-logo">
+                    <a href="./menu.php">
+                        <img src="./config/assets/img/senailogo2.png" class="logo" href="./menu.php">
+                </div>
+                <a href="#" id="menu-icon">
+                    <i class="fas fa-bars fa-2x"></i>
                 </a>
-                <ul class="navbar-menu">
+                <ul class="navbar-menu" id="menu-list">
                     <li><a href="./agendar.php">Agendar</a></li>
                     <li><a href="./cancelar.php">Cancelar</a></li>
+                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="./menu.php">Menu</a></li>
                     <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
-            <!-- <div class="navbar-toggle">
-        <span class="navbar-toggle-icon"></span>
-      </div>
-      </div>-->
         </nav>
     </header>
     <div id="app">
@@ -104,8 +104,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                </div>
             </div>
+    </div>
 </body>
 <script src="./config/assets/js/destruirSessao.js"></script>
 <footer>

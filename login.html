@@ -40,11 +40,12 @@
   <div id="app">
 
     <form id="forms" action="./conexaologin.php" method="post" onsubmit="exibirAlerta(event)">
-
-      <div class="link-container">
-        <a href="./cadastro.html" class="link-button1">CRIAR CADASTRO</a>
-      </div>
-      <img src="./config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
+      <div class="containerimg">
+        <img src="./config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai">
+    </div>
+    <div class="link-container">
+      <a href="./cadastro.html" class="link-button1">CRIAR CADASTRO</a>
+    </div>
 
       <h1>LOGIN</h1>
 
@@ -67,17 +68,17 @@
       <div class="link-container">
         <a href="./passwrecovery.html" class="link-button2">RECUPERAR SENHA</a>
       </div>
+      
 
       <div class="button-container">
         <button type="submit" value="ACESSAR">ACESSAR</button>
 
         <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">LIMPAR
-          FORMULÁRIO</button>
-
-      </div>
+          FORMULÁRIO</button> </div>
 
     </form>
-  </div><!--
+  </div>
+  <!--
   </div>
   <div class="captcha">
     <button class="g-recaptcha" data-sitekey="6LeIALEmAAAAALolDlVfyHC3zP3gdv4Rb2DRNJeC" data-callback='onSubmit' data-action='submit'>CAPTCHA</button>

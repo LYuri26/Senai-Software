@@ -94,8 +94,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
   <div class="container" id="slider">
     <div class="imgscar" id="slider">
       <div class="slide" role="rolebox" id="slider">
-        <img src="./config/assets/img/senailogo1.png" Logo Senai" class="selected">
-        <img src="./config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib">
+        <img src="./config/assets/img/senailogo1.png" alt="Logo Senai" class="selected" id="logosenai">
+        <img src="./config/assets/img/Biblioteca.jpg" alt="Logo Biblioteca" class="logobib" id="biblioteca">
         <!--<img src="/config/assets/img/img2.png" alt="imagem2" class="IMG.2">-->
       </div>
     </div>

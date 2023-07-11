@@ -43,6 +43,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
@@ -50,21 +52,21 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <header>
         <nav class="navbar">
             <div class="navbar-container">
-                <a href="./menu.php">
-                    <img src="./config/assets/img/senailogo2.png" class="logo">
+                <div class="navbar-logo">
+                    <a href="./menu.php">
+                        <img src="./config/assets/img/senailogo2.png" class="logo" href="./menu.php">
+                </div>
+                <a href="#" id="menu-icon">
+                    <i class="fas fa-bars fa-2x"></i>
                 </a>
-                <ul class="navbar-menu">
+                <ul class="navbar-menu" id="menu-list">
+                    <li><a href="./agendar.php">Agendar</a></li>
                     <li><a href="./cancelar.php">Cancelar</a></li>
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="./menu.php">Menu</a></li>
                     <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
-            <!-- <div class="navbar-toggle">
-        <span class="navbar-toggle-icon"></span>
-      </div>
-      </div>-->
         </nav>
     </header>
 
@@ -244,6 +246,39 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     }
 
     ?>
+    <script>
+            $(document).ready(function() {
+      // Define a função toggleDropdown
+      function toggleDropdown() {
+        $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
+      }
+
+      // Adiciona um evento de clique ao elemento com o id "menu-icon"
+      $("#menu-icon").click(toggleDropdown);
+
+      // Adiciona um evento de redimensionamento ao documento
+      $(window).on("resize", function() {
+        // Verifica se a largura da janela é maior que 768 pixels
+        if ($(window).width() > 768) {
+          // Mostra a lista suspensa
+          $("#menu-list").show();
+        } else {
+          // Oculta a lista suspensa
+          $("#menu-list").hide();
+        }
+      });
+    });
+    // Obtenha o botão do menu e o elemento navbar
+    const menuBtn = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    // Manipule o evento de clique do botão
+    menuBtn.addEventListener('click', function() {
+      // Adicione a classe "rounded" ao elemento navbar
+      navbar.classList.removse('rounded');
+    });
+
+    </script>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->
 
