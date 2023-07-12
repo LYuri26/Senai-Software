@@ -60,10 +60,10 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                     <i class="fas fa-bars fa-2x"></i>
                 </a>
                 <ul class="navbar-menu" id="menu-list">
-                    <li><a href="./agendar.php">Agendar</a></li>
                     <li><a href="./cancelar.php">Cancelar</a></li>
-                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./cancelamentos.php">Cancelamentos</a></li>
+                    <li><a href="./Menu.php">Menu</a></li>
                     <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>

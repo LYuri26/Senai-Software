@@ -7,6 +7,7 @@ body {
   font-size: 1.2rem;
   overflow-x: auto;
   height: 100vh;
+  
 }
 header {
   display: flex;
@@ -23,6 +24,12 @@ h1 {
 #botaosair:hover {
   color: red;
 }
+
+#menu-icon {
+  display: none;
+  /* Oculta o ícone em dispositivos desktop */
+}
+
 h1 {
   color: #005ca9;
   /*color: hsl(165, 100%, 30%); /* saturação em 100% (2° valor) */
@@ -63,22 +70,12 @@ h1 {
   /* Adicione um valor alto para definir a ordem de empilhamento da navbar */
 }
 .logo {
-  display: flex;
-  align-items: center;
   font-weight: bold;
   text-decoration: none;
-  /* Movemos essas tags para o .navbar-container
-    display: flex;
-    align-items: center;
-    */
-  font-weight: bold;
-  text-decoration: none;
-  /* object-fit: cover;
-    /*width: 10rem;*/
   height: 3rem;
   width: 10rem;
-  /*border-radius: 200px;
-    margin-right: 200px;*/
+  animation: fade-in 3s forwards;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .navbar-menu {
@@ -128,14 +125,17 @@ tr {
 }
 
 form {
-  width: 100%;
+  width: 200%;
   display: grid;
   background-color: #ffffff;
   border-radius: 15px;
   margin-left: 0px;
-  padding: 2rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-bottom: 1%;
   max-width: 30rem;
+  padding-bottom: 1rem;
   margin: 0 auto;
   margin-top: 4rem;
 }
@@ -197,6 +197,7 @@ input[type="submit"]:hover {
   text-align: center;
 }
 .text-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,14 +206,10 @@ input[type="submit"]:hover {
   /* padding-top: auto; */
   font-weight: bold;
 }
-form {
-  width: 100%;
-  width: 30rem;
-  width: 30vw;
-  padding-bottom: 1rem;
-}
 .text-container .calendario {
   display: flex;
+  width: 200%;
+
   align-items: center;
   justify-content: center;
   display: flex;
@@ -230,9 +227,10 @@ table {
 }
 
 th,
-td {
+td 
+{
   text-align: center;
-  padding: 10px;
+  padding: 12px;
 }
 
 th {
@@ -342,6 +340,14 @@ input[type="submit"]:hover {
   background-color: #0c36be;
   text-align: center;
 }
+.forms {
+  width: 200%;
+}
+tbody {
+  font-size: 20px;
+  width: 200%;
+
+}
 
 @media (max-width: 768px) {
   body {
@@ -354,18 +360,32 @@ input[type="submit"]:hover {
     height: 100vh;
   }
   form {
-    width: 100%;
-    margin: 0;
+    width: 90%;
     margin-top: 2rem;
+    display: grid;
+    background-color: #ffffff;
+    border-radius: 15px;
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 1rem;
   }
   .navbar-menu li {
-    text-align: center;
-    margin-right: 4rem;
-    z-index: 999;
+    justify-content: stretch;
+    margin-top: 0.8rem;
+    margin-right: 0;
   }
-
+  #menu-icon {
+    place-items: center;
+    display: block;
+  }
+  #menu-list {
+    display: none;
+    margin-top: 0px;
+  }
   .forms {
-    width: 100%;
+    max-width: 90%;
+    margin: 1rem auto;
+    width: 90%;
     display: grid;
     justify-items: center;
     text-align: center;
@@ -428,14 +448,13 @@ input[type="submit"]:hover {
   }
   .fa-2x {
     font-size: 1.5em !important;
-}
+  }
   .logo {
     justify-content: center;
     text-align: center;
     align-items: center;
     margin: 0 auto;
     box-sizing: content-box;
-    width: 100%;
   }
   table {
     display: grid;
@@ -444,7 +463,9 @@ input[type="submit"]:hover {
     border-collapse: collapse;
   }
   tbody {
-    margin-top: 8rem;
+    position: relative;
+    max-width: 90%;
+    margin-top: 5rem;
     justify-items: center;
     text-align: center;
   }
@@ -459,6 +480,14 @@ input[type="submit"]:hover {
   tr {
     background-color: rgba(204, 204, 206, 0.521);
   }
+  ul {
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
+    padding-inline-start: 0rem;
+  }
+  .navbar-menu li:last-child {
+    margin-right: 0rem;
+  }
 
   .text-container .calendario {
     width: 100%;
@@ -469,11 +498,10 @@ input[type="submit"]:hover {
   }
 
   .text-container form {
-    width: 100%;
+    margin: 0 auto;
     display: grid;
     justify-items: center;
     text-align: center;
-    padding: 2rem;
     flex-basis: 30%;
   }
 

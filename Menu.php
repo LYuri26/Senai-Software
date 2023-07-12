@@ -135,7 +135,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     // Manipule o evento de clique do botão
     menuBtn.addEventListener('click', function() {
       // Adicione a classe "rounded" ao elemento navbar
-      navbar.classList.removse('rounded');
+      navbar.classList.remove('rounded');
     });
 
     /*
