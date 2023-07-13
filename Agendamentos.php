@@ -64,8 +64,18 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 
     <div id="app">
         <form method="post" onsubmit="exibirAlerta(event)">
+
             <h1>Lista de Agendamentos</h1>
             <?php
+
+            session_start();
+            if (!isset($_SESSION['id_agendamento'])) {
+            } else {
+                // Exibir o ID de agendamento para o usuário
+                $idAgendamento = $_SESSION['id_agendamento'];
+                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>Seu ID de agendamento é: " . $idAgendamento . "</p>";
+                unset($_SESSION['id_agendamento']);
+            }
             // Definir as informações de conexão
             $host = 'localhost';
             $banco = 'biblioteca';

@@ -44,7 +44,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
 </head>
 
@@ -181,12 +181,15 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     // Restante do código...
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $data = $_POST['data'];
         $hora_inicio = $_POST['hora_inicio'];
         $nome = $_POST['instrutor'];
         $curso = $_POST['curso'];
         $hora_termino = $_POST['hora_termino'];
         $quantidade_alunos = $_POST['quantidade_alunos'];
+        /*$id_agendamento = $_SESSION['id_agendamento'];*/
+        
 
         // Verificar se já existe um agendamento para essa data e hora no banco de dados
         $stmt = $pdo->prepare("
@@ -215,20 +218,24 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
             // Verificar se é um dia útil e horário válido
             $dayOfWeek = date('N', strtotime($data));
             if (isValidTime($dayOfWeek, $hora_inicio)) {
+                $Id_bytes = 5;
+                $resultado_bytes = random_bytes($Id_bytes);
+                $resultado_final = strtoupper(bin2hex(random_bytes(4)));
+                $_SESSION['id_agendamento'] = $resultado_final;
+
                 // Insere os dados na tabela "agendamentos"
-                $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (:nome, :curso, :data, :hora_inicio, :hora_termino, :quantidade_alunos)");
+                $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos, id_agendamento) VALUES (:nome, :curso, :data, :hora_inicio, :hora_termino, :quantidade_alunos, :id_agendamento)");
                 $stmt->bindValue(':nome', $nome);
                 $stmt->bindValue(':curso', $curso);
                 $stmt->bindValue(':data', $data);
                 $stmt->bindValue(':hora_inicio', $hora_inicio);
                 $stmt->bindValue(':hora_termino', $hora_termino);
                 $stmt->bindValue(':quantidade_alunos', $quantidade_alunos);
+                $stmt->bindValue(':id_agendamento', $_SESSION['id_agendamento']);
+                /*$stmt->bindValue(':id_agendamento', $id_agendamento);*/
                 $stmt->execute();
                 $cadastroId = $pdo->lastInsertId();
 
-                $Id_bytes = 5;
-                $resultado_bytes = random_bytes($Id_bytes);
-                $resultado_final = strtoupper(bin2hex(random_bytes(4)));
                 // Exibe uma mensagem de sucesso
                 //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
                 //session_destroy();
@@ -247,37 +254,36 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
     ?>
     <script>
-            $(document).ready(function() {
-      // Define a função toggleDropdown
-      function toggleDropdown() {
-        $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
-      }
+        $(document).ready(function() {
+            // Define a função toggleDropdown
+            function toggleDropdown() {
+                $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
+            }
 
-      // Adiciona um evento de clique ao elemento com o id "menu-icon"
-      $("#menu-icon").click(toggleDropdown);
+            // Adiciona um evento de clique ao elemento com o id "menu-icon"
+            $("#menu-icon").click(toggleDropdown);
 
-      // Adiciona um evento de redimensionamento ao documento
-      $(window).on("resize", function() {
-        // Verifica se a largura da janela é maior que 768 pixels
-        if ($(window).width() > 768) {
-          // Mostra a lista suspensa
-          $("#menu-list").show();
-        } else {
-          // Oculta a lista suspensa
-          $("#menu-list").hide();
-        }
-      });
-    });
-    // Obtenha o botão do menu e o elemento navbar
-    const menuBtn = document.getElementById('menu-icon');
-    const navbar = document.querySelector('.navbar');
+            // Adiciona um evento de redimensionamento ao documento
+            $(window).on("resize", function() {
+                // Verifica se a largura da janela é maior que 768 pixels
+                if ($(window).width() > 768) {
+                    // Mostra a lista suspensa
+                    $("#menu-list").show();
+                } else {
+                    // Oculta a lista suspensa
+                    $("#menu-list").hide();
+                }
+            });
+        });
+        // Obtenha o botão do menu e o elemento navbar
+        const menuBtn = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
 
-    // Manipule o evento de clique do botão
-    menuBtn.addEventListener('click', function() {
-      // Adicione a classe "rounded" ao elemento navbar
-      navbar.classList.removse('rounded');
-    });
-
+        // Manipule o evento de clique do botão
+        menuBtn.addEventListener('click', function() {
+            // Adicione a classe "rounded" ao elemento navbar
+            navbar.classList.removse('rounded');
+        });
     </script>
     <script src="./config/assets/js/destruirSessao.js"></script>
     <!--<script src="./config/assets/js/default.js"></script>-->

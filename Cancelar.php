@@ -128,21 +128,49 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             echo 'Error: ' . $e->getMessage();
             die();
         }
+        /*$id_cancelamento = $_POST['id_agendamento'];*/
         // Se o formulário foi enviado
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Obtém os dados do formulário
             $nome = $_POST['nome'];
             $id = $_POST['id'];
             $motivo = $_POST['motivo'];
-            // Insere os dados na tabela "cancelamentos"
-            $stmt = $pdo->prepare("INSERT INTO cancelamentos (id, nome, motivo) VALUES (:id, :nome, :motivo)");
-            $stmt->bindValue(':id', $id);
-            $stmt->bindValue(':nome', $nome);
-            $stmt->bindValue(':motivo', $motivo);
-            $stmt->execute();
-            // Exibe uma mensagem de sucesso
-            echo "<div class='success-message' style='text-align: center; color:green; font-size:20px; margin: 1rem;'>Cancelamento realizado com sucesso!</div>";
-            //session_destroy();
+
+
+            $stmt_select = $pdo->prepare("SELECT COUNT(*) FROM agendamentos WHERE id_agendamento = :id_agendamento");
+            $stmt_select->bindValue(':id_agendamento', $id);
+            $stmt_select->execute();
+            $count = $stmt_select->fetchColumn();
+
+            if ($count > 0) { 
+                // Insere os dados na tabela "cancelamentos" 
+                $stmt = $pdo->prepare("INSERT INTO cancelamentos (id, nome, motivo) VALUES (:id, :nome, :motivo)"); 
+                $stmt->bindValue(':id', $id); 
+                $stmt->bindValue(':nome', $nome); 
+                $stmt->bindValue(':motivo', $motivo); 
+                $stmt->execute(); 
+            
+                // Exibe uma mensagem de sucesso 
+                echo "<div class='success-message' style='text-align: center; color:green; font-size:20px; margin: 1rem; font-weight: 600;'>Cancelamento realizado com sucesso!</div>"; 
+            } else {
+                // Verifica se existe um registro com o ID fornecido
+                $stmt_check = $pdo->prepare("SELECT id FROM cancelamentos WHERE id = :id"); 
+                $stmt_check->bindValue(':id', $id);
+                $stmt_check->execute();
+                $count_check = $stmt_check->rowCount();
+            
+                if ($count_check > 0) {
+                    // Realiza o UPDATE no registro existente na tabela "cancelamentos"
+                    $stmt_update = $pdo->prepare("UPDATE cancelamentos SET nome = :nome, motivo = :motivo WHERE id = :id");
+                    $stmt_update->bindValue(':nome', $nome); 
+                    $stmt_update->bindValue(':motivo', $motivo); 
+                    $stmt_update->bindValue(':id', $id);
+                    $stmt_update->execute();
+                } else {
+                    // Exibe uma mensagem de erro
+                    echo "<div class='error-message' style='text-align: center; color:red; font-size:20px; margin: 1rem; font-weight: 600;'>ID de agendamento inválido</div>"; 
+                }
+            }
         }
         ?>
         <div class="content-wrapper">

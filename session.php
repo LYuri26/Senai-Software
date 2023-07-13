@@ -4,11 +4,17 @@ session_start();
 // Verificar se há uma sessão de usuário ou superusuário
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     header("Location: login.html");
-    session_destroy(); 
     exit;
 } else {
-    //session_destroy(); 
+    /* Limpar os dados da sessão
+    $_SESSION = array();
+    session_unset();
+    // Destruir a sessão
+    session_destroy();
+    // Configurar o cookie da sessão para expirar quando o navegador for fechado
+    setcookie(session_name(), '', 0, '/');*/
 }
+
 
 /*$_SESSION['user_id'] = $usuario['id']; // Armazena o ID do usuário na sessão
 $_SESSION['privilegios'] = $usuario['privilegios']; // Armazena os privilégios do usuário na sessão
@@ -20,4 +26,3 @@ if (!isset($_SESSION['usuario'])) {
     exit;
 }
 ?>*/
-?>
