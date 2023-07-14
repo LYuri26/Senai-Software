@@ -4,7 +4,7 @@ body {
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   margin: 0 auto;
   padding: 2%;
 }
@@ -149,7 +149,7 @@ button[value="redefinir"]:hover {
 @media screen and (max-width: 768px) {
   body {
     position: relative;
-    overflow: scroll;
+    overflow: auto;
     margin: 0 auto;
     height: 500px;
     box-sizing: border-box;

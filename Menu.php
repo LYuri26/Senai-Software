@@ -35,9 +35,9 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 <html lang="pt-br">
 
 <head>
-  <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
   <meta charset="UTF-8">
   <title>Menu</title>
+  <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
 
   <!-- meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -21,9 +21,10 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 <html lang="PT-BR">
 
 <head>
-    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
     <meta charset="UTF-8">
     <title>Agendar</title>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
+
 
     <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,7 +190,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
         $hora_termino = $_POST['hora_termino'];
         $quantidade_alunos = $_POST['quantidade_alunos'];
         /*$id_agendamento = $_SESSION['id_agendamento'];*/
-        
+
 
         // Verificar se já existe um agendamento para essa data e hora no banco de dados
         $stmt = $pdo->prepare("

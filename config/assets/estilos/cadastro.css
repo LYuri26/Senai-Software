@@ -365,7 +365,7 @@ button:hover {
     max-width: 100%;
     padding: 4%;
     position: relative;
-    overflow: scroll;
+    overflow: auto;
     margin: 0 auto;
     box-sizing: border-box;
   }

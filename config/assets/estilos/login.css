@@ -8,7 +8,7 @@ body {
   padding: 0;
   height: 500px;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* css mensagem erro ou exito (opcional)
@@ -264,7 +264,7 @@ button:hover {
     height: 100%;
     width: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
   }
   .link-button1 {
     display: flex;
