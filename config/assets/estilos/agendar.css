@@ -7,7 +7,6 @@ body {
   font-size: 1.2rem;
   overflow-x: auto;
   height: 100vh;
-  
 }
 header {
   display: flex;
@@ -75,15 +74,28 @@ h1 {
   height: 3rem;
   width: 10rem;
   animation: fade-in 3s forwards;
-  animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+.navbar-logo:hover {
+  box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
+  transform: scale(1.05);
+}
 .navbar-menu {
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .navbar-menu li {
@@ -227,8 +239,7 @@ table {
 }
 
 th,
-td 
-{
+td {
   text-align: center;
   padding: 12px;
 }
@@ -346,7 +357,6 @@ input[type="submit"]:hover {
 tbody {
   font-size: 20px;
   width: 200%;
-
 }
 
 @media (max-width: 768px) {

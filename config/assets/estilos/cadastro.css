@@ -10,7 +10,10 @@ body {
   max-width: 40%;
   margin: 0 auto;
 }
-
+.navbar-logo:hover {
+  box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
+  transform: scale(1.05);
+}
 h2 {
   color: #005ca9;
   font-size: 2rem;
@@ -21,14 +24,12 @@ form {
   margin-top: 20rem;
   background-color: #ffffff;
   border-radius: 15px;
-  padding: 5%;
   padding-bottom: 5%;
-  max-width: 30rem;
+  max-width: 50rem;
   margin: 0 auto;
   border-radius: 15px;
   padding: 5%;
   padding-bottom: 5%;
-  max-width: 30rem;
   margin: 0 auto;
 }
 
@@ -194,7 +195,23 @@ input[type="password"] {
   align-items: right;
   margin-top: 1000px;
 }
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  height: 3rem;
+  width: 10rem;
+  animation: fade-in 3s forwards;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
 
+  100% {
+    opacity: 1;
+  }
+}
 button[type="submit"] {
   font-size: 1.4rem;
   font-weight: 600;
@@ -374,7 +391,6 @@ button:hover {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     /* padding-top: auto; */
-    margin-top: 5rem;
     object-position: bottom;
   }
 
