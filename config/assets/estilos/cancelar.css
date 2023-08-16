@@ -164,18 +164,18 @@ input[type="text"] {
 
 button[type="submit"] {
   margin-top: 1rem;
+  font-family: 'Raleway', sans-serif !important;
   background-color: #005ca9;
+  font-weight: bold;
+  border-radius: 20px 10px 20px 10px;
+  box-sizing: border-box;
   color: #ffffff;
   font-size: 1.2em;
-  font-weight: bold;
   border: none;
   padding: 0.5rem 1em;
-  border-radius: 20px 10px 20px 10px;
   cursor: pointer;
   transition: background-color 0.1s ease;
-  box-sizing: border-box;
   margin: 0 auto;
-  display: block;
   margin-bottom: 1rem;
 }
 button[type="button"] {
@@ -228,9 +228,6 @@ button:hover {
 }
 /* Responsividade */
 
-p {
-  margin-top: 5%;
-}
 /*strong {
   text-align: center;
   margin: 0 auto;

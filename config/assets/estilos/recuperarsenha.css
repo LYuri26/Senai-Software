@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
 
 body {
   background-color: #e0e0e0;
@@ -72,7 +72,6 @@ form {
   padding: 5%;
 }
 
-
 h2 {
   white-space: normal;
   font-size: 1.68rem;
@@ -126,7 +125,7 @@ input[type="submit"] {
 }
 
 button[value="redefinir"] {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: #005ca9;
   color: #ffffff;
   font-size: 1.25rem;
@@ -138,22 +137,23 @@ button[value="redefinir"] {
   box-sizing: border-box;
   margin-bottom: 2rem;
 }
-#botaosair:hover{
+#botaosair:hover {
   color: red;
 }
 button[value="redefinir"]:hover {
   background-color: #0c36be;
 }
-
 .rodape {
+  font-weight: bold;
   font-family: "Montserrat", sans-serif;
   text-align: center;
-  /* Centralizar o conteúdo do rodapé */
+  line-height: 1.5;
+  display: grid;
+  place-items: center;
 }
 
 .rodape p {
   font-weight: 600;
-  line-height: 1rem;
   margin: 0 auto;
   /* Remover margens para evitar espaçamento extra */
 }

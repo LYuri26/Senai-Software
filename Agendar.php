@@ -128,7 +128,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                 <label for="quantidade_alunos">Quantidade de Alunos</label>
                 <input type="number" id="quantidade_alunos" name="quantidade_alunos" required><br>
 
-                <button type="submit" value="AGENDAR">AGENDAR</button>
+                <button type="submit" value="AGENDAR">Agendar</button>
             </form>
         </div>
 
@@ -221,8 +221,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
             if (isValidTime($dayOfWeek, $hora_inicio)) {
                 $Id_bytes = 5;
                 $resultado_bytes = random_bytes($Id_bytes);
-                $resultado_final = strtoupper(bin2hex(random_bytes(4)));
-                $_SESSION['id_agendamento'] = $resultado_final;
+                $id_agendamento  = strtoupper(bin2hex(random_bytes(4)));
+                $_SESSION['id_agendamento'] = $id_agendamento;
 
                 // Insere os dados na tabela "agendamentos"
                 $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos, id_agendamento) VALUES (:nome, :curso, :data, :hora_inicio, :hora_termino, :quantidade_alunos, :id_agendamento)");

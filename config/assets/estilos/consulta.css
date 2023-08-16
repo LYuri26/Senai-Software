@@ -11,7 +11,7 @@ body {
 header {
   display: flex;
 }
-#botaosair:hover{
+#botaosair:hover {
   color: red;
 }
 .sair {
@@ -146,7 +146,7 @@ table {
 
 tr {
   display: table-row;
-  vertical-align:super;
+  vertical-align: super;
   background-color: #f2f2f2;
 }
 
@@ -273,6 +273,10 @@ footer {
 }
 
 .rodape {
+  font-weight: bold;
   font-family: "Montserrat", sans-serif;
   text-align: center;
+  line-height: 1.5;
+  display: grid;
+  place-items: center;
 }

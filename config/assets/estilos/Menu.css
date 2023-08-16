@@ -266,11 +266,14 @@ footer {
 }
 
 .rodape {
+  color: black;
+  font-weight: bold;
   font-family: "Montserrat", sans-serif;
   text-align: center;
-  /*hite-space: pre-line;*/
+  line-height: 1.5;
+  display: grid;
+  place-items: center;
 }
-
 /*.logosenai {
   animation-delay: 0s;
 }
