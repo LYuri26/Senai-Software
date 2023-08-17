@@ -70,7 +70,7 @@ header {
   align-items: center;
   box-sizing: border-box;
 }
-.logo {
+/*.logo {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -78,16 +78,17 @@ header {
   /* Movemos essas tags para o .navbar-container
     display: flex;
     align-items: center;
-    */
+    
   font-weight: bold;
   text-decoration: none;
   /* object-fit: cover;
-    /*width: 10rem;*/
+    /*width: 10rem;
   height: 3rem;
   width: 10rem;
   /*border-radius: 200px;
-    margin-right: 200px;*/
+    margin-right: 200px;
 }
+*/
 .navbar-menu {
   list-style: none;
   display: flex;
@@ -120,7 +121,7 @@ header {
   padding: 20px;
 }
 
-#botaosair:hover{
+#botaosair:hover {
   color: red;
 }
 
@@ -146,7 +147,9 @@ label {
   color: #000000;
   align-items: center;
 }
-
+#menu-icon {
+  display: none;
+}
 input[type="checkbox"] {
   transform: scale(2); /* Ajuste o valor conforme necessário */
 }
@@ -164,7 +167,7 @@ input[type="text"] {
 
 button[type="submit"] {
   margin-top: 1rem;
-  font-family: 'Raleway', sans-serif !important;
+  font-family: "Raleway", sans-serif !important;
   background-color: #005ca9;
   font-weight: bold;
   border-radius: 20px 10px 20px 10px;
@@ -243,18 +246,25 @@ strong {
   button {
     font-size: 16px;
   }
-
-  .success-message-container {
-    display: flex;
-    padding-bottom: 100%;
-    justify-content: center;
-    /* Centraliza horizontalmente o conteúdo */
-    align-items: center;
-    /* Centraliza verticalmente o conteúdo */
-    height: 100vh;
-    /* Define a altura do contêiner para ocupar toda a altura da tela */
-    color: #005ca9;
+  #menu-icon {
+    place-items: center;
+    display: block;
   }
+  #menu-list {
+    display: none;
+    margin-top: 0px;
+  }
+}
+.success-message-container {
+  display: flex;
+  padding-bottom: 100%;
+  justify-content: center;
+  /* Centraliza horizontalmente o conteúdo */
+  align-items: center;
+  /* Centraliza verticalmente o conteúdo */
+  height: 100vh;
+  /* Define a altura do contêiner para ocupar toda a altura da tela */
+  color: #005ca9;
 }
 #concordo {
   margin-top: 1.5rem;
@@ -302,19 +312,53 @@ strong {
     padding-top: 20px;
     margin-bottom: 10px;
   }
+  #menu-icon {
+    place-items: center;
+    display: block;
+  }
+  #app {
+    padding: 0;
+    width: 99%;
+  }
   .navbar {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    background-position: top;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+    padding-bottom: 2px;
+    z-index: 999;
+    width: 38.8%;
     text-align: center;
-    flex-direction: column;
-    align-items: flex-start;
+    border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  ul {
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
+    padding-inline-start: 0rem;
+  }
+  .navbar-logo {
+    box-sizing: content-box;
   }
   header {
-    display: flex;
     position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
     justify-content: center;
   }
   body {
-    margin-top: 6rem;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 
   #conteudo {
@@ -332,11 +376,16 @@ strong {
   }
 
   .navbar-container {
-    /*align-items: flex-start;*/
-    justify-content: stretch;
+    align-items: flex-start;
+    justify-content: center;
     text-align: center;
     align-items: center;
     display: grid;
+    justify-items: center;
+    place-items: center;
+    position: relative;
+    margin: 0;
+    padding-bottom: 1rem;
   }
 
   .navbar-menu li {
@@ -354,12 +403,11 @@ strong {
     justify-content: center;
     text-align: center;
     align-items: center;
-    display: grid;
     margin: 0 auto;
-    padding-left: 2rem;
+    box-sizing: content-box;
   }
   form {
-    margin-top: 12rem;
+    margin-top:1rem;
     background-color: #ffffff;
     border-radius: 15px;
     padding: 5%;
@@ -373,6 +421,9 @@ strong {
     font-size: 18px;
     transition: color 0.1s ease;
     box-sizing: border-box;
+  }
+  .fa-2x {
+    font-size: 1.5em !important;
   }
   /*
   .navbar-menu {
