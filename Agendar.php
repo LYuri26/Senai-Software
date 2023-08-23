@@ -81,27 +81,27 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
                     <th>Término</th>
                 </tr>
                 <tr>
-                    <td>Segunda-feira</td>
+                    <td>Segunda</td>
                     <td>13:00</td>
                     <td>21:00</td>
                 </tr>
                 <tr>
-                    <td>Terça-feira</td>
+                    <td>Terça</td>
                     <td>08:00</td>
                     <td>17:00</td>
                 </tr>
                 <tr>
-                    <td>Quarta-feira</td>
+                    <td>Quarta</td>
                     <td>13:00</td>
                     <td>21:00</td>
                 </tr>
                 <tr>
-                    <td>Quinta-feira</td>
+                    <td>Quinta</td>
                     <td>13:00</td>
                     <td>21:00</td>
                 </tr>
                 <tr>
-                    <td>Sexta-feira</td>
+                    <td>Sexta</td>
                     <td>08:00</td>
                     <td>17:00</td>
                 </tr>
@@ -166,11 +166,11 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     function isValidTime($dayOfWeek, $time)
     {
         $validTimes = [
-            1 => ['13:00', '21:00'], // Segunda-feira
-            2 => ['08:00', '17:00'], // Terça-feira
-            3 => ['13:00', '21:00'], // Quarta-feira
-            4 => ['13:00', '21:00'], // Quinta-feira
-            5 => ['08:00', '17:00'], // Sexta-feira
+            1 => ['13:00', '21:00'], // Segunda
+            2 => ['08:00', '17:00'], // Terça
+            3 => ['13:00', '21:00'], // Quarta
+            4 => ['13:00', '21:00'], // Quinta
+            5 => ['08:00', '17:00'], // Sexta
         ];
 
         $start = $validTimes[$dayOfWeek][0];
