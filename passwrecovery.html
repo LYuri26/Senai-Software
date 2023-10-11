@@ -30,7 +30,6 @@
 </head>
 
 <body>
-  <div id="app">
     <a href="./logout.php" class="sair">Voltar</a>
 
     <form method="POST" action="./reset_password.php">
@@ -43,16 +42,14 @@
 
       <label for="Csenha">Confirmar Nova Senha</label>
       <input type="password" id="Csenha" name="Csenha" minlength="8" autocomplete="off" required />
-      <p id="senhaErro" style="color:red;">Senhas não coincidem!</p><br><br>
+      <p id="senhaErro" style="color:red;">Senhas não coincidem!</p>
 
       <div class="button-container">
         <button type="submit" value="redefinir"> Redefinir</button>
       </div>
       <!--Caso as senhas não coincidam, mostrar mensagem-->
 
-    </form>
-  </div>
-  <script>
+    </form>  <script>
     const senha = document.getElementById('novaSenha');
     const cSenha = document.getElementById('Csenha');
     const senhaErro = document.getElementById('senhaErro');
