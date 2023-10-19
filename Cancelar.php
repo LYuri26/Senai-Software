@@ -162,9 +162,11 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     $stmt->bindValue(':motivo', $motivo);
                     $stmt->execute();
                 } catch (PDOException $e) {
+                    /*
                     if ($e->errorInfo[1] == 1062) {
                         echo "<div class='id_failed' style=' margin: 10px; text-align: center; font-size:20px; font-weight:600;'> Digite outro nome.</div>";
                     }
+                    */
                 }
 
                 // Remove o registro da tabela "agendamentos"

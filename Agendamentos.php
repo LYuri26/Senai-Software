@@ -73,7 +73,15 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             } else {
                 // Exibir o ID de agendamento para o usuário
                 $idAgendamento = $_SESSION['id_agendamento'];
-                echo "<p style='color: black; text-align: center; font-size:20px; font-weight:600;'>Seu ID de agendamento é: " . $idAgendamento . "</p>";
+                /*
+                EXIBIR UMA MENSAGEM FORTE PARA INFORMAR O USUARIO QUE ELE DEVE SALVAR O ID DE AGENDAMENTO
+                echo "<div class='alerta' id='alerta'>
+                <p>OBRIGATÓRIO: ID DE AGENDAMENTO!</p>
+                </div>";
+                */
+                echo "<div class='agendaID' id='agendaID'>
+                <p>Seu ID de agendamento é: " . $idAgendamento . "</p>"
+                    . "</div>";
                 unset($_SESSION['id_agendamento']);
             }
             // Definir as informações de conexão
