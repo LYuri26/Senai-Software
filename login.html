@@ -1,129 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login</title>
-    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
 
-    <!-- meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="robots" content="index, nofollow" />
-    <meta name="googlebot" content="index, nofollow" />
-    <meta name="googlebot" content="notranslate" />
-    <meta name="theme-color" content="#FFFFFF" />
-    <meta name="description" content="Login biblioteca SENAI" />
-    <meta name="keywords" content="SENAI, Biblioteca, login" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="author" content="SENAI" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
 
-    <!-- link tags -->
-    <link rel="stylesheet" href="config/assets/estilos/login.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Fira+Sans:ital,wght@1,200&amp;family=Montserrat:wght@200&amp;family=Source+Sans+Pro&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="robots" content="index, nofollow" />
+  <meta name="googlebot" content="index, nofollow" />
+  <meta name="googlebot" content="notranslate" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="description" content="Login biblioteca SENAI" />
+  <meta name="keywords" content="SENAI, Biblioteca, login" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="author" content="SENAI" />
 
-    <!-- Adicione a biblioteca de ícones Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon" />
-  </head>
+  <!-- link tags -->
+  <link rel="stylesheet" href="config/assets/estilos/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Fira+Sans:ital,wght@1,200&amp;family=Montserrat:wght@200&amp;family=Source+Sans+Pro&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet" />
 
-  <body>
-    <div id="app">
-      <form
-        id="forms"
-        action="./conexaologin.php"
-        method="post"
-        onsubmit="exibirAlerta(event)"
-      >
-        <div class="containerimg">
-          <img
-            src="./config/assets/img/senailogo1.png"
-            alt="logo SENAI"
-            id="logosenai"
-          />
-        </div>
-        <div class="link-container">
-          <a href="./cadastro.html" class="link-button1">CRIAR CADASTRO</a>
-        </div>
+  <!-- Adicione a biblioteca de ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon" />
+</head>
 
-        <h1>LOGIN</h1>
+<body>
+  <div id="app">
+    <form id="forms" action="./conexaologin.php" method="post" onsubmit="exibirAlerta(event)">
+      <div class="containerimg">
+        <img src="./config/assets/img/senailogo1.png" alt="logo SENAI" id="logosenai" />
+      </div>
+      <div class="link-container">
+        <a href="./cadastro.html" class="link-button1">CRIAR CADASTRO</a>
+      </div>
 
-        <label for="nome">Nome ou e-mail</label>
-        <input
-          type="text"
-          maxlength="42"
-          id="nome"
-          name="usuario"
-          placeholder="Digite aqui seu nome ou e-mail"
-          required
-          onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'Digite aqui seu nome ou e-mail'"
-          style="text-align: left"
-          autocomplete="off"
-        /><br />
+      <h1>LOGIN</h1>
 
-        <label for="senha">Senha</label>
-        <div class="password-container">
-          <input
-            type="password"
-            minlength="8"
-            maxlength="62"  
-            id="senha"
-            name="senha"
-            placeholder="Digite aqui sua senha"
-            required
-            onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'Digite sua senha'"
-            style="text-align: left"
-            autocomplete="off"
-          />
+      <label for="nome">Nome ou e-mail</label>
+      <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite aqui seu nome ou e-mail" required
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite aqui seu nome ou e-mail'"
+        style="text-align: left" autocomplete="off" /><br />
 
-          <span
-            class="password-toggle-btn"
-            onclick="togglePasswordVisibility('senha', 'password-toggle-icon')"
-          >
-            <i id="password-toggle-icon" class="fas fa-eye"></i>
-          </span>
-        </div>
+      <label for="senha">Senha</label>
+      <div class="password-container">
+        <input type="password" minlength="8" maxlength="62" id="senha" name="senha" placeholder="Digite aqui sua senha"
+          required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'"
+          style="text-align: left" autocomplete="off" />
 
-        <div class="link-container">
-          <a href="./passwrecovery.html" class="link-button2"
-            >RECUPERAR SENHA</a
-          >
-        </div>
+        <span class="password-toggle-btn" onclick="togglePasswordVisibility('senha', 'password-toggle-icon')">
+          <i id="password-toggle-icon" class="fas fa-eye"></i>
+        </span>
+      </div>
 
-        <div class="button-container">
-          <button type="submit" value="ACESSAR">ACESSAR</button>
+      <div class="link-container">
+        <a href="./passwrecovery.html" class="link-button2">RECUPERAR SENHA</a>
+      </div>
 
-          <button
-            type="button"
-            id="botao_limpar"
-            onclick="limparFormulario()"
-            class="limpar-button"
-          >
-            LIMPAR FORMULÁRIO
-          </button>
-        </div>
-      </form>
-    </div>
-    <!--
+      <div class="button-container">
+        <button type="submit" value="ACESSAR">ACESSAR</button>
+
+        <button type="button" id="botao_limpar" onclick="limparFormulario()" class="limpar-button">
+          LIMPAR FORMULÁRIO
+        </button>
+      </div>
+    </form>
+  </div>
+  <!--
   </div>
   <div class="captcha">
     <button class="g-recaptcha" data-sitekey="6LeIALEmAAAAALolDlVfyHC3zP3gdv4Rb2DRNJeC" data-callback='onSubmit' data-action='submit'>CAPTCHA</button>
@@ -147,9 +100,9 @@
   </script>
   -->
 
-    <div id="falseMsg" class="failed"></div>
-    <div id="trueMsg" class="success"></div>
-    <!--<script>
+  <div id="falseMsg" class="failed"></div>
+  <div id="trueMsg" class="success"></div>
+  <!--<script>
       
       
       // Verificar se a variável de sessão está definida
@@ -185,18 +138,19 @@
       }
     </script>-->
 
-    <!--<button onclick="history.go(-1)">Voltar</button>-->
-    <script src="./config/assets/js/passw_eye.js"></script>
-    <script src="./config/assets/js/destruirSessao.js"></script>
-    <script src="./config/assets/js/default.js"></script>
-    <footer>
-      <div class="rodape">
-        <p>
-          &copy;2023 UAIBook. Todos os direitos reservados.<br />Curso de
-          Desenvolvimento em Sistemas. Trilhas do Futuro II. <br />SENAI.
-          Uberaba/MG.
-        </p>
-      </div>
-    </footer>
-  </body>
+  <!--<button onclick="history.go(-1)">Voltar</button>-->
+  <script src="./config/assets/js/passw_eye.js"></script>
+  <script src="./config/assets/js/destruirSessao.js"></script>
+  <script src="./config/assets/js/default.js"></script>
+  <footer>
+    <div class="rodape">
+      <p>
+        &copy;2023 UAIBook. Todos os direitos reservados.<br />Curso de
+        Desenvolvimento em Sistemas. Trilhas do Futuro II. <br />SENAI.
+        Uberaba/MG.
+      </p>
+    </div>
+  </footer>
+</body>
+
 </html>
