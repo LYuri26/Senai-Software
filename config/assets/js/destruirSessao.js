@@ -29,6 +29,14 @@ window.addEventListener("beforeunload", function () {
     document.title = "Carregando...";
   } else if (currentPage === "./cancelar.php") {
     document.title = "Carregando...";
+  } else if (currentPage === "/conexaocadastro.php") {
+    document.title = "Cadastrado com sucesso!";
+  } else if (currentPage === "/conexaologin.php") {
+    document.title = "Autenticado com sucesso!";
+  } else if (currentPage === "/logout.php") {
+    document.title = "Sair";
+  } else if (currentPage === "/reset_password.php") {
+    document.title = "Alterar Senha";
   }
 });
 window.addEventListener("load", function () {
