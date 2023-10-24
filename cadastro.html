@@ -85,7 +85,8 @@
             <div class="password-container">
 
                 <label for="senha">Senha</label>
-                <input type="password" minlength="8" name="senha" id="senha" placeholder="Digite a senha" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a senha'" autocomplete="off">
+                <input type="password" minlength="8" name="senha" id="senha" placeholder="Digite a senha" required
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite a senha'" autocomplete="off">
 
                 <span class="password-toggle-btn" onclick="togglePasswordVisibility('senha', 'password-toggle-icon')">
                     <i id="password-toggle-icon" class="fas fa-eye"></i>
@@ -96,9 +97,12 @@
             <div class="password-container">
 
                 <label for="confirmar senha">Confirmar senha</label>
-                <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha" placeholder="Confirme a senha" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirme a senha'" autocomplete="off">
+                <input type="password" minlength="8" maxlength="62" name="confirmarsenha" id="confirmarsenha"
+                    placeholder="Confirme a senha" required onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Confirme a senha'" autocomplete="off">
 
-                <span class="password-toggle-btn" onclick="togglePasswordVisibility('confirmarsenha', 'password-toggle-icon1')">
+                <span class="password-toggle-btn"
+                    onclick="togglePasswordVisibility('confirmarsenha', 'password-toggle-icon1')">
                     <i id="password-toggle-icon1" class="fas fa-eye"></i>
                 </span>
             </div>
@@ -146,7 +150,7 @@
         cSenha.addEventListener('blur', () => {
             if (senha.value !== cSenha.value) {
                 senhaErro.style.display = 'block';
-                senha.value = '';
+                //senha.value = '';
                 cSenha.value = '';
             } else {
                 senhaErro.style.display = 'none';
@@ -157,12 +161,12 @@
         const cEmail = document.getElementById('confirmaremail');
         const emailErro = document.getElementById('emailErro1');
 
-        cSenha.addEventListener('blur', () => {
+        cEmail.addEventListener('blur', () => {
             if (email.value !== cEmail.value) {
                 emailErro.style.display = 'block';
-                email.value = '';
+                //email.value = '';
                 cEmail.value = '';
-            } else {
+            } else if (cEmail.innerText !== '' || email.innerText !== '') {
                 emailErro.style.display = 'none';
             }
         });
