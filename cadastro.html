@@ -78,14 +78,17 @@
 
             <p id="emailErro"></p>
 
-            <label for="Código de acesso">Código de acesso</label>
-            <input type="text" name="codigo" ID="codigo" placeholder="Digite o código" required
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o código'"
-                autocomplete="off"><br><br>
+            <div class="codigo">
+                <label for="Código de acesso">Código de acesso</label>
+                <input type="text" name="codigo" ID="codigo" placeholder="Digite o código" required
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o código'"
+                    autocomplete="off"><br>
 
-            <div class="button-container">
-                <button type="submit" value="Cadastrar">Solicitar código de acesso</button>
+                <div class="button-container">
+                    <button type="submit" value="Cadastrar" id="botaoCadastro">Solicitar código de acesso</button>
+                </div>
             </div>
+            <br>
 
             <div class="password-container">
 
@@ -114,7 +117,7 @@
 
             <!--Caso as senhas não coincidam, mostrar mensagem-->
 
-            <p id="senhaErro" style="color: red;">Senhas não coincidem!</p><br><br>
+            <p id="senhaErro" style="color: red;">Senhas não coincidem!</p><br>
 
             <div class="button-container">
                 <button type="submit" value="Cadastrar">Cadastrar</button>
@@ -154,14 +157,21 @@
         const email = document.getElementById('email');
         const cEmail = document.getElementById('confirmaremail');
         const emailErro = document.getElementById('emailErro1');
+        const botaoCadastro = document.getElementById('botaoCadastro');
 
         cEmail.addEventListener('blur', () => {
             if (email.value !== cEmail.value) {
                 emailErro.style.display = 'block';
                 // email.value = ''; // Se ativo limpa o campo de e-mail original
                 cEmail.value = ''; // Limpa o campo de confirmação de e-mail
+                // Tornar o botao de cadastro invisivel e desabilitado
+                botaoCadastro.style.display = 'none';
+                botaoCadastro.disabled = true;
             } else {
                 emailErro.style.display = 'none';
+                // Tornar o botao de cadastro visivel e habilitado
+                botaoCadastro.style.display = 'block';
+                botaoCadastro.disabled = false;
             }
         });
 
