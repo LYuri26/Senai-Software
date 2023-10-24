@@ -67,11 +67,74 @@ if (!isset($_SESSION['usuario'])) {
         $hora_termino = $_POST['hora_termino'];
         $quantidade_alunos = $_POST['quantidade_alunos'];
 
+<<<<<<< Updated upstream
         // Insere os dados na tabela "agendamentos"
         $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$instrutor, $curso, $data, $hora_inicio, $hora_termino, $quantidade_alunos]);
         // Exibe uma mensagem de sucesso
         //echo "<p>Agendamento realizado com sucesso!</p>";
+=======
+
+        // Verificar se já existe um agendamento para essa data e hora no banco de dados
+        $stmt = $pdo->prepare("
+        SELECT COUNT(*) FROM agendamentos
+        WHERE data = :data AND (
+        (hora_inicio <= :hora_inicio AND hora_termino > :hora_inicio) OR
+        (hora_inicio < :hora_termino AND hora_termino >= :hora_termino)
+        )
+        ");
+        $stmt->bindValue(':data', $data);
+        $stmt->bindValue(':hora_inicio', $hora_inicio);
+        $stmt->bindValue(':hora_termino', $hora_termino);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        if ($count > 0) {
+            /*$_SESSION['error_message'] = "Já existe um agendamento neste horário!";*/
+            // Exibir uma mensagem de erro se já existe um agendamento para essa data e hora
+            echo "<div class='error-message' style='color: yellow; text-align: center; font-size:20px; font-weight:600;margin: 1rem;'>Já existe um agendamento neste horário!</div>";
+
+            // Insere os dados na tabela "agendamentos"
+        }
+
+        if (isWeekend($data) || isHoliday($data)) {
+            echo "<div class='error-message' style='color: red; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Não é possível agendar nos sábados e domingos.</div>";
+        } else {
+            // Verificar se é um dia útil e horário válido
+            $dayOfWeek = date('N', strtotime($data));
+            if (isValidTime($dayOfWeek, $hora_inicio)) {
+                $Id_bytes = 5;
+                $resultado_bytes = random_bytes($Id_bytes);
+                $id_agendamento  = strtoupper(bin2hex(random_bytes(4)));
+                $_SESSION['id_agendamento'] = $id_agendamento;
+
+                // Insere os dados na tabela "agendamentos"
+                $stmt = $pdo->prepare("INSERT INTO agendamentos (nome, curso, data, hora_inicio, hora_termino, quantidade_alunos, id_agendamento) VALUES (:nome, :curso, :data, :hora_inicio, :hora_termino, :quantidade_alunos, :id_agendamento)");
+                $stmt->bindValue(':nome', $nome);
+                $stmt->bindValue(':curso', $curso);
+                $stmt->bindValue(':data', $data);
+                $stmt->bindValue(':hora_inicio', $hora_inicio);
+                $stmt->bindValue(':hora_termino', $hora_termino);
+                $stmt->bindValue(':quantidade_alunos', $quantidade_alunos);
+                $stmt->bindValue(':id_agendamento', $_SESSION['id_agendamento']);
+                /* $stmt->bindValue(':id_agendamento', $id_agendamento);*/
+                $stmt->execute();
+                $cadastroId = $pdo->lastInsertId();
+
+                // Exibe uma mensagem de sucesso
+                //echo "<div class='success-message' style='text-align: center; color: green; font-size:20px; margin: 1rem;'>Agendamento realizado com sucesso!</div>";
+                //session_destroy();
+                echo "<div class='success-message' style='color: green; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Agendamento realizado com sucesso!</div> <p style='color: black; text-align: center; font-size:20px; font-weight:600;'>ID do agendamento: " . $resultado_final . "</p>";
+                echo "<script>window.location.href = 'agendamentos.php'</script>;";
+                header("Location: agendamentos.php");
+
+                /*echo "<script> alert('Agendado com sucesso!') </script>";*/
+                // Agendamento válido, continuar com o código existente para inserir no banco de dados
+                // ...
+            } else {
+                echo "<div class='error-message' style='color: orange; text-align: center; font-size:20px; font-weight:600; margin: 1rem;'>Não foi possível agendar.</div>";
+            }
+        }
+>>>>>>> Stashed changes
     }
     ?>
 </body>
