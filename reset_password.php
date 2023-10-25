@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         $stmt->execute();
         echo "Senha atualizada com sucesso!";
-        echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000); </script>";
+        echo "<script> setTimeout(function() { window.location.href = 'index.html'; }, 5000); </script>";
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
         exit;
