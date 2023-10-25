@@ -70,8 +70,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             <?php
             // Definir as informações de conexão
             $host = 'localhost';
-            $dbname = 'biblioteca';
-            $username = 'root';
+            $dbname = 'u683147803_tANFv';
+            $username = 'u683147803_mUP0Y';
             $password = '';
 
             // Conectar ao banco de dados usando mysqli

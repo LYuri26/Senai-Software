@@ -137,7 +137,7 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     <?php
     // Tenta criar uma conexão com o banco de dados
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
+        $pdo = new PDO('mysql:host=localhost;dbname=u683147803_tANFv', 'u683147803_mUP0Y', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();

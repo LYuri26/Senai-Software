@@ -44,13 +44,13 @@ require_once './session.php';
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
     // Redirecionar para a página de login 
-    header("Location: login.html"); 
+    header("Location: index.html"); 
     exit;
 }*/
 
 $host = '127.0.0.1';
-$dbname = 'biblioteca';
-$username = 'root';
+$dbname = 'u683147803_tANFv';
+$username = 'u683147803_mUP0Y';
 $password = '';
 
 // Conectar ao banco de dados usando PDO
@@ -153,8 +153,8 @@ try {
         if (isset($_GET['error']) && $_GET['error'] == '1001') {
             echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Usuário ou senha inválidos.</div>";
         }
-        // Credenciais inválidas, redirecionar para login.html com mensagem de erro
-        header('Location: login.html?error=1001');
+        // Credenciais inválidas, redirecionar para index.html com mensagem de erro
+        header('Location: index.html?error=1001');
         exit;
 
         if (isset($_GET['skip_message']) && $_GET['skip_message'] === '1') {

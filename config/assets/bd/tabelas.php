@@ -3,8 +3,8 @@
 <?php
 
 $host  = 'localhost';
-$dbname = 'biblioteca';
-$username = 'root';
+$dbname = 'u683147803_tANFv';
+$username = 'u683147803_mUP0Y';
 $password = '';
 
 try {
@@ -33,7 +33,7 @@ try {
         login VARCHAR(255) NOT NULL, 
         codigo VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
-        senha VARCHAR(255) NOT NULL,
+        senha VARCHAR(255) NOT NULL
         )",
 
         "CREATE TABLE IF NOT EXISTS users (
@@ -54,13 +54,14 @@ try {
             hora_termino TIME NOT NULL,
             quantidade_alunos INT(11) NOT NULL,
             curso VARCHAR(50) NOT NULL,
+            id_agendamento VARCHAR(50) NOT NULL,
             PRIMARY KEY(id)
             )",
 
         "CREATE TABLE IF NOT EXISTS cancelametos(
               id INT(50) PRIMARY KEY, 
               nome VARCHAR(50) NOT NULL,
-              motivo VARCHAR(100) NOT NULL,  
+              motivo VARCHAR(100) NOT NULL  
             )"
 
     ];
@@ -70,7 +71,7 @@ try {
         $pdo->exec($tableStatement);
     }
 
-    echo "Instruções das tabelas exeutadas com sucesso.";
+    echo "Instruções das tabelas executadas com sucesso.";
 } catch (PDOException $e) {
     echo "Erro na execução das instruções das tabelas: " . $e->getMessage();
 }

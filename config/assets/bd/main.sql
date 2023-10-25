@@ -1,4 +1,4 @@
-use biblioteca;
+use u683147803_tANFv;
 DROP TRIGGER IF EXISTS delete_agendamento;
 DROP TABLE IF EXISTS cancelamentos;
 DROP TABLE IF EXISTS users;
@@ -44,6 +44,7 @@ CREATE TABLE agendamentos (
   hora_termino TIME NOT NULL,
   quantidade_alunos INT(11) NOT NULL,
   curso VARCHAR(50) NOT NULL,
+  id_agendamento VARCHAR(50) NOT NULL,
   PRIMARY KEY (id)
 );
 
