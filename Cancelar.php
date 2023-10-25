@@ -58,6 +58,29 @@ if (!isset($_SESSION['usuario'])) {
                 document.getElementById("concordo").checked = false;
             }
         </script>
+<<<<<<< Updated upstream
+=======
+        <?php
+        // Tenta criar uma conexão com o banco de dados
+        $host = '127.0.0.1';
+        $dbname = 'u683147803_uaibookBD';
+        $username = 'u683147803_uaibookUser';
+        $password = 'LemonPepper1';
+        try {
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            die();
+        }
+        /*$id_cancelamento = $_POST['id_agendamento'];*/
+        // Se o formulário foi enviado
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Obtém os dados do formulário
+            $nome = $_POST['nome'];
+            $id = $_POST['id'];
+            $motivo = $_POST['motivo'];
+>>>>>>> Stashed changes
 
     </div>
 

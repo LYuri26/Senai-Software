@@ -21,11 +21,22 @@ if (!isset($_SESSION['usuario'])) {
 
 <body>
   <?php
+
   // Definir as informações de conexão
+<<<<<<< Updated upstream:3.relacionar.php
   $host = '127.0.0.1'; // endereço do servidor de banco de dados
   $dbname = 'biblioteca'; // nome do banco de dados
   $username = 'root'; // nome do usuário do banco de dados
   $password = ''; // senha do usuário do banco de dados (MYSQL ou XAMPP)
+=======
+  $host = '127.0.0.1';
+  $dbname = 'u683147803_uaibookBD';
+  $username = 'u683147803_uaibookUser';
+  $password = 'LemonPepper1';
+
+  // Conectar ao banco de dados usando mysqli
+
+>>>>>>> Stashed changes:conexao.php
 
   // ... código de conexão ao banco de dados ...
 
@@ -65,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Conectar ao banco de dados usando PDO
 */
   try {
-
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 
     // Configurar o modo de erro para exceções

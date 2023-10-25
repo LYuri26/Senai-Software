@@ -20,6 +20,7 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 
 <body>
+<<<<<<< Updated upstream
     <a href="logout.php" class="sair">Sair</a>
     <h1>Lista de cancelamentos</h1>
     <?php
@@ -28,6 +29,37 @@ if (!isset($_SESSION['usuario'])) {
     $dbname = 'biblioteca';
     $username = 'root';
     $password = '';
+=======
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <a href="./menu.php">
+                        <img src="./config/assets/img/senailogo2.png" class="logo" href="./menu.php">
+                </div>
+                <a href="#" id="menu-icon">
+                    <i class="fas fa-bars fa-2x"></i>
+                </a>
+                <ul class="navbar-menu" id="menu-list">
+                    <li><a href="./agendar.php">Agendar</a></li>
+                    <li><a href="./cancelar.php">Cancelar</a></li>
+                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./Menu.php">Menu</a></li>
+                    <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="app">
+        <form action="./conexao.php" method="post" onsubmit="exibirAlerta(event)">
+            <h1>Lista de cancelamentos</h1>
+            <?php
+            // Definir as informações de conexão
+            $host = '127.0.0.1';
+            $dbname = 'u683147803_uaibookBD';
+            $username = 'u683147803_uaibookUser';
+            $password = 'LemonPepper1';
+>>>>>>> Stashed changes
 
     // Conectar ao banco de dados usando mysqli
 

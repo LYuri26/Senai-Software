@@ -48,9 +48,18 @@ if (!isset($_SESSION['usuario'])) {
         <input type="submit" value="AGENDAR">
     </form>
     <?php
+
     // Tenta criar uma conexão com o banco de dados
+    $host = '127.0.0.1';
+    $banco = 'u683147803_uaibookBD';
+    $usuario = 'u683147803_uaibookUser';
+    $senha = 'LemonPepper1';
     try {
+<<<<<<< Updated upstream
         $pdo = new PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
+=======
+        $pdo = new PDO("mysql:host=$host;dbname=$banco;charset=utf8mb4", $usuario, $senha);
+>>>>>>> Stashed changes
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
