@@ -65,7 +65,7 @@ input[type="text"] {
   font-size: 1.2em;
   border: none;
   padding: 0.5rem 1em;
-  border-radius: 1.5rem 1rem 1.5rem 1rem;
+  border-radius: 3rem;
   cursor: pointer;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
@@ -303,7 +303,7 @@ button:hover {
   flex-wrap: wrap;
 }
 
-button[value="Cadastrar"] {
+button[value="codigo"] {
   font-size: 1rem;
   max-height: max-content;
   display: none;
