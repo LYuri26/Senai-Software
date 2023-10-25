@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const tabelasBD = document.querySelector("teste")
+    const tabelasBD = document.getElementById("teste")
 
     const menuPhpPath = "../config/assets/bd/tabelas.php";
     fetch(menuPhpPath)
