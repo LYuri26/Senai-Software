@@ -66,7 +66,6 @@ form {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1%;
   background-color: #ffffff;
   border-radius: 15px;
   padding: 5%;
@@ -135,23 +134,26 @@ input[type="submit"] {
 
 .button-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0rem;
+  justify-content: center;
+  position: relative;
 }
 
 button[value="redefinir"] {
   font-family: "Raleway", sans-serif;
   background-color: #005ca9;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: #005ca9;
   color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: bold;
   border: none;
-  padding: 0.5em 1em;
-  border-radius: 20px 10px 20px 10px;
+  padding: 0.5rem 1em;
+  border-radius: 1.5rem 1rem 1.5rem 1rem;
   cursor: pointer;
+  transition: background-color 0.1s ease;
   box-sizing: border-box;
-  margin-bottom: 2rem;
+  margin: 0 auto;
+  display: block;
+  
 }
 #botaosair:hover {
   color: red;
