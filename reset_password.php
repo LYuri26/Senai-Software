@@ -34,8 +34,8 @@
 <?php
 // Conexão com o banco de dados MySQL usando PDO
 $host = '127.0.0.1';
-$dbname = 'biblioteca';
-$username = 'root';
+$dbname = 'u683147803_tANFv';
+$username = 'u683147803_mUP0Y';
 $password = '';
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

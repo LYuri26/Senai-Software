@@ -34,8 +34,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
   <?php
   // Definir as informações de conexão
   $host = '127.0.0.1'; // endereço do servidor de banco de dados
-  $dbname = 'biblioteca'; // nome do banco de dados
-  $username = 'root'; // nome do usuário do banco de dados
+  $dbname = 'u683147803_tANFv'; // nome do banco de dados
+  $username = 'u683147803_mUP0Y'; // nome do usuário do banco de dados
   $password = ''; // senha do usuário do banco de dados (MYSQL ou XAMPP)
 
   // ... código de conexão ao banco de dados ...

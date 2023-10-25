@@ -46,8 +46,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 */
 session_start();
 $host = '127.0.0.1';
-$dbname = 'biblioteca';
-$username = 'root';
+$dbname = 'u683147803_tANFv';
+$username = 'u683147803_mUP0Y';
 $password = '';
 /*
 echo '<script src="https://apis.google.com/js/api.js"></script>';

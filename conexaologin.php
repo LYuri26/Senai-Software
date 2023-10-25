@@ -49,8 +49,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 }*/
 
 $host = '127.0.0.1';
-$dbname = 'biblioteca';
-$username = 'root';
+$dbname = 'u683147803_tANFv';
+$username = 'u683147803_mUP0Y';
 $password = '';
 
 // Conectar ao banco de dados usando PDO
