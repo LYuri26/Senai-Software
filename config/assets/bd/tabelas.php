@@ -1,4 +1,4 @@
-<!-- Montar um cript php para criar as tabelas automaticamente com as funções. -->
+<!-- Montar um script php para criar as tabelas automaticamente com as funções. -->
 
 <?php
 

@@ -1,14 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const tabelasBD = document.getElementById("teste")
-
-    const menuPhpPath = "../config/assets/bd/tabelas.php";
-    fetch(menuPhpPath)
-        .then((response) => response.text())
-        .then((data) => {
-            // Inserir o conteúdo do menu.php na div .atividades
-            tabelasBD.innerHTML = data;
-        })
-        .catch((error) => {
-            console.error("Erro ao carregar o menu:", error);
-        });
+$(document).ready(function () {
+    // Executa a solicitação AJAX quando a página é carregada
+    $.ajax({
+        url: '../config/assets/bd/tabelas.php', // Nome do seu arquivo PHP
+        method: 'GET', // Ou 'POST', dependendo das suas necessidades
+        success: function (response) {
+            // Manipule a resposta do PHP (se houver) aqui
+            console.log(response);
+        },
+        error: function (xhr, status, error) {
+            // Lida com erros aqui
+            console.error(error);
+        }
+    });
 });
