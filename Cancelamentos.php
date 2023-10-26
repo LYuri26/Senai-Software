@@ -69,10 +69,10 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             <h1>Lista de cancelamentos</h1>
             <?php
             // Definir as informações de conexão
-            $host = 'localhost';
-            $dbname = 'u683147803_tANFv';
-            $username = 'u683147803_mUP0Y';
-            $password = '';
+            $host = '127.0.0.1';
+            $dbname = 'u683147803_uaibookBD';
+            $username = 'u683147803_uaibookUser';
+            $password = 'LemonPepper1';
 
             // Conectar ao banco de dados usando mysqli
 

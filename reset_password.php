@@ -34,13 +34,13 @@
 <?php
 // Conexão com o banco de dados MySQL usando PDO
 $host = '127.0.0.1';
-$dbname = 'u683147803_tANFv';
-$username = 'u683147803_mUP0Y';
-$password = '';
+$dbname = 'u683147803_uaibookBD';
+$username = 'u683147803_uaibookUser';
+$password = 'LemonPepper1';
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conn->exec("SET FOREIGN_KEY_CHECKS=0");
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec("SET FOREIGN_KEY_CHECKS=0");
 } catch (PDOException $e) {
     // Caso contrário, exibe a mensagem de erro padrão
     echo "Erro: " . $e->getMessage();
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         /* bloco 1 atualiza senha*/
         $sql1 = "UPDATE cadastro SET senha = :hashedPassword WHERE email = :usuario || nome = :usuario;";
-        $stmt = $conn->prepare($sql1);
+        $stmt = $pdo->prepare($sql1);
         $stmt->bindParam(':hashedPassword', $hashedPassword);
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':Csenha', $Csenha);
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         /* bloco 2 atualiza checksenha*/
         $sql1 = "UPDATE cadastro SET checksenha = :hashedPassword WHERE email = :usuario || nome = :usuario;";
-        $stmt = $conn->prepare($sql1);
+        $stmt = $pdo->prepare($sql1);
         $stmt->bindParam(':hashedPassword', $hashedPassword);
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':Csenha', $Csenha);
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         /* bloco 3 atualiza users */
         $sql = "UPDATE users SET senha = :hashedPassword WHERE email = :usuario || login = :usuario;";
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':hashedPassword', $hashedPassword);
         $stmt->bindParam(':usuario', $usuario);
         $stmt->bindParam(':Csenha', $Csenha);

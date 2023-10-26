@@ -2,13 +2,14 @@
 
 <?php
 
-$host  = 'localhost';
-$dbname = 'u683147803_tANFv';
-$username = 'u683147803_mUP0Y';
-$password = '';
+$host = '127.0.0.1';
+$dbname = 'u683147803_uaibookBD';
+$username = 'u683147803_uaibookUser';
+$password = 'LemonPepper1';
+
+// Conectar ao banco de dados usando mysqli
 
 try {
-    // Criando a conexão com o DB usando o PDO
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 
     // Habilitando o modo de erro do PDO para EXCEÇÕES no BD que caso tenha erro mostrará msg
@@ -47,7 +48,7 @@ try {
         )",
 
         "CREATE TABLE IF NOT EXISTS agendamentos(
-            id INT(11) NOT NULL AUTO_INCREMENT,
+            id INT(50) NOT NULL AUTO_INCREMENT,
             nome VARCHAR(50) NOT NULL,
             data DATE NOT NULL,
             hora_inicio TIME NOT NULL,
@@ -58,7 +59,7 @@ try {
             PRIMARY KEY(id)
             )",
 
-        "CREATE TABLE IF NOT EXISTS cancelametos(
+        "CREATE TABLE IF NOT EXISTS cancelamentos(
               id INT(50) PRIMARY KEY, 
               nome VARCHAR(50) NOT NULL,
               motivo VARCHAR(100) NOT NULL  

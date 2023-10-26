@@ -121,9 +121,15 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             }
         </script>
         <?php
-        // Tenta criar uma conexão com o banco de dados
+        $host = '127.0.0.1';
+        $dbname = 'u683147803_uaibookBD';
+        $username = 'u683147803_uaibookUser';
+        $password = 'LemonPepper1';
+
+        // Conectar ao banco de dados usando mysqli
+
         try {
-            $pdo = new PDO('mysql:host=localhost;dbname=u683147803_tANFv', 'u683147803_mUP0Y', '');
+            $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();

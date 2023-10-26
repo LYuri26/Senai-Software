@@ -46,16 +46,12 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 */
 session_start();
 $host = '127.0.0.1';
-$dbname = 'u683147803_tANFv';
-$username = 'u683147803_mUP0Y';
-$password = '';
-/*
-echo '<script src="https://apis.google.com/js/api.js"></script>';
-echo '<script src="./config/assets/js/gmail api.js"></script>';
-echo '<script src="./config/assets/js/destruirSessao.js"></script>';
-*/
+$dbname = 'u683147803_uaibookBD';
+$username = 'u683147803_uaibookUser';
+$password = 'LemonPepper1';
 
-// Conectar ao banco de dados usando PDO
+// Conectar ao banco de dados usando mysqli
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

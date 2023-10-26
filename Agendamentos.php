@@ -88,15 +88,15 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                 unset($_SESSION['id_agendamento']);
             }
             // Definir as informações de conexão
-            $host = 'localhost';
-            $banco = 'u683147803_tANFv';
-            $usuario = 'u683147803_mUP0Y';
-            $senha = '';
+            $host = '127.0.0.1';
+            $dbname = 'u683147803_uaibookBD';
+            $username = 'u683147803_uaibookUser';
+            $password = 'LemonPepper1';
 
             // Conectar ao banco de dados usando mysqli
 
             try {
-                $pdo = new PDO("mysql:host=$host;dbname=$banco;charset=utf8mb4", $usuario, $senha);
+                $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
                 echo "Conexão falhou" . $e->getMessage();
