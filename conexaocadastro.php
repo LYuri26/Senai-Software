@@ -50,7 +50,7 @@ $dbname = 'u683147803_uaibookBD';
 $username = 'u683147803_uaibookUser';
 $password = 'LemonPepper1';
 
-// Conectar ao banco de dados usando mysqli
+// Conectar ao banco de dados usando pdo
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);

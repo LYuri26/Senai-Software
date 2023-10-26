@@ -70,9 +70,9 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                 </a>
                 <ul class="navbar-menu" id="menu-list">
                     <li><a href="./agendar.php">Agendar</a></li>
-                    <li><a href="./Agendamentos.php">Agendamentos</a></li>
+                    <li><a href="./agendamentos.php">Agendamentos</a></li>
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
-                    <li><a href="./Menu.php">Menu</a></li>
+                    <li><a href="./menu.php">Menu</a></li>
                     <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
