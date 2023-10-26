@@ -1,11 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar usuário</title>
+    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
+
+
+    <!-- meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="robots" content="index, nofollow">
+    <meta name="googlebot" content="index, nofollow">
+    <meta name="googlebot" content="notranslate">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="description" content="Cadastro biblioteca SENAI">
+    <meta name="keywords" content="SENAI, Biblioteca, cadastro">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="SENAI">
+
+    <!-- link tags -->
+    <link rel="stylesheet" href="./config/assets/estilos/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:ital,wght@1,200&family=Montserrat:wght@200&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script src="./config/assets/js/destruirSessao.js"></script>
+    <!-- O ícone da página pode ser carregado no final, por questão de organização do código e porque é interessante processarmos as fontes e estilos primeiro do que o ícone -->
+    <link rel="icon" href="./config/assets/img/senai.ico" type="image/x-icon">
+</head>
+
 <?php
+/*
+require_once './session.php';
+
+// Verificar se há uma sessão de usuário ou superusuário 
+if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
+    // Redirecionar para a página de login 
+    header("Location: index.html"); 
+    exit;
+}
+*/
 session_start();
 $host = '127.0.0.1';
-$dbname = 'biblioteca';
-$username = 'root';
-$password = '';
+$dbname = 'u683147803_uaibookBD';
+$username = 'u683147803_uaibookUser';
+$password = 'LemonPepper1';
 
-// Conectar ao banco de dados usando PDO
+// Conectar ao banco de dados usando pdo
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -48,36 +94,39 @@ try {
         if (!empty($users) || !empty($superusuario)) {
             foreach ($users as $user) {
                 if (strtolower($user['codigo']) == strtolower($codigo)) {
-                    echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
+                    echo "<p>Código de acesso já cadastrado.</p>";
                     return;
                 }
                 if (strtolower($user['email']) == strtolower($email)) {
-                    echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
+                    echo "<p>Email já cadastrado.</p>";
                     return;
                 }
             }
 
             foreach ($superusuario as $su) {
                 if (strtolower($su['codigo']) == strtolower($codigo)) {
-                    echo "<p>O código de acesso já está em uso. Por favor, insira um código diferente.</p>";
-                    header('Location : cadastro.php');
+                    echo "<p>Código de acesso já cadastrado.</p>";
+                    header('Location : cadastro.html');
                     return;
                 }
                 if (strtolower($su['email']) == strtolower($email)) {
-                    echo "<p>O email já está em uso. Por favor, insira um email diferente.</p>";
-                    header('Location : cadastro.php');
+                    echo "<p>Email já cadastrado.</p>";
+                    header('Location : cadastro.html');
                     return;
                 }
             }
         } else {
+            $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+            $csenhaHash = password_hash($csenha, PASSWORD_DEFAULT);
+
             // Inserir informações na tabela cadastro
             $stmt = $pdo->prepare("INSERT INTO cadastro (nome, codigo, email, senha, checksenha) VALUES (:nome, :codigo, :email, :senha, :csenha)");
             $stmt->execute([
                 ':nome' => $nome,
                 ':codigo' => $codigo,
                 ':email' => $email,
-                ':senha' => $senha,
-                ':csenha' => $csenha
+                ':senha' => $senhaHash,
+                ':csenha' => $csenhaHash
             ]);
 
             // Obter o ID do último registro inserido na tabela cadastro
@@ -90,15 +139,50 @@ try {
                 ':login' => $nome,
                 ':codigo' => $codigo,
                 ':email' => $email,
-                ':senha' => $senha
+                ':senha' => $senhaHash
             ]);
 
-            echo "<p>Cadastro realizado com sucesso!</p>";
-            echo "<script> setTimeout(function() { window.location.href = 'login.php'; }, 5000);
-        </script>";
-            header('Location : login.php');
+            echo "<div class='Cadastro-sucesso' style='color: black; text-align: center; font-size:42px; margin: 1rem;'>Cadastro realizado com sucesso!</div>";
+            /* OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO HTML
+            // Inclua essa linha no seu código PHP para informar ao navegador o tipo de codificação de caracteres que está sendo usado*/
+            header('Content-Type: text/html; charset=utf-8');
+
+            // Abra o documento HTML e inicie a seção "head"
+            echo '<!DOCTYPE html>';
+            echo '<html lang="pt-BR">';
+            echo '<head>';
+            echo '<meta charset="utf-8">';
+            echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+            /*echo '<meta http-equiv="refresh" content="5;url=index.html">';*/
+            // Adicione outras meta tags aqui...
+            echo '</head>';
+
+            // Feche a seção "head" e inicie o corpo do documento
+            echo '<body>';
+            echo ' <div class="container" style="display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20%;">';
+            echo '<button onclick="redirecionar()">Para ir para a página de Login, clique aqui!</button>';
+            echo '  </div>';
+            echo "  <script>
+            function redirecionar() {
+              window.location.href = 'index.html';
+            }
+          </script>";
+
+            // Adicione o conteúdo da página aqui...
+            echo '</body>';
+            echo '</html>';
+
+            // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
+            /*echo "<script>window.location.href = 'index.html';
+        </script>";*/
+            echo "<script> setInterval(function() { window.location.href = 'index.html'; }, 5000);
+      </script>";
+            /*header('Location : index.html');*/
         }
-/*
+        /*
         users
         $stmt = $pdo->prepare("SELECT  * FROM cadastro WHERE nome = :nome AND senha = :senha");
         $stmt->bindValue(':nome', $nome);
@@ -114,7 +198,7 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $usuario;
             // É um usuário comum, redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
         // Verificar se é um usuário comum
@@ -128,17 +212,26 @@ try {
             // É um usuário comum, armazenar os dados na sessão
             $_SESSION['usuario'] = $resconsultauser;
             // Redirecionar para a página principal
-            header('Location: Menu.php');
+            header('Location: menu.php');
             exit;
         }
 
-        // Credenciais inválidas, redirecionar para login.php com mensagem de erro
-        header('Location: Login.php?error=1001');
+        // Credenciais inválidas, redirecionar para index.html com mensagem de erro
+        header('Location: index.html?error=1001');
         exit;
     }*/
     }
+    session_destroy();
 } catch (PDOException $e) {
     // Tratar exceções de conexão com o banco de dados aqui, se necessário
-    echo "Erro de conexão com o banco de dados: " . $e->getMessage();
+    //  echo "Erro de conexão com o banco de dados: " . $e->getMessage();
+    if ($e->errorInfo[1] == 1062) {
+        // Checa se o erro é código 1062 (Duplicate entry)
+        echo "Erro: Por favor, digite outra senha!";
+        echo "<script>alert('Erro: Por favor, digite outra senha.');</script>";
+    } else {
+        // Caso contrário, exibe a mensagem de erro padrão
+        echo "Erro: " . $e->getMessage();
+    }
     exit;
 }
