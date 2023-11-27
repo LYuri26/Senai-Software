@@ -123,8 +123,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
         <?php
         $host = '127.0.0.1';
         $dbname = 'u683147803_uaibookBD';
-        $username = 'u683147803_uaibookUser';
-        $password = 'LemonPepper1';
+        $username = 'root';
+        $password = '';
 
         // Conectar ao banco de dados usando mysqli
 

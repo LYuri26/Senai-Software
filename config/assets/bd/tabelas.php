@@ -1,9 +1,9 @@
 <?php
 
-    $host = '127.0.0.1';
-    $dbname = 'u683147803_senaisoftwarev';
-    $username = 'u683147803_senaisoftwarev';
-    $password = 'Senaimg123';
+$host = '127.0.0.1';
+$dbname = 'u683147803_uaibookBD';
+$username = 'root';
+$password = '';
 // Conectar ao banco de dados usando mysqli
 
 try {
@@ -18,7 +18,6 @@ try {
         "CREATE TABLE IF NOT EXISTS cadastro (
         id INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(255) NOT NULL,
-        codigo VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
         senha VARCHAR(255) NOT NULL,
         checksenha VARCHAR(255) NOT NULL,
@@ -71,5 +70,3 @@ try {
 
 //Fechando a conexão com o banco de dados
 $pdo = null;
-
-?>

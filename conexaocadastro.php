@@ -47,8 +47,8 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 session_start();
 $host = '127.0.0.1';
 $dbname = 'u683147803_uaibookBD';
-$username = 'u683147803_uaibookUser';
-$password = 'LemonPepper1';
+$username = 'root';
+$password = '';
 
 // Conectar ao banco de dados usando pdo
 
@@ -172,7 +172,6 @@ try {
         users
         $stmt = $pdo->prepare("SELECT  * FROM cadastro WHERE nome = :nome AND senha = :senha");
         $stmt->bindValue(':nome', $nome);
-        $stmt->bindValue(':codigo', $codigo);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':senha', $senha);
         $stmt->bindValue(':csenha', $csenha);

@@ -35,8 +35,8 @@
 // Conexão com o banco de dados MySQL usando PDO
 $host = '127.0.0.1';
 $dbname = 'u683147803_uaibookBD';
-$username = 'u683147803_uaibookUser';
-$password = 'LemonPepper1';
+$username = 'root';
+$password = '';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
