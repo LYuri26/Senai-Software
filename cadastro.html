@@ -78,18 +78,6 @@
 
             <p id="emailErro"></p>
 
-            <div class="codigo">
-                <label for="Código de acesso">Código de acesso</label>
-                <input type="text" name="codigo" ID="codigo" placeholder="Digite o código" required
-                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite o código'"
-                    autocomplete="off"><br>
-
-                <div class="button-container">
-                    <button type="submit" value="codigo" id="botaoCadastro">Solicitar código</button>
-                </div>
-            </div>
-            <br>
-
             <div class="password-container">
 
                 <label for="senha">Senha</label>
@@ -191,39 +179,6 @@
                 senhaErro.style.display = 'none';
             }
         });
-
-        /*   ************************************************************************     */
-
-        // Função para enviar o código por e-mail
-        function enviarCodigoPorEmail(codigo, email) {
-            emailjs.send("seu_servidor_de_emailjs", "seu_modelo_de_emailjs", {
-                codigo: codigo,
-                to_email: email
-            })
-                .then(function (response) {
-                    console.log("Código de acesso enviado com sucesso!");
-                }, function (error) {
-                    console.error("Erro ao enviar o código de acesso:", error);
-                });
-        }
-
-        // Função para gerar um código aleatório
-        function gerarCodigo() {
-            const codigo = Math.floor(1000 + Math.random() * 9000); // Código de 4 dígitos
-            return codigo.toString();
-        }
-
-        // Função para solicitar o código e enviá-lo por e-mail
-        function solicitarCodigo() {
-            const email = document.getElementById('email').value;
-            const codigo = gerarCodigo();
-            const codigoInput = document.getElementById('codigo');
-
-            enviarCodigoPorEmail(codigo, email);
-
-            // Preencha o campo de código com o código gerado
-            codigoInput.value = codigo;
-        }
 
         /*   ************************************************************************     */
 

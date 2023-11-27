@@ -72,20 +72,17 @@ try {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nome = $_POST['nome'];
-        $codigo = $_POST['codigo'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $csenha = $_POST['confirmarsenha'];
 
         // Verificar se as informações já existem nas tabelas users e superusuario
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE codigo = :codigo OR email = :email");
-        $stmt->bindValue(':codigo', $codigo);
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
         $stmt->bindValue(':email', $email);
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE codigo = :codigo OR email = :email");
-        $stmt->bindValue(':codigo', $codigo);
+        $stmt = $pdo->prepare("SELECT * FROM superusuario WHERE email = :email");
         $stmt->bindValue(':email', $email);
         $stmt->execute();
         $superusuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -93,10 +90,6 @@ try {
         // Verificar se as informações já existem em alguma tabela
         if (!empty($users) || !empty($superusuario)) {
             foreach ($users as $user) {
-                if (strtolower($user['codigo']) == strtolower($codigo)) {
-                    echo "<p>Código de acesso já cadastrado.</p>";
-                    return;
-                }
                 if (strtolower($user['email']) == strtolower($email)) {
                     echo "<p>Email já cadastrado.</p>";
                     return;
@@ -104,11 +97,6 @@ try {
             }
 
             foreach ($superusuario as $su) {
-                if (strtolower($su['codigo']) == strtolower($codigo)) {
-                    echo "<p>Código de acesso já cadastrado.</p>";
-                    header('Location : cadastro.html');
-                    return;
-                }
                 if (strtolower($su['email']) == strtolower($email)) {
                     echo "<p>Email já cadastrado.</p>";
                     header('Location : cadastro.html');
@@ -120,10 +108,9 @@ try {
             $csenhaHash = password_hash($csenha, PASSWORD_DEFAULT);
 
             // Inserir informações na tabela cadastro
-            $stmt = $pdo->prepare("INSERT INTO cadastro (nome, codigo, email, senha, checksenha) VALUES (:nome, :codigo, :email, :senha, :csenha)");
+            $stmt = $pdo->prepare("INSERT INTO cadastro (nome, email, senha, checksenha) VALUES (:nome, :email, :senha, :csenha)");
             $stmt->execute([
                 ':nome' => $nome,
-                ':codigo' => $codigo,
                 ':email' => $email,
                 ':senha' => $senhaHash,
                 ':csenha' => $csenhaHash
@@ -133,11 +120,10 @@ try {
             $cadastroId = $pdo->lastInsertId();
 
             // Inserir informações na tabela users com a foreign key para a tabela cadastro
-            $stmt = $pdo->prepare("INSERT INTO users (id, login, codigo, email, senha) VALUES (:cadastroId, :login, :codigo, :email, :senha)");
+            $stmt = $pdo->prepare("INSERT INTO users (id, login, email, senha) VALUES (:cadastroId, :login, :email, :senha)");
             $stmt->execute([
                 ':cadastroId' => $cadastroId,
                 ':login' => $nome,
-                ':codigo' => $codigo,
                 ':email' => $email,
                 ':senha' => $senhaHash
             ]);
