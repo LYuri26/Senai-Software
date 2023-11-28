@@ -4,13 +4,13 @@ const erroParam = urlParams.get('error');
 
 if (erroParam === '1001') {
   document.title = 'Login'; // Alterar o título da página
-  //window.location.href = 'login.html';
+  //window.location.href = 'index.html';
   var msgErro = document.getElementById('falseMsg');
   msgErro.textContent = 'Usuário ou senha inválidos';
   msgErro.classList.add('erro'); // Adicionar a classe 'erro' ao elemento
   msgErro.style.visibility = 'visible'; // Exibir o elemento
   msgErro.style.display = 'block'; // Exibir o elemento
-  history.replaceState(null, null, 'login.html'); // Redirecionar para a página inicial
+  history.replaceState(null, null, 'index.html'); // Redirecionar para a página inicial
 }
 */
 var urlParams = new URLSearchParams(window.location.search);
@@ -18,14 +18,14 @@ var erroParam = urlParams.get('error');
 
 if (erroParam === '1001') {
   document.title = 'Login'; // Alterar o título da página
-  //window.location.href = 'login.html';
+  //window.location.href = 'index.html';
   var msgErro = document.getElementById('falseMsg');
   msgErro.textContent = 'Usuário ou senha inválidos';
   msgErro.classList.add('erro'); // Adicionar a classe 'erro' ao elemento
   msgErro.style.visibility = 'visible'; // Exibir o elemento
   msgErro.style.display = 'block'; // Exibir o elemento
-  history.replaceState(null, 'Login', 'login.html'); // Redirecionar para a página inicial sem nova requisição
-  //window.location.replace('login.html'); // O window location também redireciona para a página inicial, no entanto, ele também atualiza a página, diferentemente do replaceState, que apenas restaura um estado anterior da página
+  history.replaceState(null, 'Login', 'index.html'); // Redirecionar para a página inicial sem nova requisição
+  //window.location.replace('index.html'); // O window location também redireciona para a página inicial, no entanto, ele também atualiza a página, diferentemente do replaceState, que apenas restaura um estado anterior da página
 };
 
 var urlParams1 = new URLSearchParams(window.location.search);

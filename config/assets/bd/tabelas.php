@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost';
-$dbname = 'biblioteca';
-$username = 'root';
-$password = '';
+$host = '127.0.0.1';
+$dbname = 'u683147803_biblioteca';
+$username = 'u683147803_biblioteca';
+$password = 'SenaiMg123';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
@@ -73,5 +73,3 @@ try {
 }
 
 $pdo = null;
-
-?>

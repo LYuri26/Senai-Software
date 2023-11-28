@@ -8,7 +8,7 @@ require_once './session.php';
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
     // Redirecionar para a página de login 
-    header("Location: login.html"); 
+    header("Location: index.html"); 
     exit;
 }
 */
@@ -78,11 +78,10 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             <h1>Lista de cancelamentos</h1>
             <?php
             // Definir as informações de conexão
-            $host = 'localhost';
-            $dbname = 'biblioteca';
-            $username = 'root';
-            $password = '';
-
+            $host = '127.0.0.1';
+            $dbname = 'u683147803_biblioteca';
+            $username = 'u683147803_biblioteca';
+            $password = 'SenaiMg123';
             // Conectar ao banco de dados usando mysqli
 
             try {

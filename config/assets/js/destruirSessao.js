@@ -15,7 +15,7 @@ window.addEventListener("beforeunload", function () {
 window.addEventListener("beforeunload", function () {
   var currentPage = location.pathname; // Obtém o caminho da URL
 
-  if (currentPage === "/login.html") {
+  if (currentPage === "/index.html") {
     document.title = "Login";
   } else if (currentPage === "/cadastro.html") {
     document.title = "Carregando...";
@@ -42,7 +42,7 @@ window.addEventListener("beforeunload", function () {
 window.addEventListener("load", function () {
   var currentPage1 = window.location.pathname; // Obtém o caminho da URL
 
-  if (currentPage1 === "/login.html") {
+  if (currentPage1 === "/index.html") {
     document.title = "Login";
   } else if (currentPage1 === "/menu.php") {
     document.title = "Menu";
@@ -80,7 +80,7 @@ function limparSessao() {
   requisicao.onreadystatechange = function () {
     if (requisicao.readyState === XMLHttpRequest.DONE && requisicao.status === 200) {
       document.title = 'Login'; // Alterar o título da página
-      window.location.href = 'login.html?' + dados; // Redireciona para login.html com os dados adicionais
+      window.location.href = 'index.html?' + dados; // Redireciona para index.html com os dados adicionais
     }
   };
   

@@ -13,7 +13,7 @@ require_once './session.php';
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
     // Se a sessão não estiver ativa, exibe uma mensagem de aviso com JavaScript
     echo "<script> alert('Você precisa fazer login novamente para acessar esta página.');
-    window.location.href = 'login.html?skip_message=1';
+    window.location.href = 'index.html?skip_message=1';
     </script>";
     exit; // Termina a execução do script
 } else {
@@ -130,10 +130,10 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
         <?php
         // Tenta criar uma conexão com o banco de dados
 
-        $host = '127.0.0.1'; // endereço do servidor de banco de dados
-        $dbname = 'biblioteca'; // nome do banco de dados
-        $username = 'root'; // nome do usuário do banco de dados
-        $password = ''; // senha do usuário do banco de dados (MYSQL ou XAMPP)
+        $host = '127.0.0.1';
+        $dbname = 'u683147803_biblioteca';
+        $username = 'u683147803_biblioteca';
+        $password = 'SenaiMg123';
 
         try {
             $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);

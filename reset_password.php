@@ -34,9 +34,9 @@
 <?php
 // Conexão com o banco de dados MySQL usando PDO
 $host = '127.0.0.1';
-$dbname = 'biblioteca';
-$username = 'root';
-$password = '';
+$dbname = 'u683147803_biblioteca';
+$username = 'u683147803_biblioteca';
+$password = 'SenaiMg123';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt2->execute();
 
         echo "Senha atualizada com sucesso!";
-        echo "<script> setTimeout(function() { window.location.href = 'login.html'; }, 5000); </script>";
+        echo "<script> setTimeout(function() { window.location.href = 'index.html'; }, 5000); </script>";
     } catch (PDOException $e) {
         // Verifique o erro do banco de dados
         if ($e->errorInfo[1] == 1062) {

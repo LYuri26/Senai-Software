@@ -40,15 +40,15 @@ require_once './session.php';
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
     // Redirecionar para a página de login 
-    header("Location: login.html"); 
+    header("Location: index.html"); 
     exit;
 }
 */
 session_start();
 $host = '127.0.0.1';
-$dbname = 'biblioteca';
-$username = 'root';
-$password = '';
+$dbname = 'u683147803_biblioteca';
+$username = 'u683147803_biblioteca';
+$password = 'SenaiMg123';
 /*
 echo '<script src="https://apis.google.com/js/api.js"></script>';
 echo '<script src="./config/assets/js/gmail api.js"></script>';
@@ -143,7 +143,7 @@ try {
             echo '<head>';
             echo '<meta charset="utf-8">';
             echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-            /*echo '<meta http-equiv="refresh" content="5;url=login.html">';*/
+            /*echo '<meta http-equiv="refresh" content="5;url=index.html">';*/
             // Adicione outras meta tags aqui...
             echo '</head>';
 
@@ -157,7 +157,7 @@ try {
             echo '  </div>';
             echo "  <script>
             function redirecionar() {
-              window.location.href = 'login.html';
+              window.location.href = 'index.html';
             }
           </script>";
 
@@ -166,11 +166,11 @@ try {
             echo '</html>';
 
             // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
-            /*echo "<script>window.location.href = 'login.html';
+            /*echo "<script>window.location.href = 'index.html';
         </script>";*/
-            echo "<script> setInterval(function() { window.location.href = 'login.html'; }, 5000);
+            echo "<script> setInterval(function() { window.location.href = 'index.html'; }, 5000);
       </script>";
-            /*header('Location : login.html');*/
+            /*header('Location : index.html');*/
         }
         /*
         users
@@ -205,8 +205,8 @@ try {
             exit;
         }
 
-        // Credenciais inválidas, redirecionar para login.html com mensagem de erro
-        header('Location: Login.html?error=1001');
+        // Credenciais inválidas, redirecionar para index.html com mensagem de erro
+        header('Location: index.html?error=1001');
         exit;
     }*/
     }

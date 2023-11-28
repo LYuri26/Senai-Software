@@ -8,7 +8,7 @@ require_once './session.php';
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
     // Redirecionar para a página de login 
-    header("Location: login.html"); 
+    header("Location: index.html"); 
     exit;
 }*/
 //require_once './session.php';
@@ -135,11 +135,10 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     </div>
 
     <?php
-    $host = 'localhost';
-    $dbname = 'biblioteca';
-    $username = 'root';
-    $password = '';
-
+    $host = '127.0.0.1';
+    $dbname = 'u683147803_biblioteca';
+    $username = 'u683147803_biblioteca';
+    $password = 'SenaiMg123';
     // Conectar ao banco de dados usando pdo
 
     try {

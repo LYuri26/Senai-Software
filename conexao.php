@@ -13,7 +13,7 @@ require_once './session.php';
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
   // Redirecionar para a página de login 
-  header("Location: login.html");
+  header("Location: index.html");
   exit;
 }
 ?>
@@ -33,10 +33,10 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
 <body>
   <?php
   // Definir as informações de conexão
-  $host = '127.0.0.1'; // endereço do servidor de banco de dados
-  $dbname = 'biblioteca'; // nome do banco de dados
-  $username = 'root'; // nome do usuário do banco de dados
-  $password = ''; // senha do usuário do banco de dados (MYSQL ou XAMPP)
+  $host = '127.0.0.1';
+  $dbname = 'u683147803_biblioteca';
+  $username = 'u683147803_biblioteca';
+  $password = 'SenaiMg123';
 
   // ... código de conexão ao banco de dados ...
 
