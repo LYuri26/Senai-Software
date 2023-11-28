@@ -76,6 +76,10 @@ h1 {
   animation: fade-in 3s forwards;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 .navbar-logo:hover {
   box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
   transform: scale(1.05);
@@ -97,7 +101,6 @@ h1 {
     opacity: 1;
   }
 }
-
 .navbar-menu li {
   text-align: center;
   margin-right: 4rem;
@@ -328,10 +331,6 @@ h1 {
   box-sizing: border-box;
 }
 
-.navbar-menu li a {
-  color: #ffffff;
-  text-decoration: none;
-}
 
 .navbar-menu li:last-child {
   margin-right: 30px;
@@ -386,7 +385,7 @@ tbody {
   }
   .navbar-menu li {
     justify-content: stretch;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     margin-right: 0;
   }
   #menu-icon {
@@ -397,13 +396,22 @@ tbody {
     display: none;
     margin-top: 0px;
   }
+  .fa, .fab, .fad, .fal, .far, .fas {
+    font-style: oblique;
+  }
   .forms {
-    max-width: 100%;
+    flex-basis: 20%;
+    /* max-width: 120%; */
     margin: 1rem auto;
-    width: 99%;
-    display: grid;
-    justify-items: center;
-    text-align: center;
+    /* width: 115%; */
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 250%;
   }
 
   header {
@@ -424,14 +432,15 @@ tbody {
     z-index: 999;
     text-align: center;
     border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
+    max-width: 60%;
     overflow: hidden;
-    width: 50%;
     justify-content: center;
     align-items: center;
+    width:max-content !important;  
     position: relative;
   }
   .navbar-container {
-    /* align-items: flex-start; */
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -454,12 +463,15 @@ tbody {
     z-index: 999;
   }
   .text-container {
-    display: grid;
-    margin: 0 auto;
+    display: flex;
+    /* margin: 0 auto; */
     align-items: center;
     font-family: "Montserrat", sans-serif;
-    /* padding-top: auto; */
     font-weight: bold;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
   }
   .fa-2x {
     font-size: 1.5em !important;
@@ -482,6 +494,7 @@ tbody {
     margin-top: 2rem;
     justify-items: center;
     text-align: center;
+    font-size: 28px;
   }
 
   tr:last-of-type td:last-child {
@@ -505,19 +518,35 @@ tbody {
 
   .text-container .calendario {
     flex-basis: 20%;
-    width: 90%;
-    max-width: 109%;
-    display: grid;
+    /* max-width: 120%; */
+    margin: 1rem auto;
+    /* width: 115%; */
+    display: flex;
     margin: 0 auto;
     align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  .forms {
+    
   }
 
   .text-container form {
     margin: 0 auto;
-    display: grid;
-    justify-items: center;
-    text-align: center;
     flex-basis: 30%;
+    max-width: 120%;
+    margin: 1rem auto;
+    width: 115%;
+    display: grid;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-items: center;
   }
 
   footer {

@@ -40,18 +40,22 @@ require_once './session.php';
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
     // Redirecionar para a página de login 
-    header("Location: index.html"); 
+    header("Location: login.html"); 
     exit;
 }
 */
 session_start();
 $host = '127.0.0.1';
-$dbname = 'u683147803_uaibookBD';
+$dbname = 'biblioteca';
 $username = 'root';
 $password = '';
+/*
+echo '<script src="https://apis.google.com/js/api.js"></script>';
+echo '<script src="./config/assets/js/gmail api.js"></script>';
+echo '<script src="./config/assets/js/destruirSessao.js"></script>';
+*/
 
-// Conectar ao banco de dados usando pdo
-
+// Conectar ao banco de dados usando PDO
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -139,7 +143,7 @@ try {
             echo '<head>';
             echo '<meta charset="utf-8">';
             echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-            /*echo '<meta http-equiv="refresh" content="5;url=index.html">';*/
+            /*echo '<meta http-equiv="refresh" content="5;url=login.html">';*/
             // Adicione outras meta tags aqui...
             echo '</head>';
 
@@ -153,7 +157,7 @@ try {
             echo '  </div>';
             echo "  <script>
             function redirecionar() {
-              window.location.href = 'index.html';
+              window.location.href = 'login.html';
             }
           </script>";
 
@@ -162,11 +166,11 @@ try {
             echo '</html>';
 
             // OUTRA MANEIRA DE REDIRECIONAR PARA A PÁGINA DE LOGIN USANDO JAVASCRIPT
-            /*echo "<script>window.location.href = 'index.html';
+            /*echo "<script>window.location.href = 'login.html';
         </script>";*/
-            echo "<script> setInterval(function() { window.location.href = 'index.html'; }, 5000);
+            echo "<script> setInterval(function() { window.location.href = 'login.html'; }, 5000);
       </script>";
-            /*header('Location : index.html');*/
+            /*header('Location : login.html');*/
         }
         /*
         users
@@ -201,8 +205,8 @@ try {
             exit;
         }
 
-        // Credenciais inválidas, redirecionar para index.html com mensagem de erro
-        header('Location: index.html?error=1001');
+        // Credenciais inválidas, redirecionar para login.html com mensagem de erro
+        header('Location: Login.html?error=1001');
         exit;
     }*/
     }

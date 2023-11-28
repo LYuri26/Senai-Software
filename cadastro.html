@@ -67,7 +67,7 @@
             <label for="email" novalidate>Email</label>
             <input type="email" name="email" id="email" placeholder="exemplo@fiemg.com.br" required
                 pattern="[^@\s]+@fiemg\.com\.br" title="domínio @fiemg.com.br" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'exemplo@fiemg.com.br'" autocomplete="off">
+                onblur="this.placeholder = 'exemplo@fiemg.com.br'" autocomplete="off"><br><br>
 
             <label for="confirmar email" novalidate>Confirmar email</label>
             <input type="email" name="confirmar email" id="confirmaremail" placeholder="Confirmar email" required
@@ -77,6 +77,7 @@
             <p id="emailErro1" style="color: red;">Email não coincide!</p><br>
 
             <p id="emailErro"></p>
+            <br>
 
             <div class="password-container">
 
@@ -105,7 +106,7 @@
 
             <!--Caso as senhas não coincidam, mostrar mensagem-->
 
-            <p id="senhaErro" style="color: red;">Senhas não coincidem!</p><br><br>
+            <p id="senhaErro" style="color: red;">Senhas não coincidem!</p><br>
 
             <div class="button-container">
                 <button type="submit" value="Cadastrar">Cadastrar</button>
@@ -179,8 +180,6 @@
                 senhaErro.style.display = 'none';
             }
         });
-
-        /*   ************************************************************************     */
 
         function limparFormulario() {
             document.getElementById("forms").reset();

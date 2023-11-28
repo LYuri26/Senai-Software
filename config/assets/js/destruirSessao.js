@@ -15,7 +15,7 @@ window.addEventListener("beforeunload", function () {
 window.addEventListener("beforeunload", function () {
   var currentPage = location.pathname; // Obtém o caminho da URL
 
-  if (currentPage === "/index.html") {
+  if (currentPage === "/login.html") {
     document.title = "Login";
   } else if (currentPage === "/cadastro.html") {
     document.title = "Carregando...";

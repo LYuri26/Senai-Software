@@ -45,6 +45,6 @@ session_destroy();
 if (isset($_GET['error']) && $_GET['error'] == '1001') {
   echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Login ou senha inválidos.</div>";
 }
-header("Location: index.html");
+header("Location: login.html");
 exit();
 ?>

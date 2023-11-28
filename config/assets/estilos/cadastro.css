@@ -13,7 +13,10 @@ body {
   box-shadow: 0 0 10px rgba(0, 92, 169, 0.7);
   transform: scale(1.05);
 }
-
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 h2 {
   color: #005ca9;
   font-size: 2rem;
@@ -46,7 +49,6 @@ input[type="text"] {
   border: 1px solid #005ca9;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-bottom: 1em;
 }
 
 .sair {
@@ -141,7 +143,6 @@ input[type="email" i] {
   border: 1px solid #005ca9;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-bottom: 1em;
 }
 
 #senha {
@@ -306,6 +307,7 @@ button[value="codigo"] {
   font-size: 1rem;
   max-height: max-content;
   display: none;
+  margin-top: 0.5rem;
 }
 
 #email:invalid:not(:focus):not(:placeholder-shown) {
@@ -321,6 +323,7 @@ button[value="codigo"] {
 }
 
 #emailErro1 {
+  margin-top: 0.2rem;
   justify-content: flex-start;
   background-color: transparent;
   font-size: 1em;
@@ -331,7 +334,6 @@ button[value="codigo"] {
   font-size: 1em;
   text-decoration: none;
   display: none;
-  margin-top: -0.2rem;
   margin-bottom: -0.2rem;
 }
 

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <title>Autenticar usuário</title>
@@ -44,17 +41,16 @@ require_once './session.php';
 // Verificar se há uma sessão de usuário ou superusuário 
 if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) { 
     // Redirecionar para a página de login 
-    header("Location: index.html"); 
+    header("Location: login.html"); 
     exit;
 }*/
 
 $host = '127.0.0.1';
-$dbname = 'u683147803_uaibookBD';
+$dbname = 'biblioteca';
 $username = 'root';
 $password = '';
 
-// Conectar ao banco de dados usando mysqli
-
+// Conectar ao banco de dados usando PDO
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -154,8 +150,8 @@ try {
         if (isset($_GET['error']) && $_GET['error'] == '1001') {
             echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Usuário ou senha inválidos.</div>";
         }
-        // Credenciais inválidas, redirecionar para index.html com mensagem de erro
-        header('Location: index.html?error=1001');
+        // Credenciais inválidas, redirecionar para login.html com mensagem de erro
+        header('Location: login.html?error=1001');
         exit;
 
         if (isset($_GET['skip_message']) && $_GET['skip_message'] === '1') {

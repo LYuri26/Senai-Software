@@ -90,7 +90,10 @@ body {
 .fa .fafa-bars::before {
   content: "\f0c9";
 }
-
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 #menu-icon {
   display: none;
   /* Oculta o ícone em dispositivos desktop */
@@ -366,11 +369,12 @@ footer {
     justify-content: center;
     align-items: center;
     position: relative;
+    width:max-content !important;  
   }
   body {
+    display: block;
     margin: 0;
     padding: 0;
-    display: grid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -477,7 +481,6 @@ footer {
     margin-block-start: 0rem;
     margin-block-end: 0rem;
     padding-inline-start: 0rem;
-
   }
 
   .titulo {
@@ -590,17 +593,11 @@ footer {
 
   #slider {
     position: relative;
-    /* Remove a posição absoluta para ajustar ao fluxo do documento */
     right: auto;
-    /* Remove o alinhamento à direita */
-    width: 90vw;
-    /* Define a largura do carrossel como 100% do container */
-    height: 20vh;
-    /* Ajusta a altura proporcionalmente ao conteúdo */
+    /* width: 90vw; */
+    /* height: 20vh; */
     max-width: 100%;
-    /* Remove a largura máxima */
-    padding: 0;
-    /* Remove o espaçamento nas laterais */
+    /* padding: 0; */
     margin: 0 auto;
   }
 

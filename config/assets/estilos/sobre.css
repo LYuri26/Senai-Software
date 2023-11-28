@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 body {
+  display: grid;
   background-color: #e0e0e0;
   font-family: "Montserrat", sans-serif;
-  height: 50%;
   margin: 0;
   padding: 0;
-  height: 500px;
   position: relative;
   overflow: auto;
+  justify-content: space-between;
+  max-width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+header {
+  display: flex;
 }
 
 .navbar {
@@ -17,20 +26,34 @@ body {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
   display: flex;
   padding-bottom: 2px;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
 }
 
+ul#menu-list {
+  padding-inline-start: 40px;
+}
+
+.fa,
+.fas {
+  font-weight: 900;
+  color: #000000;
+}
+
+h1 {
+  text-align: center;
+}
 
 .navbar-container {
-  /*align-items: flex-start;*/
+  align-items: flex-start;
   justify-content: space-between;
   display: flex;
+  align-items: center;
   max-width: 100%;
   margin: 0 auto;
+  align-items: center;
   box-sizing: border-box;
 }
 
@@ -84,28 +107,43 @@ body {
   content: "\f0c9";
 }
 
+.titulo {
+  display: flex;
+  font-family: "montserrat", "sans-serif";
+  font-size: 2.6rem;
+  align-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
 #menu-icon {
   display: none;
   /* Oculta o ícone em dispositivos desktop */
 }
 
 .navbar-menu li {
-  text-align: right;
+  text-align: center;
   margin-right: 4rem;
-  margin-right: 30px;
 }
+
 
 .navbar-menu li a {
   color: #ffffff;
   text-decoration: none;
 }
 
-
+/*
 .navbar-menu li:last-child {
   margin-right: 30px;
-  /* Removendo margin do último elemento */
+  /* Removendo margin do último elemento
 }
-
+*/
 #conteudo {
   font-size: 26px;
   display: grid;
@@ -125,42 +163,19 @@ body {
   text-decoration: none;
 }
 
-.sair {
-  font-family: sans-serif;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #333;
-  background-color: #005ca9;
-  color: #ffffff;
-  font-size: 1.2em;
-  border: none;
-  padding: 0.5rem 1em;
-  border-radius: 3rem;
-  cursor: pointer;
-  transition: background-color 0.1s ease;
-  box-sizing: border-box;
-  margin: 0 auto;
-  display: block;
-}
-
 .logosenai {
   position: relative;
   left: 4rem;
   top: 1rem;
   width: 10rem;
+  margin-left: 6px;
 }
 
-h1 {
-  font-size: 2rem;
+h5 {
   font-weight: 600;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0px;
   text-align: center;
+  color: #005ca9;
 }
 
 .containerBody {
@@ -176,8 +191,8 @@ h1 {
 .card-title {
   font-size: 1.5rem;
   font-weight: 600;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  color: #005ca9;
 }
 
 .card-body {
@@ -204,17 +219,40 @@ h1 {
   padding: 0.5rem;
 }
 
+.card-body li a:hover {
+  transition: 0.5s;
+  color: #ffffff;
+  background-color: #005ca9;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
 .card-text {
   font-size: 1.2rem;
   font-weight: 600;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
   text-align: center;
 }
 
+h5.card-text {
+  display: block;
+  margin-block-start: 20px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 
+p.card-text {
+  line-height: 2.5rem;
+}
 
-
+.card-text :last-child {
+  padding-top: 30px;
+}
 
 .rodape {
   font-family: "Montserrat", sans-serif;
@@ -222,4 +260,131 @@ h1 {
   /* padding-top: auto; */
   font-weight: bold;
   object-position: bottom;
+}
+
+ul {
+  padding-inline-start: 0px;
+  /*
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: top;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+    padding-bottom: 2px;
+    z-index: 999;
+    text-align: center;
+    border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
+    max-width: 60%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width:max-content !important;  
+  }
+
+  ul#menu-list {
+    padding-inline-start: 0px;
+  }
+
+  .navbar-menu li {
+    margin-top: 0.8rem;
+    text-align: center;
+    margin-right: 0rem;
+  }
+
+  .card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 70vw;
+    max-width: 80vw;
+  }
+
+  body {
+    display: block;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+
+  .fa-2x {
+    font-size: 1.5em !important;
+  }
+
+  header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /*body {
+    margin-top: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }*/
+
+  .navbar-menu {
+    justify-content: center;
+    display: grid;
+    text-align: center;
+    align-items: flex-start;
+    display: block;
+    list-style-type: none;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+  }
+
+  .navbar-container {
+    /*align-items: flex-start;*/
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    justify-items: center;
+    place-items: center;
+    position: relative;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-logo {
+    box-sizing: content-box;
+  }
+
+  #menu-list {
+    display: none;
+    margin-top: 0px;
+  }
+
+  #menu-icon {
+    place-items: center;
+    display: block;
+  }
+
+
 }

@@ -124,7 +124,10 @@ header {
 #botaosair:hover {
   color: red;
 }
-
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
+}
 h1 {
   color: #005ca9;
   font-size: 24px;
@@ -328,7 +331,7 @@ strong {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
     padding-bottom: 2px;
     z-index: 999;
-    width: 38.8%;
+    width:max-content !important;  
     text-align: center;
     border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
     overflow: hidden;
@@ -441,5 +444,76 @@ strong {
   .navbar-menu li:last-child {
     margin-left: 0rem;
     padding-left: 0rem;
-  }*/
+  }
+  */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: top;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 4);
+    padding-bottom: 2px;
+    z-index: 999;
+    text-align: center;
+    border-radius: 0px 0px 120px 120px / 0px 0px 120px 120px;
+    max-width: 60%;
+    width: 35%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .navbar-menu {
+    list-style-type: none;
+    justify-content: center;
+    display: grid;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .navbar-container {
+    /*align-items: flex-start;*/
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    justify-items: center;
+    place-items: center;
+    position: relative;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-logo {
+    box-sizing: content-box;
+  }
+  #menu-icon {
+    place-items: center;
+    display: block;
+  }
+
+  /* Seletor para o menu suspenso */
+  #menu-list {
+    display: none;
+    margin-top: 0px;
+  }
+  ul {
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
+    padding-inline-start: 0rem;
+  }
+  .navbar-menu li {
+    justify-content: stretch;
+    margin-top: 0.8rem;
+    margin-right: 0;
+  }
 }

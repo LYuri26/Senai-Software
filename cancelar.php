@@ -73,9 +73,16 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                     <li><a href="./agendamentos.php">Agendamentos</a></li>
                     <li><a href="./cancelamentos.php">Cancelamentos</a></li>
                     <li><a href="./menu.php">Menu</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="https://docs.google.com/forms/d/1EMKHJaqvL2lA1U9gmPW-AQwqyvDS0fgdP-ckh85ECwo/edit" target="_blank">Feedback</a></li>
                     <li class="botaosair"><a id="botaosair" href="./logout.php">Sair</a></li>
                 </ul>
             </div>
+
+            <!-- <div class="navbar-toggle">
+        <span class="navbar-toggle-icon"></span>
+      </div>
+      </div>-->
         </nav>
     </header>
 
@@ -121,12 +128,12 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
             }
         </script>
         <?php
-        $host = '127.0.0.1';
-        $dbname = 'u683147803_uaibookBD';
-        $username = 'root';
-        $password = '';
+        // Tenta criar uma conexão com o banco de dados
 
-        // Conectar ao banco de dados usando mysqli
+        $host = '127.0.0.1'; // endereço do servidor de banco de dados
+        $dbname = 'biblioteca'; // nome do banco de dados
+        $username = 'root'; // nome do usuário do banco de dados
+        $password = ''; // senha do usuário do banco de dados (MYSQL ou XAMPP)
 
         try {
             $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
@@ -162,8 +169,7 @@ if (!(isset($_SESSION['usuario']) || isset($_SESSION['superusuario']))) {
                 try {
 
                     // Insere os dados na tabela "cancelamentos" 
-                    $stmt = $pdo->prepare("INSERT INTO cancelamentos (id, nome, motivo) VALUES (:id, :nome, :motivo)");
-                    $stmt->bindValue(':id', $id);
+                    $stmt = $pdo->prepare("INSERT INTO cancelamentos (nome, motivo) VALUES (:nome, :motivo)");
                     $stmt->bindValue(':nome', $nome);
                     $stmt->bindValue(':motivo', $motivo);
                     $stmt->execute();

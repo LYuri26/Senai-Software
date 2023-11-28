@@ -135,8 +135,8 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
     </div>
 
     <?php
-    $host = '127.0.0.1';
-    $dbname = 'u683147803_uaibookBD';
+    $host = 'localhost';
+    $dbname = 'biblioteca';
     $username = 'root';
     $password = '';
 
@@ -184,8 +184,6 @@ $_SESSION['login_message'] = 'Para cancelar um agendamento, por favor, faça log
 
         return ($time >= $start && $time <= $end);
     }
-
-    // Restante do código...
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

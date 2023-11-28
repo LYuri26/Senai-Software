@@ -15,6 +15,7 @@ label {
   font-weight: bold;
   color: #000000;
 }
+
 .logo {
   font-weight: bold;
   text-decoration: none;
@@ -22,6 +23,10 @@ label {
   width: 10rem;
   animation: fade-in 3s forwards;
   animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.fa, .fas {
+  font-weight: 900;
+  color: #000000;
 }
 @keyframes fade-in {
   0% {
@@ -32,6 +37,7 @@ label {
     opacity: 1;
   }
 }
+
 .sair {
   font-family: sans-serif;
   position: fixed;
@@ -78,9 +84,11 @@ h2 {
   text-align: center;
   margin-bottom: 2rem;
 }
+
 #emailErro {
   display: none;
 }
+
 #emailErro1 {
   justify-content: flex-start;
   background-color: transparent;
@@ -95,6 +103,7 @@ h2 {
   margin-top: -0.2rem;
   margin-bottom: -0.2rem;
 }
+
 #senhaErro {
   display: none;
   float: left;
@@ -153,14 +162,17 @@ button[value="redefinir"] {
   box-sizing: border-box;
   margin: 0 auto;
   display: block;
-  
+
 }
+
 #botaosair:hover {
   color: red;
 }
+
 button[value="redefinir"]:hover {
   background-color: #0c36be;
 }
+
 .rodape {
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
